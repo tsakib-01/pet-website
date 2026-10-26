@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { ShieldAlert, PawPrint, Menu, X, ArrowRight, Dog, Cat, Sparkles, AlertTriangle } from "lucide-react";
+import { ShieldAlert, PawPrint, Menu, X, ArrowRight, Dog, Cat, Sparkles, AlertTriangle, HeartPulse } from "lucide-react";
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -28,10 +28,11 @@ export default function Header() {
 
   const navLinks = [
     { href: "/", label: "Explorer" },
-    { href: "/brand/blue-harvest", label: "Brand Dossier" },
-    { href: "/recall/fda-2024-salmonella-kibble", label: "Recall Docket" },
+    { href: "/brand/purina", label: "Brand Dossiers" },
+    { href: "/recall/fda-2024-salmonella-kibble", label: "Recall Dockets" },
     { href: "/pet/dogs", label: "Species Hub" },
     { href: "/safety/salmonella", label: "Hazard Guide" },
+    { href: "/state/california", label: "State Feed" },
   ];
 
   return (
@@ -166,22 +167,30 @@ export default function Header() {
               <span className="font-mono text-[10px] font-bold text-brand-taupe uppercase tracking-widest block pl-1">
                 Species Portals:
               </span>
-              <div className="grid grid-cols-2 gap-2">
+              <div className="grid grid-cols-3 gap-1.5">
                 <Link
                   href="/pet/dogs"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="btn-pill btn-pill-cream py-2.5 text-xs font-black justify-center shadow-paper-sm hover:bg-brand-olive"
+                  className="btn-pill btn-pill-cream py-2.5 text-[11px] font-black justify-center shadow-paper-sm hover:bg-brand-olive"
                 >
-                  <Dog className="w-4 h-4 mr-1 text-brand-espresso" />
+                  <Dog className="w-3.5 h-3.5 mr-1 text-brand-espresso" />
                   Dogs
                 </Link>
                 <Link
                   href="/pet/cats"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="btn-pill btn-pill-cream py-2.5 text-xs font-black justify-center shadow-paper-sm hover:bg-brand-olive"
+                  className="btn-pill btn-pill-cream py-2.5 text-[11px] font-black justify-center shadow-paper-sm hover:bg-brand-olive"
                 >
-                  <Cat className="w-4 h-4 mr-1 text-brand-espresso" />
+                  <Cat className="w-3.5 h-3.5 mr-1 text-brand-espresso" />
                   Cats
+                </Link>
+                <Link
+                  href="/pet/puppy-kitten"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="btn-pill btn-pill-cream py-2.5 text-[11px] font-black justify-center shadow-paper-sm hover:bg-brand-olive"
+                >
+                  <HeartPulse className="w-3.5 h-3.5 mr-1 text-brand-terracotta" />
+                  Puppy/Kitten
                 </Link>
               </div>
             </div>

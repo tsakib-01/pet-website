@@ -1,55 +1,17 @@
 import React from "react";
 import Link from "next/link";
-import { Search, ShieldAlert, AlertTriangle, ArrowRight, CheckCircle2, PawPrint, Sparkles, Filter, ChevronRight, Activity, MapPin, Dog, Cat } from "lucide-react";
+import { Search, ShieldAlert, AlertTriangle, ArrowRight, CheckCircle2, PawPrint, Sparkles, Filter, ChevronRight, Activity, MapPin, Dog, Cat, HeartPulse } from "lucide-react";
 import AdSensePlaceholder from "@/components/AdSensePlaceholder";
 import ScrollReveal from "@/components/ScrollReveal";
 import InteractiveLotScanner from "@/components/InteractiveLotScanner";
 import InteractiveUSMap from "@/components/InteractiveUSMap";
 import FaqAccordion from "@/components/FaqAccordion";
+import { recallsData } from "@/data/recalls";
+import { brandsData } from "@/data/brands";
 
 export default function HomePage() {
-  const recentRecalls = [
-    {
-      id: "fda-2024-salmonella-kibble",
-      brand: "Wild Harvest Naturals",
-      species: "Cats",
-      product: "Freeze-Dried Atlantic Salmon Cat Treats (4 oz)",
-      hazard: "Salmonella Contamination Risk",
-      date: "October 18, 2026",
-      severity: "CLASS I (URGENT)",
-      lots: ["8841A", "8841B", "8842"],
-      image: "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=600&q=80",
-    },
-    {
-      id: "fda-2024-aflatoxin-dog-corn",
-      brand: "Hearty Paws Premier",
-      species: "Dogs",
-      product: "Adult Grain-Inclusive Roasted Chicken Kibble (30 lb)",
-      hazard: "Elevated Aflatoxin Levels Detected",
-      date: "September 29, 2026",
-      severity: "CLASS I (URGENT)",
-      lots: ["LOT-HP-092", "LOT-HP-094"],
-      image: "https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&w=600&q=80",
-    },
-    {
-      id: "fda-2024-vitamin-d-canned",
-      brand: "PurrPure Holistic",
-      species: "Cats",
-      product: "Pâté Turkey & Giblets Canned Cat Food (5.5 oz)",
-      hazard: "Excess Vitamin D Formulation Error",
-      date: "August 14, 2026",
-      severity: "CLASS II (POTENTIAL ILLNESS)",
-      lots: ["C-2026-VTD"],
-      image: "https://images.unsplash.com/photo-1573865526739-10659fec78a5?auto=format&fit=crop&w=600&q=80",
-    },
-  ];
-
-  const brandWatch = [
-    { name: "Blue Harvest / Blue Buffalo", slug: "blue-harvest", grade: "B-", recalls: 2, status: "Active Watchlist", isAlert: true },
-    { name: "Canine Shield Holistic", slug: "canine-shield", grade: "A+", recalls: 0, status: "10-Yr Clean Docket", isAlert: false },
-    { name: "Hill's Science Diet", slug: "blue-harvest", grade: "A", recalls: 1, status: "Clean Tested", isAlert: false },
-    { name: "Prairie Bark Mills", slug: "blue-harvest", grade: "D", recalls: 5, status: "Multiple Warnings", isAlert: true },
-  ];
+  const recentRecalls = recallsData.slice(0, 6);
+  const brandList = Object.values(brandsData);
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 py-6 sm:py-10 space-y-12 sm:space-y-16 overflow-hidden">
@@ -119,9 +81,25 @@ export default function HomePage() {
                   <Cat className="w-3.5 h-3.5 text-brand-espresso" />
                   Cats
                 </Link>
+                <Link href="/pet/puppy-kitten" className="btn-pill btn-pill-cream px-3 sm:px-4 py-1 text-[11px] sm:text-xs font-bold shadow-paper-sm hover:bg-brand-olive flex items-center gap-1.5">
+                  <HeartPulse className="w-3.5 h-3.5 text-brand-terracotta" />
+                  Puppy/Kitten
+                </Link>
                 <Link href="/safety/salmonella" className="btn-pill btn-pill-terracotta px-3 sm:px-4 py-1 text-[11px] sm:text-xs font-bold shadow-paper-sm flex items-center gap-1.5">
                   <AlertTriangle className="w-3.5 h-3.5 text-brand-olive" />
                   Salmonella
+                </Link>
+                <Link href="/safety/aflatoxin" className="btn-pill btn-pill-terracotta px-3 sm:px-4 py-1 text-[11px] sm:text-xs font-bold shadow-paper-sm flex items-center gap-1.5">
+                  <AlertTriangle className="w-3.5 h-3.5 text-brand-olive" />
+                  Aflatoxin
+                </Link>
+                <Link href="/state/california" className="btn-pill btn-pill-cream px-3 sm:px-4 py-1 text-[11px] sm:text-xs font-bold shadow-paper-sm hover:bg-brand-olive flex items-center gap-1.5">
+                  <MapPin className="w-3.5 h-3.5 text-brand-espresso" />
+                  California
+                </Link>
+                <Link href="/state/texas" className="btn-pill btn-pill-cream px-3 sm:px-4 py-1 text-[11px] sm:text-xs font-bold shadow-paper-sm hover:bg-brand-olive flex items-center gap-1.5">
+                  <MapPin className="w-3.5 h-3.5 text-brand-espresso" />
+                  Texas
                 </Link>
               </div>
             </div>
@@ -209,13 +187,13 @@ export default function HomePage() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {recentRecalls.map((recall, idx) => (
-            <ScrollReveal key={recall.id} direction="up" delayMs={idx * 150}>
+            <ScrollReveal key={recall.id} direction="up" delayMs={idx * 100}>
               <div className="paper-box p-4 sm:p-5 flex flex-col justify-between group hover:-translate-y-1.5 transition-all bg-[#FAF4EE] h-full">
                 <div className="space-y-3 sm:space-y-4">
                   <div className="relative rounded-2xl overflow-hidden border-2 border-brand-espresso h-44 sm:h-48">
                     <img
-                      src={recall.image}
-                      alt={recall.product}
+                      src={recall.petImage}
+                      alt={recall.petBreedName}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                     />
                     <span className="absolute top-2.5 left-2.5 pill-badge bg-brand-espresso text-brand-cream border-brand-cream text-[10px] flex items-center gap-1">
@@ -230,16 +208,16 @@ export default function HomePage() {
                       )}
                     </span>
                     <span className="absolute bottom-2.5 right-2.5 pill-badge pill-badge-alert text-[10px]">
-                      {recall.severity}
+                      {recall.classification.split(" ")[0]}
                     </span>
                   </div>
 
                   <div>
                     <span className="font-mono text-xs text-brand-taupe font-bold block">
-                      {recall.date} • {recall.brand}
+                      {recall.announcementDate} • {recall.brand}
                     </span>
                     <h3 className="font-heading text-lg sm:text-xl font-black text-brand-espresso leading-snug mt-1 group-hover:text-brand-terracotta transition-colors">
-                      {recall.product}
+                      {recall.productName}
                     </h3>
                   </div>
 
@@ -248,12 +226,12 @@ export default function HomePage() {
                       <AlertTriangle className="w-3.5 h-3.5 text-brand-terracotta" />
                       Hazard Notice:
                     </span>
-                    <p className="font-medium">{recall.hazard}</p>
+                    <p className="font-medium">{recall.hazardType}</p>
                   </div>
 
                   <div className="font-mono text-xs text-brand-taupe font-bold">
                     <span className="text-brand-espresso font-black">Affected Lots: </span>
-                    {recall.lots.join(", ")}
+                    {recall.lotCodes.join(", ")}
                   </div>
                 </div>
 
@@ -267,7 +245,7 @@ export default function HomePage() {
                       <ArrowRight className="w-3 h-3" />
                     </span>
                   </Link>
-                  <span className="font-mono text-[10px] sm:text-[11px] font-bold text-brand-taupe">#FDA-9921</span>
+                  <span className="font-mono text-[10px] sm:text-[11px] font-bold text-brand-taupe">#{recall.docketNumber}</span>
                 </div>
               </div>
             </ScrollReveal>
@@ -294,10 +272,10 @@ export default function HomePage() {
                 </h2>
               </div>
               <Link
-                href="/brand/blue-harvest"
+                href="/brand/purina"
                 className="btn-pill btn-pill-cream px-3.5 py-1.5 text-xs font-black hover:bg-brand-olive shadow-paper-sm self-start sm:self-auto"
               >
-                View 250 Brands →
+                View All {brandList.length} Monitored Brands →
               </Link>
             </div>
 
@@ -308,34 +286,34 @@ export default function HomePage() {
                   <tr className="border-b-2 border-brand-espresso/30 text-brand-taupe font-heading font-black uppercase">
                     <th className="py-3">Brand Name</th>
                     <th className="py-3">Grade</th>
-                    <th className="py-3">FDA Recalls</th>
-                    <th className="py-3">Status</th>
+                    <th className="py-3">10-Yr Recalls</th>
+                    <th className="py-3">Inspection Status</th>
                     <th className="py-3 text-right">Dossier</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-brand-espresso/15">
-                  {brandWatch.map((brand, i) => (
+                  {brandList.map((brand, i) => (
                     <tr key={i} className="hover:bg-brand-cream/50 transition-colors">
                       <td className="py-3.5 font-heading font-black text-base text-brand-espresso">
                         {brand.name}
                       </td>
                       <td className="py-3.5">
-                        <span className={`pill-badge text-xs px-2.5 py-0.5 ${brand.isAlert ? "pill-badge-alert" : "pill-badge-verified"}`}>
-                          {brand.grade}
+                        <span className={`pill-badge text-xs px-2.5 py-0.5 ${brand.safetyScore < 70 ? "pill-badge-alert" : "pill-badge-verified"}`}>
+                          GRADE {brand.safetyGrade}
                         </span>
                       </td>
                       <td className="py-3.5 font-mono font-bold text-brand-espresso">
-                        {brand.recalls} Events
+                        {brand.totalRecalls10Yr} Events
                       </td>
-                      <td className={`py-3.5 font-heading font-bold ${brand.isAlert ? "text-brand-terracotta" : "text-brand-olive"}`}>
-                        {brand.status}
+                      <td className={`py-3.5 font-heading font-bold ${brand.safetyScore < 70 ? "text-brand-terracotta" : "text-brand-olive"}`}>
+                        {brand.inspectionComplianceStatus}
                       </td>
                       <td className="py-3.5 text-right">
                         <Link
                           href={`/brand/${brand.slug}`}
                           className="btn-pill btn-pill-cream px-3 py-1 text-[11px] font-black hover:bg-brand-olive shadow-paper-sm"
                         >
-                          Inspect
+                          Inspect Dossier →
                         </Link>
                       </td>
                     </tr>
@@ -346,7 +324,7 @@ export default function HomePage() {
 
             {/* Mobile Stacked Touch Cards */}
             <div className="sm:hidden space-y-3">
-              {brandWatch.map((brand, i) => (
+              {brandList.map((brand, i) => (
                 <div
                   key={i}
                   className="bg-brand-cream/50 p-3.5 rounded-2xl border-2 border-brand-espresso/20 flex items-center justify-between gap-3"
@@ -356,11 +334,11 @@ export default function HomePage() {
                       {brand.name}
                     </span>
                     <div className="flex items-center gap-2 mt-1">
-                      <span className={`pill-badge text-[10px] px-2 py-0.2 ${brand.isAlert ? "pill-badge-alert" : "pill-badge-verified"}`}>
-                        {brand.grade}
+                      <span className={`pill-badge text-[10px] px-2 py-0.2 ${brand.safetyScore < 70 ? "pill-badge-alert" : "pill-badge-verified"}`}>
+                        GRADE {brand.safetyGrade}
                       </span>
                       <span className="font-mono text-[10px] text-brand-taupe font-bold">
-                        {brand.recalls} Recalls
+                        {brand.totalRecalls10Yr} Recalls
                       </span>
                     </div>
                   </div>

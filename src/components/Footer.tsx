@@ -42,10 +42,10 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* 5 Demo Templates Directory */}
+        {/* Demo Templates Directory */}
         <div className="space-y-3">
           <h4 className="font-heading text-xs font-black uppercase tracking-wider text-brand-espresso border-b-2 border-brand-espresso pb-1">
-            Demo Pages
+            Browse Directory
           </h4>
           <ul className="space-y-2 text-xs font-heading font-bold">
             <li>
@@ -54,23 +54,28 @@ export default function Footer() {
               </Link>
             </li>
             <li>
-              <Link href="/brand/blue-harvest" className="hover:text-brand-terracotta transition-colors flex items-center gap-1">
-                → Brand Dossier
+              <Link href="/brand/purina" className="hover:text-brand-terracotta transition-colors flex items-center gap-1">
+                → Brand Dossiers (8 Brands)
               </Link>
             </li>
             <li>
               <Link href="/recall/fda-2024-salmonella-kibble" className="hover:text-brand-terracotta transition-colors flex items-center gap-1">
-                → Recall Docket
+                → Recall Dockets (8 Cases)
               </Link>
             </li>
             <li>
               <Link href="/pet/dogs" className="hover:text-brand-terracotta transition-colors flex items-center gap-1">
-                → Species Safety Hub
+                → Species Safety Hubs
               </Link>
             </li>
             <li>
               <Link href="/safety/salmonella" className="hover:text-brand-terracotta transition-colors flex items-center gap-1">
-                → Hazard Guide
+                → Pathogen Hazard Guides
+              </Link>
+            </li>
+            <li>
+              <Link href="/state/california" className="hover:text-brand-terracotta transition-colors flex items-center gap-1">
+                → State Enforcement Registries
               </Link>
             </li>
           </ul>

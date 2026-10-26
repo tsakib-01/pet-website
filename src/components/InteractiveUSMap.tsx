@@ -139,10 +139,10 @@ export default function InteractiveUSMap() {
             </div>
 
             <Link
-              href="/recall/fda-2024-salmonella-kibble"
+              href={`/state/${selectedState.code === "CA" ? "california" : selectedState.code === "TX" ? "texas" : "florida"}`}
               className="btn-pill btn-pill-espresso w-full py-2.5 text-xs font-black group text-center shadow-paper-sm justify-center"
             >
-              <span>View {selectedState.code} Dockets</span>
+              <span>View {selectedState.name} Registry ({selectedState.code})</span>
               <ArrowRight className="w-3.5 h-3.5" />
             </Link>
           </div>
