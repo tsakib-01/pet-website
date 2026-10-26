@@ -71,7 +71,7 @@ export default function HomePage() {
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
             {/* Hero Left Content */}
-            <div className="lg:col-span-7 space-y-5 sm:space-y-6">
+            <div className="order-2 lg:order-1 lg:col-span-7 space-y-5 sm:space-y-6">
               <h1 className="font-heading text-3xl sm:text-5xl lg:text-6xl font-black text-brand-espresso leading-[1.08] tracking-tight">
                 DON’T GUESS WHAT’S IN THEIR BOWL.{" "}
                 <span className="inline-block bg-brand-terracotta text-[#FAF4EE] px-3 sm:px-4 py-0.5 sm:py-1 rounded-full border-2 border-brand-espresso shadow-pill transform -rotate-1 mt-1">
@@ -126,8 +126,8 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* Hero Right Visual Collage */}
-            <div className="lg:col-span-5 relative flex justify-center pt-2 sm:pt-4">
+            {/* Hero Right Visual Collage (Shifted to top on mobile via order-1) */}
+            <div className="order-1 lg:order-2 lg:col-span-5 relative flex justify-center pt-2 sm:pt-4">
               <div className="relative w-full max-w-xs sm:max-w-sm">
                 <div className="paper-box p-3 sm:p-4 bg-brand-cream border-2.5 border-brand-espresso transform -rotate-1 hover:rotate-0 transition-transform">
                   <img
