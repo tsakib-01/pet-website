@@ -1,0 +1,204 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,700;1,800&family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800;12..96,900&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-espresso: #583D32;
+  --color-olive: #C9C986;
+  --color-taupe: #7F6F72;
+  --color-cream: #E8D5C5;
+  --color-terracotta: #D57746;
+}
+
+body {
+  background-color: #E8D5C5;
+  color: #583D32;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  overflow-x: hidden;
+  background-image: 
+    radial-gradient(#7F6F72 0.75px, transparent 0.75px),
+    radial-gradient(#583D32 0.5px, #E8D5C5 0.5px);
+  background-size: 30px 30px;
+  background-position: 0 0, 15px 15px;
+}
+
+/* Hide scrollbars for clean mobile horizontal touch swiping */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Terry Ho Punchy Headings */
+h1, h2, h3, .font-heading {
+  font-family: 'Bricolage Grotesque', 'Plus Jakarta Sans', sans-serif;
+  letter-spacing: -0.03em;
+  font-feature-settings: "liga" 1, "calt" 1;
+}
+
+/* Terry Ho Pill Button & Micro-Interactions */
+.btn-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: 9999px;
+  border: 2.5px solid #583D32;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 3.5px 3.5px 0px #583D32;
+}
+
+.btn-pill:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 5.5px 5.5px 0px #583D32;
+}
+
+.btn-pill:active {
+  transform: translate(1px, 1px);
+  box-shadow: 2px 2px 0px #583D32;
+}
+
+.btn-pill-terracotta {
+  background-color: #D57746;
+  color: #FAF4EE;
+}
+.btn-pill-terracotta:hover {
+  background-color: #DE6E35;
+}
+
+.btn-pill-olive {
+  background-color: #C9C986;
+  color: #583D32;
+}
+.btn-pill-olive:hover {
+  background-color: #BDBD75;
+}
+
+.btn-pill-cream {
+  background-color: #FAF4EE;
+  color: #583D32;
+}
+.btn-pill-cream:hover {
+  background-color: #FFFFFF;
+}
+
+.btn-pill-espresso {
+  background-color: #583D32;
+  color: #FAF4EE;
+  box-shadow: 3.5px 3.5px 0px #D57746;
+}
+.btn-pill-espresso:hover {
+  box-shadow: 5.5px 5.5px 0px #D57746;
+}
+
+/* Circle icon holder inside Terry Ho pill buttons */
+.btn-circle-icon {
+  width: 1.75rem;
+  height: 1.75rem;
+  border-radius: 9999px;
+  background-color: #FAF4EE;
+  color: #583D32;
+  border: 1.5px solid #583D32;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.25s ease;
+  flex-shrink: 0;
+}
+
+.group:hover .btn-circle-icon,
+.btn-pill:hover .btn-circle-icon {
+  transform: translateX(3px) rotate(-15deg);
+}
+
+/* Terry Ho Pill Badges & Chips */
+.pill-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  border-radius: 9999px;
+  border: 2px solid #583D32;
+  padding: 0.25rem 0.85rem;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  box-shadow: 2px 2px 0px #583D32;
+}
+
+.pill-badge-alert {
+  background-color: #D57746;
+  color: #FAF4EE;
+}
+
+.pill-badge-verified {
+  background-color: #C9C986;
+  color: #583D32;
+}
+
+.pill-badge-cream {
+  background-color: #FAF4EE;
+  color: #583D32;
+}
+
+/* Tactile Paper Cards with IGIN-style Hard Offset Drop Shadow */
+.paper-box {
+  background-color: #FAF4EE;
+  border: 2.5px solid #583D32;
+  box-shadow: 5px 5px 0px #583D32;
+  border-radius: 1.25rem;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.paper-box:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 7px 7px 0px #583D32;
+}
+
+/* Rubber Stamp Effect */
+.stamp-outline {
+  border: 2.5px dashed #583D32;
+  text-transform: uppercase;
+  font-family: 'Space Mono', monospace;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  padding: 4px 14px;
+}
+
+.stamp-alert {
+  border: 2.5px dashed #D57746;
+  color: #D57746;
+  text-transform: uppercase;
+  font-family: 'Space Mono', monospace;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  border-radius: 9999px;
+}
+
+/* Marquee Animation */
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  display: flex;
+  width: 200%;
+  animation: marquee 25s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
