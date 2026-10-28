@@ -5,9 +5,13 @@ import Footer from "@/components/Footer";
 import FloatingScrollCompanion from "@/components/FloatingScrollCompanion";
 
 export const metadata: Metadata = {
-  title: "PawTruth — Pet Health & Safety Calculators",
+  metadataBase: new URL("https://pawtruth.com"),
+  title: {
+    default: "PawTruth — Pet Health & Safety Calculators",
+    template: "%s | PawTruth",
+  },
   description:
-    "Free, 100% veterinary-accurate calculators for dogs and cats: emergency chocolate toxicity triage, AVMA canine & feline age converters, WSAVA food portioning, and AKC crate sizing.",
+    "Free, 100% veterinary-accurate calculators and clinical breed guides for dogs and cats: emergency toxicity triage, AVMA life-stage age converters, WSAVA nutrition portioning, and AKC sizing.",
   keywords: [
     "dog age calculator",
     "dog chocolate toxicity calculator",
@@ -18,7 +22,36 @@ export const metadata: Metadata = {
     "dog name generator",
     "cat name generator",
     "puppy weight calculator",
+    "dog breed guides",
+    "cat breed guides",
   ],
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    title: "PawTruth — Pet Health & Safety Calculators",
+    description: "Veterinary-accurate calculators and clinical breed standards for dogs and cats.",
+    url: "https://pawtruth.com",
+    siteName: "PawTruth",
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "PawTruth — Pet Health & Safety Calculators",
+    description: "Veterinary-accurate calculators and clinical breed standards for dogs and cats.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
 };
 
 export default function RootLayout({

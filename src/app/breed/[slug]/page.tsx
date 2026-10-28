@@ -50,8 +50,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const bName = breed.name.toLowerCase();
 
   return {
-    title: `${breed.name} ${speciesName} Care Guide, Colors, Temperament & Calculators | PawTruth`,
-    description: `${breed.name} complete guide: recognized and rare colors (${breed.coatVariations.slice(0, 4).join(", ")}), temperament ratings, puppy/kitten growth milestones, weight standards, and interactive veterinary calculators.`,
+    title: `${breed.name} Care Guide: Colors, Temperament, Size & Health | PawTruth`,
+    description: `Complete ${breed.name} veterinary guide: recognized & rare colors (${breed.coatVariations.slice(0, 3).join(", ")}), temperament scores, pediatric growth milestones, weight benchmarks, and 1-click interactive calculators.`,
     keywords: [
       bName,
       `${bName} colors`,
@@ -64,12 +64,18 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       `black ${bName}`,
       `${bName} lifespan`,
       `${bName} weight`,
+      `${bName} crate size`,
       `${bName} calculator`,
+      `${bName} health issues`,
     ],
+    alternates: {
+      canonical: `https://pawtruth.com/breed/${breed.slug}`,
+    },
     openGraph: {
       title: `${breed.name} Clinical Guide: Colors, Temperament & Calculators`,
       description: breed.tagline,
       type: "article",
+      url: `https://pawtruth.com/breed/${breed.slug}`,
       images: [
         {
           url: breed.heroImage,
@@ -78,6 +84,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
           alt: breed.heroImageAlt,
         },
       ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${breed.name} Clinical Guide: Colors, Temperament & Calculators`,
+      description: breed.tagline,
+      images: [breed.heroImage],
     },
   };
 }
@@ -114,7 +126,7 @@ export default async function BreedDetailPage({ params }: Props) {
     }
   };
 
-  // Structured Data Schema: MedicalWebPage + BreadcrumbList + FAQPage
+  // Structured Data Schema: MedicalWebPage + BreadcrumbList + FAQPage + ImageObject
   const jsonLd = {
     "@context": "https://schema.org",
     "@graph": [
@@ -145,10 +157,21 @@ export default async function BreedDetailPage({ params }: Props) {
         "@type": "MedicalWebPage",
         "name": `${breed.name} Comprehensive Clinical Breed Guide`,
         "description": breed.tagline,
+        "url": `https://pawtruth.com/breed/${breed.slug}`,
         "aspect": ["Overview", "Temperament", "Color Variations", "Growth Milestones", "Health", "Nutritional Requirements"],
         "about": {
           "@type": "Thing",
           "name": breed.name,
+        },
+        "primaryImageOfPage": {
+          "@type": "ImageObject",
+          "url": breed.heroImage,
+          "caption": breed.heroImageAlt,
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "PawTruth",
+          "url": "https://pawtruth.com",
         },
       },
       {
@@ -173,7 +196,7 @@ export default async function BreedDetailPage({ params }: Props) {
       />
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 py-6 sm:py-10 space-y-10">
-        {/* Breadcrumb Navigation */}
+        {/* Breadcrumb Navigation (Crawlable & Screen-reader compliant) */}
         <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-xs font-mono font-bold text-brand-taupe">
           <Link href="/" className="hover:text-brand-espresso transition-colors">
             Home
@@ -183,11 +206,11 @@ export default async function BreedDetailPage({ params }: Props) {
             Breeds
           </Link>
           <ChevronRight className="w-3.5 h-3.5" />
-          <span className="text-brand-espresso">{breed.name}</span>
+          <span className="text-brand-espresso font-semibold">{breed.name}</span>
         </nav>
 
         {/* ========================================================
-            HERO HEADER & BALANCED EDITORIAL SHOWCASE
+            HERO HEADER & 2-COLUMN BALANCED SHOWCASE
             ======================================================== */}
         <section className="bg-white rounded-3xl border-2.5 border-brand-espresso p-6 sm:p-8 lg:p-10 shadow-[6px_6px_0px_#583D32]">
           <div className="grid lg:grid-cols-12 gap-8 items-center">
@@ -265,7 +288,7 @@ export default async function BreedDetailPage({ params }: Props) {
         </section>
 
         {/* ========================================================
-            BLOCK 1: CLINICAL CHEAT-SHEET / QUICK SPECS TABLE
+            BLOCK 1: CLINICAL FAST SPECIFICATIONS TABLE
             ======================================================== */}
         <section className="space-y-4">
           <div className="flex items-center justify-between">
@@ -286,9 +309,9 @@ export default async function BreedDetailPage({ params }: Props) {
                 key={metric.label}
                 className="bg-white rounded-2xl border-2 border-brand-espresso p-4 sm:p-5 shadow-[3px_3px_0px_#583D32] flex flex-col justify-between"
               >
-                <div className="text-xs font-mono font-bold text-brand-taupe uppercase tracking-wider">
+                <h3 className="text-xs font-mono font-bold text-brand-taupe uppercase tracking-wider">
                   {metric.label}
-                </div>
+                </h3>
                 <div className="text-xl sm:text-2xl font-heading font-black text-brand-espresso my-2">
                   {metric.value}
                 </div>
@@ -303,7 +326,7 @@ export default async function BreedDetailPage({ params }: Props) {
         </section>
 
         {/* ========================================================
-            NEW KEYWORD CLUSTER: TEMPERAMENT & BEHAVIORAL PROFILE
+            BLOCK 2: TEMPERAMENT & BEHAVIORAL PROFILE
             ======================================================== */}
         <section className="bg-white rounded-3xl border-2.5 border-brand-espresso p-6 sm:p-8 shadow-[5px_5px_0px_#583D32] space-y-6">
           <div className="space-y-2">
@@ -327,9 +350,9 @@ export default async function BreedDetailPage({ params }: Props) {
                 className="bg-brand-cream/30 rounded-2xl border-2 border-brand-espresso/30 p-4 space-y-2"
               >
                 <div className="flex items-center justify-between">
-                  <span className="font-heading font-black text-sm text-brand-espresso">
+                  <h3 className="font-heading font-black text-sm text-brand-espresso">
                     {trait.label}
-                  </span>
+                  </h3>
                   <div className="flex items-center gap-1">
                     {[1, 2, 3, 4, 5].map((dot) => (
                       <span
@@ -350,31 +373,58 @@ export default async function BreedDetailPage({ params }: Props) {
             ))}
           </div>
 
-          {/* Family Compatibility & Training Callout */}
+          {/* Family Compatibility & Training Callout with Internal Linking */}
           <div className="grid sm:grid-cols-2 gap-4 pt-4 border-t border-brand-espresso/15">
             <div className="p-4 rounded-xl bg-brand-olive/20 border border-brand-espresso/20 space-y-1.5">
-              <div className="text-xs font-heading font-black text-brand-espresso uppercase flex items-center gap-1.5">
+              <h3 className="text-xs font-heading font-black text-brand-espresso uppercase flex items-center gap-1.5">
                 <CheckCircle2 className="w-3.5 h-3.5 text-brand-olive" />
                 Family & Home Compatibility
-              </div>
+              </h3>
               <p className="text-xs text-brand-espresso/80 leading-relaxed">
-                {breed.temperament.familyCompatibility}
+                {breed.temperament.familyCompatibility}{" "}
+                {isDog ? (
+                  <span>
+                    Welcoming a new puppy? Explore our curated{" "}
+                    <Link href="/tools/dog-name-generator" className="font-bold underline text-brand-espresso hover:text-brand-terracotta">
+                      Dog Name Generator
+                    </Link>{" "}
+                    for inspiration.
+                  </span>
+                ) : (
+                  <span>
+                    Bringing home a kitten? Browse our curated{" "}
+                    <Link href="/tools/cat-name-generator" className="font-bold underline text-brand-espresso hover:text-brand-terracotta">
+                      Cat Name Generator
+                    </Link>{" "}
+                    for fitting names.
+                  </span>
+                )}
               </p>
             </div>
             <div className="p-4 rounded-xl bg-brand-cream/60 border border-brand-espresso/20 space-y-1.5">
-              <div className="text-xs font-heading font-black text-brand-espresso uppercase flex items-center gap-1.5">
+              <h3 className="text-xs font-heading font-black text-brand-espresso uppercase flex items-center gap-1.5">
                 <Info className="w-3.5 h-3.5 text-brand-terracotta" />
                 Training & Daily Management
-              </div>
+              </h3>
               <p className="text-xs text-brand-espresso/80 leading-relaxed">
-                {breed.temperament.trainingTips}
+                {breed.temperament.trainingTips}{" "}
+                <span>
+                  Calibrate life-stage discipline and cognitive aging using the{" "}
+                  <Link
+                    href={isDog ? "/tools/dog-age-calculator" : "/tools/cat-age-calculator"}
+                    className="font-bold underline text-brand-espresso hover:text-brand-terracotta"
+                  >
+                    {isDog ? "AVMA Dog Age Calculator" : "AAFP Cat Age Calculator"}
+                  </Link>
+                  .
+                </span>
               </p>
             </div>
           </div>
         </section>
 
         {/* ========================================================
-            NEW KEYWORD CLUSTER: COAT COLORS & GENETICS BREAKDOWN
+            BLOCK 3: COAT COLORS & GENETICS BREAKDOWN
             ======================================================== */}
         <section className="bg-white rounded-3xl border-2.5 border-brand-espresso p-6 sm:p-8 shadow-[5px_5px_0px_#583D32] space-y-6">
           <div className="space-y-2">
@@ -428,9 +478,9 @@ export default async function BreedDetailPage({ params }: Props) {
           <div className="p-4 rounded-xl bg-amber-50 border border-amber-300 flex items-start gap-3">
             <AlertTriangle className="w-5 h-5 text-amber-700 flex-shrink-0 mt-0.5" />
             <div className="space-y-1">
-              <div className="text-xs font-heading font-black text-amber-900 uppercase">
+              <h3 className="text-xs font-heading font-black text-amber-900 uppercase">
                 Clinical Genetics & Coat Health Notice
-              </div>
+              </h3>
               <p className="text-xs text-amber-900/90 leading-relaxed">
                 {breed.colorGenetics.healthConsiderations}
               </p>
@@ -439,7 +489,7 @@ export default async function BreedDetailPage({ params }: Props) {
         </section>
 
         {/* ========================================================
-            NEW KEYWORD CLUSTER: PUPPY / KITTEN GROWTH MILESTONES
+            BLOCK 4: PUPPY / KITTEN GROWTH MILESTONES
             ======================================================== */}
         <section className="bg-white rounded-3xl border-2.5 border-brand-espresso p-6 sm:p-8 shadow-[5px_5px_0px_#583D32] space-y-6">
           <div className="space-y-2">
@@ -478,17 +528,35 @@ export default async function BreedDetailPage({ params }: Props) {
               </div>
             ))}
           </div>
+
+          {/* Contextual Internal Link Callout */}
+          <div className="p-4 rounded-xl bg-brand-cream/50 border border-brand-espresso/20 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs">
+            <span className="text-brand-espresso font-medium">
+              {isDog ? (
+                <>Track pediatric weight checkpoints with our clinical <Link href="/tools/puppy-weight-calculator" className="font-bold underline text-brand-espresso hover:text-brand-terracotta">Puppy Weight Growth Predictor</Link> and verify inoculations with the <Link href="/tools/puppy-vaccination-schedule" className="font-bold underline text-brand-espresso hover:text-brand-terracotta">Puppy Vaccination Schedule</Link>.</>
+              ) : (
+                <>Planning a feline litter? Calculate expected delivery milestones using the <Link href="/tools/cat-pregnancy-calculator" className="font-bold underline text-brand-espresso hover:text-brand-terracotta">Queen Feline Gestation Tracker</Link>.</>
+              )}
+            </span>
+            <Link
+              href={isDog ? "/tools/puppy-weight-calculator" : "/tools/cat-pregnancy-calculator"}
+              className="inline-flex items-center gap-1 font-heading font-black text-brand-terracotta hover:underline uppercase text-[11px] flex-shrink-0"
+            >
+              <span>Open Growth Tool</span>
+              <ArrowRight className="w-3.5 h-3.5" />
+            </Link>
+          </div>
         </section>
 
         {/* ========================================================
-            NEW KEYWORD CLUSTER: SIZE SPECTRUM & "MINI" DISCLAIMER
+            BLOCK 5: SIZE SPECTRUM & "MINI" DISCLAIMER
             ======================================================== */}
         <section className="bg-brand-cream/40 rounded-2xl border-2 border-brand-espresso p-5 shadow-[3px_3px_0px_#583D32] space-y-2">
           <div className="flex items-center gap-2">
             <Scale className="w-5 h-5 text-brand-terracotta" />
-            <h3 className="font-heading text-lg font-black text-brand-espresso">
+            <h2 className="font-heading text-lg font-black text-brand-espresso">
               {breed.sizeVarieties.disclaimerTitle}
-            </h3>
+            </h2>
           </div>
           <p className="text-xs text-brand-espresso/80 leading-relaxed">
             {breed.sizeVarieties.disclaimerText}
@@ -496,19 +564,19 @@ export default async function BreedDetailPage({ params }: Props) {
         </section>
 
         {/* ========================================================
-            BLOCK 2: 1-CLICK INTERACTIVE CALCULATOR LAUNCHERS
+            BLOCK 6: 1-CLICK INTERACTIVE CALCULATOR LAUNCHERS
             (High Utility / Defeats AI Overviews)
             ======================================================== */}
         <section className="bg-brand-cream/30 rounded-3xl border-2.5 border-brand-espresso p-6 sm:p-8 shadow-[5px_5px_0px_#583D32] space-y-6">
           <div className="space-y-1">
             <div className="inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full bg-brand-terracotta text-white text-[11px] font-heading font-black uppercase tracking-wider">
-              High Utility Tools
+              High Utility Calculators
             </div>
             <h2 className="font-heading text-2xl sm:text-3xl font-black text-brand-espresso">
-              Interactive Calculators for Your {breed.name}
+              Interactive Veterinary Calculators for {breed.name}s
             </h2>
             <p className="text-sm text-brand-espresso/80">
-              Run customized formulas calibrated specifically for {breed.name} biological benchmarks and life stages.
+              Run customized formulas calibrated specifically for {breed.name} biological benchmarks, weight curves, and life stages.
             </p>
           </div>
 
@@ -545,7 +613,7 @@ export default async function BreedDetailPage({ params }: Props) {
         </section>
 
         {/* ========================================================
-            BLOCK 3: CLINICAL HEALTH & SAFETY WATCHLIST
+            BLOCK 7: CLINICAL HEALTH & SAFETY WATCHLIST
             ======================================================== */}
         <section className="space-y-4">
           <div className="flex items-center gap-2">
@@ -597,7 +665,7 @@ export default async function BreedDetailPage({ params }: Props) {
         </section>
 
         {/* ========================================================
-            BLOCK 4: DIET, NUTRITION & PORTION MANAGEMENT
+            BLOCK 8: DIET, NUTRITION & PORTION MANAGEMENT
             ======================================================== */}
         <section className="bg-white rounded-2xl border-2 border-brand-espresso p-6 shadow-[3px_3px_0px_#583D32] space-y-3">
           <div className="flex items-center gap-2">
@@ -607,12 +675,29 @@ export default async function BreedDetailPage({ params }: Props) {
             </h2>
           </div>
           <p className="text-sm text-brand-espresso/80 leading-relaxed">
-            {breed.dietAndCareNotes}
+            {breed.dietAndCareNotes}{" "}
+            {isDog ? (
+              <span>
+                To calculate safe treat limits and avoid toxic snacks, use the{" "}
+                <Link href="/tools/dog-chocolate-toxicity-calculator" className="font-bold underline text-brand-espresso hover:text-brand-terracotta">
+                  Emergency Chocolate Toxicity Triage Tool
+                </Link>
+                .
+              </span>
+            ) : (
+              <span>
+                To balance canned moisture against dry food calories, launch the{" "}
+                <Link href="/tools/cat-food-calculator-wet-and-dry" className="font-bold underline text-brand-espresso hover:text-brand-terracotta">
+                  WSAVA Wet & Dry Calorie Splitter
+                </Link>
+                .
+              </span>
+            )}
           </p>
         </section>
 
         {/* ========================================================
-            BLOCK 5: VETERINARY FAQ ACCORDION
+            BLOCK 9: VETERINARY FAQ ACCORDION
             ======================================================== */}
         <section className="space-y-4">
           <div className="flex items-center gap-2">
@@ -630,7 +715,9 @@ export default async function BreedDetailPage({ params }: Props) {
                 className="group bg-white rounded-2xl border-2 border-brand-espresso p-5 shadow-[3px_3px_0px_#583D32] open:shadow-[4px_4px_0px_#583D32] transition-all cursor-pointer"
               >
                 <summary className="font-heading font-black text-brand-espresso flex items-center justify-between gap-4 list-none select-none text-base sm:text-lg">
-                  <span>{faq.question}</span>
+                  <h3 className="inline font-heading font-black text-base sm:text-lg text-brand-espresso">
+                    {faq.question}
+                  </h3>
                   <ChevronRight className="w-4 h-4 text-brand-terracotta transition-transform duration-200 group-open:rotate-90 flex-shrink-0" />
                 </summary>
                 <div className="mt-4 pt-3 border-t border-brand-espresso/15 text-sm text-brand-espresso/80 leading-relaxed">
@@ -642,7 +729,7 @@ export default async function BreedDetailPage({ params }: Props) {
         </section>
 
         {/* ========================================================
-            SWITCH TEMPLATE LINK / DIRECTORY NAVIGATION
+            BLOCK 10: SWITCH TEMPLATE LINK / DIRECTORY NAVIGATION
             ======================================================== */}
         {otherBreed && (
           <section className="bg-white rounded-2xl border-2 border-brand-espresso p-5 shadow-[3px_3px_0px_#583D32] flex flex-col sm:flex-row items-center justify-between gap-4">
@@ -650,9 +737,9 @@ export default async function BreedDetailPage({ params }: Props) {
               <div className="text-xs font-mono font-bold text-brand-taupe uppercase">
                 Compare Preview Templates
               </div>
-              <div className="font-heading text-base font-black text-brand-espresso">
+              <h2 className="font-heading text-base font-black text-brand-espresso">
                 View the {otherBreed.species === "dog" ? "Dog" : "Cat"} Template: {otherBreed.name}
-              </div>
+              </h2>
             </div>
             <Link
               href={`/breed/${otherBreed.slug}`}

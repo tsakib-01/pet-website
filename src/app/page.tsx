@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import { Search, ArrowRight, CheckCircle2, PawPrint, Dog, Cat, HeartPulse, ShieldCheck, AlertTriangle, Scale, Utensils, Calendar, Box, Volume2 } from "lucide-react";
+import { Search, ArrowRight, CheckCircle2, PawPrint, Dog, Cat, HeartPulse, ShieldCheck, AlertTriangle, Scale, Utensils, Calendar, Box, Volume2, ChevronRight } from "lucide-react";
 import AdSensePlaceholder from "@/components/AdSensePlaceholder";
 import ScrollReveal from "@/components/ScrollReveal";
 import FaqAccordion from "@/components/FaqAccordion";
@@ -367,6 +367,68 @@ export default function HomePage() {
         <p className="text-sm text-brand-espresso leading-relaxed max-w-4xl">
           PawTruth calculations are built directly upon published formulas from the <strong>American Veterinary Medical Association (AVMA)</strong>, the <strong>World Small Animal Veterinary Association (WSAVA)</strong>, the <strong>American Animal Hospital Association (AAHA)</strong>, and the <strong>ASPCA Animal Poison Control Center</strong>. All processing is executed client-side in memory for complete privacy and instant speed.
         </p>
+      </section>
+
+      {/* 5.5. PROGRAMMATIC BREED CLINICAL HUBS (High-Intent Internal Linking) */}
+      <section className="bg-brand-cream/35 border-2.5 border-brand-espresso rounded-3xl p-6 sm:p-8 shadow-[5px_5px_0px_#583D32] space-y-6">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+          <div>
+            <div className="inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full bg-brand-terracotta text-white text-[11px] font-heading font-black uppercase tracking-wider mb-1.5">
+              Top Canine & Feline Breeds
+            </div>
+            <h2 className="font-heading text-2xl sm:text-4xl font-black text-brand-espresso">
+              Clinical Breed Standards & Calculators
+            </h2>
+            <p className="text-xs sm:text-sm text-brand-taupe">
+              Explore weight curves, coat genetics, crate sizing, and custom calculators for popular dog and cat breeds.
+            </p>
+          </div>
+          <Link
+            href="/breed"
+            className="btn-pill btn-pill-espresso px-4 py-2 text-xs font-black shadow-paper-sm self-start sm:self-auto flex-shrink-0 inline-flex items-center gap-1.5"
+          >
+            <span>Browse All Breeds</span>
+            <ArrowRight className="w-3.5 h-3.5" />
+          </Link>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <Link
+            href="/breed/french-bulldog"
+            className="bg-white border-2 border-brand-espresso rounded-2xl p-5 shadow-[3px_3px_0px_#583D32] hover:shadow-[1px_1px_0px_#583D32] hover:translate-x-[2px] hover:translate-y-[2px] transition-all flex items-center justify-between group"
+          >
+            <div className="space-y-1.5">
+              <span className="inline-flex items-center gap-1.5 text-[10px] font-mono font-bold uppercase px-2.5 py-0.5 rounded-full bg-amber-100 text-amber-900 border border-brand-espresso/20">
+                <Dog className="w-3 h-3" /> Dog Breed Profile
+              </span>
+              <h3 className="font-heading font-black text-lg text-brand-espresso group-hover:text-brand-terracotta transition-colors">
+                French Bulldog Care Guide & Presets
+              </h3>
+              <p className="text-xs text-brand-taupe">
+                16–28 lbs benchmarks, 24" crate sizing, BOAS watchlist, and age multipliers.
+              </p>
+            </div>
+            <ChevronRight className="w-5 h-5 text-brand-terracotta group-hover:translate-x-1 transition-transform flex-shrink-0 ml-3" />
+          </Link>
+
+          <Link
+            href="/breed/ragdoll"
+            className="bg-white border-2 border-brand-espresso rounded-2xl p-5 shadow-[3px_3px_0px_#583D32] hover:shadow-[1px_1px_0px_#583D32] hover:translate-x-[2px] hover:translate-y-[2px] transition-all flex items-center justify-between group"
+          >
+            <div className="space-y-1.5">
+              <span className="inline-flex items-center gap-1.5 text-[10px] font-mono font-bold uppercase px-2.5 py-0.5 rounded-full bg-sky-100 text-sky-900 border border-brand-espresso/20">
+                <Cat className="w-3 h-3" /> Cat Breed Profile
+              </span>
+              <h3 className="font-heading font-black text-lg text-brand-espresso group-hover:text-brand-terracotta transition-colors">
+                Ragdoll Cat Care Guide & Presets
+              </h3>
+              <p className="text-xs text-brand-taupe">
+                3–4 yr growth timeline, wet/dry food splitter, HCM screening, and point coat varieties.
+              </p>
+            </div>
+            <ChevronRight className="w-5 h-5 text-brand-terracotta group-hover:translate-x-1 transition-transform flex-shrink-0 ml-3" />
+          </Link>
+        </div>
       </section>
 
       {/* 6. FAQ ACCORDION */}

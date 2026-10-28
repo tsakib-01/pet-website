@@ -29,10 +29,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: `${tool.name} — Free 100% Veterinary Accurate Calculator`,
     description: tool.description,
     keywords: [tool.name.toLowerCase(), `${tool.name.toLowerCase()} online`, "pet calculator", "veterinary formula", tool.category],
+    alternates: {
+      canonical: `https://pawtruth.com/tools/${tool.slug}`,
+    },
     openGraph: {
       title: `${tool.name} | PawTruth Tools`,
       description: tool.tagline,
       type: "website",
+      url: `https://pawtruth.com/tools/${tool.slug}`,
     },
   };
 }
@@ -172,12 +176,69 @@ export default async function CalculatorDetailPage({ params }: Props) {
           </div>
         )}
 
+        {/* Reciprocal Internal Linking: Breed Standards & Health Guides */}
+        <div className="bg-brand-cream/35 border-2 border-brand-espresso rounded-3xl p-6 sm:p-7 shadow-[4px_4px_0px_#583D32] space-y-4">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+            <div>
+              <div className="text-[10px] font-mono font-bold text-brand-taupe uppercase tracking-wider">
+                Breed Clinical Standards & Presets
+              </div>
+              <h2 className="font-heading text-xl sm:text-2xl font-black text-brand-espresso">
+                Breed Guides Calibrated with This Calculator
+              </h2>
+            </div>
+            <Link
+              href="/breed"
+              className="text-xs font-mono font-bold text-brand-terracotta hover:underline flex items-center gap-1 uppercase"
+            >
+              Browse All Breeds &rarr;
+            </Link>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <Link
+              href="/breed/french-bulldog"
+              className="bg-white border-2 border-brand-espresso rounded-2xl p-4 shadow-[3px_3px_0px_#583D32] hover:shadow-[1px_1px_0px_#583D32] hover:translate-x-[2px] hover:translate-y-[2px] transition-all flex items-center justify-between group"
+            >
+              <div className="space-y-1">
+                <span className="inline-flex items-center gap-1 text-[10px] font-mono font-bold uppercase px-2 py-0.5 rounded bg-amber-100 text-amber-900 border border-brand-espresso/20">
+                  <Dog className="w-3 h-3" /> Dog Breed Guide
+                </span>
+                <h3 className="font-heading font-black text-base text-brand-espresso group-hover:text-brand-terracotta transition-colors">
+                  French Bulldog Clinical Profile & Tools
+                </h3>
+                <p className="text-xs text-brand-taupe">
+                  Weight benchmarks, 24" crate sizing, BOAS watchlist, and age multipliers.
+                </p>
+              </div>
+              <ChevronRight className="w-5 h-5 text-brand-terracotta group-hover:translate-x-1 transition-transform flex-shrink-0 ml-2" />
+            </Link>
+
+            <Link
+              href="/breed/ragdoll"
+              className="bg-white border-2 border-brand-espresso rounded-2xl p-4 shadow-[3px_3px_0px_#583D32] hover:shadow-[1px_1px_0px_#583D32] hover:translate-x-[2px] hover:translate-y-[2px] transition-all flex items-center justify-between group"
+            >
+              <div className="space-y-1">
+                <span className="inline-flex items-center gap-1 text-[10px] font-mono font-bold uppercase px-2 py-0.5 rounded bg-sky-100 text-sky-900 border border-brand-espresso/20">
+                  <Cat className="w-3 h-3" /> Cat Breed Guide
+                </span>
+                <h3 className="font-heading font-black text-base text-brand-espresso group-hover:text-brand-terracotta transition-colors">
+                  Ragdoll Cat Clinical Profile & Tools
+                </h3>
+                <p className="text-xs text-brand-taupe">
+                  3–4 yr growth timeline, wet/dry calorie splitter, HCM screening, and point colors.
+                </p>
+              </div>
+              <ChevronRight className="w-5 h-5 text-brand-terracotta group-hover:translate-x-1 transition-transform flex-shrink-0 ml-2" />
+            </Link>
+          </div>
+        </div>
+
         {/* Related Calculators Carousel */}
         <div className="space-y-4">
           <div className="flex items-center justify-between">
-            <h3 className="font-heading text-xl sm:text-2xl font-black text-brand-espresso">
+            <h2 className="font-heading text-xl sm:text-2xl font-black text-brand-espresso">
               Explore More Health Calculators
-            </h3>
+            </h2>
             <Link
               href="/tools"
               className="text-xs font-mono font-bold text-brand-terracotta hover:underline flex items-center gap-1 uppercase"
@@ -196,9 +257,9 @@ export default async function CalculatorDetailPage({ params }: Props) {
                   <span className="text-[10px] font-mono font-bold uppercase px-2 py-0.5 rounded-full bg-brand-cream text-brand-espresso mb-2 inline-block">
                     {rel.category}
                   </span>
-                  <h4 className="font-heading font-black text-base text-brand-espresso group-hover:text-brand-terracotta transition-colors mb-1">
+                  <h3 className="font-heading font-black text-base text-brand-espresso group-hover:text-brand-terracotta transition-colors mb-1">
                     {rel.name}
-                  </h4>
+                  </h3>
                   <p className="text-xs text-brand-taupe line-clamp-2">
                     {rel.tagline}
                   </p>
