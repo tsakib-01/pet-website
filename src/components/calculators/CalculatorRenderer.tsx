@@ -16,6 +16,7 @@ import CatFoodCalculatorWetAndDry from "./CatFoodCalculatorWetAndDry";
 import MixingWetAndDryCatFoodCalculator from "./MixingWetAndDryCatFoodCalculator";
 import HomemadeDogFoodCalculator from "./HomemadeDogFoodCalculator";
 import PuppyWeightCalculator from "./PuppyWeightCalculator";
+import FishTankCalculator from "./FishTankCalculator";
 
 interface Props {
   slug: string;
@@ -53,6 +54,8 @@ export default function CalculatorRenderer({ slug }: Props) {
       return <HomemadeDogFoodCalculator />;
     case "puppy-weight-calculator":
       return <PuppyWeightCalculator />;
+    case "fish-tank-calculator":
+      return <FishTankCalculator />;
     default:
       return <div>Calculator not found</div>;
   }

@@ -99,6 +99,11 @@ export default function Footer() {
                 → Wet & Dry Food Splitter
               </Link>
             </li>
+            <li>
+              <Link href="/tools/fish-tank-calculator" className="hover:text-brand-terracotta transition-colors flex items-center gap-1 text-brand-terracotta">
+                → Fish Tank & Aquarium Volume
+              </Link>
+            </li>
           </ul>
         </div>
 

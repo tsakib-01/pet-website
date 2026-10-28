@@ -327,6 +327,40 @@ export const CALCULATOR_TOOLS: CalculatorTool[] = [
         answer: "For medium and large dogs, doubling their weight at 16 weeks provides an accurate estimate (within 10%) of their adult weight, assuming healthy body condition."
       }
     ]
+  },
+  {
+    slug: "fish-tank-calculator",
+    name: "Fish Tank & Aquarium Calculator",
+    shortTitle: "Fish Tank Volume",
+    category: "pet",
+    iconName: "Fish",
+    tagline: "Calculate aquarium water volume, filled weight, heater wattage, and fish stocking capacity.",
+    description: "Determine exact net water volume in US gallons and liters from aquarium dimensions, factoring in substrate displacement and waterline rim gap. Computes total filled weight to verify floor joist and aquarium stand safety, recommended heater wattage, filtration turnover (GPH), and surface area bioload stocking limits.",
+    authority: "Ornamental Aquatic Trade Association (OATA) & University of Florida IFAS Aquatic Science",
+    volume: "1k+",
+    competition: "Easy",
+    faqs: [
+      {
+        question: "How do you calculate the gallons of a fish tank?",
+        answer: "For rectangular aquariums, multiply Length × Width × Height (in inches) and divide the result by 231 (since there are 231 cubic inches in one US gallon). To obtain true net water volume, subtract the gravel substrate depth and waterline rim gap from the total height before calculating."
+      },
+      {
+        question: "How much does a filled fish tank weigh?",
+        answer: "Water weighs 8.34 lbs per gallon (8.55 lbs for saltwater). When including the glass tank, gravel or sand substrate (approx. 10–12 lbs per square foot of 1-inch depth), and decorations, a safe rule of thumb is 10 to 12 lbs per gallon of tank capacity. For example, a 55-gallon tank will weigh roughly 550 to 650 lbs fully loaded."
+      },
+      {
+        question: "What heater wattage does my aquarium need?",
+        answer: "A standard guideline is 3 to 5 Watts per gallon of actual water volume for a typical 5°F to 10°F room-to-tank temperature differential. For a 40-gallon tank in a typical indoor room, a 150-watt to 200-watt submersible heater is recommended."
+      },
+      {
+        question: "How much filtration flow rate (GPH) do I need?",
+        answer: "Veterinary aquatic standards recommend circulating the entire tank volume at least 4 to 6 times per hour for freshwater community tanks (e.g. 160–240 GPH for a 40-gallon tank) and 8 to 10 times per hour for heavily stocked cichlid or saltwater reef aquariums."
+      },
+      {
+        question: "What is the 1 inch of fish per gallon rule?",
+        answer: "The 'one inch of fish per gallon' guideline applies strictly to slender, low-waste tropical fish (like Neon Tetras or Guppies) and should be based on actual net water volume and surface area. Deep-bodied, waste-heavy species (such as Goldfish or African Cichlids) produce substantially higher bioload and require 2 to 3 times more water volume per inch."
+      }
+    ]
   }
 ];
 

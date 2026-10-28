@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import { Search, ArrowRight, CheckCircle2, PawPrint, Dog, Cat, HeartPulse, ShieldCheck, AlertTriangle, Scale, Utensils, Calendar, Box, Volume2, ChevronRight } from "lucide-react";
+import { Search, ArrowRight, CheckCircle2, PawPrint, Dog, Cat, HeartPulse, ShieldCheck, AlertTriangle, Scale, Utensils, Calendar, Box, Volume2, ChevronRight, Fish } from "lucide-react";
 import AdSensePlaceholder from "@/components/AdSensePlaceholder";
 import ScrollReveal from "@/components/ScrollReveal";
 import FaqAccordion from "@/components/FaqAccordion";
@@ -308,7 +308,12 @@ export default function HomePage() {
                 <div>
                   <div className="flex items-center justify-between mb-2">
                     <span className="inline-flex items-center gap-1.5 text-[10px] font-mono font-black uppercase px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-900 border border-brand-espresso/20">
-                      <PawPrint className="w-3 h-3" /> Pet Tool
+                      {tool.iconName === "Fish" ? (
+                        <Fish className="w-3 h-3" />
+                      ) : (
+                        <PawPrint className="w-3 h-3" />
+                      )}
+                      {tool.iconName === "Fish" ? "Aquatic Tool" : "Pet Tool"}
                     </span>
                   </div>
                   <h4 className="font-heading font-black text-lg text-brand-espresso group-hover:text-brand-terracotta transition-colors mb-1">
@@ -319,7 +324,7 @@ export default function HomePage() {
                   </p>
                 </div>
                 <div className="mt-4 pt-3 border-t border-brand-espresso/10 text-xs font-mono font-bold text-brand-terracotta flex items-center justify-between">
-                  <span>Launch Generator</span>
+                  <span>Launch Tool</span>
                   <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
                 </div>
               </Link>
