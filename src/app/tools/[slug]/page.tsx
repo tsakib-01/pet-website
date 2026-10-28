@@ -85,42 +85,23 @@ export default async function CalculatorDetailPage({ params }: Props) {
         </nav>
 
         {/* Hero Title Section */}
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
-          <div className="md:col-span-8 space-y-3">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-brand-olive text-brand-espresso border-2 border-brand-espresso shadow-paper-sm text-xs font-heading font-black uppercase">
-              {tool.category === "cat" ? (
-                <Cat className="w-3.5 h-3.5" />
-              ) : tool.category === "dog" ? (
-                <Dog className="w-3.5 h-3.5" />
-              ) : (
-                <PawPrint className="w-3.5 h-3.5" />
-              )}
-              {tool.authority}
-            </div>
-            <h1 className="font-heading text-3xl sm:text-5xl font-black text-brand-espresso tracking-tight">
-              {tool.name}
-            </h1>
-            <p className="text-base sm:text-lg text-brand-taupe max-w-2xl leading-relaxed">
-              {tool.description}
-            </p>
+        <div className="space-y-3">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-brand-olive text-brand-espresso border-2 border-brand-espresso shadow-paper-sm text-xs font-heading font-black uppercase">
+            {tool.category === "cat" ? (
+              <Cat className="w-3.5 h-3.5" />
+            ) : tool.category === "dog" ? (
+              <Dog className="w-3.5 h-3.5" />
+            ) : (
+              <PawPrint className="w-3.5 h-3.5" />
+            )}
+            {tool.authority}
           </div>
-          <div className="hidden md:flex md:col-span-4 justify-end">
-            <div className="paper-box p-2.5 bg-brand-cream border-2.5 border-brand-espresso transform rotate-1 max-w-[220px]">
-              <img
-                src={tool.category === "cat" ? "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=400&q=80" : "https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?auto=format&fit=crop&w=400&q=80"}
-                alt={tool.category === "cat" ? "Healthy cat companion" : "Healthy dog companion"}
-                className="w-full h-32 object-cover rounded-xl border border-brand-espresso"
-              />
-              <div className="pt-1.5 text-center">
-                <span className="font-heading text-xs font-black text-brand-espresso block">
-                  {tool.category === "cat" ? "Feline Health Monitor" : "Canine Health Monitor"}
-                </span>
-                <span className="text-[10px] font-mono text-brand-taupe font-bold">
-                  Clinical Veterinary Guide
-                </span>
-              </div>
-            </div>
-          </div>
+          <h1 className="font-heading text-3xl sm:text-5xl font-black text-brand-espresso tracking-tight">
+            {tool.name}
+          </h1>
+          <p className="text-base sm:text-lg text-brand-taupe max-w-3xl leading-relaxed">
+            {tool.description}
+          </p>
         </div>
 
         {/* Interactive Calculator Engine Container */}

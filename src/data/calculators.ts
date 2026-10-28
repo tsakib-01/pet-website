@@ -7,9 +7,9 @@ export interface CalculatorTool {
   tagline: string;
   description: string;
   authority: string;
-  badge: string;
-  volume: string;
-  competition: string;
+  badge?: string;
+  volume?: string;
+  competition?: string;
   faqs: { question: string; answer: string }[];
 }
 
@@ -23,7 +23,6 @@ export const CALCULATOR_TOOLS: CalculatorTool[] = [
     tagline: "Calculate your dog's true human age with veterinary life-stage precision.",
     description: "Move beyond the obsolete '7-year rule'. This calculator uses official AVMA and AAHA canine life-stage guidelines scaled by your dog's adult weight class to provide an accurate biological human age equivalent.",
     authority: "American Veterinary Medical Association (AVMA) & AAHA Canine Life Stage Guidelines",
-    badge: "10k+ Monthly Searches",
     volume: "10k+",
     competition: "Easy",
     faqs: [
@@ -46,7 +45,6 @@ export const CALCULATOR_TOOLS: CalculatorTool[] = [
     tagline: "Discover high-recall canine names crafted with acoustic auditory science.",
     description: "Canine behavioral studies show dogs respond fastest to one- or two-syllable names featuring sharp stop consonants. Filter by gender, vibe, breed size, and phonetic rhythm.",
     authority: "Canine Behavioral & Auditory Cognition Studies",
-    badge: "1k+ Monthly Searches",
     volume: "1k+",
     competition: "Easy",
     faqs: [
@@ -69,7 +67,6 @@ export const CALCULATOR_TOOLS: CalculatorTool[] = [
     tagline: "Find the exact ergonomic crate dimensions for safety, comfort, and potty training.",
     description: "Calculate standard crate dimensions (length, height, and width) based on your dog's anatomical nose-to-tail and standing ear height, verified by AKC guidelines.",
     authority: "American Kennel Club (AKC) & Association of Professional Dog Trainers (APDT)",
-    badge: "1k+ Monthly Searches",
     volume: "1k+",
     competition: "Easy",
     faqs: [
@@ -92,7 +89,6 @@ export const CALCULATOR_TOOLS: CalculatorTool[] = [
     tagline: "Convert feline chronological age to accurate biological human years.",
     description: "Based on the American Association of Feline Practitioners (AAFP) life stage standards: 15 years in Year 1, 9 years in Year 2, and exactly 4 human years per calendar year thereafter.",
     authority: "American Association of Feline Practitioners (AAFP) & AAHA Feline Life Stage Guidelines",
-    badge: "1k+ Monthly Searches",
     volume: "1k+",
     competition: "Medium",
     faqs: [
@@ -115,7 +111,6 @@ export const CALCULATOR_TOOLS: CalculatorTool[] = [
     tagline: "Generate melodic feline names based on coat patterns, personality, and pitch.",
     description: "Cats respond best to high-frequency vowels and sibilant sounds. Filter names by gender, coat color, and personality archetype.",
     authority: "Feline Behavioral & Phonetic Research",
-    badge: "1k+ Monthly Searches",
     volume: "1k+",
     competition: "Easy",
     faqs: [
@@ -134,7 +129,6 @@ export const CALCULATOR_TOOLS: CalculatorTool[] = [
     tagline: "Explore biological feline development, milestones, and health checklists.",
     description: "Interactive feline lifespan converter mapping your cat's exact birthday to human physiological age, organ function milestones, and preventive veterinary screenings.",
     authority: "AAFP Feline Senior Care Guidelines",
-    badge: "1k+ Monthly Searches",
     volume: "1k+",
     competition: "Easy",
     faqs: [
@@ -153,7 +147,6 @@ export const CALCULATOR_TOOLS: CalculatorTool[] = [
     tagline: "All-in-one smart name generator for dogs, cats, rabbits, and exotic companions.",
     description: "Explore curated name databases organized by mythology, food, nature, royalty, and vintage classics with instant syllable and origin insights.",
     authority: "Pet Nomenclature & Linguistic Database",
-    badge: "1k+ Monthly Searches",
     volume: "1k+",
     competition: "Easy",
     faqs: [
@@ -172,7 +165,6 @@ export const CALCULATOR_TOOLS: CalculatorTool[] = [
     tagline: "Instant veterinary toxicology assessment based on theobromine concentration.",
     description: "Calculate exact theobromine and caffeine dosage (mg/kg) based on chocolate type, amount ingested, and dog weight. Provides immediate medical severity triage.",
     authority: "Merck Veterinary Manual & ASPCA Animal Poison Control Center (APCC)",
-    badge: "1k+ Monthly Searches",
     volume: "1k+",
     competition: "Easy",
     faqs: [
@@ -195,7 +187,6 @@ export const CALCULATOR_TOOLS: CalculatorTool[] = [
     tagline: "Personalized veterinary immunization timeline from 6 weeks to adult booster.",
     description: "Generate a custom vaccination calendar based on your puppy's birthdate following the official AAHA Canine Vaccination Guidelines for Core and Lifestyle vaccines.",
     authority: "American Animal Hospital Association (AAHA) Canine Vaccination Guidelines",
-    badge: "1k+ Monthly Searches",
     volume: "1k+",
     competition: "Easy",
     faqs: [
@@ -218,7 +209,6 @@ export const CALCULATOR_TOOLS: CalculatorTool[] = [
     tagline: "Track canine gestation milestones, ultrasound dates, and whelping countdown.",
     description: "Calculate your dam's estimated whelping date (63 days standard gestation) and detailed calendar milestones for fetal heartbeats, skeletal calcification, and nesting.",
     authority: "Veterinary Reproduction & Canine Obstetrics Standards",
-    badge: "1k+ Monthly Searches",
     volume: "1k+",
     competition: "Easy",
     faqs: [
@@ -241,7 +231,6 @@ export const CALCULATOR_TOOLS: CalculatorTool[] = [
     tagline: "Calculate feline gestation timeline, kitten development, and delivery dates.",
     description: "Feline gestation tracking based on standard 63–65 day queens' reproductive timelines, highlighting palpation windows, ultrasound confirmation, and nesting care.",
     authority: "Feline Obstetrics & Reproductive Veterinary Guidelines",
-    badge: "100+ Monthly Searches",
     volume: "100+",
     competition: "Easy",
     faqs: [
@@ -264,7 +253,6 @@ export const CALCULATOR_TOOLS: CalculatorTool[] = [
     tagline: "Calculate daily caloric requirements and split meals between wet cans and dry kibble.",
     description: "Scientifically compute your cat's Resting Energy Requirement (RER) and Maintenance Energy Requirement (MER) using WSAVA guidelines, splitting exact portions by ratio.",
     authority: "World Small Animal Veterinary Association (WSAVA) Global Nutrition Guidelines",
-    badge: "100+ Monthly Searches",
     volume: "100+",
     competition: "Easy",
     faqs: [
@@ -287,7 +275,6 @@ export const CALCULATOR_TOOLS: CalculatorTool[] = [
     tagline: "Prevent overfeeding with precision calorie-matched dual diet portioning.",
     description: "Dial in your exact wet-to-dry percentage split. Automatically balance calories per can and calories per cup to generate exact morning and evening bowl measurements.",
     authority: "National Research Council (NRC) Feline Nutrient Requirements",
-    badge: "100+ Monthly Searches",
     volume: "100+",
     competition: "Easy",
     faqs: [
@@ -306,7 +293,6 @@ export const CALCULATOR_TOOLS: CalculatorTool[] = [
     tagline: "Formulate balanced cooked canine meals with required macro and calcium ratios.",
     description: "Calculate daily portions of lean proteins, digestible carbohydrates, and healthy fats tailored to your dog's weight, with mandatory 1.2:1 Calcium:Phosphorus safeguard alerts.",
     authority: "AAFCO Canine Nutrient Profiles & Veterinary Board-Certified Nutrition Standards",
-    badge: "100+ Monthly Searches",
     volume: "100+",
     competition: "Easy",
     faqs: [
@@ -329,7 +315,6 @@ export const CALCULATOR_TOOLS: CalculatorTool[] = [
     tagline: "Predict your puppy's adult weight based on veterinary pediatric growth curves.",
     description: "Input your puppy's current age and weight to calculate expected adult size, growth completion timeline, and adult feeding requirements scaled by breed category.",
     authority: "Veterinary Pediatric Growth Curve Studies & AKC Breed Standards",
-    badge: "1k+ Monthly Searches",
     volume: "1k+",
     competition: "Easy",
     faqs: [

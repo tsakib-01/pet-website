@@ -199,11 +199,9 @@ export default function HomePage() {
         <div className="space-y-4">
           <div className="flex items-center justify-between pb-2 border-b-2 border-brand-espresso">
             <div className="flex items-center gap-2.5">
-              <img
-                src="https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?auto=format&fit=crop&w=120&q=80"
-                alt="Canine Tools"
-                className="w-8 h-8 rounded-full object-cover border-2 border-brand-espresso shadow-pill"
-              />
+              <div className="w-8 h-8 rounded-full bg-brand-olive border-2 border-brand-espresso flex items-center justify-center shadow-pill">
+                <Dog className="w-4 h-4 text-brand-espresso" />
+              </div>
               <h3 className="font-heading text-2xl font-black text-brand-espresso">
                 Canine Health & Nutrition Tools
               </h3>
@@ -221,11 +219,8 @@ export default function HomePage() {
               >
                 <div>
                   <div className="flex items-center justify-between mb-2">
-                    <span className="text-[10px] font-mono font-black uppercase px-2 py-0.5 rounded-full bg-amber-100 text-amber-900 border border-brand-espresso/20">
-                      Canine
-                    </span>
-                    <span className="text-[10px] font-mono font-bold text-brand-taupe">
-                      {tool.badge}
+                    <span className="inline-flex items-center gap-1.5 text-[10px] font-mono font-black uppercase px-2 py-0.5 rounded-full bg-amber-100 text-amber-900 border border-brand-espresso/20">
+                      <Dog className="w-3 h-3" /> Dog Tool
                     </span>
                   </div>
                   <h4 className="font-heading font-black text-base text-brand-espresso group-hover:text-brand-terracotta transition-colors mb-1">
@@ -248,11 +243,9 @@ export default function HomePage() {
         <div className="space-y-4 pt-4">
           <div className="flex items-center justify-between pb-2 border-b-2 border-brand-espresso">
             <div className="flex items-center gap-2.5">
-              <img
-                src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=120&q=80"
-                alt="Feline Tools"
-                className="w-8 h-8 rounded-full object-cover border-2 border-brand-espresso shadow-pill"
-              />
+              <div className="w-8 h-8 rounded-full bg-brand-olive border-2 border-brand-espresso flex items-center justify-center shadow-pill">
+                <Cat className="w-4 h-4 text-brand-espresso" />
+              </div>
               <h3 className="font-heading text-2xl font-black text-brand-espresso">
                 Feline Health & Nutrition Tools
               </h3>
@@ -270,11 +263,8 @@ export default function HomePage() {
               >
                 <div>
                   <div className="flex items-center justify-between mb-2">
-                    <span className="text-[10px] font-mono font-black uppercase px-2 py-0.5 rounded-full bg-sky-100 text-sky-900 border border-brand-espresso/20">
-                      Feline
-                    </span>
-                    <span className="text-[10px] font-mono font-bold text-brand-taupe">
-                      {tool.badge}
+                    <span className="inline-flex items-center gap-1.5 text-[10px] font-mono font-black uppercase px-2 py-0.5 rounded-full bg-sky-100 text-sky-900 border border-brand-espresso/20">
+                      <Cat className="w-3 h-3" /> Cat Tool
                     </span>
                   </div>
                   <h4 className="font-heading font-black text-base text-brand-espresso group-hover:text-brand-terracotta transition-colors mb-1">
@@ -317,11 +307,8 @@ export default function HomePage() {
               >
                 <div>
                   <div className="flex items-center justify-between mb-2">
-                    <span className="text-[10px] font-mono font-black uppercase px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-900 border border-brand-espresso/20">
-                      All Pets
-                    </span>
-                    <span className="text-[10px] font-mono font-bold text-brand-taupe">
-                      {tool.badge}
+                    <span className="inline-flex items-center gap-1.5 text-[10px] font-mono font-black uppercase px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-900 border border-brand-espresso/20">
+                      <PawPrint className="w-3 h-3" /> Pet Tool
                     </span>
                   </div>
                   <h4 className="font-heading font-black text-lg text-brand-espresso group-hover:text-brand-terracotta transition-colors mb-1">
