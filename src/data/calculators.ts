@@ -361,6 +361,108 @@ export const CALCULATOR_TOOLS: CalculatorTool[] = [
         answer: "The 'one inch of fish per gallon' guideline applies strictly to slender, low-waste tropical fish (like Neon Tetras or Guppies) and should be based on actual net water volume and surface area. Deep-bodied, waste-heavy species (such as Goldfish or African Cichlids) produce substantially higher bioload and require 2 to 3 times more water volume per inch."
       }
     ]
+  },
+  {
+    slug: "aquarium-volume-calculator",
+    name: "Aquarium Volume Calculator (Gallons, Liters & Aquascaping)",
+    shortTitle: "Aquarium Volume",
+    category: "pet",
+    iconName: "Waves",
+    tagline: "Calculate true water volume, hardscape stone displacement, sump capacity, and water change targets.",
+    description: "Precision aquarium volume calculator for planted aquascapes, reef sumps, and freshwater tanks. Factors in substrate bed thickness, rock and driftwood displacement, rim gaps, and auxiliary filter sumps to give exact water volume for precise medication and fertilizer dosing.",
+    authority: "Aquatic Gardeners Association (AGA) & Ornamental Aquatic Trade Association (OATA)",
+    volume: "1k+",
+    competition: "Easy",
+    faqs: [
+      {
+        question: "How do you calculate true aquarium volume with rocks and gravel?",
+        answer: "Gross volume is calculated as (Length × Width × Net Water Height) / 231 for gallons. To calculate true net volume, deduct the substrate layer volume and subtract approximately 0.045 to 0.05 gallons for every pound of dense hardscape rock (like Seiryu or Dragon stone). A heavily aquascaped 50-gallon tank frequently contains only 38 to 42 gallons of actual water."
+      },
+      {
+        question: "How many gallons is a 36 x 18 x 18 aquarium?",
+        answer: "A 36″ × 18″ × 18″ aquarium (standard ADA 90P dimensions) has a gross exterior volume of 11,664 cubic inches, which equals exactly 50.5 US gallons (191 liters). With a 1-inch waterline gap and 2 inches of aquasoil, net liquid capacity is roughly 42 to 44 gallons."
+      },
+      {
+        question: "Why is net water volume critical for fish tank dosing?",
+        answer: "Dosing aquarium medications (such as Ich treatments or antibiotics), liquid fertilizers, or water conditioners based on gross advertised tank size can lead to dangerous chemical overdosing. Calculating exact net water volume prevents toxic spikes and chemical stress on sensitive livestock."
+      },
+      {
+        question: "How much water should I change weekly in an aquarium?",
+        answer: "Most planted and community freshwater aquariums thrive with a 20% to 30% weekly water change to remove dissolved organic compounds and nitrates. High-tech planted tanks using Estimative Index (EI) fertilization typically require 50% weekly water changes."
+      },
+      {
+        question: "How do I calculate sump volume in a reef tank?",
+        answer: "Measure the running water level in your sump's operating chambers (Length × Width × Operating Water Depth in inches divided by 231). Add this volume to your display tank's net volume to establish your entire aquatic system capacity."
+      }
+    ]
+  },
+  {
+    slug: "bass-weight-calculator",
+    name: "Bass Weight Calculator (Length & Girth)",
+    shortTitle: "Bass Weight",
+    category: "pet",
+    iconName: "Trophy",
+    tagline: "Calculate largemouth, smallmouth, and spotted bass weight instantly without damaging scale punctures.",
+    description: "Official catch-and-release bass weight calculator utilizing validated state wildlife agency (Wisconsin DNR, Florida FWC) and IGFA mathematical formulas. Input length and girth to accurately estimate weight in pounds and ounces, evaluate trophy tiers, and learn safe handling protocols.",
+    authority: "International Game Fish Association (IGFA) & Florida Fish and Wildlife Conservation Commission (FWC)",
+    volume: "1k+",
+    competition: "Easy",
+    faqs: [
+      {
+        question: "What is the formula to calculate bass weight from length and girth?",
+        answer: "The official fisheries formula for Largemouth Bass is: Weight (lbs) = (Length × Length × Girth) / 1,200 (with measurements in inches). For slender Smallmouth Bass, a divisor of 1,350 is used, while heavily egg-laden pre-spawn females or Florida-strain giants use a divisor of 1,000 to 1,050."
+      },
+      {
+        question: "How much does a 20-inch largemouth bass weigh?",
+        answer: "An average 20-inch largemouth bass with a normal 14-inch girth weighs approximately 4.6 to 5.0 pounds. A lean post-spawn 20-inch bass may weigh around 4.0 lbs, while a heavy pre-spawn female with a 16-inch girth can exceed 5.5 to 6.0 pounds."
+      },
+      {
+        question: "Can I estimate bass weight with length alone?",
+        answer: "Yes, using the fisheries power regression formula: Weight (lbs) = 0.000388 × Length^3.13 for largemouth bass. While convenient when a flexible girth tape is unavailable, length-only estimates have a wider variance of ±10-15% because belly fullness varies drastically between seasons."
+      },
+      {
+        question: "What length is considered a trophy bass?",
+        answer: "In northern states, a 20-inch largemouth (approx. 5 lbs) or an 18-inch smallmouth (approx. 3.5–4 lbs) is considered a state trophy benchmark. In southern states with Florida-strain genetics, 'Trophy' status typically begins at 8 pounds (around 22–23 inches), with 10+ pound fish (24+ inches) qualifying for elite programs like Texas Toyota ShareLunker."
+      },
+      {
+        question: "Why should anglers use a length and girth tape instead of hanging scales?",
+        answer: "Puncturing or gripping the fragile lower jaw membrane of large bass with mechanical scales puts enormous tension on their branchiostegal rays and jaw hinge. Weighing via soft measuring tape keeps the fish safely supported in the water or bump board, ensuring zero jaw damage prior to catch-and-release."
+      }
+    ]
+  },
+  {
+    slug: "horse-weight-calculator",
+    name: "Horse Weight Calculator (Heart Girth & Length)",
+    shortTitle: "Horse Weight",
+    category: "pet",
+    iconName: "Scale",
+    tagline: "Calculate equine weight accurately with veterinary heart girth tape measurements for proper dewormer and feed dosing.",
+    description: "Scientifically estimate equine body weight for adult horses, ponies, yearlings, and draft breeds using the veterinary standard heart girth and body length equation. Evaluates Henneke Body Condition Score (BCS 1-9), daily hay forage requirements, water intake, and medication dosage safety thresholds.",
+    authority: "American Association of Equine Practitioners (AAEP) & University of California Davis Equine Science",
+    volume: "1k+",
+    competition: "Easy",
+    faqs: [
+      {
+        question: "How do you calculate a horse's weight using a tape measure?",
+        answer: "Measure heart girth (circumference around the chest directly behind the elbows and over the withers) and body length (from the point of the shoulder to the point of the buttock/ischium) in inches. Calculate: Weight (lbs) = (Heart Girth × Heart Girth × Body Length) / 330. For ponies, use a divisor of 299; for yearlings, 301; and for weanlings, 280."
+      },
+      {
+        question: "How much hay should a horse eat per day based on weight?",
+        answer: "Horses require 1.5% to 2.5% of their total body weight in dry forage (pasture or good-quality hay) every day to maintain healthy gut motility and prevent equine gastric ulcers. For example, a 1,100 lb riding horse requires 16.5 to 22 pounds of hay daily, which corresponds to roughly 3 to 4 typical 5-pound flakes."
+      },
+      {
+        question: "Why is knowing exact equine weight essential for deworming?",
+        answer: "Equine anthelmintics (dewormers like ivermectin or moxidectin) are dosed strictly per pound of body weight. Under-dosing due to underestimating your horse's weight promotes parasite resistance, while over-dosing certain sensitive classes (like young foals or mini breeds) can cause neurotoxicity. The AAEP recommends dosing to the nearest 50 lbs rounded up."
+      },
+      {
+        question: "What is an ideal Henneke Body Condition Score (BCS) for a horse?",
+        answer: "The Henneke scale ranges from 1 (emaciated) to 9 (extremely obese). A score of 5 (Moderate) is ideal for most riding and sport horses, where the ribs cannot be seen visually but can be easily felt with light hand pressure, and the neck and shoulders blend smoothly into the body."
+      },
+      {
+        question: "How much water does a 1,000-pound horse drink in a day?",
+        answer: "A healthy 1,000-pound horse drinks between 5 and 10 gallons of clean water per day under normal ambient conditions. In hot summer weather or following strenuous athletic exertion, daily water consumption can exceed 15 to 20 gallons."
+      }
+    ]
   }
 ];
 

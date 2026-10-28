@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import { Search, ArrowRight, CheckCircle2, PawPrint, Dog, Cat, HeartPulse, ShieldCheck, AlertTriangle, Scale, Utensils, Calendar, Box, Volume2, ChevronRight, Fish } from "lucide-react";
+import { Search, ArrowRight, CheckCircle2, PawPrint, Dog, Cat, HeartPulse, ShieldCheck, AlertTriangle, Scale, Utensils, Calendar, Box, Volume2, ChevronRight, Fish, Waves, Trophy } from "lucide-react";
 import AdSensePlaceholder from "@/components/AdSensePlaceholder";
 import ScrollReveal from "@/components/ScrollReveal";
 import FaqAccordion from "@/components/FaqAccordion";
@@ -287,11 +287,11 @@ export default function HomePage() {
         <div className="space-y-4 pt-4">
           <div className="flex items-center justify-between pb-2 border-b-2 border-brand-espresso">
             <div className="flex items-center gap-2.5">
-              <div className="w-8 h-8 rounded-full bg-brand-olive border-2 border-brand-espresso flex items-center justify-center shadow-pill">
-                <PawPrint className="w-4 h-4 text-brand-espresso" />
+              <div className="w-8 h-8 rounded-full bg-brand-olive border-2 border-brand-espresso flex items-center justify-center shadow-pill flex-shrink-0 aspect-square">
+                <PawPrint className="w-4 h-4 text-brand-espresso flex-shrink-0" />
               </div>
               <h3 className="font-heading text-2xl font-black text-brand-espresso">
-                Universal Pet Tools
+                Universal Pet &amp; Specialty Tools
               </h3>
             </div>
             <span className="text-xs font-mono font-bold text-brand-taupe uppercase hidden sm:block">
@@ -309,11 +309,25 @@ export default function HomePage() {
                   <div className="flex items-center justify-between mb-2">
                     <span className="inline-flex items-center gap-1.5 text-[10px] font-mono font-black uppercase px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-900 border border-brand-espresso/20">
                       {tool.iconName === "Fish" ? (
-                        <Fish className="w-3 h-3" />
+                        <Fish className="w-3 h-3 flex-shrink-0" />
+                      ) : tool.iconName === "Waves" ? (
+                        <Waves className="w-3 h-3 flex-shrink-0" />
+                      ) : tool.iconName === "Trophy" ? (
+                        <Trophy className="w-3 h-3 flex-shrink-0" />
+                      ) : tool.iconName === "Scale" ? (
+                        <Scale className="w-3 h-3 flex-shrink-0" />
                       ) : (
-                        <PawPrint className="w-3 h-3" />
+                        <PawPrint className="w-3 h-3 flex-shrink-0" />
                       )}
-                      {tool.iconName === "Fish" ? "Aquatic Tool" : "Pet Tool"}
+                      {tool.iconName === "Fish"
+                        ? "Aquarium Tool"
+                        : tool.iconName === "Waves"
+                        ? "Aquascaping Tool"
+                        : tool.iconName === "Trophy"
+                        ? "Angling Tool"
+                        : tool.iconName === "Scale"
+                        ? "Equine Tool"
+                        : "Pet Tool"}
                     </span>
                   </div>
                   <h4 className="font-heading font-black text-lg text-brand-espresso group-hover:text-brand-terracotta transition-colors mb-1">

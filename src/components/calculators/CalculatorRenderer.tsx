@@ -17,6 +17,9 @@ import MixingWetAndDryCatFoodCalculator from "./MixingWetAndDryCatFoodCalculator
 import HomemadeDogFoodCalculator from "./HomemadeDogFoodCalculator";
 import PuppyWeightCalculator from "./PuppyWeightCalculator";
 import FishTankCalculator from "./FishTankCalculator";
+import AquariumVolumeCalculator from "./AquariumVolumeCalculator";
+import BassWeightCalculator from "./BassWeightCalculator";
+import HorseWeightCalculator from "./HorseWeightCalculator";
 
 interface Props {
   slug: string;
@@ -56,6 +59,12 @@ export default function CalculatorRenderer({ slug }: Props) {
       return <PuppyWeightCalculator />;
     case "fish-tank-calculator":
       return <FishTankCalculator />;
+    case "aquarium-volume-calculator":
+      return <AquariumVolumeCalculator />;
+    case "bass-weight-calculator":
+      return <BassWeightCalculator />;
+    case "horse-weight-calculator":
+      return <HorseWeightCalculator />;
     default:
       return <div>Calculator not found</div>;
   }

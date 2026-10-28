@@ -101,7 +101,22 @@ export default function Footer() {
             </li>
             <li>
               <Link href="/tools/fish-tank-calculator" className="hover:text-brand-terracotta transition-colors flex items-center gap-1 text-brand-terracotta">
-                → Fish Tank & Aquarium Volume
+                → Fish Tank & Water Volume
+              </Link>
+            </li>
+            <li>
+              <Link href="/tools/aquarium-volume-calculator" className="hover:text-brand-terracotta transition-colors flex items-center gap-1">
+                → Aquarium Volume & Sump
+              </Link>
+            </li>
+            <li>
+              <Link href="/tools/bass-weight-calculator" className="hover:text-brand-terracotta transition-colors flex items-center gap-1">
+                → Bass Weight Calculator (IGFA)
+              </Link>
+            </li>
+            <li>
+              <Link href="/tools/horse-weight-calculator" className="hover:text-brand-terracotta transition-colors flex items-center gap-1">
+                → Horse Weight Calculator (AAEP)
               </Link>
             </li>
           </ul>

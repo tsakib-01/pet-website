@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import Link from "next/link";
 import { CALCULATOR_TOOLS } from "@/data/calculators";
 import AdSensePlaceholder from "@/components/AdSensePlaceholder";
-import { Search, Dog, Cat, PawPrint, ArrowRight, ShieldCheck, HeartPulse, Fish } from "lucide-react";
+import { Search, Dog, Cat, PawPrint, ArrowRight, ShieldCheck, HeartPulse, Fish, Waves, Trophy, Scale } from "lucide-react";
 
 export default function ToolsDirectoryPage() {
   const [filter, setFilter] = useState<"all" | "dog" | "cat" | "pet">("all");
@@ -88,18 +88,46 @@ export default function ToolsDirectoryPage() {
             <div>
               <div className="flex items-center justify-between mb-4">
                 <span className={`inline-flex items-center gap-1.5 text-[10px] font-mono font-black uppercase px-2.5 py-0.5 rounded-full border border-brand-espresso ${
-                  tool.category === "dog" ? "bg-amber-100 text-amber-900" : tool.category === "cat" ? "bg-sky-100 text-sky-900" : "bg-emerald-100 text-emerald-900"
+                  tool.iconName === "Waves" || tool.iconName === "Fish"
+                    ? "bg-cyan-100 text-cyan-950"
+                    : tool.iconName === "Trophy"
+                    ? "bg-emerald-100 text-emerald-950"
+                    : tool.iconName === "Scale"
+                    ? "bg-amber-100 text-amber-950"
+                    : tool.category === "dog"
+                    ? "bg-amber-100 text-amber-900"
+                    : tool.category === "cat"
+                    ? "bg-sky-100 text-sky-900"
+                    : "bg-emerald-100 text-emerald-900"
                 }`}>
                   {tool.iconName === "Fish" ? (
                     <Fish className="w-3.5 h-3.5 flex-shrink-0" />
+                  ) : tool.iconName === "Waves" ? (
+                    <Waves className="w-3.5 h-3.5 flex-shrink-0" />
+                  ) : tool.iconName === "Trophy" ? (
+                    <Trophy className="w-3.5 h-3.5 flex-shrink-0" />
+                  ) : tool.iconName === "Scale" ? (
+                    <Scale className="w-3.5 h-3.5 flex-shrink-0" />
                   ) : tool.category === "dog" ? (
-                    <Dog className="w-3.5 h-3.5" />
+                    <Dog className="w-3.5 h-3.5 flex-shrink-0" />
                   ) : tool.category === "cat" ? (
-                    <Cat className="w-3.5 h-3.5" />
+                    <Cat className="w-3.5 h-3.5 flex-shrink-0" />
                   ) : (
-                    <PawPrint className="w-3.5 h-3.5" />
+                    <PawPrint className="w-3.5 h-3.5 flex-shrink-0" />
                   )}
-                  {tool.iconName === "Fish" ? "Aquatic Tool" : tool.category === "dog" ? "Dog Tool" : tool.category === "cat" ? "Cat Tool" : "Pet Tool"}
+                  {tool.iconName === "Fish"
+                    ? "Aquarium Tool"
+                    : tool.iconName === "Waves"
+                    ? "Aquascaping Tool"
+                    : tool.iconName === "Trophy"
+                    ? "Angling Tool"
+                    : tool.iconName === "Scale"
+                    ? "Equine Tool"
+                    : tool.category === "dog"
+                    ? "Dog Tool"
+                    : tool.category === "cat"
+                    ? "Cat Tool"
+                    : "Pet Tool"}
                 </span>
               </div>
 
