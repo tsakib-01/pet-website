@@ -3,7 +3,7 @@ import Link from "next/link";
 import { Metadata } from "next";
 import { BREED_DATABASE } from "@/data/breeds";
 import AdSensePlaceholder from "@/components/AdSensePlaceholder";
-import { Dog, Cat, ArrowRight, Activity, ChevronRight, Calculator, CheckCircle2 } from "lucide-react";
+import { Dog, Cat, ArrowRight, Activity, ChevronRight, Calculator, CheckCircle2, ShieldCheck, HeartPulse } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Dog & Cat Breed Care Guides, Standards & Calculators | PawTruth",
@@ -90,19 +90,19 @@ export default function BreedDirectoryPage() {
         <section className="bg-white rounded-3xl border-2.5 border-brand-espresso p-6 sm:p-10 shadow-[6px_6px_0px_#583D32] space-y-4">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-olive text-brand-espresso border-2 border-brand-espresso shadow-[2px_2px_0px_#583D32] text-xs font-heading font-black uppercase">
             <Activity className="w-4 h-4 text-brand-espresso" />
-            Programmatic Breed Hubs
+            Clinical Breed Directory
           </div>
           <h1 className="font-heading text-3xl sm:text-5xl font-black text-brand-espresso tracking-tight">
             Dog & Cat Breed Clinical Care Guides
           </h1>
           <p className="text-base sm:text-lg font-medium text-brand-espresso/80 max-w-3xl leading-relaxed">
-            High-utility breed profiles integrating official AKC & CFA standards, WSAVA nutrition baselines, coat genetics, and instant 1-click calculators designed to give pet parents actionable veterinary precision.
+            Comprehensive breed standards integrating official AKC & CFA guidelines, WSAVA nutrition baselines, coat genetics, and instant 1-click calculators designed to give pet parents actionable veterinary precision.
           </p>
         </section>
 
-        {/* Template Previews Section */}
+        {/* Breed Directory Profiles */}
         <div className="grid md:grid-cols-2 gap-8">
-          {/* DOG TEMPLATE CARD */}
+          {/* DOG BREED CARD */}
           {dogBreeds.map((breed) => (
             <div
               key={breed.slug}
@@ -115,7 +115,7 @@ export default function BreedDirectoryPage() {
                     Dog Breed Profile
                   </span>
                   <span className="text-xs font-mono font-bold text-brand-taupe">
-                    Template #1
+                    AKC Standard
                   </span>
                 </div>
 
@@ -157,13 +157,13 @@ export default function BreedDirectoryPage() {
                 href={`/breed/${breed.slug}`}
                 className="w-full inline-flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-brand-terracotta text-white font-heading font-black text-sm uppercase tracking-wider border-2 border-brand-espresso shadow-[3px_3px_0px_#583D32] hover:shadow-[1px_1px_0px_#583D32] hover:translate-x-[2px] hover:translate-y-[2px] transition-all"
               >
-                <span>View Dog Template ({breed.name})</span>
+                <span>Explore {breed.name} Guide</span>
                 <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
           ))}
 
-          {/* CAT TEMPLATE CARD */}
+          {/* CAT BREED CARD */}
           {catBreeds.map((breed) => (
             <div
               key={breed.slug}
@@ -176,7 +176,7 @@ export default function BreedDirectoryPage() {
                     Cat Breed Profile
                   </span>
                   <span className="text-xs font-mono font-bold text-brand-taupe">
-                    Template #2
+                    CFA Standard
                   </span>
                 </div>
 
@@ -218,33 +218,33 @@ export default function BreedDirectoryPage() {
                 href={`/breed/${breed.slug}`}
                 className="w-full inline-flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-brand-terracotta text-white font-heading font-black text-sm uppercase tracking-wider border-2 border-brand-espresso shadow-[3px_3px_0px_#583D32] hover:shadow-[1px_1px_0px_#583D32] hover:translate-x-[2px] hover:translate-y-[2px] transition-all"
               >
-                <span>View Cat Template ({breed.name})</span>
+                <span>Explore {breed.name} Guide</span>
                 <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
           ))}
         </div>
 
-        {/* Why This Beats AI Overviews Feature Block */}
+        {/* Why Clinical Breed Standards Matter */}
         <section className="bg-brand-cream/40 rounded-3xl border-2.5 border-brand-espresso p-6 sm:p-8 shadow-[4px_4px_0px_#583D32] space-y-4">
           <div className="flex items-center gap-2">
-            <Calculator className="w-5 h-5 text-brand-terracotta" />
+            <ShieldCheck className="w-5 h-5 text-brand-terracotta" />
             <h2 className="font-heading text-xl font-black text-brand-espresso">
-              How PawTruth Breed Hubs Win Search Rankings
+              Why Clinical Breed Standards Matter for Your Pet&apos;s Health
             </h2>
           </div>
           <div className="grid sm:grid-cols-3 gap-4 text-xs text-brand-espresso/80">
             <div className="bg-white rounded-xl border border-brand-espresso/30 p-4 space-y-1.5 shadow-[2px_2px_0px_#583D32]">
-              <h3 className="font-heading font-black text-sm text-brand-espresso">1. Interactive Utility Hub</h3>
-              <p>Direct links to calculators (weight predictions, crate ergonomics, WSAVA nutrition splits) provide high-engagement features AI search snippets cannot duplicate.</p>
+              <h3 className="font-heading font-black text-sm text-brand-espresso">1. Early Genetic Risk Screening</h3>
+              <p>Every breed profile details recognized hereditary risks—from canine hip dysplasia to feline hypertrophic cardiomyopathy—empowering owners and veterinarians to screen early before symptoms arise.</p>
             </div>
             <div className="bg-white rounded-xl border border-brand-espresso/30 p-4 space-y-1.5 shadow-[2px_2px_0px_#583D32]">
-              <h3 className="font-heading font-black text-sm text-brand-espresso">2. Complete Schema Markup</h3>
-              <p>Every profile renders verified MedicalWebPage, BreadcrumbList, and FAQPage schemas, qualifying for rich Google snippets and Knowledge Graph inclusion.</p>
+              <h3 className="font-heading font-black text-sm text-brand-espresso">2. Precision Nutrition & Weight Goals</h3>
+              <p>Adult weight ranges and structural metrics pair directly with WSAVA caloric formulas, helping ensure your dog or cat maintains an optimal Body Condition Score throughout all life stages.</p>
             </div>
             <div className="bg-white rounded-xl border border-brand-espresso/30 p-4 space-y-1.5 shadow-[2px_2px_0px_#583D32]">
-              <h3 className="font-heading font-black text-sm text-brand-espresso">3. Clinical Precision</h3>
-              <p>All figures cite official AVMA, AAHA, and WSAVA standards, establishing topical authority and high E-E-A-T trust signals with search engines.</p>
+              <h3 className="font-heading font-black text-sm text-brand-espresso">3. Environmental & Crate Ergonomics</h3>
+              <p>Accurate height, length, and behavioral temperament metrics guide proper crate dimensions, litter box sizing, and daily physical and mental enrichment routines.</p>
             </div>
           </div>
         </section>

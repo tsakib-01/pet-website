@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import { PawPrint, ShieldCheck, Heart, Info } from "lucide-react";
+import { PawPrint, ShieldCheck, Heart, Info, Code2 } from "lucide-react";
 import AdSensePlaceholder from "./AdSensePlaceholder";
 
 export default function Footer() {
@@ -26,17 +26,11 @@ export default function Footer() {
             Independent, veterinary-calibrated calculation suite providing canine and feline life-stage age models, emergency chocolate toxicity triage, WSAVA dual-diet portioning, and AKC ergonomic standards.
           </p>
 
-          {/* Visual Palette Swatches Badge */}
-          <div className="pt-2">
-            <span className="font-heading text-xs font-black text-brand-taupe uppercase tracking-wider block mb-1.5">
-              Verified 5-Color Brand Palette:
-            </span>
-            <div className="flex items-center gap-2">
-              <span className="w-7 h-7 rounded-full border-2 border-brand-espresso bg-[#583D32] shadow-sm" title="#583D32 Espresso Dark"></span>
-              <span className="w-7 h-7 rounded-full border-2 border-brand-espresso bg-[#C9C986] shadow-sm" title="#C9C986 Sage Olive"></span>
-              <span className="w-7 h-7 rounded-full border-2 border-brand-espresso bg-[#7F6F72] shadow-sm" title="#7F6F72 Taupe Slate"></span>
-              <span className="w-7 h-7 rounded-full border-2 border-brand-espresso bg-[#E8D5C5] shadow-sm" title="#E8D5C5 Linen Cream"></span>
-              <span className="w-7 h-7 rounded-full border-2 border-brand-espresso bg-[#D57746] shadow-sm" title="#D57746 Terracotta Rust"></span>
+          {/* Development Attribution */}
+          <div className="pt-1">
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-xl bg-white border-2 border-brand-espresso shadow-[2.5px_2.5px_0px_#583D32] text-xs font-heading font-black text-brand-espresso">
+              <Code2 className="w-4 h-4 text-brand-terracotta" />
+              <span>Developed by <strong className="text-brand-espresso font-black">White Stone</strong></span>
             </div>
           </div>
         </div>
@@ -54,7 +48,7 @@ export default function Footer() {
             </li>
             <li>
               <Link href="/breed" className="hover:text-brand-terracotta transition-colors flex items-center gap-1 text-brand-terracotta">
-                → Breed Guides & Calculators
+                → Breed Guides & Standards
               </Link>
             </li>
             <li>
@@ -106,8 +100,18 @@ export default function Footer() {
       </div>
 
       {/* Bottom Bar */}
-      <div className="border-t-2 border-brand-espresso/30 py-4 px-4 text-center font-mono text-[11px] text-brand-taupe font-bold">
-        © 2026 PawTruth — Pet Health & Safety Calculators. All rights reserved. Zero tracking cookies.
+      <div className="border-t-2 border-brand-espresso/30 py-5 px-4 sm:px-6">
+        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left font-mono text-[11px] text-brand-taupe font-bold">
+          <div>
+            © 2026 PawTruth — Pet Health & Safety Calculators. All rights reserved. Zero tracking cookies.
+          </div>
+          <div className="flex items-center gap-1.5 text-brand-espresso">
+            <span>Developed by</span>
+            <span className="px-2 py-0.5 rounded-md bg-white border border-brand-espresso shadow-[1.5px_1.5px_0px_#583D32] font-heading font-black uppercase text-brand-espresso">
+              White Stone
+            </span>
+          </div>
+        </div>
       </div>
     </footer>
   );
