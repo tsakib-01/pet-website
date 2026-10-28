@@ -153,16 +153,19 @@ export default function Header() {
             })}
           </nav>
 
-          {/* Right Action: Full Directory CTA on Desktop, Clean Hamburger on Mobile */}
+          {/* Right Action: Desktop CTA strictly hidden on mobile; Clean Hamburger on Mobile */}
           <div className="flex items-center gap-2">
-            <Link
-              href="/tools"
-              className="btn-pill btn-pill-terracotta px-4 py-1.5 text-xs font-black shadow-paper-sm hidden lg:inline-flex items-center gap-1.5"
-            >
-              <PawPrint className="w-3.5 h-3.5" />
-              <span>All 15 Calculators</span>
-              <ArrowRight className="w-3.5 h-3.5" />
-            </Link>
+            {/* Desktop Only Button (Completely omitted on mobile) */}
+            <div className="hidden lg:block">
+              <Link
+                href="/tools"
+                className="btn-pill btn-pill-terracotta px-4 py-1.5 text-xs font-black shadow-paper-sm flex items-center gap-1.5"
+              >
+                <PawPrint className="w-3.5 h-3.5" />
+                <span>All Calculators</span>
+                <ArrowRight className="w-3.5 h-3.5" />
+              </Link>
+            </div>
 
             {/* Mobile Hamburger / Close Button */}
             <button
@@ -229,10 +232,10 @@ export default function Header() {
                     Directory
                   </div>
                   <div className="font-heading font-black text-sm sm:text-base text-brand-espresso leading-tight">
-                    All 15 Tools
+                    All Calculators
                   </div>
                   <p className="text-[11px] text-brand-taupe font-sans mt-0.5">
-                    Veterinary calculators
+                    Veterinary formulas
                   </p>
                 </div>
               </Link>
@@ -303,7 +306,7 @@ export default function Header() {
                 className="btn-pill btn-pill-espresso w-full py-3.5 text-xs font-black justify-center flex items-center gap-2 shadow-[3px_3px_0px_#583D32]"
               >
                 <PawPrint className="w-4 h-4 text-brand-olive" />
-                Browse All 15 Free Calculators
+                Browse All Calculators
               </Link>
             </div>
 
