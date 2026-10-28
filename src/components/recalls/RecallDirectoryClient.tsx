@@ -86,6 +86,7 @@ export default function RecallDirectoryClient({ brands }: Props) {
   const totalBrandsCount = brands.length;
   const cleanCount = brands.filter((b) => b.totalRecallsCount === 0).length;
   const recallCount = brands.filter((b) => b.totalRecallsCount > 0).length;
+  const brandSlugsSet = new Set(brands.map((b) => b.slug));
 
   return (
     <div className="space-y-8">
@@ -335,12 +336,18 @@ export default function RecallDirectoryClient({ brands }: Props) {
                     <BrandLogo domain={docket.domain} name={docket.brandName} size="sm" />
                     <div>
                       <div className="flex items-center gap-2">
-                        <Link
-                          href={`/brand/${docket.brandSlug}`}
-                          className="font-heading font-black text-base sm:text-lg text-brand-espresso hover:text-brand-terracotta transition-colors"
-                        >
-                          {docket.brandName}
-                        </Link>
+                        {brandSlugsSet.has(docket.brandSlug) ? (
+                          <Link
+                            href={`/brand/${docket.brandSlug}`}
+                            className="font-heading font-black text-base sm:text-lg text-brand-espresso hover:text-brand-terracotta transition-colors"
+                          >
+                            {docket.brandName}
+                          </Link>
+                        ) : (
+                          <span className="font-heading font-black text-base sm:text-lg text-brand-espresso">
+                            {docket.brandName}
+                          </span>
+                        )}
                         <span className="text-[10px] font-mono font-bold px-2 py-0.5 rounded-full bg-brand-cream border border-brand-espresso/20 text-brand-espresso">
                           {docket.companyName}
                         </span>
@@ -403,13 +410,25 @@ export default function RecallDirectoryClient({ brands }: Props) {
                 </div>
 
                 <div className="pt-3 border-t border-brand-espresso/10 flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs">
-                  <Link
-                    href={`/brand/${docket.brandSlug}`}
-                    className="inline-flex items-center gap-1.5 font-heading font-bold text-brand-espresso hover:text-brand-terracotta transition-colors"
-                  >
-                    <span>View Brand Safety Profile &amp; Check Lot Code</span>
-                    <ArrowRight className="w-3.5 h-3.5" />
-                  </Link>
+                  {brandSlugsSet.has(docket.brandSlug) ? (
+                    <Link
+                      href={`/brand/${docket.brandSlug}`}
+                      className="inline-flex items-center gap-1.5 font-heading font-bold text-brand-espresso hover:text-brand-terracotta transition-colors"
+                    >
+                      <span>View Brand Safety Profile &amp; Check Lot Code</span>
+                      <ArrowRight className="w-3.5 h-3.5" />
+                    </Link>
+                  ) : (
+                    <a
+                      href={docket.fdaNoticeUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 font-heading font-bold text-brand-espresso hover:text-brand-terracotta transition-colors"
+                    >
+                      <span>View Official FDA Enforcement Docket</span>
+                      <ExternalLink className="w-3.5 h-3.5" />
+                    </a>
+                  )}
 
                   {docket.fdaNoticeUrl && (
                     <a
@@ -418,7 +437,7 @@ export default function RecallDirectoryClient({ brands }: Props) {
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-1 font-mono text-brand-taupe hover:text-brand-espresso underline transition-colors"
                     >
-                      <span>FDA Enforcement Notice</span>
+                      <span>FDA Notice Record</span>
                       <ExternalLink className="w-3 h-3" />
                     </a>
                   )}

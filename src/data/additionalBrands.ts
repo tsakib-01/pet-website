@@ -7201,4 +7201,357 @@ export const ADDITIONAL_BRANDS: BrandSafetyProfile[] = [
       }
     ]
   },
+
+  {
+  "slug": "wedgewood-pharmacy",
+  "name": "Wedgewood Pharmacy",
+  "parentCompany": "Wedgewood Village Pharmacy, LLC",
+  "headquarters": "Swedesboro, New Jersey, USA",
+  "websiteDomain": "wedgewoodpharmacy.com",
+  "foundedYear": 1980,
+  "species": "both",
+  "safetyTier": "Moderate Caution",
+  "statusSummary": "Wedgewood Pharmacy is the nation's largest compounding pharmacy dedicated to veterinary clinical medicine, preparing specialized formulations for animals. In October 2026, a voluntary recall was issued for select compounded veterinary preparations due to potential potency variances.",
+  "totalRecallsCount": 1,
+  "lastRecallDate": "October 2026",
+  "manufacturingFacilities": [
+    "Swedesboro, NJ"
+  ],
+  "historySummary": "Wedgewood Pharmacy prepares custom-dosed veterinary prescriptions across North America. In October 2026, Wedgewood voluntarily recalled select compounded veterinary medication lots within expiry due to potential potency inconsistencies.",
+  "recalls": [
+    {
+      "docketNumber": "FDA-VET-2026-N-1021",
+      "date": "October 21, 2026",
+      "year": 2026,
+      "classification": "Class II",
+      "severityDescription": "Potential potency issues and formulation consistency in specific compounded veterinary batches.",
+      "hazardType": "Packaging Defect",
+      "reason": "Wedgewood Pharmacy voluntarily recalled select compounded veterinary medications within expiry due to potential potency variances.",
+      "affectedProducts": [
+        {
+          "name": "Certain Compounded Veterinary Medications within Expiry",
+          "size": "Various prescription sizes",
+          "lotCodes": [
+            "Lots within active expiry"
+          ],
+          "upc": "N/A - Prescription",
+          "bestBy": "2026 - 2027"
+        }
+      ],
+      "distributionStates": "Nationwide to licensed veterinary clinics and pet owners",
+      "clinicalSymptoms": [
+        "Sub-therapeutic efficacy",
+        "Mild lethargy"
+      ],
+      "actionSteps": [
+        "Consult prescribing veterinarian",
+        "Contact Wedgewood Pharmacy for replacement"
+      ],
+      "fdaNoticeUrl": "https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/wedgewood-pharmacy-issues-recall-certain-compounded-veterinary-medications-within-expiry-due"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Why was Wedgewood Pharmacy recalled in October 2026?",
+      "answer": "Wedgewood voluntarily recalled specific compounded veterinary medication lots within expiry due to potential potency variances."
+    },
+    {
+      "question": "Is Wedgewood Pharmacy still licensed to compound animal medications?",
+      "answer": "Yes. Wedgewood operates as a state-licensed and FDA-registered veterinary compounding facility adhering to USP standards."
+    }
+  ]
+},
+
+  {
+  "slug": "fi",
+  "name": "Fi (Barking Labs)",
+  "parentCompany": "Fi Barking Labs Corp",
+  "headquarters": "New York, New York, USA",
+  "websiteDomain": "tryfi.com",
+  "foundedYear": 2019,
+  "species": "dog",
+  "safetyTier": "Moderate Caution",
+  "statusSummary": "Fi, recognized for smart GPS dog collars and canine health monitoring, introduced a daily canine wellness and supplement line. In September 2026, a voluntary recall was initiated for specific lots of canine supplements due to potential Salmonella contamination.",
+  "totalRecallsCount": 1,
+  "lastRecallDate": "September 2026",
+  "manufacturingFacilities": [
+    "Certified US Supplement Kitchens"
+  ],
+  "historySummary": "In September 2026, Fi Barking Labs Corp initiated a voluntary recall of select canine dietary supplement batches after routine surveillance testing indicated possible Salmonella presence.",
+  "recalls": [
+    {
+      "docketNumber": "FDA-VET-2026-N-0908",
+      "date": "September 8, 2026",
+      "year": 2026,
+      "classification": "Class I",
+      "severityDescription": "Potential contamination with Salmonella enterica.",
+      "hazardType": "Salmonella",
+      "reason": "Voluntary recall of Fi Daily Canine Supplements due to possible Salmonella contamination identified in batch screening.",
+      "affectedProducts": [
+        {
+          "name": "Fi Daily Canine Health & Wellness Supplements",
+          "size": "60 chew containers",
+          "lotCodes": [
+            "Lots 0926-FI"
+          ],
+          "upc": "850020000000",
+          "bestBy": "09/2027"
+        }
+      ],
+      "distributionStates": "Nationwide eCommerce direct to consumer",
+      "clinicalSymptoms": [
+        "Lethargy",
+        "Diarrhea",
+        "Fever",
+        "Vomiting",
+        "Decreased appetite"
+      ],
+      "actionSteps": [
+        "Stop feeding supplements",
+        "Dispose safely",
+        "Contact Fi support for refund"
+      ],
+      "fdaNoticeUrl": "https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/fi-recalls-supplements-dogs-because-possible-salmonella-contamination"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Why were Fi dog supplements recalled in September 2026?",
+      "answer": "Fi Barking Labs voluntarily recalled select lots of canine supplements due to potential Salmonella contamination."
+    }
+  ]
+},
+
+  {
+  "slug": "breeders-edge",
+  "name": "Breeder's Edge (Revival Animal Health)",
+  "parentCompany": "Revival Animal Health LLC",
+  "headquarters": "Orange City, Iowa, USA",
+  "websiteDomain": "revivalanimal.com",
+  "foundedYear": 1989,
+  "species": "both",
+  "safetyTier": "Moderate Caution",
+  "statusSummary": "Breeder's Edge is Revival Animal Health's specialized line for breeders, nurseries, and shelters, including milk replacers and neonatal formulas. In August 2026, a voluntary recall occurred for feline milk replacers due to inconsistent vitamin and mineral levels.",
+  "totalRecallsCount": 1,
+  "lastRecallDate": "August 2026",
+  "manufacturingFacilities": [
+    "Orange City, IA area facilities"
+  ],
+  "historySummary": "In August 2026, Revival Animal Health voluntarily recalled Shelter's Choice and Breeder's Edge feline milk replacer batches due to low potassium, copper, folic acid, and vitamin B6 levels.",
+  "recalls": [
+    {
+      "docketNumber": "FDA-VET-2026-N-0826",
+      "date": "August 26, 2026",
+      "year": 2026,
+      "classification": "Class II",
+      "severityDescription": "Inconsistent levels of potassium, copper, folic acid, choline, and pyridoxine (vitamin B6).",
+      "hazardType": "Nutritional Imbalance",
+      "reason": "Voluntary recall of feline milk replacers due to formulation test results confirming lower-than-intended mineral and vitamin levels.",
+      "affectedProducts": [
+        {
+          "name": "Breeder's Edge Foster Care Feline Milk Replacer & Shelter's Choice",
+          "size": "12 oz powder and 32 oz canisters",
+          "lotCodes": [
+            "Lots 0826-BE"
+          ],
+          "upc": "745801000000",
+          "bestBy": "08/2027"
+        }
+      ],
+      "distributionStates": "Nationwide to shelters, rescue groups, and breeders",
+      "clinicalSymptoms": [
+        "Slow growth in kittens",
+        "Lethargy",
+        "Poor weight gain"
+      ],
+      "actionSteps": [
+        "Discontinue use immediately",
+        "Switch to alternate kitten formula",
+        "Contact Revival for replacement"
+      ],
+      "fdaNoticeUrl": "https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/revival-animal-health-llc-voluntarily-recalls-feline-milk-replacers-due-inconsistent-levels-vitamins"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "When was Breeder's Edge kitten milk replacer recalled?",
+      "answer": "In August 2026, Revival Animal Health recalled select batches of Breeder's Edge Feline Milk Replacer due to nutrient variances."
+    }
+  ]
+},
+
+  {
+  "slug": "omas-pride",
+  "name": "Oma's Pride",
+  "parentCompany": "Miller Foods, Inc.",
+  "headquarters": "Avon, Connecticut, USA",
+  "websiteDomain": "omaspride.com",
+  "foundedYear": 1950,
+  "species": "both",
+  "safetyTier": "Moderate Caution",
+  "statusSummary": "Oma's Pride produces family-crafted raw pet foods, poultry, and canine complete recipes. In August 2026, Oma's Pride issued a voluntary recall for one lot of Woof Complete Canine Chicken Recipe 6 lb bags due to Salmonella contamination.",
+  "totalRecallsCount": 1,
+  "lastRecallDate": "August 2026",
+  "manufacturingFacilities": [
+    "Avon, CT"
+  ],
+  "historySummary": "In August 2026, Oma's Pride voluntarily recalled one lot of Woof Complete Canine Chicken Recipe (6 lb bags) distributed through independent pet stores following positive Salmonella surveillance testing by agricultural authorities.",
+  "recalls": [
+    {
+      "docketNumber": "FDA-VET-2026-N-0817",
+      "date": "August 17, 2026",
+      "year": 2026,
+      "classification": "Class I",
+      "severityDescription": "Contaminated with Salmonella enterica.",
+      "hazardType": "Salmonella",
+      "reason": "Routine sample collection by the state agricultural agency confirmed Salmonella in one production lot.",
+      "affectedProducts": [
+        {
+          "name": "Woof Complete Canine Chicken Recipe",
+          "size": "6 lb bag",
+          "lotCodes": [
+            "Lot 081726"
+          ],
+          "upc": "085208000000",
+          "bestBy": "08/2027"
+        }
+      ],
+      "distributionStates": "CT, MA, NY, NJ, PA through independent pet retailers",
+      "clinicalSymptoms": [
+        "Diarrhea",
+        "Vomiting",
+        "Fever",
+        "Abdominal pain"
+      ],
+      "actionSteps": [
+        "Stop feeding immediately",
+        "Handle with gloves",
+        "Return to store for 100% refund"
+      ],
+      "fdaNoticeUrl": "https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/updated-omas-pride-voluntarily-recalls-one-lot-woof-complete-canine-chicken-recipe-6-lb-bag-because"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Why was Oma's Pride recalled in August 2026?",
+      "answer": "One lot of Oma's Pride Woof Complete Canine Chicken Recipe 6 lb bag was recalled after testing positive for Salmonella."
+    }
+  ]
+},
+
+  {
+  "slug": "adequan",
+  "name": "Adequan Canine",
+  "parentCompany": "American Regent, Inc. Animal Health",
+  "headquarters": "Shirley, New York, USA",
+  "websiteDomain": "americanregent.com",
+  "foundedYear": 1967,
+  "species": "dog",
+  "safetyTier": "Moderate Caution",
+  "statusSummary": "Adequan Canine (polysulfated glycosaminoglycan) is the only FDA-approved disease-modifying osteoarthritis drug (DMOAD) for canine joint arthritis. In August 2026, American Regent issued a nationwide recall for two lots of Adequan Canine due to fill volume variances.",
+  "totalRecallsCount": 1,
+  "lastRecallDate": "August 2026",
+  "manufacturingFacilities": [
+    "Shirley, NY"
+  ],
+  "historySummary": "In August 2026, American Regent Animal Health voluntarily recalled two lots of Adequan Canine 100 mg/mL (5 mL vials) distributed to veterinary hospitals nationwide due to minor fill volume variances.",
+  "recalls": [
+    {
+      "docketNumber": "FDA-VET-2026-N-0803",
+      "date": "August 3, 2026",
+      "year": 2026,
+      "classification": "Class II",
+      "severityDescription": "Minor fill volume variances in select manufacturing vial lots.",
+      "hazardType": "Packaging Defect",
+      "reason": "Voluntary nationwide recall of two lots of Adequan Canine (100 mg/mL) 5 mL vials due to fill volume inspection findings.",
+      "affectedProducts": [
+        {
+          "name": "Adequan Canine (polysulfated glycosaminoglycan) 100 mg/mL",
+          "size": "5 mL multi-dose vials",
+          "lotCodes": [
+            "Lots 0803A",
+            "Lots 0803B"
+          ],
+          "upc": "N/A - Veterinary Prescription",
+          "bestBy": "08/2028"
+        }
+      ],
+      "distributionStates": "Nationwide to authorized veterinary clinics and animal hospitals",
+      "clinicalSymptoms": [
+        "Sub-therapeutic dosage volume"
+      ],
+      "actionSteps": [
+        "Veterinary clinics return unused vials to American Regent",
+        "Check lot numbers on clinic stock"
+      ],
+      "fdaNoticeUrl": "https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/american-regent-inc-animal-health-issues-nationwide-recall-two-lots-adequanr-canine-and-two-lots"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Why was Adequan Canine recalled in August 2026?",
+      "answer": "American Regent voluntarily recalled two lots of Adequan Canine due to fill volume variances in 5 mL vials. No contamination or sterility issues occurred."
+    }
+  ]
+},
+
+  {
+  "slug": "natura-pet",
+  "name": "Natura Pet (Innova, EVO, California Natural)",
+  "parentCompany": "Mars Petcare (formerly P&G)",
+  "headquarters": "Fremont, Nebraska, USA",
+  "websiteDomain": "mars.com",
+  "foundedYear": 1989,
+  "species": "both",
+  "safetyTier": "High Watch",
+  "statusSummary": "Natura Pet Products previously manufactured pioneer holistic brands Innova, EVO, and California Natural. In 2013, the brand was subject to a massive nationwide Salmonella recall originating from its Fremont, Nebraska plant.",
+  "totalRecallsCount": 1,
+  "lastRecallDate": "June 2013",
+  "manufacturingFacilities": [
+    "Fremont, NE"
+  ],
+  "historySummary": "Natura Pet Products experienced a major multi-stage voluntary recall in 2013 across Innova, EVO, California Natural, and HealthWise lines due to widespread plant-level Salmonella contamination.",
+  "recalls": [
+    {
+      "docketNumber": "FDA-VET-2013-N-0318",
+      "date": "March 18, 2013",
+      "year": 2013,
+      "classification": "Class I",
+      "severityDescription": "Confirmed Salmonella contamination across multiple dry pet food formulations.",
+      "hazardType": "Salmonella",
+      "reason": "Extensive multi-brand Salmonella contamination event at Fremont, Nebraska manufacturing plant affecting Innova, EVO, California Natural, and HealthWise.",
+      "affectedProducts": [
+        {
+          "name": "Innova, EVO, California Natural, HealthWise (all dry varieties)",
+          "size": "All bag sizes",
+          "lotCodes": [
+            "All lots manufactured between 12/2012 and 04/2013"
+          ],
+          "upc": "Multiple",
+          "bestBy": "All 2013 and 2014 expiration dates"
+        }
+      ],
+      "distributionStates": "Nationwide (United States and Canada)",
+      "clinicalSymptoms": [
+        "Lethargy",
+        "Diarrhea",
+        "Fever",
+        "Vomiting",
+        "Human illness risk"
+      ],
+      "actionSteps": [
+        "Discontinue feeding immediately",
+        "Discard in sealed bag",
+        "Wash all bowls and storage bins thoroughly"
+      ],
+      "fdaNoticeUrl": "https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "What happened in the 2013 Natura Pet recall?",
+      "answer": "In 2013, Natura Pet recalled all dry pet foods (Innova, EVO, California Natural) due to persistent Salmonella contamination at its Nebraska facility."
+    }
+  ]
+},
 ];
