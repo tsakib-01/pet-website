@@ -53,6 +53,11 @@ export default function Footer() {
               </Link>
             </li>
             <li>
+              <Link href="/breed" className="hover:text-brand-terracotta transition-colors flex items-center gap-1 text-brand-terracotta">
+                → Breed Guides & Calculators
+              </Link>
+            </li>
+            <li>
               <Link href="/tools/dog-age-calculator" className="hover:text-brand-terracotta transition-colors flex items-center gap-1">
                 → Dog Age Calculator (AVMA)
               </Link>

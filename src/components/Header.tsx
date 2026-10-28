@@ -26,6 +26,7 @@ export default function Header() {
 
   const navLinks = [
     { href: "/tools", label: "All Calculators" },
+    { href: "/breed", label: "Breeds" },
     { href: "/tools/dog-age-calculator", label: "Dog Age" },
     { href: "/tools/dog-chocolate-toxicity-calculator", label: "Chocolate Triage" },
     { href: "/tools/dog-crate-size-calculator", label: "Crate Sizing" },
