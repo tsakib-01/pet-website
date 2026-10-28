@@ -24,23 +24,25 @@ export default function BreedDirectoryClient({ breeds }: Props) {
   return (
     <div className="space-y-6">
       {/* Species Filter Tabs */}
-      <div className="flex flex-wrap items-center justify-between gap-3 bg-white p-3 sm:p-4 rounded-2xl border-2.5 border-brand-espresso shadow-[4px_4px_0px_#583D32]">
-        <div className="flex flex-wrap items-center gap-2">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 bg-white p-2.5 sm:p-4 rounded-2xl border-2.5 border-brand-espresso shadow-[4px_4px_0px_#583D32]">
+        {/* On mobile: 3-column equal grid so all 3 buttons sit on 1 clean row. On desktop: inline flex row */}
+        <div className="grid grid-cols-3 gap-1.5 sm:flex sm:items-center sm:gap-2 w-full sm:w-auto">
           {/* ALL OPTION (Default) */}
           <button
             type="button"
             onClick={() => setFilter("all")}
-            className={`btn-pill px-4 py-2 text-xs font-heading font-black transition-all flex items-center gap-2 ${
+            className={`btn-pill px-2 sm:px-4 py-2 text-xs font-heading font-black transition-all flex items-center justify-center gap-1.5 sm:gap-2 ${
               filter === "all"
                 ? "btn-pill-espresso"
                 : "btn-pill-cream hover:bg-brand-olive"
             }`}
             aria-pressed={filter === "all"}
           >
-            <PawPrint className="w-4 h-4 text-brand-terracotta" />
-            <span>All Breeds</span>
+            <PawPrint className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-brand-terracotta flex-shrink-0" />
+            <span className="sm:hidden">All</span>
+            <span className="hidden sm:inline">All Breeds</span>
             <span
-              className={`px-2 py-0.5 rounded-full text-[10px] font-mono font-bold ${
+              className={`px-1.5 sm:px-2 py-0.5 rounded-full text-[10px] font-mono font-bold flex-shrink-0 ${
                 filter === "all"
                   ? "bg-brand-olive text-brand-espresso"
                   : "bg-brand-espresso/10 text-brand-espresso"
@@ -54,17 +56,18 @@ export default function BreedDirectoryClient({ breeds }: Props) {
           <button
             type="button"
             onClick={() => setFilter("dog")}
-            className={`btn-pill px-4 py-2 text-xs font-heading font-black transition-all flex items-center gap-2 ${
+            className={`btn-pill px-2 sm:px-4 py-2 text-xs font-heading font-black transition-all flex items-center justify-center gap-1.5 sm:gap-2 ${
               filter === "dog"
                 ? "btn-pill-espresso"
                 : "btn-pill-cream hover:bg-brand-olive"
             }`}
             aria-pressed={filter === "dog"}
           >
-            <Dog className="w-4 h-4 text-brand-terracotta" />
-            <span>Dogs Only</span>
+            <Dog className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-brand-terracotta flex-shrink-0" />
+            <span className="sm:hidden">Dogs</span>
+            <span className="hidden sm:inline">Dogs Only</span>
             <span
-              className={`px-2 py-0.5 rounded-full text-[10px] font-mono font-bold ${
+              className={`px-1.5 sm:px-2 py-0.5 rounded-full text-[10px] font-mono font-bold flex-shrink-0 ${
                 filter === "dog"
                   ? "bg-brand-olive text-brand-espresso"
                   : "bg-brand-espresso/10 text-brand-espresso"
@@ -78,17 +81,18 @@ export default function BreedDirectoryClient({ breeds }: Props) {
           <button
             type="button"
             onClick={() => setFilter("cat")}
-            className={`btn-pill px-4 py-2 text-xs font-heading font-black transition-all flex items-center gap-2 ${
+            className={`btn-pill px-2 sm:px-4 py-2 text-xs font-heading font-black transition-all flex items-center justify-center gap-1.5 sm:gap-2 ${
               filter === "cat"
                 ? "btn-pill-espresso"
                 : "btn-pill-cream hover:bg-brand-olive"
             }`}
             aria-pressed={filter === "cat"}
           >
-            <Cat className="w-4 h-4 text-brand-terracotta" />
-            <span>Cats Only</span>
+            <Cat className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-brand-terracotta flex-shrink-0" />
+            <span className="sm:hidden">Cats</span>
+            <span className="hidden sm:inline">Cats Only</span>
             <span
-              className={`px-2 py-0.5 rounded-full text-[10px] font-mono font-bold ${
+              className={`px-1.5 sm:px-2 py-0.5 rounded-full text-[10px] font-mono font-bold flex-shrink-0 ${
                 filter === "cat"
                   ? "bg-brand-olive text-brand-espresso"
                   : "bg-brand-espresso/10 text-brand-espresso"
@@ -100,7 +104,7 @@ export default function BreedDirectoryClient({ breeds }: Props) {
         </div>
 
         {/* Counter indicator */}
-        <div className="text-xs font-mono font-bold text-brand-taupe uppercase tracking-wider px-1">
+        <div className="text-center sm:text-right text-[11px] sm:text-xs font-mono font-bold text-brand-taupe uppercase tracking-wider px-1 pt-1.5 sm:pt-0 border-t border-brand-espresso/10 sm:border-0">
           Showing {filteredBreeds.length}{" "}
           {filter === "all"
             ? "Total Breeds"
