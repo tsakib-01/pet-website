@@ -39,7 +39,9 @@ export interface BrandSafetyProfile {
   faqs: { question: string; answer: string }[];
 }
 
-export const RECALL_BRANDS_DATABASE: BrandSafetyProfile[] = [
+import { ADDITIONAL_BRANDS } from "./additionalBrands";
+
+const PRIMARY_BRANDS: BrandSafetyProfile[] = [
   // =========================================================================
   // 1. PURINA
   // =========================================================================
@@ -623,6 +625,11 @@ export const RECALL_BRANDS_DATABASE: BrandSafetyProfile[] = [
       },
     ],
   },
+];
+
+export const RECALL_BRANDS_DATABASE: BrandSafetyProfile[] = [
+  ...PRIMARY_BRANDS,
+  ...ADDITIONAL_BRANDS,
 ];
 
 export function getAllRecallBrands(): BrandSafetyProfile[] {

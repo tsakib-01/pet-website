@@ -9,6 +9,7 @@ import AdSensePlaceholder from "@/components/AdSensePlaceholder";
 import FaqAccordion from "@/components/FaqAccordion";
 import {
   ShieldCheck,
+  ShieldAlert,
   AlertTriangle,
   ChevronRight,
   Building2,
@@ -24,6 +25,7 @@ import {
   ArrowRight,
   Info,
   CheckCircle2,
+  ExternalLink,
 } from "lucide-react";
 
 interface Props {
@@ -385,6 +387,36 @@ export default async function BrandRecallPage({ params }: Props) {
               <p className="text-[11px] font-sans text-brand-taupe mt-1">
                 AVMA weight-adjusted biological human age.
               </p>
+            </Link>
+          </div>
+        </div>
+
+        {/* FDA Safety Reporting Notice */}
+        <div className="bg-brand-olive/30 border-2.5 border-brand-espresso rounded-3xl p-6 sm:p-7 shadow-paper flex flex-col sm:flex-row sm:items-center justify-between gap-5">
+          <div className="space-y-1 max-w-2xl">
+            <div className="font-heading font-black text-sm text-brand-espresso flex items-center gap-2">
+              <ShieldAlert className="w-4 h-4 text-brand-terracotta" />
+              Suspect a Problem or Illness from {brand.name}?
+            </div>
+            <p className="text-xs text-brand-taupe leading-relaxed">
+              Pet owners can submit formal complaint reports directly to the U.S. Food and Drug Administration. Keep your packaging, lot code, and veterinary records intact.
+            </p>
+          </div>
+          <div className="flex gap-2.5 flex-shrink-0">
+            <a
+              href="https://www.safetyreporting.hhs.gov/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-brand-terracotta text-white border-2 border-brand-espresso shadow-paper-sm font-heading font-bold text-xs hover:translate-x-0.5 hover:translate-y-0.5 transition-all"
+            >
+              Report to FDA
+              <ExternalLink className="w-3.5 h-3.5" />
+            </a>
+            <Link
+              href="/recalls"
+              className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-white text-brand-espresso border-2 border-brand-espresso shadow-paper-sm font-heading font-bold text-xs hover:translate-x-0.5 hover:translate-y-0.5 transition-all"
+            >
+              Emergency Protocols
             </Link>
           </div>
         </div>

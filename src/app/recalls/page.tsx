@@ -2,6 +2,7 @@ import React from "react";
 import { Metadata } from "next";
 import { getAllRecallBrands } from "@/data/recalls";
 import RecallDirectoryClient from "@/components/recalls/RecallDirectoryClient";
+import RecallActionProtocols from "@/components/recalls/RecallActionProtocols";
 import AdSensePlaceholder from "@/components/AdSensePlaceholder";
 import { ShieldAlert, ShieldCheck, AlertTriangle, FileText, Info } from "lucide-react";
 
@@ -115,6 +116,9 @@ export default function RecallsDirectoryPage() {
             </div>
           </div>
         </div>
+
+        {/* Emergency Protocols & FDA Reporting Guide */}
+        <RecallActionProtocols />
 
         {/* Mandatory Regulatory Disclaimer */}
         <div className="p-4 rounded-2xl bg-brand-cream/40 border border-brand-espresso/20 text-[11px] font-sans text-brand-taupe leading-relaxed">
