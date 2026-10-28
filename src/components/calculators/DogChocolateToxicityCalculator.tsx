@@ -72,21 +72,21 @@ export default function DogChocolateToxicityCalculator() {
   return (
     <div className="bg-[#FAF4EE] border-2.5 border-brand-espresso rounded-3xl p-6 sm:p-8 shadow-paper">
       {/* Header */}
-      <div className="flex flex-wrap items-center justify-between gap-3 mb-6 pb-4 border-b-2 border-brand-espresso/20">
-        <div className="flex items-center gap-3 min-w-0">
-          <div className="w-10 h-10 rounded-full bg-red-500/15 border-2 border-red-600 flex items-center justify-center shadow-pill flex-shrink-0 aspect-square">
+      <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-3 sm:gap-4 mb-6 pb-4 border-b-2 border-brand-espresso/20">
+        <div className="flex items-start gap-3 min-w-0">
+          <div className="w-10 h-10 rounded-full bg-red-500/15 border-2 border-red-600 flex items-center justify-center shadow-pill flex-shrink-0 aspect-square mt-0.5">
             <AlertTriangle className="w-5 h-5 text-red-600 flex-shrink-0" />
           </div>
           <div className="min-w-0">
-            <h3 className="font-heading text-xl sm:text-2xl font-black text-brand-espresso">
+            <h3 className="font-heading text-lg sm:text-2xl font-black text-brand-espresso leading-snug">
               Dog Chocolate Toxicity Calculator
             </h3>
-            <p className="text-xs font-mono font-bold text-brand-taupe uppercase">
+            <p className="text-xs sm:text-sm text-brand-taupe font-sans font-medium mt-1 leading-normal">
               Merck Veterinary Manual & ASPCA APCC Standard
             </p>
           </div>
         </div>
-        <span className="text-[10px] font-mono font-black uppercase px-2.5 py-1 rounded-full bg-brand-terracotta text-[#FAF4EE] border border-brand-espresso">
+        <span className="self-start sm:self-auto text-[10px] sm:text-xs font-mono font-black uppercase px-2.5 py-1 rounded-full bg-brand-terracotta text-[#FAF4EE] border border-brand-espresso flex-shrink-0">
           Emergency Clinical Triage
         </span>
       </div>
