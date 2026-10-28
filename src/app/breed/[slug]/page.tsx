@@ -26,6 +26,8 @@ import {
   AlertTriangle,
   Clock,
   Sparkles,
+  Lightbulb,
+  Landmark,
 } from "lucide-react";
 
 interface Props {
@@ -67,6 +69,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       `${bName} crate size`,
       `${bName} calculator`,
       `${bName} health issues`,
+      `${bName} facts`,
+      `${bName} history`,
+      `${bName} origin`,
     ],
     alternates: {
       canonical: `https://pawtruth.com/breed/${breed.slug}`,
@@ -158,7 +163,7 @@ export default async function BreedDetailPage({ params }: Props) {
         "name": `${breed.name} Comprehensive Clinical Breed Guide`,
         "description": breed.tagline,
         "url": `https://pawtruth.com/breed/${breed.slug}`,
-        "aspect": ["Overview", "Temperament", "Color Variations", "Growth Milestones", "Health", "Nutritional Requirements"],
+        "aspect": ["Overview", "Temperament", "Color Variations", "Growth Milestones", "Health", "Nutritional Requirements", "History", "Breed Facts"],
         "about": {
           "@type": "Thing",
           "name": breed.name,
@@ -694,6 +699,89 @@ export default async function BreedDetailPage({ params }: Props) {
               </span>
             )}
           </p>
+        </section>
+
+        {/* ========================================================
+            BLOCK 8.5: FASCINATING VERIFIED BREED FACTS
+            (High Shareability & Knowledge Snippet Capture)
+            ======================================================== */}
+        <section className="bg-white rounded-3xl border-2.5 border-brand-espresso p-6 sm:p-8 shadow-[5px_5px_0px_#583D32] space-y-6">
+          <div className="space-y-1">
+            <div className="inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full bg-brand-olive text-brand-espresso text-[11px] font-heading font-black uppercase tracking-wider border border-brand-espresso/30">
+              <Lightbulb className="w-3.5 h-3.5" />
+              Did You Know?
+            </div>
+            <h2 className="font-heading text-2xl sm:text-3xl font-black text-brand-espresso">
+              Fascinating & Verified {breed.name} Facts
+            </h2>
+            <p className="text-sm text-brand-espresso/80">
+              Surprising anatomical, historical, and behavioral traits confirmed by veterinary researchers and breed historians.
+            </p>
+          </div>
+
+          <div className="grid sm:grid-cols-2 gap-4">
+            {breed.facts.map((fact, idx) => (
+              <div
+                key={fact.title}
+                className="bg-brand-cream/25 rounded-2xl border-2 border-brand-espresso/30 p-5 space-y-2 flex flex-col justify-between"
+              >
+                <div className="space-y-1.5">
+                  <div className="flex items-center gap-2">
+                    <span className="w-6 h-6 rounded-full bg-brand-terracotta text-white font-mono font-bold text-xs flex items-center justify-center flex-shrink-0">
+                      {idx + 1}
+                    </span>
+                    <h3 className="font-heading font-black text-base text-brand-espresso">
+                      {fact.title}
+                    </h3>
+                  </div>
+                  <p className="text-xs text-brand-espresso/80 leading-relaxed pl-8">
+                    {fact.detail}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* ========================================================
+            BLOCK 8.6: BREED ORIGIN & HISTORICAL EVOLUTION
+            (Knowledge Graph & Entity Completeness)
+            ======================================================== */}
+        <section className="bg-white rounded-3xl border-2.5 border-brand-espresso p-6 sm:p-8 shadow-[5px_5px_0px_#583D32] space-y-6">
+          <div className="space-y-1">
+            <div className="inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full bg-brand-cream text-brand-espresso text-[11px] font-heading font-black uppercase tracking-wider border border-brand-espresso/30">
+              <Landmark className="w-3.5 h-3.5 text-brand-terracotta" />
+              Heritage & Heritage Roots
+            </div>
+            <h2 className="font-heading text-2xl sm:text-3xl font-black text-brand-espresso">
+              {breed.name} Origin & Historical Evolution
+            </h2>
+            <p className="text-sm text-brand-espresso/80 leading-relaxed max-w-3xl">
+              {breed.history.summary}
+            </p>
+          </div>
+
+          {/* Historical Milestone Chain */}
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {breed.history.milestones.map((ms) => (
+              <div
+                key={ms.title}
+                className="bg-brand-cream/30 rounded-2xl border-2 border-brand-espresso/30 p-4 space-y-2 flex flex-col justify-between"
+              >
+                <div className="space-y-1.5">
+                  <span className="inline-block px-2 py-0.5 rounded bg-brand-olive text-brand-espresso font-mono font-bold text-[10px] border border-brand-espresso/20 uppercase">
+                    {ms.era}
+                  </span>
+                  <h3 className="font-heading font-black text-sm text-brand-espresso">
+                    {ms.title}
+                  </h3>
+                </div>
+                <p className="text-xs text-brand-espresso/75 leading-relaxed pt-2 border-t border-brand-espresso/10">
+                  {ms.description}
+                </p>
+              </div>
+            ))}
+          </div>
         </section>
 
         {/* ========================================================

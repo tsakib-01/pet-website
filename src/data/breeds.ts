@@ -44,6 +44,17 @@ export interface BreedGrowthMilestone {
   guidance: string;
 }
 
+export interface BreedFact {
+  title: string;
+  detail: string;
+}
+
+export interface BreedHistoryMilestone {
+  era: string;
+  title: string;
+  description: string;
+}
+
 export interface BreedData {
   slug: string;
   name: string;
@@ -59,7 +70,7 @@ export interface BreedData {
   healthRisks: BreedHealthRisk[];
   dietAndCareNotes: string;
   faqs: BreedFAQ[];
-  // --- Enhanced Keyword Clusters (Temperament, Colors, Puppy/Kitten Growth, Size Variations) ---
+  // --- Enhanced Keyword Clusters ---
   temperament: {
     overview: string;
     traits: BreedTemperamentTrait[];
@@ -81,6 +92,12 @@ export interface BreedData {
     disclaimerTitle: string;
     disclaimerText: string;
   };
+  // --- Facts & History Clusters ---
+  history: {
+    summary: string;
+    milestones: BreedHistoryMilestone[];
+  };
+  facts: BreedFact[];
 }
 
 export const BREED_DATABASE: BreedData[] = [
@@ -276,6 +293,59 @@ export const BREED_DATABASE: BreedData[] = [
       disclaimerText:
         "The American Kennel Club recognizes only one standard size for French Bulldogs. Labels such as 'Mini Frenchie', 'Micro', or 'Teacup' are unregulated marketing descriptions. These dogs are either runts bred for dwarfism or crossbred with small breeds (e.g. Chihuahua), carrying elevated risks for organ hypoplasia and hydrocephalus.",
     },
+    // --- Facts & History Clusters ---
+    history: {
+      summary:
+        "The French Bulldog originated in the mid-1800s during England's Industrial Revolution, when lace workers in Nottingham bred toy bulldogs to serve as affectionate lap warmers. When technological mechanization pushed craftsmen to Normandy and Paris, they brought their miniature bulldogs with them, where Parisian cafe culture popularized their signature erect 'bat ears'.",
+      milestones: [
+        {
+          era: "1850s – 1860s",
+          title: "Nottingham Lacemakers' Lap Warmers",
+          description:
+            "English lace workers miniaturized the standard bulldog to 16–20 lbs to sit on workbenches and keep artisans warm in drafty textile mills.",
+        },
+        {
+          era: "1870s – 1890s",
+          title: "Parisian High Society & 'Bat Ear' Revolution",
+          description:
+            "Exported to France, the dogs became high-society mascots among artists, writers, and aristocrats, who selectively bred for erect bat ears over traditional rose ears.",
+        },
+        {
+          era: "1897 – 1898",
+          title: "First Breed Standard & AKC Recognition",
+          description:
+            "American fanciers founded the French Bull Dog Club of America (FBDCA) in New York, codifying the upright bat ear as an uncompromising breed hallmark.",
+        },
+        {
+          era: "2022 – Present",
+          title: "#1 Most Popular Dog in America",
+          description:
+            "Officially surpassed the Labrador Retriever as the most registered dog breed in the United States after a historic 31-year reign.",
+        },
+      ],
+    },
+    facts: [
+      {
+        title: "Anatomical Non-Swimmers",
+        detail:
+          "Due to their heavy, dense muscle frame, short snout, and disproportionate center of gravity, French Bulldogs sink quickly and cannot swim without an approved canine life jacket.",
+      },
+      {
+        title: "Over 80% Delivered via C-Section",
+        detail:
+          "Because French Bulldog puppies have disproportionately broad heads and mothers have compact pelvic canals, the vast majority of births require planned veterinary Caesarean deliveries.",
+      },
+      {
+        title: "The Bat Ear Controversy",
+        detail:
+          "British breeders originally favored folded 'rose ears' similar to English Bulldogs. Wealthy American tourists fell in love with upright 'bat ears' and organized the first club exclusively dedicated to preserving them.",
+      },
+      {
+        title: "A Frenchie Survived on the Titanic",
+        detail:
+          "A champion show Frenchie named Gamin de Pycombe was on board the RMS Titanic in 1912, insured by owner Robert Daniels for a then-record sum of $750 (equivalent to ~$24,000 today).",
+      },
+    ],
   },
 
   // ========================================================
@@ -471,6 +541,59 @@ export const BREED_DATABASE: BreedData[] = [
       disclaimerText:
         "Ragdolls are naturally large-boned, long-bodied cats with a legitimate fatty pad on their lower abdomen (a breed characteristic). However, an adult Ragdoll should never be allowed to develop excessive spine or rib fat rolls. Regular weight monitoring prevents joint stress and feline diabetes.",
     },
+    // --- Facts & History Clusters ---
+    history: {
+      summary:
+        "The Ragdoll breed was established in the 1960s in Riverside, California, by breeder Ann Baker. Starting with a white domestic longhaired matriarch named Josephine, Baker selectively cultivated cats that demonstrated extraordinarily peaceful, gentle temperaments and a distinctive tendency to go completely limp when held.",
+      milestones: [
+        {
+          era: "1960s",
+          title: "The Matriarch Josephine & Ann Baker",
+          description:
+            "Ann Baker mated Josephine (a longhaired white Persian-type queen) with feral pointed males, observing kittens with exceptionally loving dispositions and blue eyes.",
+        },
+        {
+          era: "1971",
+          title: "Creation of the IRCA",
+          description:
+            "Baker trademarked the 'Ragdoll' name and formed the International Ragdoll Cat Association (IRCA) with strict franchise breeding controls.",
+        },
+        {
+          era: "1975 – 1993",
+          title: "The Dayton Family & Major Registry Recognition",
+          description:
+            "Denny and Laura Dayton split from Baker to legitimize Ragdolls under major scientific feline registries, gaining official Championship status in TICA and CFA.",
+        },
+        {
+          era: "Present Day",
+          title: "World's Most Popular Pedigreed Feline",
+          description:
+            "Ranked consistently as the #1 most registered cat breed globally by the Cat Fanciers' Association (CFA) for multiple consecutive years.",
+        },
+      ],
+    },
+    facts: [
+      {
+        title: "All Kittens Are Born 100% Pure White",
+        detail:
+          "Because the Siamese-patterned albinism gene is temperature-sensitive, all Ragdoll kittens develop in the warm womb without color and are born snow-white. Their points only start emerging in cooler areas (ears, tail, paws) after birth.",
+      },
+      {
+        title: "The Famous 'Limp Doll' Muscle Reflex",
+        detail:
+          "The breed was named 'Ragdoll' because many individuals completely surrender their muscle tone and flop peacefully into the arms of humans they trust, resembling a child's plush toy.",
+      },
+      {
+        title: "Known as the 'Puppy Cat'",
+        detail:
+          "Ragdolls exhibit classic canine behaviors: they greet owners at the front door, follow family from room to room, and often fetch tossed toys with enthusiasm.",
+      },
+      {
+        title: "One of the Slowest-Maturing Domestic Cats",
+        detail:
+          "While most cats complete physical growth around their 1st birthday, Ragdolls continue developing skeletal width, muscle density, and adult coat color until 3 to 4 years of age.",
+      },
+    ],
   },
 ];
 
