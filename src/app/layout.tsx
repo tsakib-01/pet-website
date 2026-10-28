@@ -5,16 +5,19 @@ import Footer from "@/components/Footer";
 import FloatingScrollCompanion from "@/components/FloatingScrollCompanion";
 
 export const metadata: Metadata = {
-  title: "PawTruth — Pet Food Recall & Safety Inspector",
+  title: "PawTruth — Pet Health & Safety Calculators",
   description:
-    "Real-time database of official FDA pet food recalls, lot numbers, brand safety grades, and contaminant warnings for dogs and cats.",
+    "Free, 100% veterinary-accurate calculators for dogs and cats: emergency chocolate toxicity triage, AVMA canine & feline age converters, WSAVA food portioning, and AKC crate sizing.",
   keywords: [
-    "pet food recall",
-    "dog food recall 2026",
-    "cat food recall list",
-    "FDA pet food safety",
-    "salmonella dog food",
-    "aflatoxin kibble",
+    "dog age calculator",
+    "dog chocolate toxicity calculator",
+    "cat age calculator",
+    "dog crate size calculator",
+    "puppy vaccination schedule",
+    "cat food calculator wet and dry",
+    "dog name generator",
+    "cat name generator",
+    "puppy weight calculator",
   ],
 };
 

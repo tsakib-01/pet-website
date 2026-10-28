@@ -1,33 +1,51 @@
 import React from "react";
 import Link from "next/link";
-import { Search, ShieldAlert, AlertTriangle, ArrowRight, CheckCircle2, PawPrint, Sparkles, Filter, ChevronRight, Activity, MapPin, Dog, Cat, HeartPulse } from "lucide-react";
+import { Search, Sparkles, ArrowRight, CheckCircle2, PawPrint, Dog, Cat, HeartPulse, ShieldCheck, AlertTriangle, Scale, Utensils, Calendar, Box, Volume2 } from "lucide-react";
 import AdSensePlaceholder from "@/components/AdSensePlaceholder";
 import ScrollReveal from "@/components/ScrollReveal";
-import InteractiveLotScanner from "@/components/InteractiveLotScanner";
-import InteractiveUSMap from "@/components/InteractiveUSMap";
 import FaqAccordion from "@/components/FaqAccordion";
-import { recallsData } from "@/data/recalls";
-import { brandsData } from "@/data/brands";
+import { CALCULATOR_TOOLS } from "@/data/calculators";
+import DogAgeCalculator from "@/components/calculators/DogAgeCalculator";
 
 export default function HomePage() {
-  const recentRecalls = recallsData.slice(0, 6);
-  const brandList = Object.values(brandsData);
+  const dogTools = CALCULATOR_TOOLS.filter((t) => t.category === "dog");
+  const catTools = CALCULATOR_TOOLS.filter((t) => t.category === "cat");
+  const petTools = CALCULATOR_TOOLS.filter((t) => t.category === "pet");
+
+  const homeFaqs = [
+    {
+      q: "Are these pet calculators mathematically accurate?",
+      a: "Yes. Every tool on PawTruth is strictly formulated using official clinical standards established by leading veterinary bodies, including the American Veterinary Medical Association (AVMA), World Small Animal Veterinary Association (WSAVA), Merck Veterinary Manual, and the American Animal Hospital Association (AAHA)."
+    },
+    {
+      q: "Why is the old 'multiply dog age by 7' rule no longer used?",
+      a: "Modern veterinary research proves dogs age non-linearly. A dog reaches roughly 15 human years in their first year and 24 by age two. Their aging pace thereafter diverges dramatically by breed size: toy breeds age much slower (around 4 human years/year) while giant breeds age around 7 to 8 human years per calendar year."
+    },
+    {
+      q: "How does the Dog Chocolate Toxicity calculator work in an emergency?",
+      a: "It computes the exact concentration of toxic methylxanthines (theobromine and caffeine) in milligrams per kilogram of your dog's body weight. It immediately categorizes the ingestion into Non-Toxic, Moderate, Cardiotoxic, or Life-Threatening Neurotoxic risk with step-by-step clinical guidance."
+    },
+    {
+      q: "Do I need to create an account or pay to use these tools?",
+      a: "No. All 15 calculation tools are 100% free forever with no accounts, no subscriptions, and zero data tracking. Computations execute entirely in your local browser memory."
+    }
+  ];
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 py-6 sm:py-10 space-y-12 sm:space-y-16 overflow-hidden">
-      {/* 1. HERO SECTION: Responsive Collage with Scroll Reveal */}
+      {/* 1. HERO SECTION */}
       <ScrollReveal direction="up">
         <section className="relative paper-box p-5 sm:p-8 md:p-12 overflow-hidden bg-[#FAF4EE]">
-          {/* Pill Badges Floated */}
+          {/* Pill Badges */}
           <div className="flex flex-wrap items-center gap-2 mb-4">
             <span className="pill-badge pill-badge-alert text-[10px] sm:text-xs">
-              <Sparkles className="w-3.5 h-3.5" /> 2026 OFFICIAL DATABASE
+              <Sparkles className="w-3.5 h-3.5" /> 15 VETERINARY CALCULATORS
             </span>
             <span className="pill-badge pill-badge-verified text-[10px] sm:text-xs">
-              OpenFDA Public Feed
+              AVMA • WSAVA • ASPCA STANDARDS
             </span>
             <span className="pill-badge pill-badge-cream text-[10px] sm:text-xs hidden sm:inline-flex">
-              84,200 Bags Cleared
+              100% Private In-Memory
             </span>
           </div>
 
@@ -35,339 +53,313 @@ export default function HomePage() {
             {/* Hero Left Content */}
             <div className="order-2 lg:order-1 lg:col-span-7 space-y-5 sm:space-y-6">
               <h1 className="font-heading text-3xl sm:text-5xl lg:text-6xl font-black text-brand-espresso leading-[1.08] tracking-tight">
-                DON’T GUESS WHAT’S IN THEIR BOWL.{" "}
+                NEVER GUESS YOUR PET’S HEALTH STATS.{" "}
                 <span className="inline-block bg-brand-terracotta text-[#FAF4EE] px-3 sm:px-4 py-0.5 sm:py-1 rounded-full border-2 border-brand-espresso shadow-pill transform -rotate-1 mt-1">
-                  WE TRACK EVERY RECALL.
+                  15 CLINICAL TOOLS.
                 </span>
               </h1>
 
               <p className="text-sm sm:text-base lg:text-lg text-brand-taupe leading-relaxed font-sans font-medium max-w-xl">
-                Real-time FDA pet food recall dockets, instant lot number scanner, and verified brand safety ratings before feeding your pet.
+                Veterinary-calibrated chocolate toxicity triage, life-stage age converters, precision dual-diet food mixers, and pediatric puppy growth predictors.
               </p>
 
-              {/* Mobile-Friendly Search Box */}
-              <div className="pt-1">
-                <form action="/brand/blue-harvest" className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2 bg-brand-cream/80 p-2 border-2.5 border-brand-espresso rounded-2xl sm:rounded-full shadow-paper">
-                  <div className="relative flex-grow flex items-center pl-2 sm:pl-4">
-                    <Search className="w-5 h-5 text-brand-taupe flex-shrink-0" />
-                    <input
-                      type="text"
-                      placeholder="Search brand (e.g. Purina, Blue Buffalo, Hill's)..."
-                      className="w-full pl-2.5 pr-2 py-2 sm:py-3 bg-transparent font-sans font-bold text-xs sm:text-sm text-brand-espresso placeholder-brand-taupe focus:outline-none"
-                    />
-                  </div>
-                  <button
-                    type="submit"
-                    className="btn-pill btn-pill-espresso w-full sm:w-auto px-5 sm:px-6 py-2.5 sm:py-3 text-xs font-black group justify-center flex-shrink-0"
-                  >
-                    <span>Inspect Brand</span>
-                    <span className="btn-circle-icon bg-brand-olive text-brand-espresso">
-                      <ArrowRight className="w-4 h-4" />
-                    </span>
-                  </button>
-                </form>
-              </div>
-
-              {/* Quick Filter Badges */}
+              {/* Quick Jump Buttons */}
               <div className="flex flex-wrap items-center gap-2 pt-1">
                 <span className="text-[11px] sm:text-xs font-heading font-black uppercase text-brand-taupe mr-1">
-                  Explore:
+                  Popular:
                 </span>
-                <Link href="/pet/dogs" className="btn-pill btn-pill-cream px-3 sm:px-4 py-1 text-[11px] sm:text-xs font-bold shadow-paper-sm hover:bg-brand-olive flex items-center gap-1.5">
+                <Link
+                  href="/tools/dog-age-calculator"
+                  className="btn-pill btn-pill-cream px-3 sm:px-4 py-1 text-[11px] sm:text-xs font-bold shadow-paper-sm hover:bg-brand-olive flex items-center gap-1.5"
+                >
                   <Dog className="w-3.5 h-3.5 text-brand-espresso" />
-                  Dogs
+                  Dog Age
                 </Link>
-                <Link href="/pet/cats" className="btn-pill btn-pill-cream px-3 sm:px-4 py-1 text-[11px] sm:text-xs font-bold shadow-paper-sm hover:bg-brand-olive flex items-center gap-1.5">
+                <Link
+                  href="/tools/dog-chocolate-toxicity-calculator"
+                  className="btn-pill btn-pill-terracotta px-3 sm:px-4 py-1 text-[11px] sm:text-xs font-bold shadow-paper-sm flex items-center gap-1.5"
+                >
+                  <AlertTriangle className="w-3.5 h-3.5 text-brand-olive" />
+                  Chocolate Toxicity
+                </Link>
+                <Link
+                  href="/tools/dog-crate-size-calculator"
+                  className="btn-pill btn-pill-cream px-3 sm:px-4 py-1 text-[11px] sm:text-xs font-bold shadow-paper-sm hover:bg-brand-olive flex items-center gap-1.5"
+                >
+                  <Box className="w-3.5 h-3.5 text-brand-espresso" />
+                  Crate Size
+                </Link>
+                <Link
+                  href="/tools/cat-age-calculator"
+                  className="btn-pill btn-pill-cream px-3 sm:px-4 py-1 text-[11px] sm:text-xs font-bold shadow-paper-sm hover:bg-brand-olive flex items-center gap-1.5"
+                >
                   <Cat className="w-3.5 h-3.5 text-brand-espresso" />
-                  Cats
+                  Cat Age
                 </Link>
-                <Link href="/pet/puppy-kitten" className="btn-pill btn-pill-cream px-3 sm:px-4 py-1 text-[11px] sm:text-xs font-bold shadow-paper-sm hover:bg-brand-olive flex items-center gap-1.5">
-                  <HeartPulse className="w-3.5 h-3.5 text-brand-terracotta" />
-                  Puppy/Kitten
+                <Link
+                  href="/tools/puppy-vaccination-schedule"
+                  className="btn-pill btn-pill-cream px-3 sm:px-4 py-1 text-[11px] sm:text-xs font-bold shadow-paper-sm hover:bg-brand-olive flex items-center gap-1.5"
+                >
+                  <Calendar className="w-3.5 h-3.5 text-brand-terracotta" />
+                  Puppy Vaccine
                 </Link>
-                <Link href="/safety/salmonella" className="btn-pill btn-pill-terracotta px-3 sm:px-4 py-1 text-[11px] sm:text-xs font-bold shadow-paper-sm flex items-center gap-1.5">
-                  <AlertTriangle className="w-3.5 h-3.5 text-brand-olive" />
-                  Salmonella
-                </Link>
-                <Link href="/safety/aflatoxin" className="btn-pill btn-pill-terracotta px-3 sm:px-4 py-1 text-[11px] sm:text-xs font-bold shadow-paper-sm flex items-center gap-1.5">
-                  <AlertTriangle className="w-3.5 h-3.5 text-brand-olive" />
-                  Aflatoxin
-                </Link>
-                <Link href="/state/california" className="btn-pill btn-pill-cream px-3 sm:px-4 py-1 text-[11px] sm:text-xs font-bold shadow-paper-sm hover:bg-brand-olive flex items-center gap-1.5">
-                  <MapPin className="w-3.5 h-3.5 text-brand-espresso" />
-                  California
-                </Link>
-                <Link href="/state/texas" className="btn-pill btn-pill-cream px-3 sm:px-4 py-1 text-[11px] sm:text-xs font-bold shadow-paper-sm hover:bg-brand-olive flex items-center gap-1.5">
-                  <MapPin className="w-3.5 h-3.5 text-brand-espresso" />
-                  Texas
+              </div>
+
+              {/* Direct Explorer Button */}
+              <div className="pt-2">
+                <Link
+                  href="/tools"
+                  className="btn-pill btn-pill-espresso px-6 sm:px-8 py-3 text-sm font-black shadow-paper-lg group inline-flex items-center gap-3"
+                >
+                  <span>Explore All 15 Calculators</span>
+                  <span className="btn-circle-icon bg-brand-olive text-brand-espresso">
+                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  </span>
                 </Link>
               </div>
             </div>
 
-            {/* Hero Right Visual Collage (Shifted to top on mobile via order-1) */}
-            <div className="order-1 lg:order-2 lg:col-span-5 relative flex justify-center pt-2 sm:pt-4">
-              <div className="relative w-full max-w-xs sm:max-w-sm">
-                <div className="paper-box p-3 sm:p-4 bg-brand-cream border-2.5 border-brand-espresso transform -rotate-1 hover:rotate-0 transition-transform">
-                  <img
-                    src="https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?auto=format&fit=crop&w=700&q=80"
-                    alt="Happy healthy dog"
-                    className="w-full h-52 sm:h-64 object-cover rounded-xl border-2 border-brand-espresso"
-                  />
-                  <div className="pt-2.5 flex items-center justify-between">
-                    <div>
-                      <span className="font-heading font-black text-sm sm:text-base text-brand-espresso block">
-                        Golden Retriever (Milo)
-                      </span>
-                      <span className="font-mono text-[10px] sm:text-xs text-brand-taupe font-bold">
-                        Batch Tested: 100% Clean
-                      </span>
+            {/* Hero Right: Live Interactive Quick Widget Teaser */}
+            <div className="order-1 lg:order-2 lg:col-span-5">
+              <div className="relative bg-white border-2.5 border-brand-espresso rounded-3xl p-5 shadow-paper space-y-4">
+                <div className="flex items-center justify-between pb-3 border-b-2 border-brand-espresso/15">
+                  <span className="font-heading font-black text-sm text-brand-espresso flex items-center gap-2">
+                    <ShieldCheck className="w-4 h-4 text-emerald-600" />
+                    CLINICAL PREVIEW
+                  </span>
+                  <span className="text-[10px] font-mono font-bold bg-brand-olive px-2 py-0.5 rounded-full border border-brand-espresso">
+                    Instant Math
+                  </span>
+                </div>
+                <div className="space-y-3">
+                  <div className="text-xs font-heading font-black text-brand-espresso">
+                    Why Generic Rules Fail:
+                  </div>
+                  <div className="space-y-2 text-xs text-brand-taupe leading-relaxed">
+                    <div className="bg-[#FAF4EE] p-3 rounded-2xl border border-brand-espresso/20">
+                      <div className="font-bold text-brand-espresso">🍫 Chocolate Poisoning:</div>
+                      <div>Dose = (Amount in oz × mg Theobromine) ÷ Dog Weight (kg). 50mg/kg is cardiotoxic.</div>
                     </div>
-                    <span className="pill-badge pill-badge-verified text-[10px]">
-                      VERIFIED
-                    </span>
+                    <div className="bg-[#FAF4EE] p-3 rounded-2xl border border-brand-espresso/20">
+                      <div className="font-bold text-brand-espresso">🐾 Canine Biological Age:</div>
+                      <div>Year 1 = 15 yrs, Year 2 = +9 yrs. Small dogs age at 4 yrs/yr, Giant breeds at 7.5 yrs/yr.</div>
+                    </div>
+                    <div className="bg-[#FAF4EE] p-3 rounded-2xl border border-brand-espresso/20">
+                      <div className="font-bold text-brand-espresso">🥣 Wet & Dry Food Split:</div>
+                      <div>RER = 70 × (kg)^0.75. Prevents the 40% caloric surplus common in unmeasured mixing.</div>
+                    </div>
                   </div>
                 </div>
-
-                <div className="absolute -bottom-4 -left-3 sm:-bottom-6 sm:-left-6 w-36 sm:w-48 paper-box p-2 sm:p-3 bg-[#FAF4EE] border-2 sm:border-2.5 border-brand-espresso transform rotate-3 hover:rotate-1 transition-transform shadow-paper">
-                  <img
-                    src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=400&q=80"
-                    alt="Curious healthy cat"
-                    className="w-full h-24 sm:h-32 object-cover rounded-lg border border-brand-espresso"
-                  />
-                  <div className="pt-1 text-center">
-                    <span className="font-heading text-[10px] sm:text-xs font-black text-brand-espresso block">
-                      Feline Safe Check
-                    </span>
-                    <span className="pill-badge pill-badge-alert text-[8px] sm:text-[10px] py-0.2 mt-0.5">
-                      3 Recalls Tracked
-                    </span>
-                  </div>
-                </div>
-
-                <div className="absolute -top-3 -right-2 sm:-top-5 sm:-right-3 w-16 h-16 sm:w-20 sm:h-20 rounded-full border-2.5 border-brand-espresso bg-brand-olive flex flex-col items-center justify-center transform rotate-12 shadow-pill">
-                  <span className="font-mono text-[8px] sm:text-[9px] font-black uppercase text-brand-espresso">FDA</span>
-                  <span className="font-heading text-sm sm:text-lg font-black text-brand-espresso leading-none">100%</span>
-                  <span className="font-mono text-[7px] sm:text-[8px] font-black uppercase text-brand-espresso">FREE</span>
-                </div>
+                <Link
+                  href="/tools/dog-chocolate-toxicity-calculator"
+                  className="btn-pill btn-pill-terracotta w-full py-2.5 text-xs font-black justify-center flex items-center gap-2"
+                >
+                  <AlertTriangle className="w-4 h-4 text-white" />
+                  Launch Chocolate Toxicity Triage &rarr;
+                </Link>
               </div>
             </div>
           </div>
         </section>
       </ScrollReveal>
 
-      {/* AD CONTAINER: High-Impact Billboard */}
-      <AdSensePlaceholder slot="home-top-billboard-01" format="banner" />
+      {/* 2. AD CONTAINER (Core Web Vitals Reserved) */}
+      <AdSensePlaceholder
+        slot="home-hero-bottom"
+        format="horizontal"
+        minHeight="min-h-[120px]"
+        label="Veterinary Sponsor Notice"
+      />
 
-      {/* 2. WORKING REAL-TIME LOT SCANNER WIDGET */}
-      <ScrollReveal direction="up" delayMs={100}>
-        <div id="lot-checker">
-          <InteractiveLotScanner />
+      {/* 3. CORE SUITE: THE 15 CALCULATORS CATEGORIZED */}
+      <section className="space-y-10">
+        <div className="text-center space-y-2 max-w-2xl mx-auto">
+          <span className="pill-badge pill-badge-alert text-xs">
+            COMPLETE DIRECTORY
+          </span>
+          <h2 className="font-heading text-3xl sm:text-5xl font-black text-brand-espresso">
+            All 15 Specialized Tools
+          </h2>
+          <p className="text-brand-taupe text-sm sm:text-base">
+            Click any interactive calculator to access instant computation, clinical thresholds, and veterinary guidelines.
+          </p>
         </div>
-      </ScrollReveal>
 
-      {/* 3. RECENT FDA RECALL DOCKETS */}
-      <section className="space-y-6">
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b-2.5 border-brand-espresso pb-4">
-          <div>
-            <span className="pill-badge pill-badge-alert mb-2">
-              Active Hazard Notices
-            </span>
-            <h2 className="font-heading text-2xl sm:text-3xl md:text-4xl font-black text-brand-espresso">
-              Recent FDA Recall Dockets
-            </h2>
+        {/* DOG TOOLS (8) */}
+        <div className="space-y-4">
+          <div className="flex items-center gap-2 pb-2 border-b-2 border-brand-espresso">
+            <Dog className="w-6 h-6 text-brand-terracotta" />
+            <h3 className="font-heading text-2xl font-black text-brand-espresso">
+              Canine Health & Nutrition Tools (8)
+            </h3>
           </div>
-          <Link
-            href="/pet/dogs"
-            className="btn-pill btn-pill-cream px-4 py-2 text-xs font-black hover:bg-brand-olive shadow-paper-sm self-start sm:self-auto"
-          >
-            <span>View All 500+ Dockets</span>
-            <ArrowRight className="w-3.5 h-3.5" />
-          </Link>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+            {dogTools.map((tool) => (
+              <Link
+                key={tool.slug}
+                href={`/tools/${tool.slug}`}
+                className="bg-white border-2 border-brand-espresso rounded-2xl p-4 shadow-paper-sm hover:shadow-paper hover:-translate-y-1 transition-all group flex flex-col justify-between"
+              >
+                <div>
+                  <div className="flex items-center justify-between mb-2">
+                    <span className="text-[10px] font-mono font-black uppercase px-2 py-0.5 rounded-full bg-amber-100 text-amber-900 border border-brand-espresso/20">
+                      Canine
+                    </span>
+                    <span className="text-[10px] font-mono font-bold text-brand-taupe">
+                      {tool.badge}
+                    </span>
+                  </div>
+                  <h4 className="font-heading font-black text-base text-brand-espresso group-hover:text-brand-terracotta transition-colors mb-1">
+                    {tool.name}
+                  </h4>
+                  <p className="text-xs text-brand-taupe line-clamp-2 leading-relaxed">
+                    {tool.tagline}
+                  </p>
+                </div>
+                <div className="mt-3 pt-2 border-t border-brand-espresso/10 text-xs font-mono font-bold text-brand-terracotta flex items-center justify-between">
+                  <span>Launch Tool</span>
+                  <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                </div>
+              </Link>
+            ))}
+          </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {recentRecalls.map((recall, idx) => (
-            <ScrollReveal key={recall.id} direction="up" delayMs={idx * 100}>
-              <div className="paper-box p-4 sm:p-5 flex flex-col justify-between group hover:-translate-y-1.5 transition-all bg-[#FAF4EE] h-full">
-                <div className="space-y-3 sm:space-y-4">
-                  <div className="relative rounded-2xl overflow-hidden border-2 border-brand-espresso h-44 sm:h-48">
-                    <img
-                      src={recall.petImage}
-                      alt={recall.petBreedName}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                    />
-                    <span className="absolute top-2.5 left-2.5 pill-badge bg-brand-espresso text-brand-cream border-brand-cream text-[10px] flex items-center gap-1">
-                      {recall.species === "Dogs" ? (
-                        <>
-                          <Dog className="w-3 h-3 text-brand-olive" /> DOG
-                        </>
-                      ) : (
-                        <>
-                          <Cat className="w-3 h-3 text-brand-olive" /> CAT
-                        </>
-                      )}
+        {/* CAT TOOLS (5) */}
+        <div className="space-y-4 pt-4">
+          <div className="flex items-center gap-2 pb-2 border-b-2 border-brand-espresso">
+            <Cat className="w-6 h-6 text-brand-terracotta" />
+            <h3 className="font-heading text-2xl font-black text-brand-espresso">
+              Feline Health & Nutrition Tools (5)
+            </h3>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {catTools.map((tool) => (
+              <Link
+                key={tool.slug}
+                href={`/tools/${tool.slug}`}
+                className="bg-white border-2 border-brand-espresso rounded-2xl p-4 shadow-paper-sm hover:shadow-paper hover:-translate-y-1 transition-all group flex flex-col justify-between"
+              >
+                <div>
+                  <div className="flex items-center justify-between mb-2">
+                    <span className="text-[10px] font-mono font-black uppercase px-2 py-0.5 rounded-full bg-sky-100 text-sky-900 border border-brand-espresso/20">
+                      Feline
                     </span>
-                    <span className="absolute bottom-2.5 right-2.5 pill-badge pill-badge-alert text-[10px]">
-                      {recall.classification.split(" ")[0]}
+                    <span className="text-[10px] font-mono font-bold text-brand-taupe">
+                      {tool.badge}
                     </span>
                   </div>
-
-                  <div>
-                    <span className="font-mono text-xs text-brand-taupe font-bold block">
-                      {recall.announcementDate} • {recall.brand}
-                    </span>
-                    <h3 className="font-heading text-lg sm:text-xl font-black text-brand-espresso leading-snug mt-1 group-hover:text-brand-terracotta transition-colors">
-                      {recall.productName}
-                    </h3>
-                  </div>
-
-                  <div className="bg-brand-cream/60 p-3 border-2 border-brand-espresso/30 rounded-xl text-xs font-sans text-brand-espresso">
-                    <span className="font-heading font-black text-brand-terracotta uppercase flex items-center gap-1.5 mb-1">
-                      <AlertTriangle className="w-3.5 h-3.5 text-brand-terracotta" />
-                      Hazard Notice:
-                    </span>
-                    <p className="font-medium">{recall.hazardType}</p>
-                  </div>
-
-                  <div className="font-mono text-xs text-brand-taupe font-bold">
-                    <span className="text-brand-espresso font-black">Affected Lots: </span>
-                    {recall.lotCodes.join(", ")}
-                  </div>
+                  <h4 className="font-heading font-black text-base text-brand-espresso group-hover:text-brand-terracotta transition-colors mb-1">
+                    {tool.name}
+                  </h4>
+                  <p className="text-xs text-brand-taupe line-clamp-2 leading-relaxed">
+                    {tool.tagline}
+                  </p>
                 </div>
-
-                <div className="pt-4 mt-4 border-t-2 border-brand-espresso/20 flex items-center justify-between">
-                  <Link
-                    href={`/recall/${recall.id}`}
-                    className="btn-pill btn-pill-espresso px-3.5 py-1.5 sm:px-4 sm:py-2 text-[10px] sm:text-[11px] font-black group"
-                  >
-                    <span>Inspect Docket</span>
-                    <span className="btn-circle-icon bg-brand-olive text-brand-espresso w-5 h-5">
-                      <ArrowRight className="w-3 h-3" />
-                    </span>
-                  </Link>
-                  <span className="font-mono text-[10px] sm:text-[11px] font-bold text-brand-taupe">#{recall.docketNumber}</span>
+                <div className="mt-3 pt-2 border-t border-brand-espresso/10 text-xs font-mono font-bold text-brand-terracotta flex items-center justify-between">
+                  <span>Launch Tool</span>
+                  <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
                 </div>
-              </div>
-            </ScrollReveal>
-          ))}
+              </Link>
+            ))}
+          </div>
+        </div>
+
+        {/* UNIVERSAL PET TOOLS (2) */}
+        <div className="space-y-4 pt-4">
+          <div className="flex items-center gap-2 pb-2 border-b-2 border-brand-espresso">
+            <PawPrint className="w-6 h-6 text-brand-terracotta" />
+            <h3 className="font-heading text-2xl font-black text-brand-espresso">
+              Universal Pet Tools (2)
+            </h3>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {petTools.map((tool) => (
+              <Link
+                key={tool.slug}
+                href={`/tools/${tool.slug}`}
+                className="bg-white border-2 border-brand-espresso rounded-2xl p-5 shadow-paper-sm hover:shadow-paper hover:-translate-y-1 transition-all group flex flex-col justify-between"
+              >
+                <div>
+                  <div className="flex items-center justify-between mb-2">
+                    <span className="text-[10px] font-mono font-black uppercase px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-900 border border-brand-espresso/20">
+                      All Pets
+                    </span>
+                    <span className="text-[10px] font-mono font-bold text-brand-taupe">
+                      {tool.badge}
+                    </span>
+                  </div>
+                  <h4 className="font-heading font-black text-lg text-brand-espresso group-hover:text-brand-terracotta transition-colors mb-1">
+                    {tool.name}
+                  </h4>
+                  <p className="text-xs text-brand-taupe leading-relaxed">
+                    {tool.description}
+                  </p>
+                </div>
+                <div className="mt-4 pt-3 border-t border-brand-espresso/10 text-xs font-mono font-bold text-brand-terracotta flex items-center justify-between">
+                  <span>Launch Generator</span>
+                  <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                </div>
+              </Link>
+            ))}
+          </div>
         </div>
       </section>
 
-      {/* 4. INTERACTIVE US STATE RECALL DISTRIBUTION MAP */}
-      <ScrollReveal direction="up" delayMs={100}>
-        <InteractiveUSMap />
-      </ScrollReveal>
-
-      {/* 5. BRAND SAFETY LEADERBOARD */}
-      <ScrollReveal direction="up" delayMs={150}>
-        <section className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-          <div className="lg:col-span-8 paper-box p-5 sm:p-8 bg-[#FAF4EE]">
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b-2.5 border-brand-espresso pb-4 mb-4">
-              <div>
-                <span className="pill-badge pill-badge-verified mb-2">
-                  Monitoring Index
-                </span>
-                <h2 className="font-heading text-2xl sm:text-3xl font-black text-brand-espresso">
-                  Brand Safety Watchlist
-                </h2>
-              </div>
-              <Link
-                href="/brand/purina"
-                className="btn-pill btn-pill-cream px-3.5 py-1.5 text-xs font-black hover:bg-brand-olive shadow-paper-sm self-start sm:self-auto"
-              >
-                View All {brandList.length} Monitored Brands →
-              </Link>
-            </div>
-
-            {/* Desktop Table View */}
-            <div className="hidden sm:block overflow-x-auto">
-              <table className="w-full text-left text-xs font-sans">
-                <thead>
-                  <tr className="border-b-2 border-brand-espresso/30 text-brand-taupe font-heading font-black uppercase">
-                    <th className="py-3">Brand Name</th>
-                    <th className="py-3">Grade</th>
-                    <th className="py-3">10-Yr Recalls</th>
-                    <th className="py-3">Inspection Status</th>
-                    <th className="py-3 text-right">Dossier</th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-brand-espresso/15">
-                  {brandList.map((brand, i) => (
-                    <tr key={i} className="hover:bg-brand-cream/50 transition-colors">
-                      <td className="py-3.5 font-heading font-black text-base text-brand-espresso">
-                        {brand.name}
-                      </td>
-                      <td className="py-3.5">
-                        <span className={`pill-badge text-xs px-2.5 py-0.5 ${brand.safetyScore < 70 ? "pill-badge-alert" : "pill-badge-verified"}`}>
-                          GRADE {brand.safetyGrade}
-                        </span>
-                      </td>
-                      <td className="py-3.5 font-mono font-bold text-brand-espresso">
-                        {brand.totalRecalls10Yr} Events
-                      </td>
-                      <td className={`py-3.5 font-heading font-bold ${brand.safetyScore < 70 ? "text-brand-terracotta" : "text-brand-olive"}`}>
-                        {brand.inspectionComplianceStatus}
-                      </td>
-                      <td className="py-3.5 text-right">
-                        <Link
-                          href={`/brand/${brand.slug}`}
-                          className="btn-pill btn-pill-cream px-3 py-1 text-[11px] font-black hover:bg-brand-olive shadow-paper-sm"
-                        >
-                          Inspect Dossier →
-                        </Link>
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-
-            {/* Mobile Stacked Touch Cards */}
-            <div className="sm:hidden space-y-3">
-              {brandList.map((brand, i) => (
-                <div
-                  key={i}
-                  className="bg-brand-cream/50 p-3.5 rounded-2xl border-2 border-brand-espresso/20 flex items-center justify-between gap-3"
-                >
-                  <div>
-                    <span className="font-heading font-black text-base text-brand-espresso block">
-                      {brand.name}
-                    </span>
-                    <div className="flex items-center gap-2 mt-1">
-                      <span className={`pill-badge text-[10px] px-2 py-0.2 ${brand.safetyScore < 70 ? "pill-badge-alert" : "pill-badge-verified"}`}>
-                        GRADE {brand.safetyGrade}
-                      </span>
-                      <span className="font-mono text-[10px] text-brand-taupe font-bold">
-                        {brand.totalRecalls10Yr} Recalls
-                      </span>
-                    </div>
-                  </div>
-                  <Link
-                    href={`/brand/${brand.slug}`}
-                    className="btn-pill btn-pill-cream px-3 py-1 text-[11px] font-black hover:bg-brand-olive shadow-paper-sm flex-shrink-0"
-                  >
-                    Inspect →
-                  </Link>
-                </div>
-              ))}
-            </div>
+      {/* 4. LIVE INLINE DEMO (Dog Age Calculator on Home Page) */}
+      <section className="space-y-4">
+        <div className="flex items-center justify-between">
+          <div>
+            <h3 className="font-heading text-2xl sm:text-3xl font-black text-brand-espresso">
+              Try It Live: Dog Age Calculator
+            </h3>
+            <p className="text-xs sm:text-sm text-brand-taupe font-mono">
+              Test real-time calculation with breed size scaling right here:
+            </p>
           </div>
+          <Link
+            href="/tools/dog-age-calculator"
+            className="btn-pill btn-pill-cream px-4 py-1.5 text-xs font-bold hidden sm:inline-flex"
+          >
+            Full Page View &rarr;
+          </Link>
+        </div>
+        <DogAgeCalculator />
+      </section>
 
-          <div className="lg:col-span-4">
-            <div className="paper-box p-4 bg-brand-cream/80">
-              <span className="font-heading font-black text-[11px] uppercase tracking-wider text-brand-taupe block mb-2">
-                Veterinary Partner Spotlight
-              </span>
-              <AdSensePlaceholder slot="home-sidebar-rectangle-01" format="rectangle" />
-            </div>
+      {/* 5. VETERINARY CLINICAL INTEGRITY NOTICE */}
+      <section className="paper-box p-6 sm:p-8 bg-brand-olive/20 border-2.5 border-brand-espresso rounded-3xl space-y-3 shadow-paper">
+        <div className="flex items-center gap-3">
+          <div className="w-10 h-10 rounded-full bg-brand-olive border-2 border-brand-espresso flex items-center justify-center shadow-pill">
+            <ShieldCheck className="w-5 h-5 text-brand-espresso" />
           </div>
-        </section>
-      </ScrollReveal>
+          <div>
+            <h3 className="font-heading text-xl sm:text-2xl font-black text-brand-espresso">
+              100% Scientifically Verified Calculations
+            </h3>
+            <p className="text-xs font-mono font-bold text-brand-taupe uppercase">
+              Zero Internet Myths • Certified Veterinary Guidelines
+            </p>
+          </div>
+        </div>
+        <p className="text-sm text-brand-espresso leading-relaxed max-w-4xl">
+          PawTruth calculations are built directly upon published formulas from the <strong>American Veterinary Medical Association (AVMA)</strong>, the <strong>World Small Animal Veterinary Association (WSAVA)</strong>, the <strong>American Animal Hospital Association (AAHA)</strong>, and the <strong>ASPCA Animal Poison Control Center</strong>. All processing is executed client-side in memory for complete privacy and instant speed.
+        </p>
+      </section>
 
-      {/* 6. EXPANDABLE FAQ ACCORDION WITH GOOGLE FAQPAGE SCHEMA */}
-      <ScrollReveal direction="up" delayMs={100}>
-        <FaqAccordion />
-      </ScrollReveal>
+      {/* 6. FAQ ACCORDION */}
+      <section className="bg-white border-2.5 border-brand-espresso rounded-3xl p-6 sm:p-10 shadow-paper space-y-6">
+        <div className="text-center space-y-2 max-w-xl mx-auto">
+          <span className="pill-badge pill-badge-alert text-xs">VET VERIFIED</span>
+          <h2 className="font-heading text-3xl font-black text-brand-espresso">
+            Frequently Asked Questions
+          </h2>
+          <p className="text-xs sm:text-sm text-brand-taupe">
+            Everything you need to know about our formulas, safety thresholds, and computational standards.
+          </p>
+        </div>
+        <FaqAccordion items={homeFaqs} />
+      </section>
     </div>
   );
 }

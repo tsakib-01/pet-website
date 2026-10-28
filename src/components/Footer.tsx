@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import { PawPrint, AlertCircle } from "lucide-react";
+import { PawPrint, ShieldCheck, Heart, Info } from "lucide-react";
 import AdSensePlaceholder from "./AdSensePlaceholder";
 
 export default function Footer() {
@@ -23,10 +23,9 @@ export default function Footer() {
             </span>
           </div>
           <p className="text-xs text-brand-taupe leading-relaxed max-w-md font-sans font-medium">
-            Independent, real-time veterinary food safety directory indexing official FDA animal food recall dockets, 
-            contaminant laboratory tests, and brand safety compliance.
+            Independent, veterinary-calibrated calculation suite providing canine and feline life-stage age models, emergency chocolate toxicity triage, WSAVA dual-diet portioning, and AKC ergonomic standards.
           </p>
-          
+
           {/* Visual Palette Swatches Badge */}
           <div className="pt-2">
             <span className="font-heading text-xs font-black text-brand-taupe uppercase tracking-wider block mb-1.5">
@@ -42,63 +41,68 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Demo Templates Directory */}
+        {/* Popular Calculators Directory */}
         <div className="space-y-3">
           <h4 className="font-heading text-xs font-black uppercase tracking-wider text-brand-espresso border-b-2 border-brand-espresso pb-1">
-            Browse Directory
+            Core Calculators
           </h4>
           <ul className="space-y-2 text-xs font-heading font-bold">
             <li>
-              <Link href="/" className="hover:text-brand-terracotta transition-colors flex items-center gap-1">
-                → Home Explorer
+              <Link href="/tools" className="hover:text-brand-terracotta transition-colors flex items-center gap-1">
+                → All 15 Calculators Directory
               </Link>
             </li>
             <li>
-              <Link href="/brand/purina" className="hover:text-brand-terracotta transition-colors flex items-center gap-1">
-                → Brand Dossiers (8 Brands)
+              <Link href="/tools/dog-age-calculator" className="hover:text-brand-terracotta transition-colors flex items-center gap-1">
+                → Dog Age Calculator (AVMA)
               </Link>
             </li>
             <li>
-              <Link href="/recall/fda-2024-salmonella-kibble" className="hover:text-brand-terracotta transition-colors flex items-center gap-1">
-                → Recall Dockets (8 Cases)
+              <Link href="/tools/dog-chocolate-toxicity-calculator" className="hover:text-brand-terracotta transition-colors flex items-center gap-1">
+                → Dog Chocolate Toxicity Triage
               </Link>
             </li>
             <li>
-              <Link href="/pet/dogs" className="hover:text-brand-terracotta transition-colors flex items-center gap-1">
-                → Species Safety Hubs
+              <Link href="/tools/dog-crate-size-calculator" className="hover:text-brand-terracotta transition-colors flex items-center gap-1">
+                → Dog Crate Size Calculator
               </Link>
             </li>
             <li>
-              <Link href="/safety/salmonella" className="hover:text-brand-terracotta transition-colors flex items-center gap-1">
-                → Pathogen Hazard Guides
+              <Link href="/tools/cat-age-calculator" className="hover:text-brand-terracotta transition-colors flex items-center gap-1">
+                → Cat Age Calculator (AAFP)
               </Link>
             </li>
             <li>
-              <Link href="/state/california" className="hover:text-brand-terracotta transition-colors flex items-center gap-1">
-                → State Enforcement Registries
+              <Link href="/tools/puppy-vaccination-schedule" className="hover:text-brand-terracotta transition-colors flex items-center gap-1">
+                → Puppy Vaccination Schedule
+              </Link>
+            </li>
+            <li>
+              <Link href="/tools/cat-food-calculator-wet-and-dry" className="hover:text-brand-terracotta transition-colors flex items-center gap-1">
+                → Wet & Dry Food Splitter
               </Link>
             </li>
           </ul>
         </div>
 
-        {/* Regulatory & FDA Compliance */}
+        {/* Regulatory & Veterinary Disclaimer */}
         <div className="space-y-3">
           <h4 className="font-heading text-xs font-black uppercase tracking-wider text-brand-espresso border-b-2 border-brand-espresso pb-1">
-            Regulatory Notice
+            Clinical Standards
           </h4>
           <div className="bg-[#FAF4EE] p-4 border-2 border-brand-espresso rounded-2xl text-xs text-brand-taupe leading-relaxed font-sans font-medium">
             <p className="flex items-center gap-1.5 mb-1.5 font-heading font-black text-brand-espresso">
-              <AlertCircle className="w-4 h-4 text-brand-terracotta flex-shrink-0" />
-              Official Government Data
+              <ShieldCheck className="w-4 h-4 text-emerald-600 flex-shrink-0" />
+              Veterinary Formulations
             </p>
-            Recall notices, lot distributions, and hazard ratings are referenced directly from public FDA enforcement dockets (OpenFDA).
+            All calculations are built strictly upon protocols from AVMA, WSAVA, AAHA, and Merck Veterinary Manual. Educational tool suite only; not a substitute for clinical veterinary diagnosis.
           </div>
         </div>
       </div>
 
       {/* Bottom Bar */}
       <div className="border-t-2 border-brand-espresso/30 py-4 px-4 text-center font-mono text-[11px] text-brand-taupe font-bold">
-        <p>© 2026 PawTruth Inspector. Designed with Terry Ho punchy pill typography & buttons. Zero-database architecture.</p>
+        © 2026 PawTruth — Pet Health & Safety Calculators. All rights reserved. Zero tracking cookies.
       </div>
     </footer>
   );

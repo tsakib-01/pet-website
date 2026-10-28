@@ -3,42 +3,51 @@
 import React, { useState } from "react";
 import { ChevronDown, HelpCircle } from "lucide-react";
 
-interface FaqItem {
+export interface FaqItem {
   q: string;
   a: string;
 }
 
-const FAQS: FaqItem[] = [
+const DEFAULT_FAQS: FaqItem[] = [
   {
-    q: "How do I check if my pet's specific bag of food is recalled?",
-    a: "Look on the back or bottom crimp of your pet food bag near the expiration date. You will see an ink-stamped 'Lot Number' or 'Batch Code' (e.g., #8841A or #LOT-092). Manufacturers recall specific production batches, not whole brands. Enter this code into our free scanner above to instantly compare against official FDA enforcement dockets.",
+    q: "How are the pet calculators calibrated?",
+    a: "Every calculator is built using peer-reviewed veterinary algorithms from official bodies including the AVMA (American Veterinary Medical Association), AAHA (American Animal Hospital Association), WSAVA (World Small Animal Veterinary Association), and the ASPCA Animal Poison Control Center.",
   },
   {
-    q: "What is the difference between FDA Class I, Class II, and Class III pet food recalls?",
-    a: "Class I is the most urgent hazard category, where exposure will cause serious adverse health consequences or death (e.g. fatal Aflatoxin or Salmonella). Class II involves temporary or medically reversible health issues (e.g. elevated Vitamin D). Class III involves technical violations not likely to cause adverse health consequences (e.g. minor label formatting errors).",
+    q: "Why is the 7-year age rule for dogs obsolete?",
+    a: "Modern veterinary research proves dogs age rapidly in their first two years (reaching roughly 24 human years by age 2) and their aging rate thereafter diverges dramatically by breed size: small dogs age around 4 human years/year, whereas giant breeds age at 7.5 to 8 human years per calendar year.",
   },
   {
-    q: "Can I get a full refund if my pet food is subject to a recall?",
-    a: "Yes. Under FDA recall guidelines and manufacturer agreements, retailers must provide a 100% full refund or replacement. Most major pet stores (Petco, PetSmart, Chewy, local independent pet shops) do not require a paper receipt—simply bring the bag or a clear photo of the stamped lot number.",
+    q: "What should I do if my dog ate chocolate?",
+    a: "Use our Dog Chocolate Toxicity Calculator immediately to determine the exact mg/kg theobromine dose based on your dog's weight, chocolate type, and ounces consumed. If the dose exceeds 40 mg/kg, seek emergency veterinary attention immediately.",
   },
   {
-    q: "Can humans get sick from handling recalled pet food?",
-    a: "Yes. Bacterial pathogens like Salmonella and Listeria are zoonotic, meaning they easily transmit from pet kibble or freeze-dried treats to humans through touch. Always wash your hands thoroughly with warm water and soap after feeding, and sanitize pet bowls regularly.",
+    q: "Are my pet's measurements and calculations saved on a server?",
+    a: "No. All calculation models execute 100% in volatile memory in your browser. No personal pet records or inputs are ever transmitted or saved to external databases.",
   },
 ];
 
-export default function FaqAccordion() {
+interface FaqAccordionProps {
+  items?: FaqItem[];
+  title?: string;
+  subtitle?: string;
+}
+
+export default function FaqAccordion({
+  items = DEFAULT_FAQS,
+  title = "Pet Health & Safety Calculator Guide",
+  subtitle = "Essential veterinary computational guidance verified by clinical veterinary standards.",
+}: FaqAccordionProps) {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   const toggle = (idx: number) => {
     setOpenIndex(openIndex === idx ? null : idx);
   };
 
-  // Structured Data Schema for Google Rich Snippets
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "mainEntity": FAQS.map((faq) => ({
+    "mainEntity": items.map((faq) => ({
       "@type": "Question",
       "name": faq.q,
       "acceptedAnswer": {
@@ -50,7 +59,6 @@ export default function FaqAccordion() {
 
   return (
     <div className="paper-box bg-[#FAF4EE] p-5 sm:p-8 rounded-3xl border-2.5 border-brand-espresso space-y-6">
-      {/* JSON-LD Script Injection for SEO */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
@@ -61,15 +69,15 @@ export default function FaqAccordion() {
           <HelpCircle className="w-3.5 h-3.5" /> Frequently Asked Questions
         </span>
         <h3 className="font-heading text-2xl sm:text-3xl font-black text-brand-espresso">
-          Pet Food Safety & Recall Guide
+          {title}
         </h3>
         <p className="text-xs sm:text-sm text-brand-taupe font-medium mt-1">
-          Essential regulatory guidance verified by veterinary compliance records.
+          {subtitle}
         </p>
       </div>
 
       <div className="space-y-3 font-sans">
-        {FAQS.map((faq, idx) => {
+        {items.map((faq, idx) => {
           const isOpen = openIndex === idx;
           return (
             <div
