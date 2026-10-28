@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Metadata } from "next";
 import { getAllRecallBrands, getRecallBrandBySlug } from "@/data/recalls";
 import BrandLotChecker from "@/components/recalls/BrandLotChecker";
+import BrandLogo from "@/components/recalls/BrandLogo";
 import AdSensePlaceholder from "@/components/AdSensePlaceholder";
 import FaqAccordion from "@/components/FaqAccordion";
 import {
@@ -119,18 +120,21 @@ export default async function BrandRecallPage({ params }: Props) {
 
         {/* Brand Header Dossier Card */}
         <div className="bg-white border-2.5 border-brand-espresso rounded-3xl p-6 sm:p-8 shadow-paper space-y-6">
-          <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-4">
-            <div className="space-y-2">
-              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-black uppercase border border-brand-espresso/20 bg-brand-cream/80 text-brand-espresso">
-                <Building2 className="w-3.5 h-3.5 text-brand-leaf" />
-                {brand.parentCompany}
+          <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-6">
+            <div className="flex items-start gap-4 sm:gap-5">
+              <BrandLogo domain={brand.websiteDomain} name={brand.name} size="lg" className="mt-1 shadow-paper" />
+              <div className="space-y-2">
+                <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-black uppercase border border-brand-espresso/20 bg-brand-cream/80 text-brand-espresso">
+                  <Building2 className="w-3.5 h-3.5 text-brand-leaf" />
+                  {brand.parentCompany}
+                </div>
+                <h1 className="font-heading text-3xl sm:text-5xl font-black text-brand-espresso tracking-tight">
+                  {brand.name}
+                </h1>
+                <p className="text-xs sm:text-sm font-sans text-brand-taupe">
+                  Headquarters: <strong>{brand.headquarters}</strong> &bull; Founded: <strong>{brand.foundedYear}</strong>
+                </p>
               </div>
-              <h1 className="font-heading text-3xl sm:text-5xl font-black text-brand-espresso tracking-tight">
-                {brand.name}
-              </h1>
-              <p className="text-xs sm:text-sm font-sans text-brand-taupe">
-                Headquarters: <strong>{brand.headquarters}</strong> &bull; Founded: <strong>{brand.foundedYear}</strong>
-              </p>
             </div>
 
             {/* Safety Rating Pill */}

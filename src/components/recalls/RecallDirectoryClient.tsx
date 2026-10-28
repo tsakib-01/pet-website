@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import { BrandSafetyProfile } from "@/data/recalls";
+import BrandLogo from "./BrandLogo";
 import {
   Search,
   ShieldCheck,
@@ -133,14 +134,17 @@ export default function RecallDirectoryClient({ brands }: Props) {
                 </span>
               </div>
 
-              {/* Brand Title */}
-              <div>
-                <h3 className="font-heading text-xl sm:text-2xl font-black text-brand-espresso group-hover:text-brand-terracotta transition-colors">
-                  {brand.name}
-                </h3>
-                <div className="text-xs font-mono text-brand-taupe flex items-center gap-1 mt-0.5">
-                  <Building2 className="w-3.5 h-3.5" />
-                  <span>{brand.parentCompany}</span>
+              {/* Brand Title Lockup with Official Logo */}
+              <div className="flex items-center gap-3">
+                <BrandLogo domain={brand.websiteDomain} name={brand.name} size="md" />
+                <div className="min-w-0 flex-1">
+                  <h3 className="font-heading text-lg sm:text-xl font-black text-brand-espresso group-hover:text-brand-terracotta transition-colors truncate">
+                    {brand.name}
+                  </h3>
+                  <div className="text-xs font-mono text-brand-taupe flex items-center gap-1 mt-0.5 truncate">
+                    <Building2 className="w-3.5 h-3.5 flex-shrink-0" />
+                    <span className="truncate">{brand.parentCompany}</span>
+                  </div>
                 </div>
               </div>
 

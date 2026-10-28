@@ -26,6 +26,7 @@ export interface BrandSafetyProfile {
   name: string;
   parentCompany: string;
   headquarters: string;
+  websiteDomain: string;
   foundedYear: number;
   species: "dog" | "cat" | "both";
   safetyTier: "Clean / Verified Safe" | "Moderate Caution" | "High Watch";
@@ -47,6 +48,7 @@ export const RECALL_BRANDS_DATABASE: BrandSafetyProfile[] = [
     name: "Purina (Nestlé Purina)",
     parentCompany: "Nestlé S.A.",
     headquarters: "St. Louis, Missouri, USA",
+    websiteDomain: "purina.com",
     foundedYear: 1894,
     species: "both",
     safetyTier: "Moderate Caution",
@@ -135,6 +137,7 @@ export const RECALL_BRANDS_DATABASE: BrandSafetyProfile[] = [
     name: "Blue Buffalo",
     parentCompany: "General Mills, Inc.",
     headquarters: "Wilton, Connecticut, USA",
+    websiteDomain: "bluebuffalo.com",
     foundedYear: 2002,
     species: "both",
     safetyTier: "Moderate Caution",
@@ -218,6 +221,7 @@ export const RECALL_BRANDS_DATABASE: BrandSafetyProfile[] = [
     name: "Victor Super Premium Pet Food",
     parentCompany: "Mid America Pet Food (MAPF)",
     headquarters: "Mount Pleasant, Texas, USA",
+    websiteDomain: "victorpetfood.com",
     foundedYear: 1966,
     species: "both",
     safetyTier: "High Watch",
@@ -292,6 +296,7 @@ export const RECALL_BRANDS_DATABASE: BrandSafetyProfile[] = [
     name: "Kirkland Signature (Costco)",
     parentCompany: "Costco Wholesale Corporation",
     headquarters: "Issaquah, Washington, USA",
+    websiteDomain: "costco.com",
     foundedYear: 1995,
     species: "both",
     safetyTier: "Clean / Verified Safe",
@@ -343,6 +348,7 @@ export const RECALL_BRANDS_DATABASE: BrandSafetyProfile[] = [
     name: "Hill's Pet Nutrition (Science Diet & Prescription Diet)",
     parentCompany: "Colgate-Palmolive Company",
     headquarters: "Topeka, Kansas, USA",
+    websiteDomain: "hillspet.com",
     foundedYear: 1907,
     species: "both",
     safetyTier: "Moderate Caution",
@@ -402,6 +408,7 @@ export const RECALL_BRANDS_DATABASE: BrandSafetyProfile[] = [
     name: "Fromm Family Foods",
     parentCompany: "Fromm Family Pet Food (Independent / Family-Owned)",
     headquarters: "Mequon, Wisconsin, USA",
+    websiteDomain: "frommfamily.com",
     foundedYear: 1904,
     species: "both",
     safetyTier: "Clean / Verified Safe",
@@ -453,6 +460,7 @@ export const RECALL_BRANDS_DATABASE: BrandSafetyProfile[] = [
     name: "Open Farm Pet Food",
     parentCompany: "Open Farm Inc. (Independent)",
     headquarters: "Toronto, Ontario, Canada",
+    websiteDomain: "openfarmpet.com",
     foundedYear: 2014,
     species: "both",
     safetyTier: "Clean / Verified Safe",
@@ -482,6 +490,7 @@ export const RECALL_BRANDS_DATABASE: BrandSafetyProfile[] = [
     name: "Taste of the Wild",
     parentCompany: "Diamond Pet Foods (Schell & Kampeter, Inc.)",
     headquarters: "Meta, Missouri, USA",
+    websiteDomain: "tasteofthewildpetfood.com",
     foundedYear: 2007,
     species: "both",
     safetyTier: "Clean / Verified Safe",
@@ -533,6 +542,7 @@ export const RECALL_BRANDS_DATABASE: BrandSafetyProfile[] = [
     name: "Sportmix (Midwestern Pet Foods)",
     parentCompany: "Midwestern Pet Foods, Inc.",
     headquarters: "Evansville, Indiana, USA",
+    websiteDomain: "sportmix.com",
     foundedYear: 1926,
     species: "both",
     safetyTier: "High Watch",
@@ -592,6 +602,7 @@ export const RECALL_BRANDS_DATABASE: BrandSafetyProfile[] = [
     name: "The Farmer's Dog",
     parentCompany: "The Farmer's Dog, Inc.",
     headquarters: "New York, New York, USA",
+    websiteDomain: "thefarmersdog.com",
     foundedYear: 2014,
     species: "dog",
     safetyTier: "Clean / Verified Safe",
