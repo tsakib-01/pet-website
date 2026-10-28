@@ -3,10 +3,11 @@
 import React, { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
-import { PawPrint, Calculator, ArrowUp } from "lucide-react";
+import { PawPrint, ArrowUp } from "lucide-react";
 
 export default function FloatingScrollCompanion() {
   const [showScrollTop, setShowScrollTop] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const pathname = usePathname();
 
   useEffect(() => {
@@ -22,12 +23,36 @@ export default function FloatingScrollCompanion() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Track body class to hide completely when mobile navigation drawer is open
+  useEffect(() => {
+    const checkMenu = () => {
+      if (typeof document !== "undefined") {
+        setIsMenuOpen(document.body.classList.contains("mobile-menu-open"));
+      }
+    };
+
+    checkMenu();
+    const observer = new MutationObserver(checkMenu);
+    if (typeof document !== "undefined" && document.body) {
+      observer.observe(document.body, { attributes: true, attributeFilter: ["class"] });
+    }
+    return () => observer.disconnect();
+  }, []);
+
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
+  // Do not render anything when mobile menu is open
+  if (isMenuOpen) {
+    return null;
+  }
+
   return (
-    <div className="fixed bottom-5 right-4 sm:bottom-6 sm:right-6 z-40 flex items-center gap-2">
+    <div
+      id="floating-scroll-companion"
+      className="fixed bottom-5 right-4 sm:bottom-6 sm:right-6 z-30 flex items-center gap-2"
+    >
       {/* Quick Launch Tools Pill (Visible when not already on /tools) */}
       {pathname !== "/tools" && (
         <Link

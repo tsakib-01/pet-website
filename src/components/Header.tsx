@@ -27,15 +27,18 @@ export default function Header() {
     setMobileMenuOpen(false);
   }, [pathname]);
 
-  // Lock body scroll while mobile menu is open
+  // Lock body scroll while mobile menu is open and mark body class
   useEffect(() => {
     if (mobileMenuOpen) {
       document.body.style.overflow = "hidden";
+      document.body.classList.add("mobile-menu-open");
     } else {
       document.body.style.overflow = "";
+      document.body.classList.remove("mobile-menu-open");
     }
     return () => {
       document.body.style.overflow = "";
+      document.body.classList.remove("mobile-menu-open");
     };
   }, [mobileMenuOpen]);
 
@@ -104,7 +107,7 @@ export default function Header() {
           STICKY TOP HEADER
           Clean, solid background to prevent blur stacking traps
           ======================================================== */}
-      <header className="sticky top-0 z-50 bg-[#FAF4EE] border-b-2.5 border-brand-espresso shadow-sm">
+      <header className="sticky top-0 z-[60] bg-[#FAF4EE] border-b-2.5 border-brand-espresso shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 h-14 sm:h-16 flex items-center justify-between gap-3">
           {/* Brand Logo */}
           <Link
@@ -193,7 +196,7 @@ export default function Header() {
       {mobileMenuOpen && (
         <div
           id="mobile-navigation-dropdown"
-          className="lg:hidden fixed inset-x-0 top-14 sm:top-16 bottom-0 z-40 bg-[#FAF4EE] overflow-y-auto border-t-2.5 border-brand-espresso p-4 sm:p-6 pb-28 shadow-2xl animate-in fade-in slide-in-from-top-2 duration-150"
+          className="lg:hidden fixed inset-x-0 top-14 sm:top-16 bottom-0 z-[55] bg-[#FAF4EE] overflow-y-auto border-t-2.5 border-brand-espresso p-4 sm:p-6 pb-28 shadow-2xl animate-in fade-in slide-in-from-top-2 duration-150"
         >
           <div className="max-w-lg mx-auto space-y-5">
             {/* 1. Core Primary Hubs (Tactile Cards) */}

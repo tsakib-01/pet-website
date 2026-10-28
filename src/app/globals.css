@@ -33,6 +33,13 @@ body {
   scrollbar-width: none;
 }
 
+/* Hide floating scroll companion whenever mobile menu is open */
+body.mobile-menu-open #floating-scroll-companion {
+  display: none !important;
+  pointer-events: none !important;
+  visibility: hidden !important;
+}
+
 /* Terry Ho Punchy Headings */
 h1, h2, h3, .font-heading {
   font-family: 'Bricolage Grotesque', 'Plus Jakarta Sans', sans-serif;
