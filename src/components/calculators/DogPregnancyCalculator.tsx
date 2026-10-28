@@ -42,11 +42,11 @@ export default function DogPregnancyCalculator() {
     <div className="bg-[#FAF4EE] border-2.5 border-brand-espresso rounded-3xl p-6 sm:p-8 shadow-paper">
       {/* Header */}
       <div className="flex flex-wrap items-center justify-between gap-3 mb-6 pb-4 border-b-2 border-brand-espresso/20">
-        <div className="flex items-center gap-3">
-          <div className="w-10 h-10 rounded-full bg-brand-olive border-2 border-brand-espresso flex items-center justify-center shadow-pill">
-            <Dog className="w-5 h-5 text-brand-espresso" />
+        <div className="flex items-center gap-3 min-w-0">
+          <div className="w-10 h-10 rounded-full bg-brand-olive border-2 border-brand-espresso flex items-center justify-center shadow-pill flex-shrink-0 aspect-square">
+            <Dog className="w-5 h-5 text-brand-espresso flex-shrink-0" />
           </div>
-          <div>
+          <div className="min-w-0">
             <h3 className="font-heading text-xl sm:text-2xl font-black text-brand-espresso">
               Dog Pregnancy (Canine Gestation) Calculator
             </h3>

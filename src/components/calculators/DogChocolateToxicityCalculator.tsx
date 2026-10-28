@@ -73,11 +73,11 @@ export default function DogChocolateToxicityCalculator() {
     <div className="bg-[#FAF4EE] border-2.5 border-brand-espresso rounded-3xl p-6 sm:p-8 shadow-paper">
       {/* Header */}
       <div className="flex flex-wrap items-center justify-between gap-3 mb-6 pb-4 border-b-2 border-brand-espresso/20">
-        <div className="flex items-center gap-3">
-          <div className="w-10 h-10 rounded-full bg-red-500/15 border-2 border-red-600 flex items-center justify-center shadow-pill">
-            <AlertTriangle className="w-5 h-5 text-red-600" />
+        <div className="flex items-center gap-3 min-w-0">
+          <div className="w-10 h-10 rounded-full bg-red-500/15 border-2 border-red-600 flex items-center justify-center shadow-pill flex-shrink-0 aspect-square">
+            <AlertTriangle className="w-5 h-5 text-red-600 flex-shrink-0" />
           </div>
-          <div>
+          <div className="min-w-0">
             <h3 className="font-heading text-xl sm:text-2xl font-black text-brand-espresso">
               Dog Chocolate Toxicity Calculator
             </h3>

@@ -142,6 +142,23 @@ h1, h2, h3, .font-heading {
     box-shadow: 2px 2px 0px #583D32;
   }
 
+  /* Universal circular icon protection (guarantees perfect 1:1 circle, zero mobile flex squeeze) */
+  .rounded-full.w-7,
+  .rounded-full.w-8,
+  .rounded-full.w-9,
+  .rounded-full.w-10,
+  .rounded-full.w-11,
+  .rounded-full.w-12 {
+    aspect-ratio: 1 / 1;
+    flex-shrink: 0;
+  }
+
+  svg.lucide-dog,
+  svg.lucide-cat,
+  svg.lucide-paw-print {
+    flex-shrink: 0;
+  }
+
   .pill-badge-alert {
     background-color: #D57746;
     color: #FAF4EE;

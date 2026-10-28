@@ -198,9 +198,9 @@ export default function HomePage() {
         {/* DOG TOOLS */}
         <div className="space-y-4">
           <div className="flex items-center justify-between pb-2 border-b-2 border-brand-espresso">
-            <div className="flex items-center gap-2.5">
-              <div className="w-8 h-8 rounded-full bg-brand-olive border-2 border-brand-espresso flex items-center justify-center shadow-pill">
-                <Dog className="w-4 h-4 text-brand-espresso" />
+            <div className="flex items-center gap-2.5 min-w-0">
+              <div className="w-8 h-8 rounded-full bg-brand-olive border-2 border-brand-espresso flex items-center justify-center shadow-pill flex-shrink-0 aspect-square">
+                <Dog className="w-4 h-4 text-brand-espresso flex-shrink-0" />
               </div>
               <h3 className="font-heading text-2xl font-black text-brand-espresso">
                 Canine Health & Nutrition Tools
@@ -242,9 +242,9 @@ export default function HomePage() {
         {/* CAT TOOLS */}
         <div className="space-y-4 pt-4">
           <div className="flex items-center justify-between pb-2 border-b-2 border-brand-espresso">
-            <div className="flex items-center gap-2.5">
-              <div className="w-8 h-8 rounded-full bg-brand-olive border-2 border-brand-espresso flex items-center justify-center shadow-pill">
-                <Cat className="w-4 h-4 text-brand-espresso" />
+            <div className="flex items-center gap-2.5 min-w-0">
+              <div className="w-8 h-8 rounded-full bg-brand-olive border-2 border-brand-espresso flex items-center justify-center shadow-pill flex-shrink-0 aspect-square">
+                <Cat className="w-4 h-4 text-brand-espresso flex-shrink-0" />
               </div>
               <h3 className="font-heading text-2xl font-black text-brand-espresso">
                 Feline Health & Nutrition Tools
