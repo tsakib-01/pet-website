@@ -309,13 +309,6 @@ export default function Header() {
                 Browse All Calculators
               </Link>
             </div>
-
-            {/* 5. Authority & Privacy Badge */}
-            <div className="text-center pt-2">
-              <p className="text-[10px] font-mono text-brand-taupe uppercase tracking-wider">
-                AVMA • WSAVA • AAHA Standards • 100% Free & In-Memory
-              </p>
-            </div>
           </div>
         </div>
       )}
