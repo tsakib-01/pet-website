@@ -44,10 +44,10 @@ export default function ToolsDirectoryPage() {
         {/* Category Filter Pills */}
         <div className="flex flex-wrap items-center gap-2 w-full sm:w-auto">
           {[
-            { id: "all", label: "All Tools (15)" },
-            { id: "dog", label: "Dog Tools (8)" },
-            { id: "cat", label: "Cat Tools (5)" },
-            { id: "pet", label: "Universal Pets (2)" },
+            { id: "all", label: "All Tools" },
+            { id: "dog", label: "Dog Tools" },
+            { id: "cat", label: "Cat Tools" },
+            { id: "pet", label: "Universal Pets" },
           ].map((cat) => (
             <button
               key={cat.id}

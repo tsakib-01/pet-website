@@ -49,7 +49,7 @@ export default function Footer() {
           <ul className="space-y-2 text-xs font-heading font-bold">
             <li>
               <Link href="/tools" className="hover:text-brand-terracotta transition-colors flex items-center gap-1">
-                → All 15 Calculators Directory
+                → All Calculators Directory
               </Link>
             </li>
             <li>

@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { PawPrint, Menu, X, ArrowRight, Dog, Cat, Sparkles, AlertTriangle, HeartPulse, Scale, Box, Calendar } from "lucide-react";
+import { PawPrint, Menu, X, ArrowRight, Sparkles } from "lucide-react";
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -25,7 +25,7 @@ export default function Header() {
   }, [mobileMenuOpen]);
 
   const navLinks = [
-    { href: "/tools", label: "All 15 Tools" },
+    { href: "/tools", label: "All Calculators" },
     { href: "/tools/dog-age-calculator", label: "Dog Age" },
     { href: "/tools/dog-chocolate-toxicity-calculator", label: "Chocolate Triage" },
     { href: "/tools/dog-crate-size-calculator", label: "Crate Sizing" },
@@ -35,25 +35,7 @@ export default function Header() {
 
   return (
     <>
-      {/* 1. TOP TICKER BAR: Clean animated ticker with veterinary clinical alerts */}
-      <div className="hidden sm:block bg-brand-terracotta text-[#FAF4EE] py-1.5 px-4 overflow-hidden border-b-2 border-brand-espresso">
-        <div className="max-w-7xl mx-auto flex items-center text-xs font-mono font-bold tracking-wider">
-          <span className="bg-brand-espresso text-brand-olive px-2.5 py-0.5 rounded-full text-[10px] mr-3 whitespace-nowrap uppercase flex items-center gap-1.5 border border-brand-olive/40 shadow-sm flex-shrink-0">
-            <span className="w-1.5 h-1.5 rounded-full bg-brand-olive animate-ping"></span>
-            VET STANDARDS
-          </span>
-          <div className="overflow-hidden whitespace-nowrap w-full">
-            <div className="animate-marquee inline-block space-x-10 font-bold uppercase text-[11px]">
-              <span>[CLINICAL] AVMA & AAHA CANINE LIFE-STAGE SCALING • 100% NON-LINEAR FORMULAS</span>
-              <span>[EMERGENCY TRIAGE] DOG CHOCOLATE TOXICITY (THEOBROMINE MG/KG) CALCULATOR ACTIVE</span>
-              <span>[NUTRITION] WSAVA RESTING METABOLIC RATE (RER) DUAL-DIET PORTIONING</span>
-              <span>[PEDIATRIC] AAHA CORE IMMUNIZATION SCHEDULES & REPRODUCTIVE GESTATION TRACKING</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* 2. STICKY MAIN HEADER */}
+      {/* STICKY MAIN HEADER */}
       <header className="sticky top-0 z-50 bg-[#FAF4EE]/95 backdrop-blur-md border-b-2.5 border-brand-espresso shadow-sm">
         <div className="max-w-7xl mx-auto px-3 sm:px-6 h-14 sm:h-16 flex items-center justify-between gap-3">
           {/* Brand Logo */}
@@ -144,7 +126,7 @@ export default function Header() {
                 className="btn-pill btn-pill-espresso w-full py-3 text-xs font-black justify-center flex items-center gap-2"
               >
                 <Sparkles className="w-4 h-4 text-brand-olive" />
-                View Complete 15 Calculator Directory
+                View Complete Calculator Directory
               </Link>
             </div>
           </div>

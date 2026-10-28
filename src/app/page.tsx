@@ -27,7 +27,7 @@ export default function HomePage() {
     },
     {
       q: "Do I need to create an account or pay to use these tools?",
-      a: "No. All 15 calculation tools are 100% free forever with no accounts, no subscriptions, and zero data tracking. Computations execute entirely in your local browser memory."
+      a: "No. All calculation tools are 100% free forever with no accounts, no subscriptions, and zero data tracking. Computations execute entirely in your local browser memory."
     }
   ];
 
@@ -39,7 +39,7 @@ export default function HomePage() {
           {/* Pill Badges */}
           <div className="flex flex-wrap items-center gap-2 mb-4">
             <span className="pill-badge pill-badge-alert text-[10px] sm:text-xs">
-              <Sparkles className="w-3.5 h-3.5" /> 15 VETERINARY CALCULATORS
+              <Sparkles className="w-3.5 h-3.5" /> VETERINARY CALCULATORS
             </span>
             <span className="pill-badge pill-badge-verified text-[10px] sm:text-xs">
               AVMA • WSAVA • ASPCA STANDARDS
@@ -55,7 +55,7 @@ export default function HomePage() {
               <h1 className="font-heading text-3xl sm:text-5xl lg:text-6xl font-black text-brand-espresso leading-[1.08] tracking-tight">
                 NEVER GUESS YOUR PET’S HEALTH STATS.{" "}
                 <span className="inline-block bg-brand-terracotta text-[#FAF4EE] px-3 sm:px-4 py-0.5 sm:py-1 rounded-full border-2 border-brand-espresso shadow-pill transform -rotate-1 mt-1">
-                  15 CLINICAL TOOLS.
+                  CLINICAL TOOLS.
                 </span>
               </h1>
 
@@ -111,7 +111,7 @@ export default function HomePage() {
                   href="/tools"
                   className="btn-pill btn-pill-espresso px-6 sm:px-8 py-3 text-sm font-black shadow-paper-lg group inline-flex items-center gap-3"
                 >
-                  <span>Explore All 15 Calculators</span>
+                  <span>Explore All Calculators</span>
                   <span className="btn-circle-icon bg-brand-olive text-brand-espresso">
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </span>
@@ -119,44 +119,54 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* Hero Right: Live Interactive Quick Widget Teaser */}
-            <div className="order-1 lg:order-2 lg:col-span-5">
-              <div className="relative bg-white border-2.5 border-brand-espresso rounded-3xl p-5 shadow-paper space-y-4">
-                <div className="flex items-center justify-between pb-3 border-b-2 border-brand-espresso/15">
-                  <span className="font-heading font-black text-sm text-brand-espresso flex items-center gap-2">
-                    <ShieldCheck className="w-4 h-4 text-emerald-600" />
-                    CLINICAL PREVIEW
-                  </span>
-                  <span className="text-[10px] font-mono font-bold bg-brand-olive px-2 py-0.5 rounded-full border border-brand-espresso">
-                    Instant Math
-                  </span>
-                </div>
-                <div className="space-y-3">
-                  <div className="text-xs font-heading font-black text-brand-espresso">
-                    Why Generic Rules Fail:
-                  </div>
-                  <div className="space-y-2 text-xs text-brand-taupe leading-relaxed">
-                    <div className="bg-[#FAF4EE] p-3 rounded-2xl border border-brand-espresso/20">
-                      <div className="font-bold text-brand-espresso">🍫 Chocolate Poisoning:</div>
-                      <div>Dose = (Amount in oz × mg Theobromine) ÷ Dog Weight (kg). 50mg/kg is cardiotoxic.</div>
+            {/* Hero Right: Original Dog & Cat Image Collage */}
+            <div className="order-1 lg:order-2 lg:col-span-5 relative flex justify-center pt-2 sm:pt-4">
+              <div className="relative w-full max-w-xs sm:max-w-sm">
+                <div className="paper-box p-3 sm:p-4 bg-brand-cream border-2.5 border-brand-espresso transform -rotate-1 hover:rotate-0 transition-transform">
+                  <img
+                    src="https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?auto=format&fit=crop&w=700&q=80"
+                    alt="Happy healthy dog"
+                    className="w-full h-52 sm:h-64 object-cover rounded-xl border-2 border-brand-espresso"
+                  />
+                  <div className="pt-2.5 flex items-center justify-between">
+                    <div>
+                      <span className="font-heading font-black text-sm sm:text-base text-brand-espresso block">
+                        Golden Retriever (Milo)
+                      </span>
+                      <span className="font-mono text-[10px] sm:text-xs text-brand-taupe font-bold">
+                        Clinical Life Stage: Adult (AAHA)
+                      </span>
                     </div>
-                    <div className="bg-[#FAF4EE] p-3 rounded-2xl border border-brand-espresso/20">
-                      <div className="font-bold text-brand-espresso">🐾 Canine Biological Age:</div>
-                      <div>Year 1 = 15 yrs, Year 2 = +9 yrs. Small dogs age at 4 yrs/yr, Giant breeds at 7.5 yrs/yr.</div>
-                    </div>
-                    <div className="bg-[#FAF4EE] p-3 rounded-2xl border border-brand-espresso/20">
-                      <div className="font-bold text-brand-espresso">🥣 Wet & Dry Food Split:</div>
-                      <div>RER = 70 × (kg)^0.75. Prevents the 40% caloric surplus common in unmeasured mixing.</div>
-                    </div>
+                    <span className="pill-badge pill-badge-verified text-[10px]">
+                      VERIFIED
+                    </span>
                   </div>
                 </div>
-                <Link
-                  href="/tools/dog-chocolate-toxicity-calculator"
-                  className="btn-pill btn-pill-terracotta w-full py-2.5 text-xs font-black justify-center flex items-center gap-2"
-                >
-                  <AlertTriangle className="w-4 h-4 text-white" />
-                  Launch Chocolate Toxicity Triage &rarr;
-                </Link>
+
+                <div className="absolute -bottom-4 -left-3 sm:-bottom-6 sm:-left-6 w-36 sm:w-48 paper-box p-2 sm:p-3 bg-[#FAF4EE] border-2 sm:border-2.5 border-brand-espresso transform rotate-3 hover:rotate-1 transition-transform shadow-paper">
+                  <img
+                    src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=400&q=80"
+                    alt="Curious healthy cat"
+                    className="w-full h-24 sm:h-32 object-cover rounded-lg border border-brand-espresso"
+                  />
+                  <div className="pt-1 text-center">
+                    <span className="font-heading text-[10px] sm:text-xs font-black text-brand-espresso block">
+                      Feline Health Monitor
+                    </span>
+                    <span className="pill-badge pill-badge-alert text-[8px] sm:text-[10px] py-0.2 mt-0.5">
+                      AAFP Calibrated
+                    </span>
+                  </div>
+                </div>
+
+                <div className="absolute -top-3 -right-2 sm:-top-5 sm:-right-3 w-16 h-16 sm:w-20 sm:h-20 rounded-full border-2.5 border-brand-espresso bg-brand-olive flex flex-col items-center justify-center transform rotate-12 shadow-pill">
+                  <span className="text-[10px] sm:text-xs font-mono font-black text-brand-espresso leading-none">
+                    100%
+                  </span>
+                  <span className="text-[8px] sm:text-[9px] font-heading font-black text-brand-espresso uppercase">
+                    Free
+                  </span>
+                </div>
               </div>
             </div>
           </div>
@@ -171,27 +181,36 @@ export default function HomePage() {
         label="Veterinary Sponsor Notice"
       />
 
-      {/* 3. CORE SUITE: THE 15 CALCULATORS CATEGORIZED */}
+      {/* 3. CORE SUITE: CALCULATORS CATEGORIZED */}
       <section className="space-y-10">
         <div className="text-center space-y-2 max-w-2xl mx-auto">
           <span className="pill-badge pill-badge-alert text-xs">
             COMPLETE DIRECTORY
           </span>
           <h2 className="font-heading text-3xl sm:text-5xl font-black text-brand-espresso">
-            All 15 Specialized Tools
+            All Specialized Tools
           </h2>
           <p className="text-brand-taupe text-sm sm:text-base">
             Click any interactive calculator to access instant computation, clinical thresholds, and veterinary guidelines.
           </p>
         </div>
 
-        {/* DOG TOOLS (8) */}
+        {/* DOG TOOLS */}
         <div className="space-y-4">
-          <div className="flex items-center gap-2 pb-2 border-b-2 border-brand-espresso">
-            <Dog className="w-6 h-6 text-brand-terracotta" />
-            <h3 className="font-heading text-2xl font-black text-brand-espresso">
-              Canine Health & Nutrition Tools (8)
-            </h3>
+          <div className="flex items-center justify-between pb-2 border-b-2 border-brand-espresso">
+            <div className="flex items-center gap-2.5">
+              <img
+                src="https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?auto=format&fit=crop&w=120&q=80"
+                alt="Canine Tools"
+                className="w-8 h-8 rounded-full object-cover border-2 border-brand-espresso shadow-pill"
+              />
+              <h3 className="font-heading text-2xl font-black text-brand-espresso">
+                Canine Health & Nutrition Tools
+              </h3>
+            </div>
+            <span className="text-xs font-mono font-bold text-brand-taupe uppercase hidden sm:block">
+              AVMA & AAHA Guidelines
+            </span>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
             {dogTools.map((tool) => (
@@ -225,13 +244,22 @@ export default function HomePage() {
           </div>
         </div>
 
-        {/* CAT TOOLS (5) */}
+        {/* CAT TOOLS */}
         <div className="space-y-4 pt-4">
-          <div className="flex items-center gap-2 pb-2 border-b-2 border-brand-espresso">
-            <Cat className="w-6 h-6 text-brand-terracotta" />
-            <h3 className="font-heading text-2xl font-black text-brand-espresso">
-              Feline Health & Nutrition Tools (5)
-            </h3>
+          <div className="flex items-center justify-between pb-2 border-b-2 border-brand-espresso">
+            <div className="flex items-center gap-2.5">
+              <img
+                src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=120&q=80"
+                alt="Feline Tools"
+                className="w-8 h-8 rounded-full object-cover border-2 border-brand-espresso shadow-pill"
+              />
+              <h3 className="font-heading text-2xl font-black text-brand-espresso">
+                Feline Health & Nutrition Tools
+              </h3>
+            </div>
+            <span className="text-xs font-mono font-bold text-brand-taupe uppercase hidden sm:block">
+              AAFP & WSAVA Guidelines
+            </span>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {catTools.map((tool) => (
@@ -265,13 +293,20 @@ export default function HomePage() {
           </div>
         </div>
 
-        {/* UNIVERSAL PET TOOLS (2) */}
+        {/* UNIVERSAL PET TOOLS */}
         <div className="space-y-4 pt-4">
-          <div className="flex items-center gap-2 pb-2 border-b-2 border-brand-espresso">
-            <PawPrint className="w-6 h-6 text-brand-terracotta" />
-            <h3 className="font-heading text-2xl font-black text-brand-espresso">
-              Universal Pet Tools (2)
-            </h3>
+          <div className="flex items-center justify-between pb-2 border-b-2 border-brand-espresso">
+            <div className="flex items-center gap-2.5">
+              <div className="w-8 h-8 rounded-full bg-brand-olive border-2 border-brand-espresso flex items-center justify-center shadow-pill">
+                <PawPrint className="w-4 h-4 text-brand-espresso" />
+              </div>
+              <h3 className="font-heading text-2xl font-black text-brand-espresso">
+                Universal Pet Tools
+              </h3>
+            </div>
+            <span className="text-xs font-mono font-bold text-brand-taupe uppercase hidden sm:block">
+              All Companion Species
+            </span>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {petTools.map((tool) => (
