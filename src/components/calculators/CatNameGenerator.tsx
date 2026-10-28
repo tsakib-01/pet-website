@@ -1,52 +1,28 @@
 "use client";
 
 import React, { useState } from "react";
-import { Sparkles, RefreshCw, Cat, Heart, Volume2 } from "lucide-react";
-
-interface CatName {
-  name: string;
-  gender: "male" | "female" | "unisex";
-  coat: string;
-  vibe: string;
-  meaning: string;
-  felineSuitability: string;
-}
-
-const CAT_NAMES_DATABASE: CatName[] = [
-  { name: "Luna", gender: "female", coat: "black", vibe: "mystical", meaning: "Moon goddess", felineSuitability: "Gentle high-vowel cadence cats distinguish effortlessly." },
-  { name: "Oliver", gender: "male", coat: "tabby", vibe: "classic", meaning: "Olive tree / Peace", felineSuitability: "Soft consonants with rising inflection." },
-  { name: "Milo", gender: "male", coat: "ginger", vibe: "cute", meaning: "Beloved soldier", felineSuitability: "Short acoustic burst perfect for feline ear articulation." },
-  { name: "Cleo", gender: "female", coat: "calico", vibe: "royal", meaning: "Cleopatra / Pride", felineSuitability: "Strong 'Cl' blend with bright 'O' finish." },
-  { name: "Simba", gender: "male", coat: "ginger", vibe: "royal", meaning: "Lion", felineSuitability: "Soft sibilant 'S' start mimics maternal feline purr cues." },
-  { name: "Shadow", gender: "unisex", coat: "black", vibe: "mystical", meaning: "Shade / Silhouette", felineSuitability: "Sh- whisper acoustic tone." },
-  { name: "Bella", gender: "female", coat: "white", vibe: "sweet", meaning: "Beautiful", felineSuitability: "Melodic double-L vowel harmony." },
-  { name: "Felix", gender: "male", coat: "tuxedo", vibe: "classic", meaning: "Lucky / Happy", felineSuitability: "Crisp 'F' and sharp 'X' stop phonetics." },
-  { name: "Oreo", gender: "unisex", coat: "tuxedo", vibe: "food", meaning: "Black & white cookie", felineSuitability: "Vowel-heavy melodic flow." },
-  { name: "Jasper", gender: "male", coat: "tabby", vibe: "mystical", meaning: "Spotted gemstone", felineSuitability: "Rich rolling sound for domestic shorthairs." },
-  { name: "Nala", gender: "female", coat: "ginger", vibe: "royal", meaning: "Beloved gift", felineSuitability: "Open vocalization easy to murmur softly." },
-  { name: "Smokey", gender: "unisex", coat: "grey", vibe: "classic", meaning: "Mist / Ash", felineSuitability: "Sibilant 'S' and long high '-ey' sound." },
-  { name: "Chloe", gender: "female", coat: "calico", vibe: "sweet", meaning: "Blooming sprout", felineSuitability: "Bright friendly tone." },
-  { name: "Ziggy", gender: "unisex", coat: "tabby", vibe: "quirky", meaning: "Victorious peace", felineSuitability: "Distinct 'Z' buzzing vibration catches feline ears." },
-  { name: "Mochi", gender: "unisex", coat: "white", vibe: "food", meaning: "Sweet rice cake", felineSuitability: "Soft 'M' into cheerful 'Ch' inflection." },
-  { name: "Mittens", gender: "unisex", coat: "tuxedo", vibe: "cute", meaning: "White paws", felineSuitability: "Classic domestic moniker." },
-  { name: "Pepper", gender: "unisex", coat: "grey", vibe: "food", meaning: "Spicy & energetic", felineSuitability: "Snappy double 'P' plosive." },
-  { name: "Penny", gender: "female", coat: "ginger", vibe: "sweet", meaning: "Copper coin", felineSuitability: "High bright register cats love." },
-  { name: "Salem", gender: "male", coat: "black", vibe: "mystical", meaning: "Peace / Arcane", felineSuitability: "Smooth sibilant 'S' with grounding 'M'." },
-  { name: "Willow", gender: "female", coat: "grey", vibe: "nature", meaning: "Graceful tree", felineSuitability: "Gentle breathy syllables." },
-];
+import { Sparkles, RefreshCw, Cat, Volume2 } from "lucide-react";
+import { CAT_NAMES, CatName } from "@/data/names/catNames";
 
 export default function CatNameGenerator() {
   const [selectedGender, setSelectedGender] = useState<string>("all");
   const [selectedCoat, setSelectedCoat] = useState<string>("all");
   const [seed, setSeed] = useState<number>(0);
 
-  const filteredNames = CAT_NAMES_DATABASE.filter((item) => {
+  const filteredNames = CAT_NAMES.filter((item) => {
     if (selectedGender !== "all" && item.gender !== selectedGender && item.gender !== "unisex") return false;
     if (selectedCoat !== "all" && item.coat !== selectedCoat) return false;
     return true;
   });
 
-  const displayNames = [...filteredNames].sort(() => 0.5 - ((seed * 5) % 10) / 10).slice(0, 8);
+  // Deterministic shuffle with seed, showing 12 per roll
+  const displayNames = [...filteredNames]
+    .sort((a, b) => {
+      const hashA = (a.name.charCodeAt(0) * 19 + seed * 37) % 100;
+      const hashB = (b.name.charCodeAt(0) * 19 + seed * 37) % 100;
+      return hashA - hashB;
+    })
+    .slice(0, 12);
 
   return (
     <div className="bg-[#FAF4EE] border-2.5 border-brand-espresso rounded-3xl p-6 sm:p-8 shadow-paper">
@@ -58,20 +34,20 @@ export default function CatNameGenerator() {
           </div>
           <div>
             <h3 className="font-heading text-xl sm:text-2xl font-black text-brand-espresso">
-              Cat Name Generator
+              Cat Name Generator (Feline Acoustics)
             </h3>
             <p className="text-xs font-mono font-bold text-brand-taupe uppercase">
-              Feline High-Frequency Phonetic Matcher
+              High-Frequency Pitch & Coat Pattern Matrix • {CAT_NAMES.length}+ Curated Names
             </p>
           </div>
         </div>
         <button
           type="button"
           onClick={() => setSeed(seed + 1)}
-          className="btn-pill btn-pill-terracotta px-4 py-1.5 text-xs font-black shadow-paper-sm flex items-center gap-1.5"
+          className="btn-pill btn-pill-terracotta px-4 py-1.5 text-xs font-black shadow-paper-sm flex items-center gap-1.5 cursor-pointer"
         >
           <RefreshCw className="w-3.5 h-3.5" />
-          Roll New Names
+          Roll 12 New Names
         </button>
       </div>
 

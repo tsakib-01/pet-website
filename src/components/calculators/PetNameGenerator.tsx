@@ -1,38 +1,8 @@
 "use client";
 
 import React, { useState } from "react";
-import { Sparkles, RefreshCw, PawPrint, Heart, Star } from "lucide-react";
-
-interface UniversalPetName {
-  name: string;
-  species: "all" | "dog" | "cat" | "small";
-  theme: "mythology" | "food" | "nature" | "classic" | "royal";
-  vibe: string;
-  meaning: string;
-}
-
-const UNIVERSAL_PET_NAMES: UniversalPetName[] = [
-  { name: "Apollo", species: "all", theme: "mythology", vibe: "Majestic", meaning: "Greek god of light, music, and truth." },
-  { name: "Boba", species: "all", theme: "food", vibe: "Cute & Sweet", meaning: "Tapioca pearl tea; round and delightful." },
-  { name: "Willow", species: "all", theme: "nature", vibe: "Graceful", meaning: "Slender tree known for flexibility and elegance." },
-  { name: "Jasper", species: "all", theme: "classic", vibe: "Vintage", meaning: "Treasurer / precious spotted chalcedony stone." },
-  { name: "Athena", species: "all", theme: "mythology", vibe: "Wise", meaning: "Goddess of wisdom and honorable courage." },
-  { name: "Chai", species: "all", theme: "food", vibe: "Warm & Cozy", meaning: "Spiced aromatic tea; comforting companion." },
-  { name: "Finn", species: "all", theme: "classic", vibe: "Friendly", meaning: "Fair / bright; energetic and loyal." },
-  { name: "Freya", species: "all", theme: "mythology", vibe: "Regal", meaning: "Norse goddess of love, beauty, and companion cats." },
-  { name: "Biscuit", species: "all", theme: "food", vibe: "Playful", meaning: "Golden baked treat; gentle and lovable." },
-  { name: "Otis", species: "all", theme: "classic", vibe: "Charm", meaning: "Wealthy; cheerful companion with vintage soul." },
-  { name: "Nova", species: "all", theme: "nature", vibe: "Cosmic", meaning: "Astronomical bright star explosion." },
-  { name: "Hazel", species: "all", theme: "nature", vibe: "Earthy", meaning: "Nut-bearing tree symbolizing wisdom." },
-  { name: "Zeus", species: "dog", theme: "mythology", vibe: "Powerful", meaning: "Ruler of the sky and thunder." },
-  { name: "Cleo", species: "cat", theme: "royal", vibe: "Diva", meaning: "Queen Cleopatra; proud and discerning." },
-  { name: "Pippin", species: "small", theme: "classic", vibe: "Sprightly", meaning: "Adventurous hobbit or crisp apple." },
-  { name: "Nori", species: "all", theme: "food", vibe: "Sleek", meaning: "Seaweed; perfect for sleek dark or shiny coats." },
-  { name: "Clover", species: "all", theme: "nature", vibe: "Lucky", meaning: "Four-leaf shamrock bringing good fortune." },
-  { name: "Winston", species: "all", theme: "royal", vibe: "Dignified", meaning: "From a friendly town; classic British charm." },
-  { name: "Peaches", species: "all", theme: "food", vibe: "Sweet", meaning: "Soft, golden fruit with warm sunny energy." },
-  { name: "Loki", species: "all", theme: "mythology", vibe: "Mischief", meaning: "Norse trickster god; playful and clever." },
-];
+import { Sparkles, RefreshCw, PawPrint, Star } from "lucide-react";
+import { UNIVERSAL_PET_NAMES, UniversalPetName } from "@/data/names/petNames";
 
 export default function PetNameGenerator() {
   const [selectedTheme, setSelectedTheme] = useState<string>("all");
@@ -45,7 +15,13 @@ export default function PetNameGenerator() {
     return true;
   });
 
-  const display = [...filtered].sort(() => 0.5 - ((seed * 3) % 10) / 10).slice(0, 8);
+  const display = [...filtered]
+    .sort((a, b) => {
+      const hashA = (a.name.charCodeAt(0) * 23 + seed * 41) % 100;
+      const hashB = (b.name.charCodeAt(0) * 23 + seed * 41) % 100;
+      return hashA - hashB;
+    })
+    .slice(0, 12);
 
   return (
     <div className="bg-[#FAF4EE] border-2.5 border-brand-espresso rounded-3xl p-6 sm:p-8 shadow-paper">
@@ -60,17 +36,17 @@ export default function PetNameGenerator() {
               Pet Name Generator (All Animals)
             </h3>
             <p className="text-xs font-mono font-bold text-brand-taupe uppercase">
-              Thematic Multi-Species Nomenclature Engine
+              Thematic Multi-Species Nomenclature Engine • {UNIVERSAL_PET_NAMES.length}+ Curated Names
             </p>
           </div>
         </div>
         <button
           type="button"
           onClick={() => setSeed(seed + 1)}
-          className="btn-pill btn-pill-terracotta px-4 py-1.5 text-xs font-black shadow-paper-sm flex items-center gap-1.5"
+          className="btn-pill btn-pill-terracotta px-4 py-1.5 text-xs font-black shadow-paper-sm flex items-center gap-1.5 cursor-pointer"
         >
           <RefreshCw className="w-3.5 h-3.5" />
-          Roll New Names
+          Roll 12 New Names
         </button>
       </div>
 

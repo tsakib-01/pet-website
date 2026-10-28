@@ -1,43 +1,8 @@
 "use client";
 
 import React, { useState } from "react";
-import { Sparkles, RefreshCw, Bookmark, Dog, Check, Volume2 } from "lucide-react";
-
-interface DogName {
-  name: string;
-  gender: "male" | "female" | "unisex";
-  vibe: string;
-  syllables: number;
-  meaning: string;
-  whyItWorks: string;
-}
-
-const DOG_NAMES_DATABASE: DogName[] = [
-  { name: "Max", gender: "male", vibe: "classic", syllables: 1, meaning: "Greatest", whyItWorks: "Crisp 'M' and hard 'X' stop sound creates immediate acoustic recall." },
-  { name: "Bella", gender: "female", vibe: "cute", syllables: 2, meaning: "Beautiful", whyItWorks: "Strong double 'L' with open vowel ending cuts through park noise." },
-  { name: "Cooper", gender: "male", vibe: "classic", syllables: 2, meaning: "Barrel maker", whyItWorks: "Hard 'K' explosive consonant commands quick canine attention." },
-  { name: "Luna", gender: "female", vibe: "nature", syllables: 2, meaning: "Moon", whyItWorks: "High pitch vowel inflection ensures strong responsiveness." },
-  { name: "Milo", gender: "male", vibe: "cute", syllables: 2, meaning: "Soldier or merciful", whyItWorks: "Bouncy two-syllable cadence ideal for recall whistles." },
-  { name: "Daisy", gender: "female", vibe: "nature", syllables: 2, meaning: "Day's eye", whyItWorks: "Sharp 'D' start with bright '-y' ending sounds cheerful." },
-  { name: "Rocky", gender: "male", vibe: "tough", syllables: 2, meaning: "Rest / Stone", whyItWorks: "Hard 'K' mid-consonant allows crisp vocal snap." },
-  { name: "Thor", gender: "male", vibe: "tough", syllables: 1, meaning: "God of Thunder", whyItWorks: "Short powerful burst; impossible for dogs to confuse with commands." },
-  { name: "Waffles", gender: "unisex", vibe: "food", syllables: 2, meaning: "Sweet breakfast", whyItWorks: "Sibilant 'F' sounds capture playful attention." },
-  { name: "Zeus", gender: "male", vibe: "tough", syllables: 1, meaning: "King of Gods", whyItWorks: "Z-buzzing phonetics trigger distinct canine ear prick." },
-  { name: "Penny", gender: "female", vibe: "classic", syllables: 2, meaning: "Weaver / Coin", whyItWorks: "Plosive 'P' creates immediate acoustic spike." },
-  { name: "Duke", gender: "male", vibe: "royal", syllables: 1, meaning: "Noble leader", whyItWorks: "Hard 'D' and hard 'K' bookends—optimal training acoustic structure." },
-  { name: "Ruby", gender: "female", vibe: "royal", syllables: 2, meaning: "Precious red gemstone", whyItWorks: "Bright melodic rhythm easy to call across distances." },
-  { name: "Bear", gender: "male", vibe: "nature", syllables: 1, meaning: "Strong animal", whyItWorks: "Single deep plosive syllable; high obedience training speed." },
-  { name: "Kona", gender: "unisex", vibe: "nature", syllables: 2, meaning: "Hawaiian leeward lady", whyItWorks: "Hard 'K' start with open 'A' resonance." },
-  { name: "Hazel", gender: "female", vibe: "nature", syllables: 2, meaning: "Hazelnut tree", whyItWorks: "Soft 'H' into sharp 'Z' provides recognizable distinction." },
-  { name: "Tucker", gender: "male", vibe: "classic", syllables: 2, meaning: "Fabric fuller", whyItWorks: "Hard 'T' and 'K' sounds give two immediate cues." },
-  { name: "Stella", gender: "female", vibe: "royal", syllables: 2, meaning: "Star", whyItWorks: "St- blend followed by open vowel makes training seamless." },
-  { name: "Mocha", gender: "unisex", vibe: "food", syllables: 2, meaning: "Coffee and chocolate", whyItWorks: "Gentle 'M' with distinct 'Ch' stop." },
-  { name: "Bruno", gender: "male", vibe: "tough", syllables: 2, meaning: "Brown / Shield", whyItWorks: "Grounded plosive 'B' and rolling 'R' sound." },
-  { name: "Peanut", gender: "unisex", vibe: "food", syllables: 2, meaning: "Little legume", whyItWorks: "Double plosive 'P' and 'T' consonants." },
-  { name: "Roxy", gender: "female", vibe: "tough", syllables: 2, meaning: "Dawn / Bright", whyItWorks: "Sharp 'X' sound prevents confusion with general words." },
-  { name: "Ollie", gender: "male", vibe: "cute", syllables: 2, meaning: "Olive tree", whyItWorks: "Lively vowel rising tone." },
-  { name: "Winston", gender: "male", vibe: "royal", syllables: 2, meaning: "Joyful stone", whyItWorks: "Dignified cadence, easy two-syllable delivery." },
-];
+import { Sparkles, RefreshCw, Dog, Volume2, ShieldCheck } from "lucide-react";
+import { DOG_NAMES, DogName } from "@/data/names/dogNames";
 
 export default function DogNameGenerator() {
   const [selectedGender, setSelectedGender] = useState<string>("all");
@@ -45,15 +10,21 @@ export default function DogNameGenerator() {
   const [selectedSyllables, setSelectedSyllables] = useState<number | "all">("all");
   const [seed, setSeed] = useState<number>(0);
 
-  const filteredNames = DOG_NAMES_DATABASE.filter((item) => {
+  const filteredNames = DOG_NAMES.filter((item) => {
     if (selectedGender !== "all" && item.gender !== selectedGender && item.gender !== "unisex") return false;
     if (selectedVibe !== "all" && item.vibe !== selectedVibe) return false;
     if (selectedSyllables !== "all" && item.syllables !== selectedSyllables) return false;
     return true;
   });
 
-  // Shuffle display based on seed
-  const displayNames = [...filteredNames].sort(() => 0.5 - ((seed * 7) % 10) / 10).slice(0, 8);
+  // Deterministic shuffle with seed, showing 12 per page
+  const displayNames = [...filteredNames]
+    .sort((a, b) => {
+      const hashA = (a.name.charCodeAt(0) * 17 + seed * 31) % 100;
+      const hashB = (b.name.charCodeAt(0) * 17 + seed * 31) % 100;
+      return hashA - hashB;
+    })
+    .slice(0, 12);
 
   return (
     <div className="bg-[#FAF4EE] border-2.5 border-brand-espresso rounded-3xl p-6 sm:p-8 shadow-paper">
@@ -68,17 +39,17 @@ export default function DogNameGenerator() {
               Dog Name Generator (Auditory Science)
             </h3>
             <p className="text-xs font-mono font-bold text-brand-taupe uppercase">
-              Phonetic Hard-Consonant Response Algorithm
+              Phonetic Hard-Consonant Response Algorithm • {DOG_NAMES.length}+ Curated Names
             </p>
           </div>
         </div>
         <button
           type="button"
           onClick={() => setSeed(seed + 1)}
-          className="btn-pill btn-pill-terracotta px-4 py-1.5 text-xs font-black shadow-paper-sm flex items-center gap-1.5"
+          className="btn-pill btn-pill-terracotta px-4 py-1.5 text-xs font-black shadow-paper-sm flex items-center gap-1.5 cursor-pointer"
         >
           <RefreshCw className="w-3.5 h-3.5" />
-          Roll New Names
+          Roll 12 New Names
         </button>
       </div>
 
@@ -112,19 +83,19 @@ export default function DogNameGenerator() {
         {/* Vibe / Style */}
         <div>
           <label className="block text-xs font-mono font-bold text-brand-espresso uppercase mb-1">
-            Vibe / Style
+            Vibe / Personality Style
           </label>
           <select
             value={selectedVibe}
             onChange={(e) => setSelectedVibe(e.target.value)}
             className="w-full bg-white border-2 border-brand-espresso rounded-xl px-3 py-1.5 text-xs font-heading font-black text-brand-espresso shadow-paper-sm"
           >
-            <option value="all">All Styles</option>
+            <option value="all">All Styles ({DOG_NAMES.length})</option>
             <option value="classic">Classic & Friendly</option>
-            <option value="tough">Tough & Strong</option>
+            <option value="tough">Tough, Guard & Strong</option>
             <option value="cute">Cute & Playful</option>
-            <option value="royal">Royal & Elegant</option>
-            <option value="nature">Nature & Wild</option>
+            <option value="royal">Royal & Noble</option>
+            <option value="nature">Nature & Outdoors</option>
             <option value="food">Food & Treats</option>
           </select>
         </div>
@@ -155,12 +126,20 @@ export default function DogNameGenerator() {
         </div>
       </div>
 
+      {/* Results Header Count */}
+      <div className="flex items-center justify-between text-xs font-mono text-brand-taupe mb-3">
+        <span>Displaying {displayNames.length} matched names ({filteredNames.length} total in filter)</span>
+        <span className="text-emerald-700 font-bold flex items-center gap-1">
+          <ShieldCheck className="w-3.5 h-3.5" /> 100% Obedience Friendly
+        </span>
+      </div>
+
       {/* Generated Names Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
         {displayNames.map((item) => (
           <div
             key={item.name}
-            className="bg-white border-2 border-brand-espresso rounded-2xl p-4 shadow-paper-sm hover:shadow-paper transition-all flex flex-col justify-between"
+            className="bg-white border-2 border-brand-espresso rounded-2xl p-4 shadow-paper-sm hover:shadow-paper hover:-translate-y-0.5 transition-all flex flex-col justify-between"
           >
             <div>
               <div className="flex items-center justify-between mb-2">
@@ -171,7 +150,7 @@ export default function DogNameGenerator() {
                   {item.syllables} {item.syllables === 1 ? "Syllable" : "Syllables"}
                 </span>
               </div>
-              <div className="text-xs font-sans text-brand-terracotta font-bold mb-2">
+              <div className="text-xs font-sans text-brand-terracotta font-bold mb-1.5">
                 Meaning: {item.meaning}
               </div>
               <p className="text-[11px] font-sans text-brand-taupe leading-relaxed">
