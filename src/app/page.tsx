@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import { Search, Sparkles, ArrowRight, CheckCircle2, PawPrint, Dog, Cat, HeartPulse, ShieldCheck, AlertTriangle, Scale, Utensils, Calendar, Box, Volume2 } from "lucide-react";
+import { Search, ArrowRight, CheckCircle2, PawPrint, Dog, Cat, HeartPulse, ShieldCheck, AlertTriangle, Scale, Utensils, Calendar, Box, Volume2 } from "lucide-react";
 import AdSensePlaceholder from "@/components/AdSensePlaceholder";
 import ScrollReveal from "@/components/ScrollReveal";
 import FaqAccordion from "@/components/FaqAccordion";
@@ -39,7 +39,7 @@ export default function HomePage() {
           {/* Pill Badges */}
           <div className="flex flex-wrap items-center gap-2 mb-4">
             <span className="pill-badge pill-badge-alert text-[10px] sm:text-xs">
-              <Sparkles className="w-3.5 h-3.5" /> VETERINARY CALCULATORS
+              <PawPrint className="w-3.5 h-3.5" /> VETERINARY CALCULATORS
             </span>
             <span className="pill-badge pill-badge-verified text-[10px] sm:text-xs">
               AVMA • WSAVA • ASPCA STANDARDS

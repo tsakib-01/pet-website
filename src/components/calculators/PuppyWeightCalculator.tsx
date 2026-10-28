@@ -52,7 +52,7 @@ export default function PuppyWeightCalculator() {
       <div className="flex flex-wrap items-center justify-between gap-3 mb-6 pb-4 border-b-2 border-brand-espresso/20">
         <div className="flex items-center gap-3">
           <div className="w-10 h-10 rounded-full bg-brand-olive border-2 border-brand-espresso flex items-center justify-center shadow-pill">
-            <Scale className="w-5 h-5 text-brand-espresso" />
+            <Dog className="w-5 h-5 text-brand-espresso" />
           </div>
           <div>
             <h3 className="font-heading text-xl sm:text-2xl font-black text-brand-espresso">

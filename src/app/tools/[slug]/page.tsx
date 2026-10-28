@@ -5,7 +5,7 @@ import { Metadata } from "next";
 import { CALCULATOR_TOOLS, getCalculatorBySlug } from "@/data/calculators";
 import CalculatorRenderer from "@/components/calculators/CalculatorRenderer";
 import AdSensePlaceholder from "@/components/AdSensePlaceholder";
-import { ArrowLeft, ShieldCheck, HelpCircle, Sparkles, BookOpen, ChevronRight } from "lucide-react";
+import { ArrowLeft, ShieldCheck, HelpCircle, Dog, Cat, PawPrint, BookOpen, ChevronRight } from "lucide-react";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -88,7 +88,13 @@ export default async function CalculatorDetailPage({ params }: Props) {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
           <div className="md:col-span-8 space-y-3">
             <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-brand-olive text-brand-espresso border-2 border-brand-espresso shadow-paper-sm text-xs font-heading font-black uppercase">
-              <ShieldCheck className="w-3.5 h-3.5" />
+              {tool.category === "cat" ? (
+                <Cat className="w-3.5 h-3.5" />
+              ) : tool.category === "dog" ? (
+                <Dog className="w-3.5 h-3.5" />
+              ) : (
+                <PawPrint className="w-3.5 h-3.5" />
+              )}
               {tool.authority}
             </div>
             <h1 className="font-heading text-3xl sm:text-5xl font-black text-brand-espresso tracking-tight">

@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
-import { Sparkles, Calculator, ArrowUp } from "lucide-react";
+import { PawPrint, Calculator, ArrowUp } from "lucide-react";
 
 export default function FloatingScrollCompanion() {
   const [showScrollTop, setShowScrollTop] = useState(false);
@@ -34,7 +34,7 @@ export default function FloatingScrollCompanion() {
           href="/tools"
           className="btn-pill btn-pill-terracotta text-xs font-black px-4 py-2.5 shadow-pill hover:scale-105 active:scale-95 transition-all flex items-center gap-2 cursor-pointer uppercase tracking-wide"
         >
-          <Sparkles className="w-4 h-4 text-brand-olive flex-shrink-0" />
+          <PawPrint className="w-4 h-4 text-brand-olive flex-shrink-0" />
           <span>All Calculators</span>
         </Link>
       )}

@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import Link from "next/link";
 import { CALCULATOR_TOOLS } from "@/data/calculators";
 import AdSensePlaceholder from "@/components/AdSensePlaceholder";
-import { Search, Dog, Cat, PawPrint, Sparkles, ArrowRight, ShieldCheck, HeartPulse } from "lucide-react";
+import { Search, Dog, Cat, PawPrint, ArrowRight, ShieldCheck, HeartPulse } from "lucide-react";
 
 export default function ToolsDirectoryPage() {
   const [filter, setFilter] = useState<"all" | "dog" | "cat" | "pet">("all");

@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { Dog, Sparkles, HeartPulse, ShieldCheck, Info } from "lucide-react";
+import { Dog, HeartPulse, ShieldCheck, Info } from "lucide-react";
 
 export default function DogAgeCalculator() {
   const [years, setYears] = useState<number>(3);

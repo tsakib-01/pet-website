@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { Sparkles, RefreshCw, Cat, Volume2 } from "lucide-react";
+import { RefreshCw, Cat, Volume2 } from "lucide-react";
 import { CAT_NAMES, CatName } from "@/data/names/catNames";
 
 export default function CatNameGenerator() {

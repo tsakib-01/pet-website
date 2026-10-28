@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { PawPrint, Menu, X, ArrowRight, Sparkles } from "lucide-react";
+import { PawPrint, Menu, X, ArrowRight } from "lucide-react";
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -84,7 +84,7 @@ export default function Header() {
               href="/tools"
               className="btn-pill btn-pill-terracotta px-3 sm:px-4 py-1.5 text-xs font-black shadow-paper-sm hidden sm:inline-flex"
             >
-              <Sparkles className="w-3.5 h-3.5" />
+              <PawPrint className="w-3.5 h-3.5" />
               <span>Explore Tools</span>
             </Link>
 
@@ -125,7 +125,7 @@ export default function Header() {
                 href="/tools"
                 className="btn-pill btn-pill-espresso w-full py-3 text-xs font-black justify-center flex items-center gap-2"
               >
-                <Sparkles className="w-4 h-4 text-brand-olive" />
+                <PawPrint className="w-4 h-4 text-brand-olive" />
                 View Complete Calculator Directory
               </Link>
             </div>

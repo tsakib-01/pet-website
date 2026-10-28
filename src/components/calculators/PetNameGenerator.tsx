@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { Sparkles, RefreshCw, PawPrint, Star } from "lucide-react";
+import { RefreshCw, PawPrint, Star } from "lucide-react";
 import { UNIVERSAL_PET_NAMES, UniversalPetName } from "@/data/names/petNames";
 
 export default function PetNameGenerator() {

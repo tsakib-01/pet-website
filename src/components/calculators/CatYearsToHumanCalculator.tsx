@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { Cat, ArrowRight, ShieldCheck, HeartPulse, Sparkles } from "lucide-react";
+import { Cat, ArrowRight, ShieldCheck, HeartPulse } from "lucide-react";
 
 export default function CatYearsToHumanCalculator() {
   const [selectedAge, setSelectedAge] = useState<number>(5);
