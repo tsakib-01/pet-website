@@ -143,28 +143,8 @@ export default function Footer() {
           <div>
             © 2026 PawTruth — Pet Health & Safety Calculators. All rights reserved. Zero tracking cookies.
           </div>
-          <div className="flex flex-wrap items-center justify-center gap-4 text-xs font-heading font-bold text-brand-espresso">
-            <Link href="/about" className="hover:text-brand-terracotta transition-colors">
-              About
-            </Link>
-            <span>•</span>
-            <Link href="/contact" className="hover:text-brand-terracotta transition-colors">
-              Contact
-            </Link>
-            <span>•</span>
-            <Link href="/breed" className="hover:text-brand-terracotta transition-colors">
-              Breeds
-            </Link>
-            <span>•</span>
-            <Link href="/tools" className="hover:text-brand-terracotta transition-colors">
-              Calculators
-            </Link>
-          </div>
-          <div className="flex items-center gap-1.5 text-brand-espresso">
-            <span>Developed by</span>
-            <span className="px-2 py-0.5 rounded-md bg-white border border-brand-espresso shadow-[1.5px_1.5px_0px_#583D32] font-heading font-black uppercase text-brand-espresso">
-              White Stone
-            </span>
+          <div className="text-brand-taupe">
+            Independent Veterinary &amp; Clinical Health Calculation Suite
           </div>
         </div>
       </div>
