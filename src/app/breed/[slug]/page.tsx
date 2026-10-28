@@ -257,22 +257,6 @@ export default async function BreedDetailPage({ params }: Props) {
                   ))}
                 </div>
               </div>
-
-              {/* Quick Hero Highlights */}
-              <div className="grid grid-cols-3 gap-2.5 pt-2">
-                <div className="bg-brand-cream/40 rounded-xl p-2.5 border border-brand-espresso/20 text-center">
-                  <div className="text-[10px] font-mono text-brand-taupe uppercase font-bold">Weight</div>
-                  <div className="text-xs sm:text-sm font-heading font-black text-brand-espresso">{breed.metrics[0]?.value}</div>
-                </div>
-                <div className="bg-brand-cream/40 rounded-xl p-2.5 border border-brand-espresso/20 text-center">
-                  <div className="text-[10px] font-mono text-brand-taupe uppercase font-bold">{isDog ? "Crate Size" : "Litter Box"}</div>
-                  <div className="text-xs sm:text-sm font-heading font-black text-brand-espresso">{breed.metrics[2]?.value}</div>
-                </div>
-                <div className="bg-brand-cream/40 rounded-xl p-2.5 border border-brand-espresso/20 text-center">
-                  <div className="text-[10px] font-mono text-brand-taupe uppercase font-bold">Lifespan</div>
-                  <div className="text-xs sm:text-sm font-heading font-black text-brand-espresso">{breed.metrics[3]?.value}</div>
-                </div>
-              </div>
             </div>
 
             {/* Right Column: Balanced Breed Portrait Card */}
