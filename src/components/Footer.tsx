@@ -139,13 +139,8 @@ export default function Footer() {
 
       {/* Bottom Bar */}
       <div className="border-t-2 border-brand-espresso/30 py-5 px-4 sm:px-6">
-        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left font-mono text-[11px] text-brand-taupe font-bold">
-          <div>
-            © 2026 PawTruth — Pet Health & Safety Calculators. All rights reserved. Zero tracking cookies.
-          </div>
-          <div className="text-brand-taupe">
-            Independent Veterinary &amp; Clinical Health Calculation Suite
-          </div>
+        <div className="max-w-7xl mx-auto flex items-center justify-center text-center font-mono text-[11px] text-brand-taupe font-bold">
+          © 2026 PawTruth — Pet Health & Safety Calculators. All rights reserved. Zero tracking cookies.
         </div>
       </div>
     </footer>
