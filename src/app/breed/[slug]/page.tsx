@@ -1,7 +1,6 @@
 import React from "react";
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import Image from "next/image";
 import { Metadata } from "next";
 import { BREED_DATABASE, getBreedBySlug, BreedData } from "@/data/breeds";
 import AdSensePlaceholder from "@/components/AdSensePlaceholder";
@@ -22,6 +21,11 @@ import {
   HeartPulse,
   Info,
   CheckCircle2,
+  Smile,
+  Palette,
+  AlertTriangle,
+  Clock,
+  Sparkles,
 } from "lucide-react";
 
 interface Props {
@@ -43,20 +47,27 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 
   const speciesName = breed.species === "dog" ? "Dog" : "Cat";
+  const bName = breed.name.toLowerCase();
 
   return {
-    title: `${breed.name} ${speciesName} Care Guide, Size & Health Calculators | PawTruth`,
-    description: `${breed.name} complete veterinary guide: accurate weight standards, ${breed.species === "dog" ? "crate dimensions" : "litter box size"}, WSAVA calorie requirements, hereditary health risks, and 1-click interactive calculators.`,
+    title: `${breed.name} ${speciesName} Care Guide, Colors, Temperament & Calculators | PawTruth`,
+    description: `${breed.name} complete guide: recognized and rare colors (${breed.coatVariations.slice(0, 4).join(", ")}), temperament ratings, puppy/kitten growth milestones, weight standards, and interactive veterinary calculators.`,
     keywords: [
-      breed.name.toLowerCase(),
-      `${breed.name.toLowerCase()} weight`,
-      `${breed.name.toLowerCase()} lifespan`,
-      `${breed.name.toLowerCase()} health issues`,
-      `${breed.name.toLowerCase()} calculator`,
-      `${breed.name.toLowerCase()} care guide`,
+      bName,
+      `${bName} colors`,
+      `${bName} temperament`,
+      `${bName} puppies`,
+      `${bName} kitten`,
+      `fluffy ${bName}`,
+      `blue ${bName}`,
+      `merle ${bName}`,
+      `black ${bName}`,
+      `${bName} lifespan`,
+      `${bName} weight`,
+      `${bName} calculator`,
     ],
     openGraph: {
-      title: `${breed.name} Clinical Guide & Breed Calculators`,
+      title: `${breed.name} Clinical Guide: Colors, Temperament & Calculators`,
       description: breed.tagline,
       type: "article",
       images: [
@@ -134,7 +145,7 @@ export default async function BreedDetailPage({ params }: Props) {
         "@type": "MedicalWebPage",
         "name": `${breed.name} Comprehensive Clinical Breed Guide`,
         "description": breed.tagline,
-        "aspect": ["Overview", "Health", "Nutritional Requirements", "Physical Characteristics"],
+        "aspect": ["Overview", "Temperament", "Color Variations", "Growth Milestones", "Health", "Nutritional Requirements"],
         "about": {
           "@type": "Thing",
           "name": breed.name,
@@ -215,7 +226,7 @@ export default async function BreedDetailPage({ params }: Props) {
           <div className="pt-2 border-t border-brand-espresso/15">
             <div className="text-xs font-heading font-black text-brand-espresso uppercase tracking-wider mb-2.5 flex items-center gap-1.5">
               <PawPrint className="w-3.5 h-3.5 text-brand-terracotta" />
-              Recognized Coat & Pattern Variations:
+              Recognized Coat & Color Variations:
             </div>
             <div className="flex flex-wrap gap-2">
               {breed.coatVariations.map((coat) => (
@@ -266,6 +277,199 @@ export default async function BreedDetailPage({ params }: Props) {
               </div>
             ))}
           </div>
+        </section>
+
+        {/* ========================================================
+            NEW KEYWORD CLUSTER: TEMPERAMENT & BEHAVIORAL PROFILE
+            ======================================================== */}
+        <section className="bg-white rounded-3xl border-2.5 border-brand-espresso p-6 sm:p-8 shadow-[5px_5px_0px_#583D32] space-y-6">
+          <div className="space-y-2">
+            <div className="inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full bg-brand-olive text-brand-espresso text-[11px] font-heading font-black uppercase tracking-wider border border-brand-espresso/30">
+              <Smile className="w-3.5 h-3.5" />
+              Behavior & Personality
+            </div>
+            <h2 className="font-heading text-2xl sm:text-3xl font-black text-brand-espresso">
+              {breed.name} Temperament & Behavioral Profile
+            </h2>
+            <p className="text-sm text-brand-espresso/80 leading-relaxed max-w-3xl">
+              {breed.temperament.overview}
+            </p>
+          </div>
+
+          {/* Behavioral Trait Ratings */}
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {breed.temperament.traits.map((trait) => (
+              <div
+                key={trait.label}
+                className="bg-brand-cream/30 rounded-2xl border-2 border-brand-espresso/30 p-4 space-y-2"
+              >
+                <div className="flex items-center justify-between">
+                  <span className="font-heading font-black text-sm text-brand-espresso">
+                    {trait.label}
+                  </span>
+                  <div className="flex items-center gap-1">
+                    {[1, 2, 3, 4, 5].map((dot) => (
+                      <span
+                        key={dot}
+                        className={`w-2.5 h-2.5 rounded-full border border-brand-espresso ${
+                          dot <= trait.score
+                            ? "bg-brand-terracotta"
+                            : "bg-white"
+                        }`}
+                      />
+                    ))}
+                  </div>
+                </div>
+                <p className="text-xs text-brand-espresso/75 leading-relaxed">
+                  {trait.description}
+                </p>
+              </div>
+            ))}
+          </div>
+
+          {/* Family Compatibility & Training Callout */}
+          <div className="grid sm:grid-cols-2 gap-4 pt-4 border-t border-brand-espresso/15">
+            <div className="p-4 rounded-xl bg-brand-olive/20 border border-brand-espresso/20 space-y-1.5">
+              <div className="text-xs font-heading font-black text-brand-espresso uppercase flex items-center gap-1.5">
+                <CheckCircle2 className="w-3.5 h-3.5 text-brand-olive" />
+                Family & Home Compatibility
+              </div>
+              <p className="text-xs text-brand-espresso/80 leading-relaxed">
+                {breed.temperament.familyCompatibility}
+              </p>
+            </div>
+            <div className="p-4 rounded-xl bg-brand-cream/60 border border-brand-espresso/20 space-y-1.5">
+              <div className="text-xs font-heading font-black text-brand-espresso uppercase flex items-center gap-1.5">
+                <Info className="w-3.5 h-3.5 text-brand-terracotta" />
+                Training & Daily Management
+              </div>
+              <p className="text-xs text-brand-espresso/80 leading-relaxed">
+                {breed.temperament.trainingTips}
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* ========================================================
+            NEW KEYWORD CLUSTER: COAT COLORS & GENETICS BREAKDOWN
+            ======================================================== */}
+        <section className="bg-white rounded-3xl border-2.5 border-brand-espresso p-6 sm:p-8 shadow-[5px_5px_0px_#583D32] space-y-6">
+          <div className="space-y-2">
+            <div className="inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full bg-brand-cream text-brand-espresso text-[11px] font-heading font-black uppercase tracking-wider border border-brand-espresso/30">
+              <Palette className="w-3.5 h-3.5 text-brand-terracotta" />
+              Coat & Color Genetics
+            </div>
+            <h2 className="font-heading text-2xl sm:text-3xl font-black text-brand-espresso">
+              {breed.name} Colors, Patterns & Coat Types
+            </h2>
+            <p className="text-sm text-brand-espresso/80 leading-relaxed max-w-3xl">
+              {breed.colorGenetics.overview} <span className="font-semibold text-brand-espresso">Coat texture:</span> {breed.colorGenetics.coatType}
+            </p>
+          </div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {breed.colorGenetics.palette.map((color) => (
+              <div
+                key={color.name}
+                className="bg-brand-cream/20 rounded-2xl border-2 border-brand-espresso/30 p-4 space-y-2 flex flex-col justify-between"
+              >
+                <div className="space-y-1.5">
+                  <div className="flex items-center justify-between">
+                    <span
+                      className={`text-[10px] font-heading font-black uppercase px-2 py-0.5 rounded-md border ${
+                        color.category === "Standard (Official)"
+                          ? "bg-brand-olive/30 text-brand-espresso border-brand-espresso/30"
+                          : "bg-brand-terracotta/20 text-brand-terracotta border-brand-terracotta/40"
+                      }`}
+                    >
+                      {color.category}
+                    </span>
+                  </div>
+                  <h3 className="font-heading font-black text-base text-brand-espresso">
+                    {color.name}
+                  </h3>
+                  <p className="text-xs text-brand-espresso/80 leading-relaxed">
+                    {color.description}
+                  </p>
+                </div>
+                {color.geneticsNote && (
+                  <div className="pt-2 border-t border-brand-espresso/10 text-[11px] font-mono text-brand-taupe">
+                    🧬 {color.geneticsNote}
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+
+          {/* Health Considerations for Coat Colors */}
+          <div className="p-4 rounded-xl bg-amber-50 border border-amber-300 flex items-start gap-3">
+            <AlertTriangle className="w-5 h-5 text-amber-700 flex-shrink-0 mt-0.5" />
+            <div className="space-y-1">
+              <div className="text-xs font-heading font-black text-amber-900 uppercase">
+                Clinical Genetics & Coat Health Notice
+              </div>
+              <p className="text-xs text-amber-900/90 leading-relaxed">
+                {breed.colorGenetics.healthConsiderations}
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* ========================================================
+            NEW KEYWORD CLUSTER: PUPPY / KITTEN GROWTH MILESTONES
+            ======================================================== */}
+        <section className="bg-white rounded-3xl border-2.5 border-brand-espresso p-6 sm:p-8 shadow-[5px_5px_0px_#583D32] space-y-6">
+          <div className="space-y-2">
+            <div className="inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full bg-brand-olive text-brand-espresso text-[11px] font-heading font-black uppercase tracking-wider border border-brand-espresso/30">
+              <Clock className="w-3.5 h-3.5" />
+              Growth Milestones
+            </div>
+            <h2 className="font-heading text-2xl sm:text-3xl font-black text-brand-espresso">
+              {breed.name} {isDog ? "Puppy" : "Kitten"} Development Timeline
+            </h2>
+            <p className="text-sm text-brand-espresso/80 leading-relaxed max-w-3xl">
+              {breed.growthMilestones.overview}
+            </p>
+          </div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {breed.growthMilestones.stages.map((stg) => (
+              <div
+                key={stg.stage}
+                className="bg-brand-cream/30 rounded-2xl border-2 border-brand-espresso/30 p-4 space-y-2 flex flex-col justify-between"
+              >
+                <div className="space-y-1.5">
+                  <div className="text-[11px] font-mono font-bold text-brand-taupe uppercase">
+                    {stg.timeline}
+                  </div>
+                  <h3 className="font-heading font-black text-sm text-brand-espresso">
+                    {stg.stage}
+                  </h3>
+                  <div className="inline-block px-2 py-0.5 rounded bg-brand-terracotta/10 text-brand-terracotta font-mono text-xs font-bold border border-brand-terracotta/20">
+                    Target: {stg.benchmark}
+                  </div>
+                </div>
+                <p className="text-xs text-brand-espresso/75 leading-relaxed pt-2 border-t border-brand-espresso/10">
+                  {stg.guidance}
+                </p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* ========================================================
+            NEW KEYWORD CLUSTER: SIZE SPECTRUM & "MINI" DISCLAIMER
+            ======================================================== */}
+        <section className="bg-brand-cream/40 rounded-2xl border-2 border-brand-espresso p-5 shadow-[3px_3px_0px_#583D32] space-y-2">
+          <div className="flex items-center gap-2">
+            <Scale className="w-5 h-5 text-brand-terracotta" />
+            <h3 className="font-heading text-lg font-black text-brand-espresso">
+              {breed.sizeVarieties.disclaimerTitle}
+            </h3>
+          </div>
+          <p className="text-xs text-brand-espresso/80 leading-relaxed">
+            {breed.sizeVarieties.disclaimerText}
+          </p>
         </section>
 
         {/* ========================================================
