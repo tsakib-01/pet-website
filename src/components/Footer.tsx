@@ -54,8 +54,14 @@ export default function Footer() {
               </Link>
             </li>
             <li>
-              <Link href="/breed" className="hover:text-brand-terracotta transition-colors flex items-center gap-1.5 text-brand-terracotta group">
+              <Link href="/recalls" className="hover:text-brand-terracotta transition-colors flex items-center gap-1.5 text-brand-terracotta group">
                 <span className="font-black group-hover:translate-x-0.5 transition-transform">→</span>
+                <span>Pet Food Recalls (FDA)</span>
+              </Link>
+            </li>
+            <li>
+              <Link href="/breed" className="hover:text-brand-terracotta transition-colors flex items-center gap-1.5 group">
+                <span className="text-brand-terracotta font-black group-hover:translate-x-0.5 transition-transform">→</span>
                 <span>Breed Care Guides</span>
               </Link>
             </li>

@@ -16,6 +16,7 @@ import {
   Calendar,
   Utensils,
   Sparkles,
+  ShieldAlert,
 } from "lucide-react";
 
 export default function Header() {
@@ -42,22 +43,22 @@ export default function Header() {
     };
   }, [mobileMenuOpen]);
 
-  // Essential Desktop Navigation Links (Focused, Non-Redundant)
+  // Essential Desktop Navigation Links (Uncluttered, High Priority)
   const desktopLinks = [
+    {
+      href: "/recalls",
+      label: "Pet Food Recalls",
+      icon: <ShieldAlert className="w-3.5 h-3.5 text-brand-terracotta" />,
+    },
+    {
+      href: "/tools",
+      label: "All Calculators",
+      icon: <PawPrint className="w-3.5 h-3.5" />,
+    },
     {
       href: "/breed",
       label: "Breed Guides",
       icon: <BookOpen className="w-3.5 h-3.5" />,
-    },
-    {
-      href: "/tools/dog-age-calculator",
-      label: "Dog Age",
-      icon: <Dog className="w-3.5 h-3.5" />,
-    },
-    {
-      href: "/tools/cat-age-calculator",
-      label: "Cat Age",
-      icon: <Cat className="w-3.5 h-3.5" />,
     },
     {
       href: "/tools/dog-chocolate-toxicity-calculator",
@@ -133,8 +134,8 @@ export default function Header() {
             </div>
           </Link>
 
-          {/* Desktop Nav (Only Important Links — Zero Redundancy) */}
-          <nav className="hidden lg:flex items-center gap-2 text-xs font-heading">
+          {/* Desktop Nav (Only Important Sections — Un-Cramped) */}
+          <nav className="hidden lg:flex items-center gap-2.5 text-xs font-heading">
             {desktopLinks.map((link) => {
               const isActive = pathname === link.href;
               return (
@@ -156,20 +157,8 @@ export default function Header() {
             })}
           </nav>
 
-          {/* Right Action: Desktop CTA strictly hidden on mobile; Clean Hamburger on Mobile */}
+          {/* Right Action: Mobile Hamburger */}
           <div className="flex items-center gap-2">
-            {/* Desktop Only Button (Completely omitted on mobile) */}
-            <div className="hidden lg:block">
-              <Link
-                href="/tools"
-                className="btn-pill btn-pill-terracotta px-4 py-1.5 text-xs font-black shadow-paper-sm flex items-center gap-1.5"
-              >
-                <PawPrint className="w-3.5 h-3.5" />
-                <span>All Calculators</span>
-                <ArrowRight className="w-3.5 h-3.5" />
-              </Link>
-            </div>
-
             {/* Mobile Hamburger / Close Button */}
             <button
               type="button"
@@ -200,46 +189,58 @@ export default function Header() {
         >
           <div className="max-w-lg mx-auto space-y-5">
             {/* 1. Core Primary Hubs (Tactile Cards) */}
-            <div className="grid grid-cols-2 gap-3">
+            <div className="grid grid-cols-3 gap-2">
               <Link
-                href="/breed"
+                href="/recalls"
                 onClick={() => setMobileMenuOpen(false)}
-                className="p-3.5 sm:p-4 rounded-2xl border-2.5 border-brand-espresso bg-white shadow-[3px_3px_0px_#583D32] hover:bg-brand-cream/50 transition-all flex flex-col justify-between group"
+                className="p-3 rounded-2xl border-2.5 border-brand-espresso bg-white shadow-[2.5px_2.5px_0px_#583D32] hover:bg-brand-cream/50 transition-all flex flex-col justify-between group"
               >
-                <div className="w-9 h-9 rounded-xl bg-brand-olive border-2 border-brand-espresso flex items-center justify-center shadow-paper-sm mb-2.5 group-hover:scale-105 transition-transform">
-                  <BookOpen className="w-5 h-5 text-brand-espresso" />
+                <div className="w-8 h-8 rounded-xl bg-rose-100 border-2 border-brand-espresso flex items-center justify-center shadow-paper-sm mb-2 group-hover:scale-105 transition-transform">
+                  <ShieldAlert className="w-4 h-4 text-brand-terracotta" />
                 </div>
                 <div>
-                  <div className="text-[10px] font-mono font-bold text-brand-taupe uppercase tracking-wider">
-                    Hub
+                  <div className="text-[9px] font-mono font-bold text-brand-taupe uppercase tracking-wider">
+                    Safety
                   </div>
-                  <div className="font-heading font-black text-sm sm:text-base text-brand-espresso leading-tight">
-                    Breed Guides
+                  <div className="font-heading font-black text-xs text-brand-espresso leading-tight">
+                    Food Recalls
                   </div>
-                  <p className="text-[11px] text-brand-taupe font-sans mt-0.5">
-                    Dogs & Cats clinical standards
-                  </p>
                 </div>
               </Link>
 
               <Link
                 href="/tools"
                 onClick={() => setMobileMenuOpen(false)}
-                className="p-3.5 sm:p-4 rounded-2xl border-2.5 border-brand-espresso bg-white shadow-[3px_3px_0px_#583D32] hover:bg-brand-cream/50 transition-all flex flex-col justify-between group"
+                className="p-3 rounded-2xl border-2.5 border-brand-espresso bg-white shadow-[2.5px_2.5px_0px_#583D32] hover:bg-brand-cream/50 transition-all flex flex-col justify-between group"
               >
-                <div className="w-9 h-9 rounded-xl bg-brand-terracotta border-2 border-brand-espresso flex items-center justify-center shadow-paper-sm mb-2.5 group-hover:scale-105 transition-transform">
-                  <PawPrint className="w-5 h-5 text-white" />
+                <div className="w-8 h-8 rounded-xl bg-brand-terracotta border-2 border-brand-espresso flex items-center justify-center shadow-paper-sm mb-2 group-hover:scale-105 transition-transform">
+                  <PawPrint className="w-4 h-4 text-white" />
                 </div>
                 <div>
-                  <div className="text-[10px] font-mono font-bold text-brand-taupe uppercase tracking-wider">
-                    Directory
+                  <div className="text-[9px] font-mono font-bold text-brand-taupe uppercase tracking-wider">
+                    Tools
                   </div>
-                  <div className="font-heading font-black text-sm sm:text-base text-brand-espresso leading-tight">
-                    All Calculators
+                  <div className="font-heading font-black text-xs text-brand-espresso leading-tight">
+                    Calculators
                   </div>
-                  <p className="text-[11px] text-brand-taupe font-sans mt-0.5">
-                    Veterinary formulas
-                  </p>
+                </div>
+              </Link>
+
+              <Link
+                href="/breed"
+                onClick={() => setMobileMenuOpen(false)}
+                className="p-3 rounded-2xl border-2.5 border-brand-espresso bg-white shadow-[2.5px_2.5px_0px_#583D32] hover:bg-brand-cream/50 transition-all flex flex-col justify-between group"
+              >
+                <div className="w-8 h-8 rounded-xl bg-brand-olive border-2 border-brand-espresso flex items-center justify-center shadow-paper-sm mb-2 group-hover:scale-105 transition-transform">
+                  <BookOpen className="w-4 h-4 text-brand-espresso" />
+                </div>
+                <div>
+                  <div className="text-[9px] font-mono font-bold text-brand-taupe uppercase tracking-wider">
+                    Guides
+                  </div>
+                  <div className="font-heading font-black text-xs text-brand-espresso leading-tight">
+                    Breeds
+                  </div>
                 </div>
               </Link>
             </div>

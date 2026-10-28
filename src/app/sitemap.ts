@@ -1,6 +1,7 @@
 import { MetadataRoute } from "next";
 import { CALCULATOR_TOOLS } from "@/data/calculators";
 import { BREED_DATABASE } from "@/data/breeds";
+import { getAllRecallBrands } from "@/data/recalls";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://pawtruth.com";
@@ -20,12 +21,25 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.9,
   }));
 
+  const brandRoutes = getAllRecallBrands().map((brand) => ({
+    url: `${baseUrl}/brand/${brand.slug}`,
+    lastModified: now,
+    changeFrequency: "weekly" as const,
+    priority: 0.9,
+  }));
+
   return [
     {
       url: baseUrl,
       lastModified: now,
       changeFrequency: "daily" as const,
       priority: 1.0,
+    },
+    {
+      url: `${baseUrl}/recalls`,
+      lastModified: now,
+      changeFrequency: "daily" as const,
+      priority: 0.95,
     },
     {
       url: `${baseUrl}/tools`,
@@ -51,6 +65,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly" as const,
       priority: 0.7,
     },
+    ...brandRoutes,
     ...breedRoutes,
     ...toolRoutes,
   ];
