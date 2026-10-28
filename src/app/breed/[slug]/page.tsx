@@ -218,9 +218,9 @@ export default async function BreedDetailPage({ params }: Props) {
             HERO HEADER & 2-COLUMN BALANCED SHOWCASE
             ======================================================== */}
         <section className="bg-white rounded-3xl border-2.5 border-brand-espresso p-6 sm:p-8 lg:p-10 shadow-[6px_6px_0px_#583D32]">
-          <div className="grid lg:grid-cols-12 gap-8 items-center">
-            {/* Left Column: Breed Identity & Facts */}
-            <div className="lg:col-span-7 space-y-5">
+          <div className="grid lg:grid-cols-12 gap-6 lg:gap-8 items-center">
+            {/* Left Column: Breed Identity, Title & Tagline */}
+            <div className="lg:col-span-7 space-y-4">
               <div className="flex flex-wrap items-center gap-2.5">
                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-olive text-brand-espresso border-2 border-brand-espresso shadow-[2px_2px_0px_#583D32] text-xs font-heading font-black uppercase">
                   {isDog ? <Dog className="w-4 h-4" /> : <Cat className="w-4 h-4" />}
@@ -240,8 +240,8 @@ export default async function BreedDetailPage({ params }: Props) {
                 </p>
               </div>
 
-              {/* Recognized Coat Patterns */}
-              <div className="pt-2 border-t border-brand-espresso/15 space-y-2">
+              {/* Recognized Coat Patterns — DESKTOP VIEW (Inside left column) */}
+              <div className="hidden lg:block pt-3 border-t border-brand-espresso/15 space-y-2">
                 <div className="text-xs font-heading font-black text-brand-espresso uppercase tracking-wider flex items-center gap-1.5">
                   <PawPrint className="w-3.5 h-3.5 text-brand-terracotta" />
                   Recognized Coat & Color Variations:
@@ -259,7 +259,7 @@ export default async function BreedDetailPage({ params }: Props) {
               </div>
             </div>
 
-            {/* Right Column: Balanced Breed Portrait Card */}
+            {/* Right Column (Desktop) / Below Tagline (Mobile): Balanced Breed Portrait Card */}
             <div className="lg:col-span-5">
               <div className="relative w-full max-w-md mx-auto aspect-[4/3] sm:aspect-[16/11] max-h-[320px] rounded-2xl overflow-hidden border-2.5 border-brand-espresso shadow-[5px_5px_0px_#583D32] bg-brand-cream/40 group">
                 <img
@@ -271,6 +271,24 @@ export default async function BreedDetailPage({ params }: Props) {
                 <div className="absolute bottom-2.5 right-2.5 bg-brand-espresso/85 backdrop-blur-sm text-brand-cream text-[10px] font-mono font-medium px-2.5 py-0.5 rounded-full border border-brand-cream/30">
                   Representative Photo
                 </div>
+              </div>
+            </div>
+
+            {/* Recognized Coat Patterns — MOBILE VIEW ONLY (Positioned at bottom of card, after image) */}
+            <div className="lg:hidden col-span-1 pt-3 border-t border-brand-espresso/15 space-y-2">
+              <div className="text-xs font-heading font-black text-brand-espresso uppercase tracking-wider flex items-center gap-1.5">
+                <PawPrint className="w-3.5 h-3.5 text-brand-terracotta" />
+                Recognized Coat & Color Variations:
+              </div>
+              <div className="flex flex-wrap gap-1.5">
+                {breed.coatVariations.map((coat) => (
+                  <span
+                    key={coat}
+                    className="px-2.5 py-1 bg-brand-cream/50 text-brand-espresso text-xs font-bold rounded-lg border border-brand-espresso/30"
+                  >
+                    {coat}
+                  </span>
+                ))}
               </div>
             </div>
           </div>
