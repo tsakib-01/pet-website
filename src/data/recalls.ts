@@ -413,13 +413,35 @@ const PRIMARY_BRANDS: BrandSafetyProfile[] = [
     websiteDomain: "frommfamily.com",
     foundedYear: 1904,
     species: "both",
-    safetyTier: "Clean / Verified Safe",
-    statusSummary: "Fromm Family Foods is a fifth-generation family-owned pet food manufacturer operating its own USDA-inspected facilities in Wisconsin. Fromm holds one of the most respected safety track records in the industry, executing proactive voluntary withdrawals on the rare occasion potential nutrient variances are detected.",
-    totalRecallsCount: 2,
-    lastRecallDate: "October 2021",
+    safetyTier: "Moderate Caution",
+    statusSummary: "Fromm Family Foods is a fifth-generation family-owned pet food manufacturer operating its own USDA-inspected facilities in Wisconsin. In August 2026, Fromm initiated a voluntary recall of select wet canned dog food batches due to potential foreign metal material from equipment wear.",
+    totalRecallsCount: 3,
+    lastRecallDate: "August 2026",
     manufacturingFacilities: ["Mequon, WI", "Columbus, WI"],
-    historySummary: "Fromm has never experienced a Class I pathogen or mold contamination event. In October 2021, Fromm issued a proactive, voluntary withdrawal of four canned dog food varieties due to elevated Vitamin D levels identified through internal quality audits before widespread adverse events occurred.",
+    historySummary: "Fromm dry kibble lines have never experienced a recall in over a century of manufacturing. In August 2026, Fromm issued a voluntary recall for select canned dog food varieties (Turkey Pâté and Diner Classic Milo's Meatloaf) due to potential metal fragments. Previously in October 2021, a proactive voluntary recall of four canned dog food varieties was executed due to elevated Vitamin D levels.",
     recalls: [
+      {
+        docketNumber: "FDA-VET-2026-N-0821",
+        date: "August 21, 2026",
+        year: 2026,
+        classification: "Class II",
+        severityDescription: "Potential foreign metal material from manufacturing line canning equipment.",
+        hazardType: "Foreign Material",
+        reason: "Fromm Family Foods LLC voluntarily recalled select batches of Turkey Pâté wet food for dogs and Diner Classic Milo's Meatloaf due to potential presence of small metal fragments.",
+        affectedProducts: [
+          {
+            name: "Fromm Turkey Pâté Wet Food for Dogs & Diner Classic Milo's Meatloaf",
+            size: "12 oz and 13 oz cans",
+            lotCodes: ["LOT 12480", "LOT 12481", "LOT 12482"],
+            upc: "072705 12480 / 072705 12482",
+            bestBy: "Exp. 08/2028",
+          },
+        ],
+        distributionStates: "Nationwide through independent neighborhood pet retailers and authorized distributors.",
+        clinicalSymptoms: ["Oral trauma", "Choking", "Reluctance to eat wet food", "Gastrointestinal discomfort"],
+        actionSteps: ["Stop feeding immediately", "Return to independent pet retailer for full exchange or cash refund", "Inspect mouth if pet ate food"],
+        fdaNoticeUrl: "https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/fromm-family-foods-voluntarily-recalls-turkey-pate-wet-food-dogs-and-diner-classic-milos-meatloaf",
+      },
       {
         docketNumber: "FDA-REC-2021-F-0512",
         date: "October 1, 2021",
@@ -444,8 +466,12 @@ const PRIMARY_BRANDS: BrandSafetyProfile[] = [
     ],
     faqs: [
       {
+        question: "Why was Fromm canned dog food recalled in August 2026?",
+        answer: "Fromm issued a voluntary recall for select batches of Turkey Pâté and Diner Classic Milo's Meatloaf canned food due to potential small metal fragments from canning machinery.",
+      },
+      {
         question: "Has Fromm dry dog food ever been recalled?",
-        answer: "No. Fromm's dry dog and cat kibble lines (Fromm Gold, Four-Star Nutritionals) have never had an FDA recall in over a century of production.",
+        answer: "No. Fromm's dry dog and cat kibble lines (Fromm Gold, Four-Star Nutritionals) have NEVER had an FDA recall in over a century of production.",
       },
       {
         question: "Where is Fromm dog food made?",
