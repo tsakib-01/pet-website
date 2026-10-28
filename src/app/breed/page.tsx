@@ -3,7 +3,8 @@ import Link from "next/link";
 import { Metadata } from "next";
 import { BREED_DATABASE } from "@/data/breeds";
 import AdSensePlaceholder from "@/components/AdSensePlaceholder";
-import { Dog, Cat, ArrowRight, Activity, ChevronRight, Calculator, CheckCircle2, ShieldCheck, HeartPulse } from "lucide-react";
+import BreedDirectoryClient from "@/components/BreedDirectoryClient";
+import { Activity, ChevronRight, ShieldCheck } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Dog & Cat Breed Care Guides, Standards & Calculators | PawTruth",
@@ -37,9 +38,6 @@ export const metadata: Metadata = {
 };
 
 export default function BreedDirectoryPage() {
-  const dogBreeds = BREED_DATABASE.filter((b) => b.species === "dog");
-  const catBreeds = BREED_DATABASE.filter((b) => b.species === "cat");
-
   const jsonLd = {
     "@context": "https://schema.org",
     "@graph": [
@@ -100,130 +98,8 @@ export default function BreedDirectoryPage() {
           </p>
         </section>
 
-        {/* Breed Directory Profiles */}
-        <div className="grid md:grid-cols-2 gap-8">
-          {/* DOG BREED CARD */}
-          {dogBreeds.map((breed) => (
-            <div
-              key={breed.slug}
-              className="bg-white rounded-3xl border-2.5 border-brand-espresso p-6 sm:p-8 shadow-[5px_5px_0px_#583D32] flex flex-col justify-between space-y-6"
-            >
-              <div className="space-y-4">
-                <div className="flex items-center justify-between">
-                  <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-brand-olive text-brand-espresso border border-brand-espresso/40 text-xs font-heading font-black uppercase">
-                    <Dog className="w-3.5 h-3.5" />
-                    Dog Breed Profile
-                  </span>
-                  <span className="text-xs font-mono font-bold text-brand-taupe">
-                    AKC Standard
-                  </span>
-                </div>
-
-                <div className="relative w-full h-44 sm:h-52 rounded-2xl overflow-hidden border-2 border-brand-espresso shadow-[3px_3px_0px_#583D32] bg-brand-cream/30">
-                  <img
-                    src={breed.heroImage}
-                    alt={breed.heroImageAlt}
-                    className="w-full h-full object-cover object-center"
-                  />
-                </div>
-
-                <div>
-                  <h2 className="font-heading text-2xl font-black text-brand-espresso mb-1">
-                    {breed.name}
-                  </h2>
-                  <p className="text-xs text-brand-espresso/80 leading-relaxed">
-                    {breed.tagline}
-                  </p>
-                </div>
-
-                {/* Sample Metrics Chips */}
-                <div className="grid grid-cols-3 gap-2 pt-2 border-t border-brand-espresso/15">
-                  <div className="bg-brand-cream/40 rounded-xl p-2.5 border border-brand-espresso/20 text-center">
-                    <div className="text-[10px] font-mono text-brand-taupe uppercase font-bold">Weight</div>
-                    <div className="text-xs font-heading font-black text-brand-espresso">{breed.metrics[0]?.value}</div>
-                  </div>
-                  <div className="bg-brand-cream/40 rounded-xl p-2.5 border border-brand-espresso/20 text-center">
-                    <div className="text-[10px] font-mono text-brand-taupe uppercase font-bold">Crate</div>
-                    <div className="text-xs font-heading font-black text-brand-espresso">{breed.metrics[2]?.value}</div>
-                  </div>
-                  <div className="bg-brand-cream/40 rounded-xl p-2.5 border border-brand-espresso/20 text-center">
-                    <div className="text-[10px] font-mono text-brand-taupe uppercase font-bold">Lifespan</div>
-                    <div className="text-xs font-heading font-black text-brand-espresso">{breed.metrics[3]?.value}</div>
-                  </div>
-                </div>
-              </div>
-
-              <Link
-                href={`/breed/${breed.slug}`}
-                className="w-full inline-flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-brand-terracotta text-white font-heading font-black text-sm uppercase tracking-wider border-2 border-brand-espresso shadow-[3px_3px_0px_#583D32] hover:shadow-[1px_1px_0px_#583D32] hover:translate-x-[2px] hover:translate-y-[2px] transition-all"
-              >
-                <span>Explore {breed.name} Guide</span>
-                <ArrowRight className="w-4 h-4" />
-              </Link>
-            </div>
-          ))}
-
-          {/* CAT BREED CARD */}
-          {catBreeds.map((breed) => (
-            <div
-              key={breed.slug}
-              className="bg-white rounded-3xl border-2.5 border-brand-espresso p-6 sm:p-8 shadow-[5px_5px_0px_#583D32] flex flex-col justify-between space-y-6"
-            >
-              <div className="space-y-4">
-                <div className="flex items-center justify-between">
-                  <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-brand-olive text-brand-espresso border border-brand-espresso/40 text-xs font-heading font-black uppercase">
-                    <Cat className="w-3.5 h-3.5" />
-                    Cat Breed Profile
-                  </span>
-                  <span className="text-xs font-mono font-bold text-brand-taupe">
-                    CFA Standard
-                  </span>
-                </div>
-
-                <div className="relative w-full h-44 sm:h-52 rounded-2xl overflow-hidden border-2 border-brand-espresso shadow-[3px_3px_0px_#583D32] bg-brand-cream/30">
-                  <img
-                    src={breed.heroImage}
-                    alt={breed.heroImageAlt}
-                    className="w-full h-full object-cover object-center"
-                  />
-                </div>
-
-                <div>
-                  <h2 className="font-heading text-2xl font-black text-brand-espresso mb-1">
-                    {breed.name}
-                  </h2>
-                  <p className="text-xs text-brand-espresso/80 leading-relaxed">
-                    {breed.tagline}
-                  </p>
-                </div>
-
-                {/* Sample Metrics Chips */}
-                <div className="grid grid-cols-3 gap-2 pt-2 border-t border-brand-espresso/15">
-                  <div className="bg-brand-cream/40 rounded-xl p-2.5 border border-brand-espresso/20 text-center">
-                    <div className="text-[10px] font-mono text-brand-taupe uppercase font-bold">Weight</div>
-                    <div className="text-xs font-heading font-black text-brand-espresso">{breed.metrics[0]?.value}</div>
-                  </div>
-                  <div className="bg-brand-cream/40 rounded-xl p-2.5 border border-brand-espresso/20 text-center">
-                    <div className="text-[10px] font-mono text-brand-taupe uppercase font-bold">Litter Box</div>
-                    <div className="text-xs font-heading font-black text-brand-espresso">{breed.metrics[2]?.value}</div>
-                  </div>
-                  <div className="bg-brand-cream/40 rounded-xl p-2.5 border border-brand-espresso/20 text-center">
-                    <div className="text-[10px] font-mono text-brand-taupe uppercase font-bold">Lifespan</div>
-                    <div className="text-xs font-heading font-black text-brand-espresso">{breed.metrics[3]?.value}</div>
-                  </div>
-                </div>
-              </div>
-
-              <Link
-                href={`/breed/${breed.slug}`}
-                className="w-full inline-flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-brand-terracotta text-white font-heading font-black text-sm uppercase tracking-wider border-2 border-brand-espresso shadow-[3px_3px_0px_#583D32] hover:shadow-[1px_1px_0px_#583D32] hover:translate-x-[2px] hover:translate-y-[2px] transition-all"
-              >
-                <span>Explore {breed.name} Guide</span>
-                <ArrowRight className="w-4 h-4" />
-              </Link>
-            </div>
-          ))}
-        </div>
+        {/* Interactive Species Filter & Breed Cards */}
+        <BreedDirectoryClient breeds={BREED_DATABASE} />
 
         {/* Why Clinical Breed Standards Matter */}
         <section className="bg-brand-cream/40 rounded-3xl border-2.5 border-brand-espresso p-6 sm:p-8 shadow-[4px_4px_0px_#583D32] space-y-4">
