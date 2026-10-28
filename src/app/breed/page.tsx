@@ -59,11 +59,11 @@ export default function BreedDirectoryPage() {
                 </span>
               </div>
 
-              <div className="relative w-full aspect-video rounded-2xl overflow-hidden border-2 border-brand-espresso shadow-[3px_3px_0px_#583D32] bg-brand-cream/30">
+              <div className="relative w-full h-44 sm:h-52 rounded-2xl overflow-hidden border-2 border-brand-espresso shadow-[3px_3px_0px_#583D32] bg-brand-cream/30">
                 <img
                   src={breed.heroImage}
                   alt={breed.heroImageAlt}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover object-center"
                 />
               </div>
 
@@ -120,11 +120,11 @@ export default function BreedDirectoryPage() {
                 </span>
               </div>
 
-              <div className="relative w-full aspect-video rounded-2xl overflow-hidden border-2 border-brand-espresso shadow-[3px_3px_0px_#583D32] bg-brand-cream/30">
+              <div className="relative w-full h-44 sm:h-52 rounded-2xl overflow-hidden border-2 border-brand-espresso shadow-[3px_3px_0px_#583D32] bg-brand-cream/30">
                 <img
                   src={breed.heroImage}
                   alt={breed.heroImageAlt}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover object-center"
                 />
               </div>
 

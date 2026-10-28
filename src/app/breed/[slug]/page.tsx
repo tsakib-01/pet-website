@@ -187,56 +187,79 @@ export default async function BreedDetailPage({ params }: Props) {
         </nav>
 
         {/* ========================================================
-            HERO HEADER & 16:9 VISUAL SHOWCASE
+            HERO HEADER & BALANCED EDITORIAL SHOWCASE
             ======================================================== */}
-        <section className="bg-white rounded-3xl border-2.5 border-brand-espresso p-6 sm:p-10 shadow-[6px_6px_0px_#583D32] space-y-8">
-          <div className="flex flex-wrap items-center justify-between gap-3">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-olive text-brand-espresso border-2 border-brand-espresso shadow-[2px_2px_0px_#583D32] text-xs font-heading font-black uppercase">
-              {isDog ? <Dog className="w-4 h-4" /> : <Cat className="w-4 h-4" />}
-              {isDog ? "Dog Breed Clinical Profile" : "Cat Breed Clinical Profile"}
-            </div>
-            <div className="text-xs font-mono font-bold text-brand-taupe">
-              {breed.standardGroup} • Origin: {breed.origin}
-            </div>
-          </div>
+        <section className="bg-white rounded-3xl border-2.5 border-brand-espresso p-6 sm:p-8 lg:p-10 shadow-[6px_6px_0px_#583D32]">
+          <div className="grid lg:grid-cols-12 gap-8 items-center">
+            {/* Left Column: Breed Identity & Facts */}
+            <div className="lg:col-span-7 space-y-5">
+              <div className="flex flex-wrap items-center gap-2.5">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-olive text-brand-espresso border-2 border-brand-espresso shadow-[2px_2px_0px_#583D32] text-xs font-heading font-black uppercase">
+                  {isDog ? <Dog className="w-4 h-4" /> : <Cat className="w-4 h-4" />}
+                  {isDog ? "Dog Breed Clinical Profile" : "Cat Breed Clinical Profile"}
+                </div>
+                <div className="text-xs font-mono font-bold text-brand-taupe">
+                  {breed.standardGroup} • Origin: {breed.origin}
+                </div>
+              </div>
 
-          <div className="space-y-3">
-            <h1 className="font-heading text-3xl sm:text-5xl font-black text-brand-espresso tracking-tight">
-              {breed.name}
-            </h1>
-            <p className="text-base sm:text-xl font-medium text-brand-espresso/80 max-w-3xl leading-relaxed">
-              {breed.tagline}
-            </p>
-          </div>
+              <div className="space-y-2">
+                <h1 className="font-heading text-3xl sm:text-5xl font-black text-brand-espresso tracking-tight">
+                  {breed.name}
+                </h1>
+                <p className="text-sm sm:text-base font-medium text-brand-espresso/80 leading-relaxed">
+                  {breed.tagline}
+                </p>
+              </div>
 
-          {/* 16:9 Visual Showcase Image */}
-          <div className="relative w-full aspect-video rounded-2xl overflow-hidden border-2.5 border-brand-espresso shadow-[4px_4px_0px_#583D32] bg-brand-cream/40">
-            <img
-              src={breed.heroImage}
-              alt={breed.heroImageAlt}
-              className="w-full h-full object-cover"
-              loading="eager"
-            />
-            <div className="absolute bottom-3 right-3 bg-brand-espresso/80 backdrop-blur-sm text-brand-cream text-[11px] font-mono font-medium px-3 py-1 rounded-full border border-brand-cream/30">
-              Representative Photo (Custom Image Update Pending)
-            </div>
-          </div>
+              {/* Recognized Coat Patterns */}
+              <div className="pt-2 border-t border-brand-espresso/15 space-y-2">
+                <div className="text-xs font-heading font-black text-brand-espresso uppercase tracking-wider flex items-center gap-1.5">
+                  <PawPrint className="w-3.5 h-3.5 text-brand-terracotta" />
+                  Recognized Coat & Color Variations:
+                </div>
+                <div className="flex flex-wrap gap-1.5">
+                  {breed.coatVariations.map((coat) => (
+                    <span
+                      key={coat}
+                      className="px-2.5 py-1 bg-brand-cream/50 text-brand-espresso text-xs font-bold rounded-lg border border-brand-espresso/30"
+                    >
+                      {coat}
+                    </span>
+                  ))}
+                </div>
+              </div>
 
-          {/* Recognized Coat Patterns */}
-          <div className="pt-2 border-t border-brand-espresso/15">
-            <div className="text-xs font-heading font-black text-brand-espresso uppercase tracking-wider mb-2.5 flex items-center gap-1.5">
-              <PawPrint className="w-3.5 h-3.5 text-brand-terracotta" />
-              Recognized Coat & Color Variations:
+              {/* Quick Hero Highlights */}
+              <div className="grid grid-cols-3 gap-2.5 pt-2">
+                <div className="bg-brand-cream/40 rounded-xl p-2.5 border border-brand-espresso/20 text-center">
+                  <div className="text-[10px] font-mono text-brand-taupe uppercase font-bold">Weight</div>
+                  <div className="text-xs sm:text-sm font-heading font-black text-brand-espresso">{breed.metrics[0]?.value}</div>
+                </div>
+                <div className="bg-brand-cream/40 rounded-xl p-2.5 border border-brand-espresso/20 text-center">
+                  <div className="text-[10px] font-mono text-brand-taupe uppercase font-bold">{isDog ? "Crate Size" : "Litter Box"}</div>
+                  <div className="text-xs sm:text-sm font-heading font-black text-brand-espresso">{breed.metrics[2]?.value}</div>
+                </div>
+                <div className="bg-brand-cream/40 rounded-xl p-2.5 border border-brand-espresso/20 text-center">
+                  <div className="text-[10px] font-mono text-brand-taupe uppercase font-bold">Lifespan</div>
+                  <div className="text-xs sm:text-sm font-heading font-black text-brand-espresso">{breed.metrics[3]?.value}</div>
+                </div>
+              </div>
             </div>
-            <div className="flex flex-wrap gap-2">
-              {breed.coatVariations.map((coat) => (
-                <span
-                  key={coat}
-                  className="px-3 py-1 bg-brand-cream/50 text-brand-espresso text-xs font-bold rounded-lg border border-brand-espresso/30"
-                >
-                  {coat}
-                </span>
-              ))}
+
+            {/* Right Column: Balanced Breed Portrait Card */}
+            <div className="lg:col-span-5">
+              <div className="relative w-full max-w-md mx-auto aspect-[4/3] sm:aspect-[16/11] max-h-[320px] rounded-2xl overflow-hidden border-2.5 border-brand-espresso shadow-[5px_5px_0px_#583D32] bg-brand-cream/40 group">
+                <img
+                  src={breed.heroImage}
+                  alt={breed.heroImageAlt}
+                  className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                  loading="eager"
+                />
+                <div className="absolute bottom-2.5 right-2.5 bg-brand-espresso/85 backdrop-blur-sm text-brand-cream text-[10px] font-mono font-medium px-2.5 py-0.5 rounded-full border border-brand-cream/30">
+                  Representative Photo
+                </div>
+              </div>
             </div>
           </div>
         </section>
