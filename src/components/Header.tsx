@@ -17,6 +17,7 @@ import {
   Utensils,
   Sparkles,
   ShieldAlert,
+  Building2,
 } from "lucide-react";
 
 export default function Header() {
@@ -47,8 +48,13 @@ export default function Header() {
   const desktopLinks = [
     {
       href: "/recalls",
-      label: "Pet Food Recalls",
+      label: "Food Recalls",
       icon: <ShieldAlert className="w-3.5 h-3.5 text-brand-terracotta" />,
+    },
+    {
+      href: "/brands",
+      label: "Brand Directory",
+      icon: <Building2 className="w-3.5 h-3.5 text-brand-leaf" />,
     },
     {
       href: "/tools",
@@ -189,7 +195,7 @@ export default function Header() {
         >
           <div className="max-w-lg mx-auto space-y-5">
             {/* 1. Core Primary Hubs (Tactile Cards) */}
-            <div className="grid grid-cols-3 gap-2">
+            <div className="grid grid-cols-2 gap-2.5">
               <Link
                 href="/recalls"
                 onClick={() => setMobileMenuOpen(false)}
@@ -200,10 +206,28 @@ export default function Header() {
                 </div>
                 <div>
                   <div className="text-[9px] font-mono font-bold text-brand-taupe uppercase tracking-wider">
-                    Safety
+                    FDA Database
                   </div>
                   <div className="font-heading font-black text-xs text-brand-espresso leading-tight">
                     Food Recalls
+                  </div>
+                </div>
+              </Link>
+
+              <Link
+                href="/brands"
+                onClick={() => setMobileMenuOpen(false)}
+                className="p-3 rounded-2xl border-2.5 border-brand-espresso bg-white shadow-[2.5px_2.5px_0px_#583D32] hover:bg-brand-cream/50 transition-all flex flex-col justify-between group"
+              >
+                <div className="w-8 h-8 rounded-xl bg-emerald-100 border-2 border-brand-espresso flex items-center justify-center shadow-paper-sm mb-2 group-hover:scale-105 transition-transform">
+                  <Building2 className="w-4 h-4 text-emerald-800" />
+                </div>
+                <div>
+                  <div className="text-[9px] font-mono font-bold text-brand-taupe uppercase tracking-wider">
+                    250+ Profiles
+                  </div>
+                  <div className="font-heading font-black text-xs text-brand-espresso leading-tight">
+                    Brand Directory
                   </div>
                 </div>
               </Link>

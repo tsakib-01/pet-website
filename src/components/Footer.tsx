@@ -56,7 +56,13 @@ export default function Footer() {
             <li>
               <Link href="/recalls" className="hover:text-brand-terracotta transition-colors flex items-center gap-1.5 text-brand-terracotta group">
                 <span className="font-black group-hover:translate-x-0.5 transition-transform">→</span>
-                <span>Pet Food Recalls (FDA)</span>
+                <span>FDA Food Recalls (2009–2026)</span>
+              </Link>
+            </li>
+            <li>
+              <Link href="/brands" className="hover:text-brand-terracotta transition-colors flex items-center gap-1.5 group">
+                <span className="text-brand-terracotta font-black group-hover:translate-x-0.5 transition-transform">→</span>
+                <span>250+ Brand Safety Directory</span>
               </Link>
             </li>
             <li>

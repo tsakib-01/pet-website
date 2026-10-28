@@ -113,8 +113,8 @@ export default async function BrandRecallPage({ params }: Props) {
             Home
           </Link>
           <ChevronRight className="w-3.5 h-3.5" />
-          <Link href="/recalls" className="hover:text-brand-espresso transition-colors">
-            Pet Food Recalls
+          <Link href="/brands" className="hover:text-brand-espresso transition-colors">
+            Brand Directory
           </Link>
           <ChevronRight className="w-3.5 h-3.5" />
           <span className="text-brand-espresso">{brand.name}</span>

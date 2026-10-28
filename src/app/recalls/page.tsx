@@ -1,21 +1,27 @@
 import React from "react";
 import { Metadata } from "next";
+import Link from "next/link";
 import { getAllRecallBrands } from "@/data/recalls";
-import RecallDirectoryClient from "@/components/recalls/RecallDirectoryClient";
+import RecallTableLedger from "@/components/recalls/RecallTableLedger";
 import RecallActionProtocols from "@/components/recalls/RecallActionProtocols";
 import AdSensePlaceholder from "@/components/AdSensePlaceholder";
-import { ShieldAlert, ShieldCheck, AlertTriangle, FileText, Info } from "lucide-react";
+import { ShieldAlert, ShieldCheck, AlertTriangle, FileText, Building2, ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Pet Food Recall & Brand Safety Inspector (2026 Database) — PawTruth",
-  description: "Official FDA pet food recall index and lot number lookup. Search 250+ dog and cat food brands, active Salmonella and mold dockets, and historical manufacturing safety records.",
+  title: "Pet Food Recall Database & Historical Archive (2009–2026) — PawTruth",
+  description:
+    "Official FDA pet food recall enforcement database. Search historical recall dockets from 2009 to 2026, verify lot numbers, check Salmonella and Aflatoxin dockets, and access emergency pet action protocols.",
   keywords: [
     "pet food recall",
     "dog food recall 2026",
     "cat food recall 2026",
     "fda pet food recall list",
+    "dog food recall history 2009 to 2026",
     "pet food lot number lookup",
+    "salmonella dog food recall",
+    "aflatoxin pet food",
     "purina recall",
+    "fromm recall",
     "blue buffalo recall",
     "victor dog food recall",
   ],
@@ -23,8 +29,9 @@ export const metadata: Metadata = {
     canonical: "https://pawtruth.com/recalls",
   },
   openGraph: {
-    title: "Pet Food Recall & Brand Safety Inspector | PawTruth",
-    description: "Search official FDA pet food recall dockets, verify lot numbers, and review 10-year brand safety track records.",
+    title: "Pet Food Recall Database & Historical Archive (2009–2026) | PawTruth",
+    description:
+      "Search official FDA veterinary recall dockets, verify specific lot codes, and inspect full chronological recall histories from 2009 through 2026.",
     type: "website",
     url: "https://pawtruth.com/recalls",
   },
@@ -32,13 +39,21 @@ export const metadata: Metadata = {
 
 export default function RecallsDirectoryPage() {
   const brands = getAllRecallBrands();
+  const knownBrandSlugs = brands.map((b) => b.slug);
 
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "CollectionPage",
-    "name": "Pet Food Recall & Brand Safety Inspector",
-    "description": "Comprehensive public safety database indexing official FDA veterinary recall enforcement reports, lot numbers, and brand manufacturing track records.",
+    "@type": "Dataset",
+    "name": "FDA Pet Food Recall Enforcement Database (2009–2026)",
+    "description":
+      "Public safety dataset indexing official FDA veterinary recall enforcement reports, Class I/II/III severity classifications, lot numbers, and pathogen contaminants.",
     "url": "https://pawtruth.com/recalls",
+    "temporalCoverage": "2009/2026",
+    "isAccessibleForFree": true,
+    "creator": {
+      "@type": "Organization",
+      "name": "PawTruth Consumer Safety Initiative",
+    },
   };
 
   return (
@@ -53,18 +68,18 @@ export default function RecallsDirectoryPage() {
         <div className="text-center space-y-4 max-w-3xl mx-auto">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-olive text-brand-espresso border-2 border-brand-espresso shadow-paper-sm text-xs font-heading font-black uppercase">
             <ShieldAlert className="w-4 h-4 text-brand-terracotta" />
-            Official FDA Veterinary Enforcement Index
+            Official FDA Veterinary Enforcement Ledger
           </div>
           <h1 className="font-heading text-4xl sm:text-6xl font-black text-brand-espresso tracking-tight">
-            Pet Food Recall &amp; Safety <span className="text-brand-terracotta">Inspector</span>
+            FDA Pet Food Recall <span className="text-brand-terracotta">Database</span>
           </h1>
           <p className="text-base sm:text-lg text-brand-taupe leading-relaxed">
-            Independent consumer safety directory tracking official FDA Class I, II, and III recall dockets. Search major brands, verify specific bag lot numbers, and inspect 10-year manufacturing track records.
+            Executive regulatory ledger tracking official FDA Class I, II, and III animal veterinary food recall dockets from 2009 to 2026. Filter by year, severity, hazard contaminant, and status.
           </p>
         </div>
 
-        {/* Directory Search & Brand Grid */}
-        <RecallDirectoryClient brands={brands} />
+        {/* Professional Regulatory Ledger Table (Bloomberg / FDA Solr Aesthetic) */}
+        <RecallTableLedger knownBrandSlugs={knownBrandSlugs} />
 
         {/* AdSense Fixed Banner */}
         <div className="pt-4">
