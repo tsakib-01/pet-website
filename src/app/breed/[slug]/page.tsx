@@ -2,7 +2,7 @@ import React from "react";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { Metadata } from "next";
-import { BREED_DATABASE, getBreedBySlug, BreedData } from "@/data/breeds";
+import { BREED_DATABASE, ALL_BREED_IMAGES, getBreedBySlug, BreedData } from "@/data/breeds";
 import AdSensePlaceholder from "@/components/AdSensePlaceholder";
 import {
   Dog,
@@ -35,8 +35,11 @@ interface Props {
 }
 
 export async function generateStaticParams() {
-  return BREED_DATABASE.map((breed) => ({
-    slug: breed.slug,
+  const dbSlugs = BREED_DATABASE.map((breed) => breed.slug);
+  const imageSlugs = ALL_BREED_IMAGES.map((img) => img.slug);
+  const allSlugs = Array.from(new Set([...dbSlugs, ...imageSlugs]));
+  return allSlugs.map((slug) => ({
+    slug,
   }));
 }
 

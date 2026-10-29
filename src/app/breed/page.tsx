@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import { Metadata } from "next";
-import { BREED_DATABASE } from "@/data/breeds";
+import { getAllBreeds } from "@/data/breeds";
 import AdSensePlaceholder from "@/components/AdSensePlaceholder";
 import BreedDirectoryClient from "@/components/BreedDirectoryClient";
 import BreedVisualGallery from "@/components/BreedVisualGallery";
@@ -100,7 +100,7 @@ export default function BreedDirectoryPage() {
         </section>
 
         {/* Interactive Species Filter & Breed Cards */}
-        <BreedDirectoryClient breeds={BREED_DATABASE} />
+        <BreedDirectoryClient breeds={getAllBreeds()} />
 
         {/* 120 High-Res Breed Visual Gallery & Search */}
         <BreedVisualGallery />
