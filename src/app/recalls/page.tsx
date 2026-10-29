@@ -9,20 +9,25 @@ import AdSensePlaceholder from "@/components/AdSensePlaceholder";
 import { ShieldAlert, ShieldCheck, AlertTriangle, FileText, Building2, ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Pet Food Recall Database & Historical Archive (2009–2026) — PawTruth",
+  title: "Pet Food Recall Database: USA, Canada, UK & Australia (2009–2026) — PawTruth",
   description:
-    "Official FDA pet food recall enforcement database. Search historical recall dockets from 2009 to 2026, verify lot numbers, check Salmonella and Aflatoxin dockets, and access emergency pet action protocols.",
+    "Search official pet food recall dockets across the USA (FDA), Canada (CFIA), United Kingdom & Europe (FSA), and Australia (ACCC). Verify lot numbers, check Class I contamination events, and access emergency veterinary protocols.",
   keywords: [
     "pet food recall",
     "dog food recall 2026",
     "cat food recall 2026",
     "fda pet food recall list",
+    "pet food recall australia accc",
+    "dog food recalls canada cfia",
+    "pet food recalls uk fsa",
     "dog food recall history 2009 to 2026",
     "pet food lot number lookup",
     "salmonella dog food recall",
     "aflatoxin pet food",
     "purina recall",
-    "fromm recall",
+    "advance dermocare recall",
+    "applaws recall",
+    "orijen recall",
     "blue buffalo recall",
     "victor dog food recall",
   ],
@@ -30,9 +35,9 @@ export const metadata: Metadata = {
     canonical: "https://pawtruth.com/recalls",
   },
   openGraph: {
-    title: "Pet Food Recall Database & Historical Archive (2009–2026) | PawTruth",
+    title: "Pet Food Recall Database: USA, Canada, UK & Australia (2009–2026) | PawTruth",
     description:
-      "Search official FDA veterinary recall dockets, verify specific lot codes, and inspect full chronological recall histories from 2009 through 2026.",
+      "Search official veterinary recall dockets across the USA, Canada, UK, and Australia. Verify specific lot codes and inspect chronological recall histories from 2009 through 2026.",
     type: "website",
     url: "https://pawtruth.com/recalls",
   },
@@ -47,9 +52,9 @@ export default function RecallsDirectoryPage() {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Dataset",
-    "name": "FDA Pet Food Recall Enforcement Database (2009–2026)",
+    "name": "International Pet Food Recall Enforcement Database (USA, Canada, UK, Australia 2009–2026)",
     "description":
-      "Public safety dataset indexing official FDA veterinary recall enforcement reports, Class I/II/III severity classifications, lot numbers, and pathogen contaminants.",
+      "Public safety dataset indexing official government veterinary recall enforcement reports, Class I/II/III severity classifications, lot numbers, and pathogen contaminants across the USA (FDA), Canada (CFIA), UK (FSA), and Australia (ACCC).",
     "url": "https://pawtruth.com/recalls",
     "dateModified": lastVerifiedDate,
     "temporalCoverage": "2009/2026",
@@ -72,13 +77,13 @@ export default function RecallsDirectoryPage() {
         <div className="text-center space-y-4 max-w-3xl mx-auto">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-olive text-brand-espresso border-2 border-brand-espresso shadow-paper-sm text-xs font-heading font-black uppercase">
             <ShieldAlert className="w-4 h-4 text-brand-terracotta" />
-            Official FDA Veterinary Enforcement Ledger
+            Global Safety Ledger: USA • Canada • UK • Australia
           </div>
           <h1 className="font-heading text-4xl sm:text-6xl font-black text-brand-espresso tracking-tight">
-            FDA Pet Food Recall <span className="text-brand-terracotta">Database</span>
+            Pet Food Recall <span className="text-brand-terracotta">Database</span>
           </h1>
           <p className="text-base sm:text-lg text-brand-taupe leading-relaxed">
-            Executive regulatory ledger tracking official FDA Class I, II, and III animal veterinary food recall dockets from 2009 to 2026. Filter by year, severity, hazard contaminant, and status.
+            Executive regulatory ledger tracking over 220 official pet food recall dockets across the United States (FDA), Canada (CFIA), United Kingdom &amp; Europe (FSA/RASFF), and Australia (ACCC/PFIAA) from 2009 to 2026. Filter by jurisdiction, year, severity, and hazard contaminant.
           </p>
         </div>
 
@@ -141,7 +146,7 @@ export default function RecallsDirectoryPage() {
 
         {/* Mandatory Regulatory Disclaimer */}
         <div className="p-4 rounded-2xl bg-brand-cream/40 border border-brand-espresso/20 text-[11px] font-sans text-brand-taupe leading-relaxed">
-          <strong className="text-brand-espresso">Notice:</strong> PawTruth indexes public regulatory reports published by the U.S. Food and Drug Administration (FDA) Center for Veterinary Medicine (CVM). PawTruth is an independent consumer directory and is not an agency of the federal government. If your pet shows acute signs of illness, immediately contact a licensed veterinarian.
+          <strong className="text-brand-espresso">Notice:</strong> PawTruth indexes public regulatory reports published by government veterinary authorities including the U.S. Food and Drug Administration (FDA) Center for Veterinary Medicine (CVM), Canadian Food Inspection Agency (CFIA), UK Food Standards Agency (FSA), and Australian Competition &amp; Consumer Commission (ACCC). PawTruth is an independent consumer directory and is not an agency of any government. If your pet shows acute signs of illness, immediately contact a licensed veterinarian.
         </div>
       </div>
     </>

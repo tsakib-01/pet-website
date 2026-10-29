@@ -24,6 +24,7 @@ import {
   Clock,
   ChevronLeft,
   ChevronRight,
+  Globe,
 } from "lucide-react";
 
 interface Props {
@@ -33,6 +34,7 @@ interface Props {
 export default function RecallTableLedger({ knownBrandSlugs = [] }: Props) {
   // Filter States
   const [searchQuery, setSearchQuery] = useState("");
+  const [selectedCountry, setSelectedCountry] = useState<string>("all");
   const [selectedYear, setSelectedYear] = useState<string>("all");
   const [selectedSeverity, setSelectedSeverity] = useState<string>("all");
   const [selectedHazard, setSelectedHazard] = useState<string>("all");
@@ -65,6 +67,12 @@ export default function RecallTableLedger({ knownBrandSlugs = [] }: Props) {
   // Filter Logic
   const filteredDockets = useMemo(() => {
     return HISTORICAL_FDA_TIMELINE.filter((docket) => {
+      // Country / Jurisdiction filter
+      const docketCountry = docket.country || "USA";
+      if (selectedCountry !== "all" && docketCountry !== selectedCountry) {
+        return false;
+      }
+
       // Year filter
       if (selectedYear !== "all") {
         if (docket.year !== parseInt(selectedYear, 10)) return false;
@@ -94,6 +102,8 @@ export default function RecallTableLedger({ knownBrandSlugs = [] }: Props) {
         const matchesHazard = docket.hazardType.toLowerCase().includes(q);
         const matchesLots = docket.lotCodes.toLowerCase().includes(q);
         const matchesYear = docket.year.toString().includes(q);
+        const matchesCountry = docketCountry.toLowerCase().includes(q);
+        const matchesAgency = (docket.regulatoryAgency || "US FDA").toLowerCase().includes(q);
 
         return (
           matchesBrand ||
@@ -102,7 +112,9 @@ export default function RecallTableLedger({ knownBrandSlugs = [] }: Props) {
           matchesReason ||
           matchesHazard ||
           matchesLots ||
-          matchesYear
+          matchesYear ||
+          matchesCountry ||
+          matchesAgency
         );
       }
 
@@ -114,6 +126,7 @@ export default function RecallTableLedger({ knownBrandSlugs = [] }: Props) {
     });
   }, [
     searchQuery,
+    selectedCountry,
     selectedYear,
     selectedSeverity,
     selectedHazard,
@@ -129,6 +142,7 @@ export default function RecallTableLedger({ knownBrandSlugs = [] }: Props) {
 
   const handleResetFilters = () => {
     setSearchQuery("");
+    setSelectedCountry("all");
     setSelectedYear("all");
     setSelectedSeverity("all");
     setSelectedHazard("all");
@@ -163,8 +177,29 @@ export default function RecallTableLedger({ knownBrandSlugs = [] }: Props) {
   );
   const totalDocketsCount = HISTORICAL_FDA_TIMELINE.length;
 
+  // Country Counts for quick pills
+  const countryCounts = useMemo(() => {
+    const counts = {
+      all: HISTORICAL_FDA_TIMELINE.length,
+      USA: 0,
+      Canada: 0,
+      "UK & Europe": 0,
+      Australia: 0,
+    };
+    HISTORICAL_FDA_TIMELINE.forEach((d) => {
+      const c = d.country || "USA";
+      if (c in counts) {
+        counts[c as keyof typeof counts]++;
+      } else {
+        counts.USA++;
+      }
+    });
+    return counts;
+  }, []);
+
   const hasActiveFilters =
     searchQuery !== "" ||
+    selectedCountry !== "all" ||
     selectedYear !== "all" ||
     selectedSeverity !== "all" ||
     selectedHazard !== "all" ||
@@ -185,7 +220,7 @@ export default function RecallTableLedger({ knownBrandSlugs = [] }: Props) {
             {totalDocketsCount}
           </div>
           <div className="mt-0.5 text-[11px] font-sans text-brand-taupe">
-            2009 — 2026 Archived
+            USA, CAN, UK &amp; AUS Archived
           </div>
         </div>
 
@@ -243,7 +278,7 @@ export default function RecallTableLedger({ knownBrandSlugs = [] }: Props) {
               setSearchQuery(e.target.value);
               setCurrentPage(1);
             }}
-            placeholder="Search FDA dockets by brand name, company, lot code, or product description (e.g. Purina, Victor, Fromm, Salmonella)..."
+            placeholder="Search dockets by brand name, company, country, agency, lot code, or description (e.g. Purina, Victor, Canada, Australia, Salmonella)..."
             className="w-full bg-[#FAF4EE] border-2 border-brand-espresso rounded-2xl pl-11 pr-4 py-3 text-xs sm:text-sm font-heading font-bold text-brand-espresso placeholder:text-brand-taupe/60 shadow-paper-sm focus:outline-none focus:border-brand-terracotta"
           />
           {searchQuery && (
@@ -255,6 +290,114 @@ export default function RecallTableLedger({ knownBrandSlugs = [] }: Props) {
               Clear
             </button>
           )}
+        </div>
+
+        {/* Jurisdiction Quick Pills */}
+        <div className="flex flex-wrap items-center gap-2 pt-1 pb-1">
+          <span className="text-[11px] font-mono font-bold text-brand-taupe uppercase tracking-wider flex items-center gap-1.5 mr-1">
+            <Globe className="w-3.5 h-3.5 text-brand-espresso" />
+            Jurisdiction:
+          </span>
+          <button
+            type="button"
+            onClick={() => handleFilterChange(setSelectedCountry, "all")}
+            className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-heading font-black transition-all ${
+              selectedCountry === "all"
+                ? "bg-brand-espresso text-white shadow-paper-sm"
+                : "bg-[#FAF4EE] hover:bg-white text-brand-espresso border border-brand-espresso/30"
+            }`}
+          >
+            <span>🌐 All Regions</span>
+            <span
+              className={`px-1.5 py-0.5 rounded-full text-[10px] font-mono font-bold ${
+                selectedCountry === "all"
+                  ? "bg-white/20 text-white"
+                  : "bg-brand-espresso/10 text-brand-espresso"
+              }`}
+            >
+              {countryCounts.all}
+            </span>
+          </button>
+          <button
+            type="button"
+            onClick={() => handleFilterChange(setSelectedCountry, "USA")}
+            className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-heading font-black transition-all ${
+              selectedCountry === "USA"
+                ? "bg-brand-espresso text-white shadow-paper-sm"
+                : "bg-[#FAF4EE] hover:bg-white text-brand-espresso border border-brand-espresso/30"
+            }`}
+          >
+            <span>🇺🇸 USA (FDA)</span>
+            <span
+              className={`px-1.5 py-0.5 rounded-full text-[10px] font-mono font-bold ${
+                selectedCountry === "USA"
+                  ? "bg-white/20 text-white"
+                  : "bg-brand-espresso/10 text-brand-espresso"
+              }`}
+            >
+              {countryCounts.USA}
+            </span>
+          </button>
+          <button
+            type="button"
+            onClick={() => handleFilterChange(setSelectedCountry, "Canada")}
+            className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-heading font-black transition-all ${
+              selectedCountry === "Canada"
+                ? "bg-brand-espresso text-white shadow-paper-sm"
+                : "bg-[#FAF4EE] hover:bg-white text-brand-espresso border border-brand-espresso/30"
+            }`}
+          >
+            <span>🇨🇦 Canada (CFIA)</span>
+            <span
+              className={`px-1.5 py-0.5 rounded-full text-[10px] font-mono font-bold ${
+                selectedCountry === "Canada"
+                  ? "bg-white/20 text-white"
+                  : "bg-brand-espresso/10 text-brand-espresso"
+              }`}
+            >
+              {countryCounts.Canada}
+            </span>
+          </button>
+          <button
+            type="button"
+            onClick={() => handleFilterChange(setSelectedCountry, "UK & Europe")}
+            className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-heading font-black transition-all ${
+              selectedCountry === "UK & Europe"
+                ? "bg-brand-espresso text-white shadow-paper-sm"
+                : "bg-[#FAF4EE] hover:bg-white text-brand-espresso border border-brand-espresso/30"
+            }`}
+          >
+            <span>🇬🇧 UK &amp; Europe (FSA)</span>
+            <span
+              className={`px-1.5 py-0.5 rounded-full text-[10px] font-mono font-bold ${
+                selectedCountry === "UK & Europe"
+                  ? "bg-white/20 text-white"
+                  : "bg-brand-espresso/10 text-brand-espresso"
+              }`}
+            >
+              {countryCounts["UK & Europe"]}
+            </span>
+          </button>
+          <button
+            type="button"
+            onClick={() => handleFilterChange(setSelectedCountry, "Australia")}
+            className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-heading font-black transition-all ${
+              selectedCountry === "Australia"
+                ? "bg-brand-espresso text-white shadow-paper-sm"
+                : "bg-[#FAF4EE] hover:bg-white text-brand-espresso border border-brand-espresso/30"
+            }`}
+          >
+            <span>🇦🇺 Australia (ACCC)</span>
+            <span
+              className={`px-1.5 py-0.5 rounded-full text-[10px] font-mono font-bold ${
+                selectedCountry === "Australia"
+                  ? "bg-white/20 text-white"
+                  : "bg-brand-espresso/10 text-brand-espresso"
+              }`}
+            >
+              {countryCounts.Australia}
+            </span>
+          </button>
         </div>
 
         {/* Executive Dropdown Selectors */}
@@ -352,7 +495,7 @@ export default function RecallTableLedger({ knownBrandSlugs = [] }: Props) {
           <div className="flex items-center gap-2 text-brand-espresso font-bold">
             <span>Ledger Records:</span>
             <span className="px-2 py-0.5 rounded-md bg-brand-olive text-brand-espresso border border-brand-espresso/30 font-black">
-              Showing {filteredDockets.length} of {totalDocketsCount} FDA Dockets
+              Showing {filteredDockets.length} of {totalDocketsCount} Regulatory Dockets
             </span>
             {hasActiveFilters && (
               <span className="text-[11px] text-brand-terracotta font-sans font-medium">
@@ -456,8 +599,19 @@ export default function RecallTableLedger({ knownBrandSlugs = [] }: Props) {
                               className="mt-0.5 hidden sm:flex"
                             />
                             <div>
-                              <div className="font-heading font-black text-brand-espresso text-sm group-hover:text-brand-terracotta transition-colors flex items-center gap-1.5">
-                                <span>{docket.brandName}</span>
+                              <div className="flex flex-wrap items-center gap-1.5">
+                                <span className="font-heading font-black text-brand-espresso text-sm group-hover:text-brand-terracotta transition-colors">
+                                  {docket.brandName}
+                                </span>
+                                <span className="inline-flex items-center gap-1 text-[10px] font-mono font-bold px-1.5 py-0.5 rounded-md bg-[#FAF4EE] text-brand-espresso border border-brand-espresso/20">
+                                  {docket.country === "Canada"
+                                    ? "🇨🇦 CFIA"
+                                    : docket.country === "Australia"
+                                    ? "🇦🇺 ACCC"
+                                    : docket.country === "UK & Europe"
+                                    ? "🇬🇧 FSA"
+                                    : "🇺🇸 US FDA"}
+                                </span>
                               </div>
                               <div className="text-[11px] text-brand-taupe font-medium mt-0.5">
                                 {docket.companyName}
@@ -544,7 +698,14 @@ export default function RecallTableLedger({ knownBrandSlugs = [] }: Props) {
                               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-brand-espresso/10">
                                 <div className="space-y-0.5">
                                   <div className="text-xs font-mono font-black uppercase text-brand-taupe tracking-wider">
-                                    Official Regulatory Docket Details
+                                    {docket.regulatoryAgency ||
+                                      (docket.country === "Canada"
+                                        ? "CFIA (Canada) Regulatory Notice"
+                                        : docket.country === "Australia"
+                                        ? "ACCC / PFIAA (Australia) Consumer Safety Notice"
+                                        : docket.country === "UK & Europe"
+                                        ? "UK FSA / EU RASFF Regulatory Alert"
+                                        : "Official FDA Veterinary Enforcement Docket")}
                                   </div>
                                   <div className="font-heading font-black text-base text-brand-espresso">
                                     {docket.brandName} — {docket.companyName}
@@ -559,7 +720,17 @@ export default function RecallTableLedger({ knownBrandSlugs = [] }: Props) {
                                       rel="noopener noreferrer"
                                       className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-brand-espresso text-white text-xs font-heading font-black hover:bg-brand-espresso/90 shadow-paper-sm transition-all"
                                     >
-                                      <span>Official FDA Notice</span>
+                                      <span>
+                                        Official{" "}
+                                        {docket.country === "Canada"
+                                          ? "CFIA"
+                                          : docket.country === "Australia"
+                                          ? "ACCC"
+                                          : docket.country === "UK & Europe"
+                                          ? "FSA / EU"
+                                          : "FDA"}{" "}
+                                        Notice
+                                      </span>
                                       <ExternalLink className="w-3.5 h-3.5 text-brand-olive" />
                                     </a>
                                   )}
