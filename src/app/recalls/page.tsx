@@ -70,15 +70,9 @@ export default function RecallsDirectoryPage() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-8 sm:py-12 space-y-10">
         {/* Hero Header */}
         <div className="text-center space-y-4 max-w-3xl mx-auto">
-          <div className="flex flex-wrap items-center justify-center gap-2">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-olive text-brand-espresso border-2 border-brand-espresso shadow-paper-sm text-xs font-heading font-black uppercase">
-              <ShieldAlert className="w-4 h-4 text-brand-terracotta" />
-              Official FDA Veterinary Enforcement Ledger
-            </div>
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-50 text-emerald-900 border-2 border-emerald-600 shadow-paper-sm text-xs font-mono font-bold">
-              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-              <span>Live Daily FDA Sync (Verified: {latestDocket?.dateFormatted || "10/21/2026"})</span>
-            </div>
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-olive text-brand-espresso border-2 border-brand-espresso shadow-paper-sm text-xs font-heading font-black uppercase">
+            <ShieldAlert className="w-4 h-4 text-brand-terracotta" />
+            Official FDA Veterinary Enforcement Ledger
           </div>
           <h1 className="font-heading text-4xl sm:text-6xl font-black text-brand-espresso tracking-tight">
             FDA Pet Food Recall <span className="text-brand-terracotta">Database</span>
