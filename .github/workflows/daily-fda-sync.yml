@@ -1,0 +1,41 @@
+name: Daily FDA Pet Food Recall Sync
+
+on:
+  schedule:
+    # Runs at 04:00 UTC every day (after FDA publishes overnight docket notices)
+    - cron: '0 4 * * *'
+  workflow_dispatch: # Allows manual 1-click execution from GitHub Actions dashboard
+
+permissions:
+  contents: write
+
+jobs:
+  sync-recalls:
+    name: Sync FDA CVM & OpenFDA Pet Food Recalls
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Run FDA Pet Food Recall Sync Script
+        run: |
+          python scripts/sync_fda_recalls.py
+
+      - name: Commit and Push Updates
+        run: |
+          git config --global user.name "PawTruth Safety Bot"
+          git config --global user.email "safety-bot@pawtruth.com"
+          git add src/data/historicalTimeline.ts
+          if git diff --staged --quiet; then
+            echo "Zero new FDA recalls detected today. Working tree clean."
+          else
+            echo "New FDA recall dockets discovered! Committing and pushing..."
+            git commit -m "chore(recalls): auto-sync latest FDA pet food recall dockets"
+            git push
+          fi
