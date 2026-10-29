@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useMemo } from "react";
+import React, { useState, useMemo, useEffect } from "react";
 import Link from "next/link";
 import { HISTORICAL_FDA_TIMELINE, HistoricalDocketEntry } from "@/data/historicalTimeline";
 import BrandLogo from "./BrandLogo";
@@ -134,6 +134,38 @@ export default function RecallTableLedger({ knownBrandSlugs = [] }: Props) {
     sortOrder,
   ]);
 
+  // Check URL parameter (?country=canada / ?country=australia) or saved preference
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const params = new URLSearchParams(window.location.search);
+    const countryParam = params.get("country");
+    if (countryParam) {
+      const lower = countryParam.toLowerCase();
+      if (lower === "canada" || lower === "ca") setSelectedCountry("Canada");
+      else if (lower === "australia" || lower === "au") setSelectedCountry("Australia");
+      else if (lower === "uk" || lower === "europe" || lower === "eu" || lower === "gb") setSelectedCountry("UK & Europe");
+      else if (lower === "usa" || lower === "us") setSelectedCountry("USA");
+    } else {
+      const saved = localStorage.getItem("pawtruth_preferred_country");
+      if (saved && ["USA", "Canada", "UK & Europe", "Australia"].includes(saved)) {
+        setSelectedCountry(saved);
+      }
+    }
+  }, []);
+
+  // Country change with persistence
+  const handleCountryChange = (val: string) => {
+    setSelectedCountry(val);
+    setCurrentPage(1);
+    if (typeof window !== "undefined") {
+      if (val !== "all") {
+        localStorage.setItem("pawtruth_preferred_country", val);
+      } else {
+        localStorage.removeItem("pawtruth_preferred_country");
+      }
+    }
+  };
+
   // Reset page when filters change
   const handleFilterChange = (setter: (v: string) => void, val: string) => {
     setter(val);
@@ -148,6 +180,9 @@ export default function RecallTableLedger({ knownBrandSlugs = [] }: Props) {
     setSelectedHazard("all");
     setSelectedStatus("all");
     setCurrentPage(1);
+    if (typeof window !== "undefined") {
+      localStorage.removeItem("pawtruth_preferred_country");
+    }
   };
 
   // Toggle Row Expansion
@@ -300,7 +335,7 @@ export default function RecallTableLedger({ knownBrandSlugs = [] }: Props) {
           </span>
           <button
             type="button"
-            onClick={() => handleFilterChange(setSelectedCountry, "all")}
+            onClick={() => handleCountryChange("all")}
             className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-heading font-black transition-all ${
               selectedCountry === "all"
                 ? "bg-brand-espresso text-white shadow-paper-sm"
@@ -320,7 +355,7 @@ export default function RecallTableLedger({ knownBrandSlugs = [] }: Props) {
           </button>
           <button
             type="button"
-            onClick={() => handleFilterChange(setSelectedCountry, "USA")}
+            onClick={() => handleCountryChange("USA")}
             className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-heading font-black transition-all ${
               selectedCountry === "USA"
                 ? "bg-brand-espresso text-white shadow-paper-sm"
@@ -340,7 +375,7 @@ export default function RecallTableLedger({ knownBrandSlugs = [] }: Props) {
           </button>
           <button
             type="button"
-            onClick={() => handleFilterChange(setSelectedCountry, "Canada")}
+            onClick={() => handleCountryChange("Canada")}
             className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-heading font-black transition-all ${
               selectedCountry === "Canada"
                 ? "bg-brand-espresso text-white shadow-paper-sm"
@@ -360,7 +395,7 @@ export default function RecallTableLedger({ knownBrandSlugs = [] }: Props) {
           </button>
           <button
             type="button"
-            onClick={() => handleFilterChange(setSelectedCountry, "UK & Europe")}
+            onClick={() => handleCountryChange("UK & Europe")}
             className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-heading font-black transition-all ${
               selectedCountry === "UK & Europe"
                 ? "bg-brand-espresso text-white shadow-paper-sm"
@@ -380,7 +415,7 @@ export default function RecallTableLedger({ knownBrandSlugs = [] }: Props) {
           </button>
           <button
             type="button"
-            onClick={() => handleFilterChange(setSelectedCountry, "Australia")}
+            onClick={() => handleCountryChange("Australia")}
             className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-heading font-black transition-all ${
               selectedCountry === "Australia"
                 ? "bg-brand-espresso text-white shadow-paper-sm"
@@ -401,7 +436,28 @@ export default function RecallTableLedger({ knownBrandSlugs = [] }: Props) {
         </div>
 
         {/* Executive Dropdown Selectors */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 pt-2 border-t border-brand-espresso/10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3 pt-2 border-t border-brand-espresso/10">
+          {/* Country / Jurisdiction Dropdown */}
+          <div className="space-y-1.5">
+            <label className="text-[11px] font-mono font-bold text-brand-taupe uppercase tracking-wider flex items-center gap-1.5">
+              <Globe className="w-3.5 h-3.5 text-brand-espresso" />
+              Country / Jurisdiction
+            </label>
+            <div className="relative">
+              <select
+                value={selectedCountry}
+                onChange={(e) => handleCountryChange(e.target.value)}
+                className="w-full appearance-none bg-[#FAF4EE] border-2 border-brand-espresso/60 hover:border-brand-espresso rounded-xl px-3.5 py-2.5 text-xs font-heading font-black text-brand-espresso shadow-paper-sm focus:outline-none focus:border-brand-terracotta transition-colors pr-9 cursor-pointer"
+              >
+                <option value="all">🌐 All Regions ({countryCounts.all})</option>
+                <option value="USA">🇺🇸 United States — FDA ({countryCounts.USA})</option>
+                <option value="Canada">🇨🇦 Canada — CFIA ({countryCounts.Canada})</option>
+                <option value="UK & Europe">🇬🇧 UK &amp; Europe — FSA ({countryCounts["UK & Europe"]})</option>
+                <option value="Australia">🇦🇺 Australia — ACCC ({countryCounts.Australia})</option>
+              </select>
+              <ChevronDown className="w-4 h-4 text-brand-espresso pointer-events-none absolute right-3 top-1/2 -translate-y-1/2" />
+            </div>
+          </div>
           {/* Year Dropdown */}
           <div className="space-y-1.5">
             <label className="text-[11px] font-mono font-bold text-brand-taupe uppercase tracking-wider flex items-center gap-1.5">
@@ -429,7 +485,7 @@ export default function RecallTableLedger({ knownBrandSlugs = [] }: Props) {
           <div className="space-y-1.5">
             <label className="text-[11px] font-mono font-bold text-brand-taupe uppercase tracking-wider flex items-center gap-1.5">
               <ShieldAlert className="w-3.5 h-3.5 text-brand-terracotta" />
-              FDA Severity
+              Hazard Severity
             </label>
             <div className="relative">
               <select
