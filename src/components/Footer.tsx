@@ -54,6 +54,18 @@ export default function Footer() {
               </Link>
             </li>
             <li>
+              <Link href="/privacy" className="hover:text-brand-terracotta transition-colors flex items-center gap-1.5 group">
+                <span className="text-brand-terracotta font-black group-hover:translate-x-0.5 transition-transform">→</span>
+                <span>Privacy &amp; Cookie Policy</span>
+              </Link>
+            </li>
+            <li>
+              <Link href="/terms" className="hover:text-brand-terracotta transition-colors flex items-center gap-1.5 group">
+                <span className="text-brand-terracotta font-black group-hover:translate-x-0.5 transition-transform">→</span>
+                <span>Terms &amp; Medical Disclaimer</span>
+              </Link>
+            </li>
+            <li>
               <Link href="/recalls" className="hover:text-brand-terracotta transition-colors flex items-center gap-1.5 text-brand-terracotta group">
                 <span className="font-black group-hover:translate-x-0.5 transition-transform">→</span>
                 <span>FDA Food Recalls (2009–2026)</span>
@@ -151,8 +163,23 @@ export default function Footer() {
 
       {/* Bottom Bar */}
       <div className="border-t-2 border-brand-espresso/30 py-5 px-4 sm:px-6">
-        <div className="max-w-7xl mx-auto flex items-center justify-center text-center font-mono text-[11px] text-brand-taupe font-bold">
-          © 2026 PawTruth — Pet Health & Safety Calculators. All rights reserved. Zero tracking cookies.
+        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left font-mono text-[11px] text-brand-taupe font-bold">
+          <div>
+            © 2026 PawTruth — Independent Pet Health &amp; Food Safety Directory. All rights reserved.
+          </div>
+          <div className="flex flex-wrap items-center justify-center gap-4 text-xs font-mono">
+            <Link href="/privacy" className="hover:text-brand-espresso underline transition-colors">
+              Privacy Policy
+            </Link>
+            <span className="text-brand-espresso/30">•</span>
+            <Link href="/terms" className="hover:text-brand-espresso underline transition-colors">
+              Terms &amp; Disclaimer
+            </Link>
+            <span className="text-brand-espresso/30">•</span>
+            <Link href="/contact" className="hover:text-brand-espresso underline transition-colors">
+              Contact
+            </Link>
+          </div>
         </div>
       </div>
     </footer>
