@@ -3553,59 +3553,247 @@ export interface BreedImageAsset {
 
 
 export const ALL_BREED_IMAGES: BreedImageAsset[] = [
-  // --- Dogs (41 Canonical Breeds) ---
-  { filename: "american-bulldog.webp", name: "American Bulldog", species: "dog", path: "/images/breeds/dogs/american-bulldog.webp", slug: "american-bulldog", breedSlug: "american-bulldog" },
-  { filename: "australian-cattle-dog.webp", name: "Australian Cattle Dog", species: "dog", path: "/images/breeds/dogs/australian-cattle-dog.webp", slug: "australian-cattle-dog", breedSlug: "australian-cattle-dog" },
-  { filename: "australian-shepherd.webp", name: "Australian Shepherd", species: "dog", path: "/images/breeds/dogs/australian-shepherd.webp", slug: "australian-shepherd", breedSlug: "australian-shepherd" },
-  { filename: "basset-hound.webp", name: "Basset Hound", species: "dog", path: "/images/breeds/dogs/basset-hound.webp", slug: "basset-hound", breedSlug: "basset-hound" },
-  { filename: "beagle.webp", name: "Beagle", species: "dog", path: "/images/breeds/dogs/beagle.webp", slug: "beagle", breedSlug: "beagle" },
-  { filename: "belgian-malinois.webp", name: "Belgian Malinois", species: "dog", path: "/images/breeds/dogs/belgian-malinois.webp", slug: "belgian-malinois", breedSlug: "belgian-malinois" },
-  { filename: "bernese-mountain-dog.webp", name: "Bernese Mountain Dog", species: "dog", path: "/images/breeds/dogs/bernese-mountain-dog.webp", slug: "bernese-mountain-dog", breedSlug: "bernese-mountain-dog" },
-  { filename: "border-collie.webp", name: "Border Collie", species: "dog", path: "/images/breeds/dogs/border-collie.webp", slug: "border-collie", breedSlug: "border-collie" },
-  { filename: "boston-terrier.webp", name: "Boston Terrier", species: "dog", path: "/images/breeds/dogs/boston-terrier.webp", slug: "boston-terrier", breedSlug: "boston-terrier" },
-  { filename: "boxer-dog.webp", name: "Boxer", species: "dog", path: "/images/breeds/dogs/boxer-dog.webp", slug: "boxer-dog", breedSlug: "boxer-dog" },
-  { filename: "brittany-dog.webp", name: "Brittany", species: "dog", path: "/images/breeds/dogs/brittany-dog.webp", slug: "brittany-dog", breedSlug: "brittany-dog" },
-  { filename: "cockapoo.webp", name: "Cockapoo", species: "dog", path: "/images/breeds/dogs/cockapoo.webp", slug: "cockapoo", breedSlug: "cockapoo" },
-  { filename: "cocker-spaniel.webp", name: "Cocker Spaniel", species: "dog", path: "/images/breeds/dogs/cocker-spaniel.webp", slug: "cocker-spaniel", breedSlug: "cocker-spaniel" },
-  { filename: "dachshund.webp", name: "Dachshund", species: "dog", path: "/images/breeds/dogs/dachshund.webp", slug: "dachshund", breedSlug: "dachshund" },
-  { filename: "deer-head-chihuahua.webp", name: "Chihuahua", species: "dog", path: "/images/breeds/dogs/deer-head-chihuahua.webp", slug: "deer-head-chihuahua", breedSlug: "deer-head-chihuahua" },
-  { filename: "doberman-pinscher.webp", name: "Doberman Pinscher", species: "dog", path: "/images/breeds/dogs/doberman-pinscher.webp", slug: "doberman-pinscher", breedSlug: "doberman-pinscher" },
-  { filename: "english-springer-spaniel.webp", name: "English Springer Spaniel", species: "dog", path: "/images/breeds/dogs/english-springer-spaniel.webp", slug: "english-springer-spaniel", breedSlug: "english-springer-spaniel" },
+
   { filename: "french-bulldog.webp", name: "French Bulldog", species: "dog", path: "/images/breeds/dogs/french-bulldog.webp", slug: "french-bulldog", breedSlug: "french-bulldog" },
-  { filename: "german-shepherd.webp", name: "German Shepherd", species: "dog", path: "/images/breeds/dogs/german-shepherd.webp", slug: "german-shepherd", breedSlug: "german-shepherd" },
-  { filename: "german-shorthaired-pointer.webp", name: "German Shorthaired Pointer", species: "dog", path: "/images/breeds/dogs/german-shorthaired-pointer.webp", slug: "german-shorthaired-pointer", breedSlug: "german-shorthaired-pointer" },
+
+  { filename: "fluffy-french-bulldog.webp", name: "Fluffy French Bulldog", species: "dog", path: "/images/breeds/dogs/fluffy-french-bulldog.webp", slug: "fluffy-french-bulldog", breedSlug: "french-bulldog" },
+
+  { filename: "french-bulldog-puppies.webp", name: "French Bulldog puppies", species: "dog", path: "/images/breeds/dogs/french-bulldog-puppies.webp", slug: "french-bulldog-puppies", breedSlug: "french-bulldog" },
+
+  { filename: "merle-french-bulldog.webp", name: "Merle French Bulldog", species: "dog", path: "/images/breeds/dogs/merle-french-bulldog.webp", slug: "merle-french-bulldog", breedSlug: "french-bulldog" },
+
+  { filename: "blue-french-bulldog.webp", name: "Blue French Bulldog", species: "dog", path: "/images/breeds/dogs/blue-french-bulldog.webp", slug: "blue-french-bulldog", breedSlug: "french-bulldog" },
+
+  { filename: "lilac-french-bulldog.webp", name: "Lilac French Bulldog", species: "dog", path: "/images/breeds/dogs/lilac-french-bulldog.webp", slug: "lilac-french-bulldog", breedSlug: "french-bulldog" },
+
+  { filename: "black-french-bulldog.webp", name: "Black French Bulldog", species: "dog", path: "/images/breeds/dogs/black-french-bulldog.webp", slug: "black-french-bulldog", breedSlug: "french-bulldog" },
+
+  { filename: "black-french-bulldog-puppy.webp", name: "Black French Bulldog puppy", species: "dog", path: "/images/breeds/dogs/black-french-bulldog-puppy.webp", slug: "black-french-bulldog-puppy", breedSlug: "french-bulldog" },
+
+  { filename: "labrador-puppy.webp", name: "Yellow Labrador puppy", species: "dog", path: "/images/breeds/dogs/labrador-puppy.webp", slug: "labrador-puppy", breedSlug: "labrador-retriever" },
+
+  { filename: "black-labrador.webp", name: "Black Labrador Retriever", species: "dog", path: "/images/breeds/dogs/black-labrador.webp", slug: "black-labrador", breedSlug: "labrador-retriever" },
+
+  { filename: "fox-red-labrador.webp", name: "Fox Red Labrador", species: "dog", path: "/images/breeds/dogs/fox-red-labrador.webp", slug: "fox-red-labrador", breedSlug: "labrador-retriever" },
+
+  { filename: "white-labrador.webp", name: "White Labrador Retriever", species: "dog", path: "/images/breeds/dogs/white-labrador.webp", slug: "white-labrador", breedSlug: "labrador-retriever" },
+
+  { filename: "labrador-mix.webp", name: "Labrador mix dog", species: "dog", path: "/images/breeds/dogs/labrador-mix.webp", slug: "labrador-mix", breedSlug: "labrador-retriever" },
+
   { filename: "golden-retriever.webp", name: "Golden Retriever", species: "dog", path: "/images/breeds/dogs/golden-retriever.webp", slug: "golden-retriever", breedSlug: "golden-retriever" },
-  { filename: "great-dane.webp", name: "Great Dane", species: "dog", path: "/images/breeds/dogs/great-dane.webp", slug: "great-dane", breedSlug: "great-dane" },
-  { filename: "havanese.webp", name: "Havanese", species: "dog", path: "/images/breeds/dogs/havanese.webp", slug: "havanese", breedSlug: "havanese" },
-  { filename: "labrador-retriever.webp", name: "Labrador Retriever", species: "dog", path: "/images/breeds/dogs/labrador-retriever.webp", slug: "labrador-retriever", breedSlug: "labrador-retriever" },
-  { filename: "mini-pinscher.webp", name: "Miniature Pinscher", species: "dog", path: "/images/breeds/dogs/mini-pinscher.webp", slug: "mini-pinscher", breedSlug: "mini-pinscher" },
-  { filename: "miniature-american-shepherd.webp", name: "Miniature American Shepherd", species: "dog", path: "/images/breeds/dogs/miniature-american-shepherd.webp", slug: "miniature-american-shepherd", breedSlug: "miniature-american-shepherd" },
-  { filename: "olde-english-bulldog.webp", name: "Olde English Bulldogge", species: "dog", path: "/images/breeds/dogs/olde-english-bulldog.webp", slug: "olde-english-bulldog", breedSlug: "olde-english-bulldog" },
-  { filename: "papillon.webp", name: "Papillon", species: "dog", path: "/images/breeds/dogs/papillon.webp", slug: "papillon", breedSlug: "papillon" },
-  { filename: "pembroke-welsh-corgi.webp", name: "Pembroke Welsh Corgi", species: "dog", path: "/images/breeds/dogs/pembroke-welsh-corgi.webp", slug: "pembroke-welsh-corgi", breedSlug: "pembroke-welsh-corgi" },
-  { filename: "pomeranian.webp", name: "Pomeranian", species: "dog", path: "/images/breeds/dogs/pomeranian.webp", slug: "pomeranian", breedSlug: "pomeranian" },
-  { filename: "rhodesian-ridgeback.webp", name: "Rhodesian Ridgeback", species: "dog", path: "/images/breeds/dogs/rhodesian-ridgeback.webp", slug: "rhodesian-ridgeback", breedSlug: "rhodesian-ridgeback" },
-  { filename: "rottweiler.webp", name: "Rottweiler", species: "dog", path: "/images/breeds/dogs/rottweiler.webp", slug: "rottweiler", breedSlug: "rottweiler" },
-  { filename: "rough-collie.webp", name: "Rough Collie", species: "dog", path: "/images/breeds/dogs/rough-collie.webp", slug: "rough-collie", breedSlug: "rough-collie" },
-  { filename: "shepweiler-mix.webp", name: "Shepweiler (German Shepherd Rottweiler mix)", species: "dog", path: "/images/breeds/dogs/shepweiler-mix.webp", slug: "shepweiler-mix", breedSlug: "shepweiler-mix" },
-  { filename: "shiba-inu.webp", name: "Shiba Inu", species: "dog", path: "/images/breeds/dogs/shiba-inu.webp", slug: "shiba-inu", breedSlug: "shiba-inu" },
-  { filename: "shih-tzu.webp", name: "Shih Tzu", species: "dog", path: "/images/breeds/dogs/shih-tzu.webp", slug: "shih-tzu", breedSlug: "shih-tzu" },
-  { filename: "siberian-husky.webp", name: "Siberian Husky", species: "dog", path: "/images/breeds/dogs/siberian-husky.webp", slug: "siberian-husky", breedSlug: "siberian-husky" },
+
+  { filename: "golden-retriever-puppy.webp", name: "Golden Retriever puppy", species: "dog", path: "/images/breeds/dogs/golden-retriever-puppy.webp", slug: "golden-retriever-puppy", breedSlug: "golden-retriever" },
+
+  { filename: "mini-golden-retriever.webp", name: "Mini Golden Retriever", species: "dog", path: "/images/breeds/dogs/mini-golden-retriever.webp", slug: "mini-golden-retriever", breedSlug: "golden-retriever" },
+
+  { filename: "english-cream-golden-retriever.webp", name: "English Cream Golden Retriever", species: "dog", path: "/images/breeds/dogs/english-cream-golden-retriever.webp", slug: "english-cream-golden-retriever", breedSlug: "golden-retriever" },
+
+  { filename: "red-golden-retriever.webp", name: "Red Golden Retriever", species: "dog", path: "/images/breeds/dogs/red-golden-retriever.webp", slug: "red-golden-retriever", breedSlug: "golden-retriever" },
+
+  { filename: "black-golden-retriever.webp", name: "Black Golden Retriever", species: "dog", path: "/images/breeds/dogs/black-golden-retriever.webp", slug: "black-golden-retriever", breedSlug: "golden-retriever" },
+
+  { filename: "german-shepherd.webp", name: "German Shepherd", species: "dog", path: "/images/breeds/dogs/german-shepherd.webp", slug: "german-shepherd", breedSlug: "german-shepherd" },
+
+  { filename: "old-german-shepherd.webp", name: "Old German Shepherd dog", species: "dog", path: "/images/breeds/dogs/old-german-shepherd.webp", slug: "old-german-shepherd", breedSlug: "german-shepherd" },
+
+  { filename: "german-shepherd-training.webp", name: "German Shepherd training", species: "dog", path: "/images/breeds/dogs/german-shepherd-training.webp", slug: "german-shepherd-training", breedSlug: "german-shepherd" },
+
+  { filename: "black-german-shepherd.webp", name: "Black German Shepherd", species: "dog", path: "/images/breeds/dogs/black-german-shepherd.webp", slug: "black-german-shepherd", breedSlug: "german-shepherd" },
+
+  { filename: "white-german-shepherd.webp", name: "White German Shepherd", species: "dog", path: "/images/breeds/dogs/white-german-shepherd.webp", slug: "white-german-shepherd", breedSlug: "german-shepherd" },
+
+  { filename: "mini-dachshund.webp", name: "Mini Dachshund", species: "dog", path: "/images/breeds/dogs/mini-dachshund.webp", slug: "mini-dachshund", breedSlug: "dachshund" },
+
+  { filename: "long-haired-dachshund.webp", name: "Long haired Dachshund", species: "dog", path: "/images/breeds/dogs/long-haired-dachshund.webp", slug: "long-haired-dachshund", breedSlug: "dachshund" },
+
+  { filename: "wire-haired-dachshund.webp", name: "Wire haired Dachshund", species: "dog", path: "/images/breeds/dogs/wire-haired-dachshund.webp", slug: "wire-haired-dachshund", breedSlug: "dachshund" },
+
+  { filename: "dapple-dachshund.webp", name: "Dapple Dachshund", species: "dog", path: "/images/breeds/dogs/dapple-dachshund.webp", slug: "dapple-dachshund", breedSlug: "dachshund" },
+
+  { filename: "dachshund-puppies.webp", name: "Dachshund puppies", species: "dog", path: "/images/breeds/dogs/dachshund-puppies.webp", slug: "dachshund-puppies", breedSlug: "dachshund" },
+
   { filename: "standard-poodle.webp", name: "Standard Poodle", species: "dog", path: "/images/breeds/dogs/standard-poodle.webp", slug: "standard-poodle", breedSlug: "standard-poodle" },
-  { filename: "vizsla.webp", name: "Vizsla", species: "dog", path: "/images/breeds/dogs/vizsla.webp", slug: "vizsla", breedSlug: "vizsla" },
-  { filename: "west-highland-white-terrier.webp", name: "West Highland White Terrier", species: "dog", path: "/images/breeds/dogs/west-highland-white-terrier.webp", slug: "west-highland-white-terrier", breedSlug: "west-highland-white-terrier" },
+
+  { filename: "mini-poodle.webp", name: "Mini Poodle", species: "dog", path: "/images/breeds/dogs/mini-poodle.webp", slug: "mini-poodle", breedSlug: "standard-poodle" },
+
+  { filename: "teacup-poodle.webp", name: "Teacup Poodle", species: "dog", path: "/images/breeds/dogs/teacup-poodle.webp", slug: "teacup-poodle", breedSlug: "standard-poodle" },
+
+  { filename: "moyen-poodle.webp", name: "Moyen Poodle", species: "dog", path: "/images/breeds/dogs/moyen-poodle.webp", slug: "moyen-poodle", breedSlug: "standard-poodle" },
+
+  { filename: "shih-poo.webp", name: "Shih Tzu Poodle mix", species: "dog", path: "/images/breeds/dogs/shih-poo.webp", slug: "shih-poo", breedSlug: "shih-tzu" },
+
+  { filename: "beagle.webp", name: "Beagle dog", species: "dog", path: "/images/breeds/dogs/beagle.webp", slug: "beagle", breedSlug: "beagle" },
+
+  { filename: "beagle-puppy.webp", name: "Beagle puppy", species: "dog", path: "/images/breeds/dogs/beagle-puppy.webp", slug: "beagle-puppy", breedSlug: "beagle" },
+
+  { filename: "lemon-beagle.webp", name: "Lemon Beagle", species: "dog", path: "/images/breeds/dogs/lemon-beagle.webp", slug: "lemon-beagle", breedSlug: "beagle" },
+
+  { filename: "beagle-mix.webp", name: "Beagle mix dog", species: "dog", path: "/images/breeds/dogs/beagle-mix.webp", slug: "beagle-mix", breedSlug: "beagle" },
+
+  { filename: "rottweiler.webp", name: "Rottweiler", species: "dog", path: "/images/breeds/dogs/rottweiler.webp", slug: "rottweiler", breedSlug: "rottweiler" },
+
+  { filename: "baby-rottweiler.webp", name: "Rottweiler puppy", species: "dog", path: "/images/breeds/dogs/baby-rottweiler.webp", slug: "baby-rottweiler", breedSlug: "rottweiler" },
+
+  { filename: "rottweiler-pitbull-mix.webp", name: "Rottweiler Pitbull mix", species: "dog", path: "/images/breeds/dogs/rottweiler-pitbull-mix.webp", slug: "rottweiler-pitbull-mix", breedSlug: "rottweiler" },
+
+  { filename: "shepweiler-mix.webp", name: "German Shepherd Rottweiler mix", species: "dog", path: "/images/breeds/dogs/shepweiler-mix.webp", slug: "shepweiler-mix", breedSlug: "shepweiler-mix" },
+
+  { filename: "roman-rottweiler.webp", name: "Large Rottweiler dog", species: "dog", path: "/images/breeds/dogs/roman-rottweiler.webp", slug: "roman-rottweiler", breedSlug: "rottweiler" },
+
+  { filename: "german-shorthaired-pointer.webp", name: "German Shorthaired Pointer", species: "dog", path: "/images/breeds/dogs/german-shorthaired-pointer.webp", slug: "german-shorthaired-pointer", breedSlug: "german-shorthaired-pointer" },
+
+  { filename: "gsp-puppy.webp", name: "German Shorthaired Pointer puppy", species: "dog", path: "/images/breeds/dogs/gsp-puppy.webp", slug: "gsp-puppy", breedSlug: "german-shorthaired-pointer" },
+
+  { filename: "black-gsp.webp", name: "Black German Shorthaired Pointer", species: "dog", path: "/images/breeds/dogs/black-gsp.webp", slug: "black-gsp", breedSlug: "german-shorthaired-pointer" },
+
+  { filename: "american-bulldog.webp", name: "American Bulldog", species: "dog", path: "/images/breeds/dogs/american-bulldog.webp", slug: "american-bulldog", breedSlug: "american-bulldog" },
+
+  { filename: "olde-english-bulldog.webp", name: "Olde English Bulldogge", species: "dog", path: "/images/breeds/dogs/olde-english-bulldog.webp", slug: "olde-english-bulldog", breedSlug: "olde-english-bulldog" },
+
   { filename: "yorkshire-terrier.webp", name: "Yorkshire Terrier", species: "dog", path: "/images/breeds/dogs/yorkshire-terrier.webp", slug: "yorkshire-terrier", breedSlug: "yorkshire-terrier" },
 
-  // --- Cats (9 Canonical Breeds) ---
-  { filename: "american-shorthair.webp", name: "American Shorthair", species: "cat", path: "/images/breeds/cats/american-shorthair.webp", slug: "american-shorthair", breedSlug: "american-shorthair" },
-  { filename: "chartreux.webp", name: "Chartreux", species: "cat", path: "/images/breeds/cats/chartreux.webp", slug: "chartreux", breedSlug: "chartreux" },
-  { filename: "devon-rex.webp", name: "Devon Rex", species: "cat", path: "/images/breeds/cats/devon-rex.webp", slug: "devon-rex", breedSlug: "devon-rex" },
-  { filename: "egyptian-mau.webp", name: "Egyptian Mau", species: "cat", path: "/images/breeds/cats/egyptian-mau.webp", slug: "egyptian-mau", breedSlug: "egyptian-mau" },
-  { filename: "himalayan.webp", name: "Himalayan", species: "cat", path: "/images/breeds/cats/himalayan.webp", slug: "himalayan", breedSlug: "himalayan" },
-  { filename: "ragdoll.webp", name: "Ragdoll", species: "cat", path: "/images/breeds/cats/ragdoll.webp", slug: "ragdoll", breedSlug: "ragdoll" },
-  { filename: "russian-blue.webp", name: "Russian Blue", species: "cat", path: "/images/breeds/cats/russian-blue.webp", slug: "russian-blue", breedSlug: "russian-blue" },
-  { filename: "sphynx.webp", name: "Sphynx", species: "cat", path: "/images/breeds/cats/sphynx.webp", slug: "sphynx", breedSlug: "sphynx" },
-  { filename: "turkish-angora.webp", name: "Turkish Angora", species: "cat", path: "/images/breeds/cats/turkish-angora.webp", slug: "turkish-angora", breedSlug: "turkish-angora" }
+  { filename: "yorkshire-terrier-puppy.webp", name: "Yorkshire Terrier puppy", species: "dog", path: "/images/breeds/dogs/yorkshire-terrier-puppy.webp", slug: "yorkshire-terrier-puppy", breedSlug: "yorkshire-terrier" },
+
+  { filename: "australian-shepherd.webp", name: "Australian Shepherd", species: "dog", path: "/images/breeds/dogs/australian-shepherd.webp", slug: "australian-shepherd", breedSlug: "australian-shepherd" },
+
+  { filename: "mini-australian-shepherd.webp", name: "Mini Australian Shepherd", species: "dog", path: "/images/breeds/dogs/mini-australian-shepherd.webp", slug: "mini-australian-shepherd", breedSlug: "miniature-american-shepherd" },
+
+  { filename: "blue-merle-australian-shepherd.webp", name: "Blue Merle Australian Shepherd", species: "dog", path: "/images/breeds/dogs/blue-merle-australian-shepherd.webp", slug: "blue-merle-australian-shepherd", breedSlug: "australian-shepherd" },
+
+  { filename: "red-merle-australian-shepherd.webp", name: "Red Merle Australian Shepherd", species: "dog", path: "/images/breeds/dogs/red-merle-australian-shepherd.webp", slug: "red-merle-australian-shepherd", breedSlug: "australian-shepherd" },
+
+  { filename: "border-aussie-mix.webp", name: "Border Collie Australian Shepherd mix", species: "dog", path: "/images/breeds/dogs/border-aussie-mix.webp", slug: "border-aussie-mix", breedSlug: "border-collie" },
+
+  { filename: "doberman-pinscher.webp", name: "Doberman Pinscher", species: "dog", path: "/images/breeds/dogs/doberman-pinscher.webp", slug: "doberman-pinscher", breedSlug: "doberman-pinscher" },
+
+  { filename: "red-doberman.webp", name: "Red Doberman Pinscher", species: "dog", path: "/images/breeds/dogs/red-doberman.webp", slug: "red-doberman", breedSlug: "doberman-pinscher" },
+
+  { filename: "blue-doberman.webp", name: "Blue Doberman Pinscher", species: "dog", path: "/images/breeds/dogs/blue-doberman.webp", slug: "blue-doberman", breedSlug: "doberman-pinscher" },
+
+  { filename: "mini-pinscher.webp", name: "Miniature Pinscher", species: "dog", path: "/images/breeds/dogs/mini-pinscher.webp", slug: "mini-pinscher", breedSlug: "mini-pinscher" },
+
+  { filename: "doberman-puppy.webp", name: "Doberman puppy", species: "dog", path: "/images/breeds/dogs/doberman-puppy.webp", slug: "doberman-puppy", breedSlug: "doberman-pinscher" },
+
+  { filename: "pembroke-welsh-corgi.webp", name: "Pembroke Welsh Corgi", species: "dog", path: "/images/breeds/dogs/pembroke-welsh-corgi.webp", slug: "pembroke-welsh-corgi", breedSlug: "pembroke-welsh-corgi" },
+
+  { filename: "boxer-dog.webp", name: "Boxer dog", species: "dog", path: "/images/breeds/dogs/boxer-dog.webp", slug: "boxer-dog", breedSlug: "boxer-dog" },
+
+  { filename: "boxer-puppies.webp", name: "Boxer puppies", species: "dog", path: "/images/breeds/dogs/boxer-puppies.webp", slug: "boxer-puppies", breedSlug: "boxer-dog" },
+
+  { filename: "pomeranian.webp", name: "Pomeranian dog", species: "dog", path: "/images/breeds/dogs/pomeranian.webp", slug: "pomeranian", breedSlug: "pomeranian" },
+
+  { filename: "white-pomeranian.webp", name: "White Pomeranian", species: "dog", path: "/images/breeds/dogs/white-pomeranian.webp", slug: "white-pomeranian", breedSlug: "pomeranian" },
+
+  { filename: "black-pomeranian.webp", name: "Black Pomeranian", species: "dog", path: "/images/breeds/dogs/black-pomeranian.webp", slug: "black-pomeranian", breedSlug: "pomeranian" },
+
+  { filename: "pomsky-mix.webp", name: "Pomsky puppy", species: "dog", path: "/images/breeds/dogs/pomsky-mix.webp", slug: "pomsky-mix", breedSlug: "siberian-husky" },
+
+  { filename: "bernese-mountain-dog.webp", name: "Bernese Mountain Dog", species: "dog", path: "/images/breeds/dogs/bernese-mountain-dog.webp", slug: "bernese-mountain-dog", breedSlug: "bernese-mountain-dog" },
+
+  { filename: "bernedoodle.webp", name: "Bernedoodle", species: "dog", path: "/images/breeds/dogs/bernedoodle.webp", slug: "bernedoodle", breedSlug: "bernese-mountain-dog" },
+
+  { filename: "shih-tzu.webp", name: "Shih Tzu dog", species: "dog", path: "/images/breeds/dogs/shih-tzu.webp", slug: "shih-tzu", breedSlug: "shih-tzu" },
+
+  { filename: "shih-tzu-puppy.webp", name: "Shih Tzu puppy", species: "dog", path: "/images/breeds/dogs/shih-tzu-puppy.webp", slug: "shih-tzu-puppy", breedSlug: "shih-tzu" },
+
+  { filename: "malshi.webp", name: "Maltese Shih Tzu mix", species: "dog", path: "/images/breeds/dogs/malshi.webp", slug: "malshi", breedSlug: "shih-tzu" },
+
+  { filename: "great-dane.webp", name: "Great Dane dog", species: "dog", path: "/images/breeds/dogs/great-dane.webp", slug: "great-dane", breedSlug: "great-dane" },
+
+  { filename: "harlequin-great-dane.webp", name: "Harlequin Great Dane", species: "dog", path: "/images/breeds/dogs/harlequin-great-dane.webp", slug: "harlequin-great-dane", breedSlug: "great-dane" },
+
+  { filename: "black-great-dane.webp", name: "Black Great Dane", species: "dog", path: "/images/breeds/dogs/black-great-dane.webp", slug: "black-great-dane", breedSlug: "great-dane" },
+
+  { filename: "boston-terrier.webp", name: "Boston Terrier", species: "dog", path: "/images/breeds/dogs/boston-terrier.webp", slug: "boston-terrier", breedSlug: "boston-terrier" },
+
+  { filename: "blue-boston-terrier.webp", name: "Blue Boston Terrier", species: "dog", path: "/images/breeds/dogs/blue-boston-terrier.webp", slug: "blue-boston-terrier", breedSlug: "boston-terrier" },
+
+  { filename: "deer-head-chihuahua.webp", name: "Deer head Chihuahua", species: "dog", path: "/images/breeds/dogs/deer-head-chihuahua.webp", slug: "deer-head-chihuahua", breedSlug: "deer-head-chihuahua" },
+
+  { filename: "havanese.webp", name: "Havanese dog", species: "dog", path: "/images/breeds/dogs/havanese.webp", slug: "havanese", breedSlug: "havanese" },
+
+  { filename: "border-collie.webp", name: "Border Collie", species: "dog", path: "/images/breeds/dogs/border-collie.webp", slug: "border-collie", breedSlug: "border-collie" },
+
+  { filename: "red-border-collie.webp", name: "Red Border Collie", species: "dog", path: "/images/breeds/dogs/red-border-collie.webp", slug: "red-border-collie", breedSlug: "border-collie" },
+
+  { filename: "bordoodle.webp", name: "Border Collie Poodle mix", species: "dog", path: "/images/breeds/dogs/bordoodle.webp", slug: "bordoodle", breedSlug: "border-collie" },
+
+  { filename: "english-springer-spaniel.webp", name: "English Springer Spaniel", species: "dog", path: "/images/breeds/dogs/english-springer-spaniel.webp", slug: "english-springer-spaniel", breedSlug: "english-springer-spaniel" },
+
+  { filename: "miniature-american-shepherd.webp", name: "Miniature American Shepherd", species: "dog", path: "/images/breeds/dogs/miniature-american-shepherd.webp", slug: "miniature-american-shepherd", breedSlug: "miniature-american-shepherd" },
+
+  { filename: "siberian-husky.webp", name: "Siberian Husky", species: "dog", path: "/images/breeds/dogs/siberian-husky.webp", slug: "siberian-husky", breedSlug: "siberian-husky" },
+
+  { filename: "white-siberian-husky.webp", name: "White Siberian Husky", species: "dog", path: "/images/breeds/dogs/white-siberian-husky.webp", slug: "white-siberian-husky", breedSlug: "siberian-husky" },
+
+  { filename: "red-siberian-husky.webp", name: "Red Siberian Husky", species: "dog", path: "/images/breeds/dogs/red-siberian-husky.webp", slug: "red-siberian-husky", breedSlug: "siberian-husky" },
+
+  { filename: "brittany-dog.webp", name: "Brittany dog breed", species: "dog", path: "/images/breeds/dogs/brittany-dog.webp", slug: "brittany-dog", breedSlug: "brittany-dog" },
+
+  { filename: "belgian-malinois.webp", name: "Belgian Malinois", species: "dog", path: "/images/breeds/dogs/belgian-malinois.webp", slug: "belgian-malinois", breedSlug: "belgian-malinois" },
+
+  { filename: "black-belgian-malinois.webp", name: "Black Belgian Malinois", species: "dog", path: "/images/breeds/dogs/black-belgian-malinois.webp", slug: "black-belgian-malinois", breedSlug: "belgian-malinois" },
+
+  { filename: "cocker-spaniel-puppy.webp", name: "Cocker Spaniel puppy", species: "dog", path: "/images/breeds/dogs/cocker-spaniel-puppy.webp", slug: "cocker-spaniel-puppy", breedSlug: "cocker-spaniel" },
+
+  { filename: "black-cocker-spaniel.webp", name: "Black Cocker Spaniel", species: "dog", path: "/images/breeds/dogs/black-cocker-spaniel.webp", slug: "black-cocker-spaniel", breedSlug: "cocker-spaniel" },
+
+  { filename: "cockapoo.webp", name: "Cockapoo dog", species: "dog", path: "/images/breeds/dogs/cockapoo.webp", slug: "cockapoo", breedSlug: "cockapoo" },
+
+  { filename: "basset-hound.webp", name: "Basset Hound", species: "dog", path: "/images/breeds/dogs/basset-hound.webp", slug: "basset-hound", breedSlug: "basset-hound" },
+
+  { filename: "vizsla.webp", name: "Vizsla dog", species: "dog", path: "/images/breeds/dogs/vizsla.webp", slug: "vizsla", breedSlug: "vizsla" },
+
+  { filename: "rough-collie.webp", name: "Rough Collie dog", species: "dog", path: "/images/breeds/dogs/rough-collie.webp", slug: "rough-collie", breedSlug: "rough-collie" },
+
+  { filename: "smooth-collie.webp", name: "Smooth Collie dog", species: "dog", path: "/images/breeds/dogs/smooth-collie.webp", slug: "smooth-collie", breedSlug: "rough-collie" },
+
+  { filename: "rhodesian-ridgeback.webp", name: "Rhodesian Ridgeback", species: "dog", path: "/images/breeds/dogs/rhodesian-ridgeback.webp", slug: "rhodesian-ridgeback", breedSlug: "rhodesian-ridgeback" },
+
+  { filename: "papillon.webp", name: "Papillon dog", species: "dog", path: "/images/breeds/dogs/papillon.webp", slug: "papillon", breedSlug: "papillon" },
+
+  { filename: "shiba-inu.webp", name: "Shiba Inu", species: "dog", path: "/images/breeds/dogs/shiba-inu.webp", slug: "shiba-inu", breedSlug: "shiba-inu" },
+
+  { filename: "black-and-tan-shiba-inu.webp", name: "Black and tan Shiba Inu", species: "dog", path: "/images/breeds/dogs/black-and-tan-shiba-inu.webp", slug: "black-and-tan-shiba-inu", breedSlug: "shiba-inu" },
+
+  { filename: "west-highland-white-terrier.webp", name: "West Highland White Terrier", species: "dog", path: "/images/breeds/dogs/west-highland-white-terrier.webp", slug: "west-highland-white-terrier", breedSlug: "west-highland-white-terrier" },
+
+  { filename: "blue-heeler.webp", name: "Blue Heeler Australian Cattle Dog", species: "dog", path: "/images/breeds/dogs/blue-heeler.webp", slug: "blue-heeler", breedSlug: "australian-cattle-dog" },
+
+  { filename: "red-heeler.webp", name: "Red Heeler Australian Cattle Dog", species: "dog", path: "/images/breeds/dogs/red-heeler.webp", slug: "red-heeler", breedSlug: "australian-cattle-dog" },
+
+  { filename: "ragdoll-kitten.webp", name: "Ragdoll kitten", species: "cat", path: "/images/breeds/cats/ragdoll-kitten.webp", slug: "ragdoll-kitten", breedSlug: "ragdoll" },
+
+  { filename: "sphynx-cat.webp", name: "Sphynx cat", species: "cat", path: "/images/breeds/cats/sphynx-cat.webp", slug: "sphynx-cat", breedSlug: "sphynx" },
+
+  { filename: "fat-sphynx-cat.webp", name: "Fat Sphynx cat", species: "cat", path: "/images/breeds/cats/fat-sphynx-cat.webp", slug: "fat-sphynx-cat", breedSlug: "sphynx" },
+
+  { filename: "baby-sphynx-cat.webp", name: "Baby Sphynx kitten", species: "cat", path: "/images/breeds/cats/baby-sphynx-cat.webp", slug: "baby-sphynx-cat", breedSlug: "sphynx" },
+
+  { filename: "russian-blue-cat.webp", name: "Russian Blue cat", species: "cat", path: "/images/breeds/cats/russian-blue-cat.webp", slug: "russian-blue-cat", breedSlug: "russian-blue" },
+
+  { filename: "russian-blue-kitten.webp", name: "Russian Blue kitten", species: "cat", path: "/images/breeds/cats/russian-blue-kitten.webp", slug: "russian-blue-kitten", breedSlug: "russian-blue" },
+
+  { filename: "american-shorthair-tabby.webp", name: "American Shorthair tabby", species: "cat", path: "/images/breeds/cats/american-shorthair-tabby.webp", slug: "american-shorthair-tabby", breedSlug: "american-shorthair" },
+
+  { filename: "american-shorthair-kitten.webp", name: "American Shorthair kitten", species: "cat", path: "/images/breeds/cats/american-shorthair-kitten.webp", slug: "american-shorthair-kitten", breedSlug: "american-shorthair" },
+
+  { filename: "himalayan-cat.webp", name: "Himalayan cat", species: "cat", path: "/images/breeds/cats/himalayan-cat.webp", slug: "himalayan-cat", breedSlug: "himalayan" },
+
+  { filename: "himalayan-kitten.webp", name: "Himalayan kitten", species: "cat", path: "/images/breeds/cats/himalayan-kitten.webp", slug: "himalayan-kitten", breedSlug: "himalayan" },
+
+  { filename: "turkish-angora-cat.webp", name: "Turkish Angora cat", species: "cat", path: "/images/breeds/cats/turkish-angora-cat.webp", slug: "turkish-angora-cat", breedSlug: "turkish-angora" },
+
+  { filename: "turkish-angora-kitten.webp", name: "Turkish Angora kitten", species: "cat", path: "/images/breeds/cats/turkish-angora-kitten.webp", slug: "turkish-angora-kitten", breedSlug: "turkish-angora" },
+
+  { filename: "devon-rex-cat.webp", name: "Devon Rex cat", species: "cat", path: "/images/breeds/cats/devon-rex-cat.webp", slug: "devon-rex-cat", breedSlug: "devon-rex" },
+
+  { filename: "egyptian-mau.webp", name: "Egyptian Mau cat", species: "cat", path: "/images/breeds/cats/egyptian-mau.webp", slug: "egyptian-mau", breedSlug: "egyptian-mau" },
+
+  { filename: "egyptian-mau-tabby-mix.webp", name: "Egyptian Mau tabby", species: "cat", path: "/images/breeds/cats/egyptian-mau-tabby-mix.webp", slug: "egyptian-mau-tabby-mix", breedSlug: "egyptian-mau" },
+
+  { filename: "chartreux-cat.webp", name: "Chartreux cat", species: "cat", path: "/images/breeds/cats/chartreux-cat.webp", slug: "chartreux-cat", breedSlug: "chartreux" }
+
 ];
 
 
@@ -4027,12 +4215,10 @@ export const BREED_ALIASES: Record<string, string> = {
   "chartreux-cat": "chartreux"
 };
 
-// Comprehensive resolver: finds exact canonical breed or resolves legacy alias
+// Comprehensive resolver: finds exact breed in all 120 breeds
 export function getBreedBySlug(slug: string): BreedData | undefined {
-  const canonicalSlug = BREED_ALIASES[slug] || slug;
-
-  // 1. Direct match in canonical ALL_BREED_IMAGES
-  const asset = ALL_BREED_IMAGES.find((a) => a.slug === canonicalSlug || a.breedSlug === canonicalSlug);
+  // 1. Direct match in ALL_BREED_IMAGES by exact slug or filename
+  const asset = ALL_BREED_IMAGES.find((a) => a.slug === slug || a.filename === slug + ".webp");
   if (asset) {
     const canonical = BREED_DATABASE.find((b) => b.slug === asset.breedSlug);
     if (canonical) {
@@ -4048,11 +4234,17 @@ export function getBreedBySlug(slug: string): BreedData | undefined {
   }
 
   // 2. Direct match in handcrafted database
-  const direct = BREED_DATABASE.find((b) => b.slug === canonicalSlug);
+  const direct = BREED_DATABASE.find((b) => b.slug === slug);
   if (direct) return direct;
 
-  // 3. Fallback search by partial slug matching in images
-  const fallbackAsset = ALL_BREED_IMAGES.find((a) => a.slug.includes(canonicalSlug) || canonicalSlug.includes(a.slug));
+  // 3. Match via alias map
+  const alias = BREED_ALIASES[slug];
+  if (alias) {
+    return getBreedBySlug(alias);
+  }
+
+  // 4. Fallback search by partial slug matching in images
+  const fallbackAsset = ALL_BREED_IMAGES.find((a) => a.slug.includes(slug) || slug.includes(a.slug));
   if (fallbackAsset) {
     const canonical = BREED_DATABASE.find((b) => b.slug === fallbackAsset.breedSlug);
     if (canonical) {
@@ -4070,7 +4262,7 @@ export function getBreedBySlug(slug: string): BreedData | undefined {
   return undefined;
 }
 
-// Get all 50 canonical breeds (41 dogs, 9 cats) for directory
+// Get all 120 breeds (104 dogs, 16 cats) for directory
 export function getAllBreeds(): BreedData[] {
   return ALL_BREED_IMAGES.map((asset) => {
     const canonical = BREED_DATABASE.find((b) => b.slug === asset.breedSlug);

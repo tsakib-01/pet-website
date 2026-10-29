@@ -1,0 +1,1162 @@
+{
+  "french-bulldog.webp": {
+    "species": "dog",
+    "query": "French Bulldog",
+    "candidate": {
+      "title": "File:Franz\u00f6sische Bulldogge in Paris-20060505-RM-100032.jpg",
+      "width": 2239,
+      "height": 1832,
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/39/Franz%C3%B6sische_Bulldogge_in_Paris-20060505-RM-100032.jpg/1920px-Franz%C3%B6sische_Bulldogge_in_Paris-20060505-RM-100032.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+    }
+  },
+  "fluffy-french-bulldog.webp": {
+    "species": "dog",
+    "query": "French Bulldog adult",
+    "candidate": {
+      "title": "File:A textbook on French, Vol. 4 French-English Lexicon English-French Lexicon (IA textbookonfrench04inte).pdf",
+      "width": 1268,
+      "height": 2166,
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c3/A_textbook_on_French%2C_Vol._4_French-English_Lexicon_English-French_Lexicon_%28IA_textbookonfrench04inte%29.pdf/page1-960px-A_textbook_on_French%2C_Vol._4_French-English_Lexicon_English-French_Lexicon_%28IA_textbookonfrench04inte%29.pdf.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+    }
+  },
+  "french-bulldog-puppies.webp": {
+    "species": "dog",
+    "query": "French Bulldog puppy",
+    "candidate": {
+      "title": "File:French Bulldog puppy 259A4145.jpg",
+      "width": 1782,
+      "height": 1585,
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/79/French_Bulldog_puppy_259A4145.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled"
+    }
+  },
+  "merle-french-bulldog.webp": {
+    "species": "dog",
+    "query": "French Bulldog pied",
+    "candidate": {
+      "title": "File:French Bulldog pied.jpg",
+      "width": 1010,
+      "height": 1067,
+      "url": "https://upload.wikimedia.org/wikipedia/commons/c/c2/French_Bulldog_pied.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled"
+    }
+  },
+  "blue-french-bulldog.webp": {
+    "species": "dog",
+    "query": "French Bulldog blue",
+    "candidate": {
+      "title": "File:Example of a blue colored french bulldog.jpg",
+      "width": 1082,
+      "height": 2344,
+      "url": "https://upload.wikimedia.org/wikipedia/commons/f/fb/Example_of_a_blue_colored_french_bulldog.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled"
+    }
+  },
+  "lilac-french-bulldog.webp": {
+    "species": "dog",
+    "query": "French Bulldog fawn",
+    "candidate": {
+      "title": "File:Fawn French bulldog chewing a green toy.jpg",
+      "width": 4059,
+      "height": 2986,
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cc/Fawn_French_bulldog_chewing_a_green_toy.jpg/1920px-Fawn_French_bulldog_chewing_a_green_toy.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+    }
+  },
+  "black-french-bulldog.webp": {
+    "species": "dog",
+    "query": "French Bulldog black",
+    "candidate": {
+      "title": "File:Black French bulldog in life jacket.jpg",
+      "width": 3807,
+      "height": 2918,
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/18/Black_French_bulldog_in_life_jacket.jpg/1920px-Black_French_bulldog_in_life_jacket.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+    }
+  },
+  "black-french-bulldog-puppy.webp": {
+    "species": "dog",
+    "query": "French Bulldog black puppy",
+    "candidate": {
+      "title": "File:A gentleman from France- an Airedale hero (IA gentlemanfromfra00hawk).pdf",
+      "width": 1160,
+      "height": 1829,
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e4/A_gentleman_from_France-_an_Airedale_hero_%28IA_gentlemanfromfra00hawk%29.pdf/page1-960px-A_gentleman_from_France-_an_Airedale_hero_%28IA_gentlemanfromfra00hawk%29.pdf.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+    }
+  },
+  "labrador-puppy.webp": {
+    "species": "dog",
+    "query": "Yellow Labrador puppy",
+    "candidate": {
+      "title": "File:Yellow Labrador puppies (4165737325).jpg",
+      "width": 3888,
+      "height": 2592,
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/12/Yellow_Labrador_puppies_%284165737325%29.jpg/1920px-Yellow_Labrador_puppies_%284165737325%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+    }
+  },
+  "black-labrador.webp": {
+    "species": "dog",
+    "query": "Black Labrador Retriever",
+    "candidate": {
+      "title": "File:Black Labrador Retriever (Nitro).jpg",
+      "width": 3009,
+      "height": 4013,
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/08/Black_Labrador_Retriever_%28Nitro%29.jpg/1920px-Black_Labrador_Retriever_%28Nitro%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+    }
+  },
+  "fox-red-labrador.webp": {
+    "species": "dog",
+    "query": "Fox red Labrador",
+    "candidate": {
+      "title": "File:A fox red Labrador fetching his toy.jpg",
+      "width": 4146,
+      "height": 2490,
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c2/A_fox_red_Labrador_fetching_his_toy.jpg/1920px-A_fox_red_Labrador_fetching_his_toy.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+    }
+  },
+  "white-labrador.webp": {
+    "species": "dog",
+    "query": "Labrador retriever yellow",
+    "candidate": {
+      "title": "File:Labrador Retriever - Yellow.JPG",
+      "width": 3056,
+      "height": 3716,
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d4/Labrador_Retriever_-_Yellow.JPG/1920px-Labrador_Retriever_-_Yellow.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+    }
+  },
+  "labrador-mix.webp": {
+    "species": "dog",
+    "query": "Labrador mix dog",
+    "candidate": {
+      "title": "File:Australian Cattle Dog Lab mix at Old Fisherman's Wharf.jpg",
+      "width": 2095,
+      "height": 3668,
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/45/Australian_Cattle_Dog_Lab_mix_at_Old_Fisherman%27s_Wharf.jpg/1920px-Australian_Cattle_Dog_Lab_mix_at_Old_Fisherman%27s_Wharf.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+    }
+  },
+  "golden-retriever.webp": {
+    "species": "dog",
+    "query": "Golden Retriever",
+    "candidate": {
+      "title": "File:A Golden Retriever-9 (Barras).JPG",
+      "width": 4320,
+      "height": 3240,
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/74/A_Golden_Retriever-9_%28Barras%29.JPG/1920px-A_Golden_Retriever-9_%28Barras%29.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+    }
+  },
+  "golden-retriever-puppy.webp": {
+    "species": "dog",
+    "query": "Golden Retriever puppy",
+    "candidate": {
+      "title": "File:Callie the golden retriever puppy.jpg",
+      "width": 2048,
+      "height": 1536,
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/33/Callie_the_golden_retriever_puppy.jpg/1920px-Callie_the_golden_retriever_puppy.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+    }
+  },
+  "mini-golden-retriever.webp": {
+    "species": "dog",
+    "query": "Golden Retriever young",
+    "candidate": {
+      "title": "File:Child interacts with dog in a field during late afternoon sunshine.jpg",
+      "width": 4016,
+      "height": 6016,
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1b/Child_interacts_with_dog_in_a_field_during_late_afternoon_sunshine.jpg/1920px-Child_interacts_with_dog_in_a_field_during_late_afternoon_sunshine.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+    }
+  },
+  "english-cream-golden-retriever.webp": {
+    "species": "dog",
+    "query": "Golden Retriever cream",
+    "candidate": {
+      "title": "File:Dogs in front of The Parlor Ice Cream Shop.jpg",
+      "width": 1377,
+      "height": 2048,
+      "url": "https://upload.wikimedia.org/wikipedia/commons/5/5a/Dogs_in_front_of_The_Parlor_Ice_Cream_Shop.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled"
+    }
+  },
+  "red-golden-retriever.webp": {
+    "species": "dog",
+    "query": "Golden Retriever dark",
+    "candidate": {
+      "title": "File:Golden Retriever dark Parker.jpg",
+      "width": 2002,
+      "height": 1446,
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c7/Golden_Retriever_dark_Parker.jpg/1920px-Golden_Retriever_dark_Parker.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+    }
+  },
+  "black-golden-retriever.webp": {
+    "species": "dog",
+    "query": "Flat-coated Retriever",
+    "candidate": {
+      "title": "File:Flat-Coated Retriever BDL.jpg",
+      "width": 1755,
+      "height": 1179,
+      "url": "https://upload.wikimedia.org/wikipedia/commons/0/0a/Flat-Coated_Retriever_BDL.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled"
+    }
+  },
+  "german-shepherd.webp": {
+    "species": "dog",
+    "query": "German Shepherd Dog",
+    "candidate": {
+      "title": "File:20110425 German Shepherd Dog 8505.jpg",
+      "width": 4245,
+      "height": 2820,
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/61/20110425_German_Shepherd_Dog_8505.jpg/1920px-20110425_German_Shepherd_Dog_8505.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+    }
+  },
+  "old-german-shepherd.webp": {
+    "species": "dog",
+    "query": "Altdeutscher Schaeferhund",
+    "candidate": {
+      "title": "File:Altdeutscher Schaeferhund.jpg",
+      "width": 1024,
+      "height": 768,
+      "url": "https://upload.wikimedia.org/wikipedia/commons/9/99/Altdeutscher_Schaeferhund.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled"
+    }
+  },
+  "german-shepherd-training.webp": {
+    "species": "dog",
+    "query": "German Shepherd Dog working",
+    "candidate": {
+      "title": "File:German Shepherd Dog in Lithuanian Army.jpg",
+      "width": 3063,
+      "height": 2442,
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/German_Shepherd_Dog_in_Lithuanian_Army.jpg/1920px-German_Shepherd_Dog_in_Lithuanian_Army.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+    }
+  },
+  "black-german-shepherd.webp": {
+    "species": "dog",
+    "query": "Black German Shepherd",
+    "candidate": {
+      "title": "File:Black-german-shepherd-29944091920.jpg",
+      "width": 1920,
+      "height": 1232,
+      "url": "https://upload.wikimedia.org/wikipedia/commons/d/d9/Black-german-shepherd-29944091920.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled"
+    }
+  },
+  "white-german-shepherd.webp": {
+    "species": "dog",
+    "query": "White Swiss Shepherd Dog",
+    "candidate": {
+      "title": "File:White Swiss Shepherd 4.jpg",
+      "width": 1528,
+      "height": 1196,
+      "url": "https://upload.wikimedia.org/wikipedia/commons/4/49/White_Swiss_Shepherd_4.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled"
+    }
+  },
+  "mini-dachshund.webp": {
+    "species": "dog",
+    "query": "Miniature Dachshund",
+    "candidate": {
+      "title": "File:1 Year Old Miniature Dachshund.jpg",
+      "width": 1179,
+      "height": 792,
+      "url": "https://upload.wikimedia.org/wikipedia/commons/4/4f/1_Year_Old_Miniature_Dachshund.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled"
+    }
+  },
+  "long-haired-dachshund.webp": {
+    "species": "dog",
+    "query": "Long-haired Dachshund",
+    "candidate": {
+      "title": "File:Long-haired Dachshund Rosie.jpg",
+      "width": 4032,
+      "height": 3024,
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f4/Long-haired_Dachshund_Rosie.jpg/1920px-Long-haired_Dachshund_Rosie.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+    }
+  },
+  "wire-haired-dachshund.webp": {
+    "species": "dog",
+    "query": "Wire-haired Dachshund",
+    "candidate": {
+      "title": "File:Wire-Haired Dachshund - Image 01.jpg",
+      "width": 1456,
+      "height": 2592,
+      "url": "https://upload.wikimedia.org/wikipedia/commons/c/c6/Wire-Haired_Dachshund_-_Image_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled"
+    }
+  },
+  "dapple-dachshund.webp": {
+    "species": "dog",
+    "query": "Dapple Dachshund",
+    "candidate": {
+      "title": "File:Dapple-Dachshund.jpg",
+      "width": 5472,
+      "height": 3648,
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/28/Dapple-Dachshund.jpg/1920px-Dapple-Dachshund.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+    }
+  },
+  "dachshund-puppies.webp": {
+    "species": "dog",
+    "query": "Dachshund puppies",
+    "candidate": {
+      "title": "File:Dachshund puppies 3305.jpg",
+      "width": 2587,
+      "height": 2324,
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/53/Dachshund_puppies_3305.jpg/1920px-Dachshund_puppies_3305.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+    }
+  },
+  "standard-poodle.webp": {
+    "species": "dog",
+    "query": "Standard Poodle",
+    "candidate": {
+      "title": "File:Mini Poodle Pup Belgian Malinois Mysore Apr23 R16 07313.jpg",
+      "width": 4421,
+      "height": 3316,
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/19/Mini_Poodle_Pup_Belgian_Malinois_Mysore_Apr23_R16_07313.jpg/1920px-Mini_Poodle_Pup_Belgian_Malinois_Mysore_Apr23_R16_07313.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+    }
+  },
+  "mini-poodle.webp": {
+    "species": "dog",
+    "query": "Miniature Poodle",
+    "candidate": {
+      "title": "File:Head Miniature Poodle Mysore May24 A7CR 00091.jpg",
+      "width": 6974,
+      "height": 5230,
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a4/Head_Miniature_Poodle_Mysore_May24_A7CR_00091.jpg/1920px-Head_Miniature_Poodle_Mysore_May24_A7CR_00091.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+    }
+  },
+  "teacup-poodle.webp": {
+    "species": "dog",
+    "query": "Toy Poodle",
+    "candidate": {
+      "title": "File:Mini Poodle Pup Belgian Malinois Mysore Apr23 R16 07313.jpg",
+      "width": 4421,
+      "height": 3316,
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/19/Mini_Poodle_Pup_Belgian_Malinois_Mysore_Apr23_R16_07313.jpg/1920px-Mini_Poodle_Pup_Belgian_Malinois_Mysore_Apr23_R16_07313.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+    }
+  },
+  "moyen-poodle.webp": {
+    "species": "dog",
+    "query": "Poodle Medium",
+    "candidate": {
+      "title": "File:Poodle Medium black.jpg",
+      "width": 1836,
+      "height": 1560,
+      "url": "https://upload.wikimedia.org/wikipedia/commons/9/9e/Poodle_Medium_black.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled"
+    }
+  },
+  "shih-poo.webp": {
+    "species": "dog",
+    "query": "Shih-poo",
+    "candidate": {
+      "title": "File:Ruby, Shih poo, on deck.jpg",
+      "width": 1200,
+      "height": 1600,
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/10/Ruby%2C_Shih_poo%2C_on_deck.jpg/960px-Ruby%2C_Shih_poo%2C_on_deck.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+    }
+  },
+  "beagle.webp": {
+    "species": "dog",
+    "query": "Beagle dog",
+    "candidate": {
+      "title": "File:Beagle Dog female.jpg",
+      "width": 1113,
+      "height": 1109,
+      "url": "https://upload.wikimedia.org/wikipedia/commons/3/34/Beagle_Dog_female.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled"
+    }
+  },
+  "beagle-puppy.webp": {
+    "species": "dog",
+    "query": "Beagle puppy",
+    "candidate": {
+      "title": "File:Beagle puppy on sofa.jpg",
+      "width": 3024,
+      "height": 4032,
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/83/Beagle_puppy_on_sofa.jpg/1920px-Beagle_puppy_on_sofa.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+    }
+  },
+  "beagle-mix.webp": {
+    "species": "dog",
+    "query": "Beagle mix",
+    "candidate": {
+      "title": "File:Beagle terrier mix.jpg",
+      "width": 1154,
+      "height": 1177,
+      "url": "https://upload.wikimedia.org/wikipedia/commons/b/b7/Beagle_terrier_mix.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled"
+    }
+  },
+  "rottweiler.webp": {
+    "species": "dog",
+    "query": "Rottweiler",
+    "candidate": {
+      "title": "File:Rottweiler -52773841920.jpg",
+      "width": 1920,
+      "height": 1285,
+      "url": "https://upload.wikimedia.org/wikipedia/commons/6/69/Rottweiler_-52773841920.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled"
+    }
+  },
+  "baby-rottweiler.webp": {
+    "species": "dog",
+    "query": "Rottweiler puppy",
+    "candidate": {
+      "title": "File:10-week-old Rottweiler puppy Rottweiler 2.jpg",
+      "width": 1952,
+      "height": 3264,
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0d/10-week-old_Rottweiler_puppy_Rottweiler_2.jpg/1920px-10-week-old_Rottweiler_puppy_Rottweiler_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+    }
+  },
+  "rottweiler-pitbull-mix.webp": {
+    "species": "dog",
+    "query": "Rottweiler cross",
+    "candidate": {
+      "title": "File:Baby rottweiler.jpg",
+      "width": 2766,
+      "height": 2268,
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/67/Baby_rottweiler.jpg/1920px-Baby_rottweiler.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+    }
+  },
+  "shepweiler-mix.webp": {
+    "species": "dog",
+    "query": "German Shepherd Rottweiler",
+    "candidate": {
+      "title": "File:Lennie.jpg",
+      "width": 2400,
+      "height": 1800,
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/78/Lennie.jpg/1920px-Lennie.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+    }
+  },
+  "roman-rottweiler.webp": {
+    "species": "dog",
+    "query": "Rottweiler standing",
+    "candidate": {
+      "title": "File:Grupp 2 ROTTWEILER, ASKELONS IDUN (24260990736).jpg",
+      "width": 1656,
+      "height": 1104,
+      "url": "https://upload.wikimedia.org/wikipedia/commons/4/45/Grupp_2_ROTTWEILER%2C_ASKELONS_IDUN_%2824260990736%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled"
+    }
+  },
+  "german-shorthaired-pointer.webp": {
+    "species": "dog",
+    "query": "German Shorthaired Pointer",
+    "candidate": {
+      "title": "File:10 Week Old German Shorthaired Pointer Puppy.jpg",
+      "width": 3220,
+      "height": 2415,
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/dd/10_Week_Old_German_Shorthaired_Pointer_Puppy.jpg/1920px-10_Week_Old_German_Shorthaired_Pointer_Puppy.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+    }
+  },
+  "gsp-puppy.webp": {
+    "species": "dog",
+    "query": "German Shorthaired Pointer puppy",
+    "candidate": {
+      "title": "File:10 Week Old German Shorthaired Pointer Puppy.jpg",
+      "width": 3220,
+      "height": 2415,
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/dd/10_Week_Old_German_Shorthaired_Pointer_Puppy.jpg/1920px-10_Week_Old_German_Shorthaired_Pointer_Puppy.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+    }
+  },
+  "black-gsp.webp": {
+    "species": "dog",
+    "query": "German Shorthaired Pointer black",
+    "candidate": {
+      "title": "File:(2)Wystawa ps\u00f3w Rybnik wy\u017ce\u0142 niemiecki 04.10.2010 pl.jpg",
+      "width": 1955,
+      "height": 1630,
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e4/%282%29Wystawa_ps%C3%B3w_Rybnik_wy%C5%BCe%C5%82_niemiecki_04.10.2010_pl.jpg/1920px-%282%29Wystawa_ps%C3%B3w_Rybnik_wy%C5%BCe%C5%82_niemiecki_04.10.2010_pl.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+    }
+  },
+  "american-bulldog.webp": {
+    "species": "dog",
+    "query": "American Bulldog",
+    "candidate": {
+      "title": "File:American Bulldog 43.jpg",
+      "width": 5184,
+      "height": 3888,
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cb/American_Bulldog_43.jpg/1920px-American_Bulldog_43.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+    }
+  },
+  "yorkshire-terrier.webp": {
+    "species": "dog",
+    "query": "Yorkshire Terrier",
+    "candidate": {
+      "title": "File:Biewer Yorkshire Terrier 2.jpg",
+      "width": 1992,
+      "height": 1712,
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2b/Biewer_Yorkshire_Terrier_2.jpg/1920px-Biewer_Yorkshire_Terrier_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+    }
+  },
+  "yorkshire-terrier-puppy.webp": {
+    "species": "dog",
+    "query": "Yorkshire Terrier puppy",
+    "candidate": {
+      "title": "File:Yorkshire Terrier puppies-1.JPG",
+      "width": 3264,
+      "height": 2448,
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/72/Yorkshire_Terrier_puppies-1.JPG/1920px-Yorkshire_Terrier_puppies-1.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+    }
+  },
+  "australian-shepherd.webp": {
+    "species": "dog",
+    "query": "Australian Shepherd",
+    "candidate": {
+      "title": "File:8 Week Old Australian Shepherd Puppy.jpg",
+      "width": 3024,
+      "height": 4032,
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e9/8_Week_Old_Australian_Shepherd_Puppy.jpg/1920px-8_Week_Old_Australian_Shepherd_Puppy.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+    }
+  },
+  "blue-merle-australian-shepherd.webp": {
+    "species": "dog",
+    "query": "Blue Merle Australian Shepherd",
+    "candidate": {
+      "title": "File:Australian Shepherd Blue Merle.jpg",
+      "width": 2580,
+      "height": 1968,
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/58/Australian_Shepherd_Blue_Merle.jpg/1920px-Australian_Shepherd_Blue_Merle.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+    }
+  },
+  "red-merle-australian-shepherd.webp": {
+    "species": "dog",
+    "query": "Red Merle Australian Shepherd",
+    "candidate": {
+      "title": "File:Australian Shepherd puppy red-merle.jpg",
+      "width": 2304,
+      "height": 1728,
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0d/Australian_Shepherd_puppy_red-merle.jpg/1920px-Australian_Shepherd_puppy_red-merle.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+    }
+  },
+  "border-aussie-mix.webp": {
+    "species": "dog",
+    "query": "Australian Shepherd cross",
+    "candidate": {
+      "title": "File:An Australian Parsonage.djvu",
+      "width": 5100,
+      "height": 6600,
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3b/An_Australian_Parsonage.djvu/page1-1920px-An_Australian_Parsonage.djvu.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+    }
+  },
+  "doberman-pinscher.webp": {
+    "species": "dog",
+    "query": "Doberman Pinscher",
+    "candidate": {
+      "title": "File:Doberman Pinscher aka Dobermann.jpg",
+      "width": 1083,
+      "height": 1871,
+      "url": "https://upload.wikimedia.org/wikipedia/commons/1/10/Doberman_Pinscher_aka_Dobermann.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled"
+    }
+  },
+  "red-doberman.webp": {
+    "species": "dog",
+    "query": "Doberman red",
+    "candidate": {
+      "title": "File:Doberman Pinscher red standing.jpg",
+      "width": 3504,
+      "height": 2336,
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3d/Doberman_Pinscher_red_standing.jpg/1920px-Doberman_Pinscher_red_standing.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+    }
+  },
+  "blue-doberman.webp": {
+    "species": "dog",
+    "query": "Doberman blue",
+    "candidate": {
+      "title": "File:Color dilution alopecia 2.jpg",
+      "width": 1024,
+      "height": 768,
+      "url": "https://upload.wikimedia.org/wikipedia/commons/2/2b/Color_dilution_alopecia_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled"
+    }
+  },
+  "mini-pinscher.webp": {
+    "species": "dog",
+    "query": "Miniature Pinscher",
+    "candidate": {
+      "title": "File:Adult Male Miniature Pinscher.jpg",
+      "width": 2082,
+      "height": 2602,
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f0/Adult_Male_Miniature_Pinscher.jpg/1920px-Adult_Male_Miniature_Pinscher.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+    }
+  },
+  "doberman-puppy.webp": {
+    "species": "dog",
+    "query": "Doberman puppy",
+    "candidate": {
+      "title": "File:Doberman Pinscher.jpg",
+      "width": 2620,
+      "height": 4656,
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7d/Doberman_Pinscher.jpg/1920px-Doberman_Pinscher.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+    }
+  },
+  "pembroke-welsh-corgi.webp": {
+    "species": "dog",
+    "query": "Pembroke Welsh Corgi",
+    "candidate": {
+      "title": "File:Fawn and white Welsh Corgi puppy standing on rear legs and sticking out the tongue.jpg",
+      "width": 3126,
+      "height": 4682,
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4a/Fawn_and_white_Welsh_Corgi_puppy_standing_on_rear_legs_and_sticking_out_the_tongue.jpg/1920px-Fawn_and_white_Welsh_Corgi_puppy_standing_on_rear_legs_and_sticking_out_the_tongue.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+    }
+  },
+  "boxer-dog.webp": {
+    "species": "dog",
+    "query": "Boxer dog",
+    "candidate": {
+      "title": "File:\"Boxer dog\" stand.jpg",
+      "width": 1433,
+      "height": 1210,
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/75/%22Boxer_dog%22_stand.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled"
+    }
+  },
+  "boxer-puppies.webp": {
+    "species": "dog",
+    "query": "Boxer puppy",
+    "candidate": {
+      "title": "File:Boxer puppy .jpg",
+      "width": 4032,
+      "height": 3024,
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3b/Boxer_puppy_.jpg/1920px-Boxer_puppy_.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+    }
+  },
+  "pomeranian.webp": {
+    "species": "dog",
+    "query": "Pomeranian dog",
+    "candidate": {
+      "title": "File:Pomeranian Dog - Kolkata 2011-10-31 6417.JPG",
+      "width": 4288,
+      "height": 2848,
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9b/Pomeranian_Dog_-_Kolkata_2011-10-31_6417.JPG/1920px-Pomeranian_Dog_-_Kolkata_2011-10-31_6417.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+    }
+  },
+  "white-pomeranian.webp": {
+    "species": "dog",
+    "query": "White Pomeranian",
+    "candidate": {
+      "title": "File:2026.02.14 White Pomeranian Shpitz Zhdanovichi Minsk Belarus.jpg",
+      "width": 1694,
+      "height": 2400,
+      "url": "https://upload.wikimedia.org/wikipedia/commons/9/9c/2026.02.14_White_Pomeranian_Shpitz_Zhdanovichi_Minsk_Belarus.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled"
+    }
+  },
+  "black-pomeranian.webp": {
+    "species": "dog",
+    "query": "Black Pomeranian",
+    "candidate": {
+      "title": "File:A black & tan Pomeranian that lost an eye due to an infection.jpg",
+      "width": 1536,
+      "height": 2048,
+      "url": "https://upload.wikimedia.org/wikipedia/commons/2/26/A_black_%26_tan_Pomeranian_that_lost_an_eye_due_to_an_infection.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled"
+    }
+  },
+  "pomsky-mix.webp": {
+    "species": "dog",
+    "query": "Pomsky dog",
+    "candidate": {
+      "title": "File:Pomsky - Gentbrugge 17-12-2019 13-50-41.jpg",
+      "width": 4800,
+      "height": 3200,
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3c/Pomsky_-_Gentbrugge_17-12-2019_13-50-41.jpg/1920px-Pomsky_-_Gentbrugge_17-12-2019_13-50-41.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+    }
+  },
+  "bernese-mountain-dog.webp": {
+    "species": "dog",
+    "query": "Bernese Mountain Dog",
+    "candidate": {
+      "title": "File:2-BerneseMountainDogInGrass.jpg",
+      "width": 5170,
+      "height": 7756,
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/59/2-BerneseMountainDogInGrass.jpg/1920px-2-BerneseMountainDogInGrass.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+    }
+  },
+  "bernedoodle.webp": {
+    "species": "dog",
+    "query": "Bernedoodle",
+    "candidate": {
+      "title": "File:2019 Laurent-Perrier Pop-Up in Sonoma - Sarah Stierch 06.jpg",
+      "width": 3024,
+      "height": 4032,
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3d/2019_Laurent-Perrier_Pop-Up_in_Sonoma_-_Sarah_Stierch_06.jpg/1920px-2019_Laurent-Perrier_Pop-Up_in_Sonoma_-_Sarah_Stierch_06.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+    }
+  },
+  "great-dane.webp": {
+    "species": "dog",
+    "query": "Great Dane",
+    "candidate": {
+      "title": "File:Dog heart (Great Dane).jpg",
+      "width": 2158,
+      "height": 3223,
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c0/Dog_heart_%28Great_Dane%29.jpg/1920px-Dog_heart_%28Great_Dane%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+    }
+  },
+  "harlequin-great-dane.webp": {
+    "species": "dog",
+    "query": "Harlequin Great Dane",
+    "candidate": {
+      "title": "File:Great Dane harlequin grass.jpg",
+      "width": 2937,
+      "height": 2202,
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f6/Great_Dane_harlequin_grass.jpg/1920px-Great_Dane_harlequin_grass.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+    }
+  },
+  "black-great-dane.webp": {
+    "species": "dog",
+    "query": "Great Dane black",
+    "candidate": {
+      "title": "File:Black Great Dane.jpg",
+      "width": 1024,
+      "height": 679,
+      "url": "https://upload.wikimedia.org/wikipedia/commons/6/64/Black_Great_Dane.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled"
+    }
+  },
+  "shih-tzu.webp": {
+    "species": "dog",
+    "query": "Shih Tzu",
+    "candidate": {
+      "title": "File:Shih-tzu-udon.jpg",
+      "width": 1080,
+      "height": 1350,
+      "url": "https://upload.wikimedia.org/wikipedia/commons/1/12/Shih-tzu-udon.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled"
+    }
+  },
+  "shih-tzu-puppy.webp": {
+    "species": "dog",
+    "query": "Shih Tzu puppy",
+    "candidate": {
+      "title": "File:Shih Tzu puppy - 20070802.jpg",
+      "width": 3456,
+      "height": 2304,
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a7/Shih_Tzu_puppy_-_20070802.jpg/1920px-Shih_Tzu_puppy_-_20070802.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+    }
+  },
+  "malshi.webp": {
+    "species": "dog",
+    "query": "Malshi dog",
+    "candidate": {
+      "title": "File:Bodhi.the.malshi.2016.jpg",
+      "width": 3024,
+      "height": 4032,
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e9/Bodhi.the.malshi.2016.jpg/1920px-Bodhi.the.malshi.2016.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+    }
+  },
+  "boston-terrier.webp": {
+    "species": "dog",
+    "query": "Boston Terrier",
+    "candidate": {
+      "title": "File:BOSTON TERRIER, Ving\u00e5rdens Essi von Richards (23995273800).2.jpg",
+      "width": 1033,
+      "height": 882,
+      "url": "https://upload.wikimedia.org/wikipedia/commons/f/fe/BOSTON_TERRIER%2C_Ving%C3%A5rdens_Essi_von_Richards_%2823995273800%29.2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled"
+    }
+  },
+  "blue-boston-terrier.webp": {
+    "species": "dog",
+    "query": "Boston Terrier blue",
+    "candidate": {
+      "title": "File:Project Blue Book report - 1963-03-9316973-Duluth-Minnesota.pdf",
+      "width": 2962,
+      "height": 4389,
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c6/Project_Blue_Book_report_-_1963-03-9316973-Duluth-Minnesota.pdf/page1-1920px-Project_Blue_Book_report_-_1963-03-9316973-Duluth-Minnesota.pdf.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+    }
+  },
+  "deer-head-chihuahua.webp": {
+    "species": "dog",
+    "query": "Chihuahua dog",
+    "candidate": {
+      "title": "File:Blubble Head English Chihuahua - Warhol.jpg",
+      "width": 2848,
+      "height": 4272,
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/ff/Blubble_Head_English_Chihuahua_-_Warhol.jpg/1920px-Blubble_Head_English_Chihuahua_-_Warhol.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+    }
+  },
+  "havanese.webp": {
+    "species": "dog",
+    "query": "Havanese dog",
+    "candidate": {
+      "title": "File:A Havanese judging.jpg",
+      "width": 1353,
+      "height": 1225,
+      "url": "https://upload.wikimedia.org/wikipedia/commons/e/ed/A_Havanese_judging.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled"
+    }
+  },
+  "border-collie.webp": {
+    "species": "dog",
+    "query": "Border Collie",
+    "candidate": {
+      "title": "File:Border-Collie-tri-colour-face-1.jpg",
+      "width": 4632,
+      "height": 3464,
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/37/Border-Collie-tri-colour-face-1.jpg/1920px-Border-Collie-tri-colour-face-1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+    }
+  },
+  "red-border-collie.webp": {
+    "species": "dog",
+    "query": "Red Border Collie",
+    "candidate": {
+      "title": "File:A Red Border Collie.jpg",
+      "width": 2411,
+      "height": 1928,
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/aa/A_Red_Border_Collie.jpg/1920px-A_Red_Border_Collie.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+    }
+  },
+  "bordoodle.webp": {
+    "species": "dog",
+    "query": "Border Collie poodle",
+    "candidate": {
+      "title": "File:Black and white bordoodle puppy.jpg",
+      "width": 5674,
+      "height": 3783,
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9b/Black_and_white_bordoodle_puppy.jpg/1920px-Black_and_white_bordoodle_puppy.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+    }
+  },
+  "english-springer-spaniel.webp": {
+    "species": "dog",
+    "query": "English Springer Spaniel",
+    "candidate": {
+      "title": "File:English Springer Spaniel after swimming.jpg",
+      "width": 5184,
+      "height": 3456,
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d5/English_Springer_Spaniel_after_swimming.jpg/1920px-English_Springer_Spaniel_after_swimming.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+    }
+  },
+  "siberian-husky.webp": {
+    "species": "dog",
+    "query": "Siberian Husky",
+    "candidate": {
+      "title": "File:Inzell 2017 Kat A1 ZBYSZEK Kunert -9513.jpg",
+      "width": 4410,
+      "height": 2940,
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0e/Inzell_2017_Kat_A1_ZBYSZEK_Kunert_-9513.jpg/1920px-Inzell_2017_Kat_A1_ZBYSZEK_Kunert_-9513.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+    }
+  },
+  "white-siberian-husky.webp": {
+    "species": "dog",
+    "query": "White Siberian Husky",
+    "candidate": {
+      "title": "File:White Siberian Husky.jpg",
+      "width": 1147,
+      "height": 1147,
+      "url": "https://upload.wikimedia.org/wikipedia/commons/e/e1/White_Siberian_Husky.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled"
+    }
+  },
+  "red-siberian-husky.webp": {
+    "species": "dog",
+    "query": "Red Siberian Husky",
+    "candidate": {
+      "title": "File:Red and White Female Siberian Husky.jpg",
+      "width": 1440,
+      "height": 2560,
+      "url": "https://upload.wikimedia.org/wikipedia/commons/b/ba/Red_and_White_Female_Siberian_Husky.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled"
+    }
+  },
+  "brittany-dog.webp": {
+    "species": "dog",
+    "query": "Brittany dog",
+    "candidate": {
+      "title": "File:An Epagneul Breton - world dog show 2010.jpg",
+      "width": 1200,
+      "height": 1058,
+      "url": "https://upload.wikimedia.org/wikipedia/commons/4/47/An_Epagneul_Breton_-_world_dog_show_2010.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled"
+    }
+  },
+  "belgian-malinois.webp": {
+    "species": "dog",
+    "query": "Belgian Malinois",
+    "candidate": {
+      "title": "File:04 - Belgian shepherd dog varieties - Groenendael,Tervuren, Malinois, Laekenois.jpg",
+      "width": 1079,
+      "height": 1184,
+      "url": "https://upload.wikimedia.org/wikipedia/commons/2/2f/04_-_Belgian_shepherd_dog_varieties_-_Groenendael%2CTervuren%2C_Malinois%2C_Laekenois.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled"
+    }
+  },
+  "black-belgian-malinois.webp": {
+    "species": "dog",
+    "query": "Belgian Shepherd Groenendael",
+    "candidate": {
+      "title": "File:04 - Belgian shepherd dog varieties - Groenendael,Tervuren, Malinois, Laekenois.jpg",
+      "width": 1079,
+      "height": 1184,
+      "url": "https://upload.wikimedia.org/wikipedia/commons/2/2f/04_-_Belgian_shepherd_dog_varieties_-_Groenendael%2CTervuren%2C_Malinois%2C_Laekenois.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled"
+    }
+  },
+  "cocker-spaniel-puppy.webp": {
+    "species": "dog",
+    "query": "Cocker Spaniel puppy",
+    "candidate": {
+      "title": "File:\"Bill\" - Cocker spaniel anglais 1.jpg",
+      "width": 3456,
+      "height": 5184,
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/70/%22Bill%22_-_Cocker_spaniel_anglais_1.jpg/1920px-%22Bill%22_-_Cocker_spaniel_anglais_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+    }
+  },
+  "black-cocker-spaniel.webp": {
+    "species": "dog",
+    "query": "Black Cocker Spaniel",
+    "candidate": {
+      "title": "File:Black and tan cocker spaniel.jpg",
+      "width": 1408,
+      "height": 2009,
+      "url": "https://upload.wikimedia.org/wikipedia/commons/d/d9/Black_and_tan_cocker_spaniel.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled"
+    }
+  },
+  "cockapoo.webp": {
+    "species": "dog",
+    "query": "Cockapoo",
+    "candidate": {
+      "title": "File:A cockapoo.jpg",
+      "width": 3608,
+      "height": 5412,
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0d/A_cockapoo.jpg/1920px-A_cockapoo.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+    }
+  },
+  "basset-hound.webp": {
+    "species": "dog",
+    "query": "Basset Hound",
+    "candidate": {
+      "title": "File:A Basset Hound at Lodhi Gardens, Delhi.jpg",
+      "width": 5674,
+      "height": 3780,
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/98/A_Basset_Hound_at_Lodhi_Gardens%2C_Delhi.jpg/1920px-A_Basset_Hound_at_Lodhi_Gardens%2C_Delhi.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+    }
+  },
+  "vizsla.webp": {
+    "species": "dog",
+    "query": "Vizsla dog",
+    "candidate": {
+      "title": "File:Magyar Vizsla male 1 year old dog in forest.jpg",
+      "width": 3024,
+      "height": 3024,
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c0/Magyar_Vizsla_male_1_year_old_dog_in_forest.jpg/1920px-Magyar_Vizsla_male_1_year_old_dog_in_forest.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+    }
+  },
+  "rough-collie.webp": {
+    "species": "dog",
+    "query": "Rough Collie",
+    "candidate": {
+      "title": "File:Rough Collie head.jpg",
+      "width": 1042,
+      "height": 1017,
+      "url": "https://upload.wikimedia.org/wikipedia/commons/5/5c/Rough_Collie_head.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled"
+    }
+  },
+  "smooth-collie.webp": {
+    "species": "dog",
+    "query": "Smooth Collie",
+    "candidate": {
+      "title": "File:SmoothCollie Sable.jpg",
+      "width": 1090,
+      "height": 800,
+      "url": "https://upload.wikimedia.org/wikipedia/commons/8/8c/SmoothCollie_Sable.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled"
+    }
+  },
+  "rhodesian-ridgeback.webp": {
+    "species": "dog",
+    "query": "Rhodesian Ridgeback",
+    "candidate": {
+      "title": "File:Grupp 6 RHODESIAN RIDGEBACK, NO JV-15 SE VCH Kadamo I\u2019m In It For The Gold (23920356649).jpg",
+      "width": 1656,
+      "height": 1104,
+      "url": "https://upload.wikimedia.org/wikipedia/commons/d/d2/Grupp_6_RHODESIAN_RIDGEBACK%2C_NO_JV-15_SE_VCH_Kadamo_I%E2%80%99m_In_It_For_The_Gold_%2823920356649%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled"
+    }
+  },
+  "papillon.webp": {
+    "species": "dog",
+    "query": "Papillon dog",
+    "candidate": {
+      "title": "File:Outdoor Continental Toy Spaniel Papillon.jpeg",
+      "width": 1250,
+      "height": 976,
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/7d/Outdoor_Continental_Toy_Spaniel_Papillon.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled"
+    }
+  },
+  "shiba-inu.webp": {
+    "species": "dog",
+    "query": "Shiba Inu",
+    "candidate": {
+      "title": "File:A Shiba Inu at Itaim Bibi, Sao Paulo.jpg",
+      "width": 1536,
+      "height": 2048,
+      "url": "https://upload.wikimedia.org/wikipedia/commons/1/1b/A_Shiba_Inu_at_Itaim_Bibi%2C_Sao_Paulo.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled"
+    }
+  },
+  "black-and-tan-shiba-inu.webp": {
+    "species": "dog",
+    "query": "Black and Tan Shiba Inu",
+    "candidate": {
+      "title": "File:Female Shiba Inu.jpg",
+      "width": 1440,
+      "height": 1080,
+      "url": "https://upload.wikimedia.org/wikipedia/commons/5/52/Female_Shiba_Inu.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled"
+    }
+  },
+  "west-highland-white-terrier.webp": {
+    "species": "dog",
+    "query": "West Highland White Terrier",
+    "candidate": {
+      "title": "File:Blossom and Laysha.jpg",
+      "width": 4984,
+      "height": 3848,
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/50/Blossom_and_Laysha.jpg/1920px-Blossom_and_Laysha.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+    }
+  },
+  "blue-heeler.webp": {
+    "species": "dog",
+    "query": "Blue Heeler Australian Cattle Dog",
+    "candidate": {
+      "title": "File:Australian Cattle Dog 22.04.2012 5pl.jpg",
+      "width": 2536,
+      "height": 1916,
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3c/Australian_Cattle_Dog_22.04.2012_5pl.jpg/1920px-Australian_Cattle_Dog_22.04.2012_5pl.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+    }
+  },
+  "red-heeler.webp": {
+    "species": "dog",
+    "query": "Red Heeler Australian Cattle Dog",
+    "candidate": {
+      "title": "File:Australian Cattle Dog 22.04.2012 5pl.jpg",
+      "width": 2536,
+      "height": 1916,
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3c/Australian_Cattle_Dog_22.04.2012_5pl.jpg/1920px-Australian_Cattle_Dog_22.04.2012_5pl.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+    }
+  },
+  "ragdoll-kitten.webp": {
+    "species": "cat",
+    "query": "Ragdoll kitten",
+    "candidate": {
+      "title": "File:Gato Ragdoll BreedingCat.jpg",
+      "width": 1280,
+      "height": 1011,
+      "url": "https://upload.wikimedia.org/wikipedia/commons/8/8d/Gato_Ragdoll_BreedingCat.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled"
+    }
+  },
+  "sphynx-cat.webp": {
+    "species": "cat",
+    "query": "Sphynx cat",
+    "candidate": {
+      "title": "File:1 adult cat Sphynx. img 047.jpg",
+      "width": 3560,
+      "height": 4127,
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5a/1_adult_cat_Sphynx._img_047.jpg/1920px-1_adult_cat_Sphynx._img_047.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+    }
+  },
+  "fat-sphynx-cat.webp": {
+    "species": "cat",
+    "query": "Sphynx cat standing",
+    "candidate": {
+      "title": "File:Baby sphynx (512689257).jpg",
+      "width": 1600,
+      "height": 1200,
+      "url": "https://upload.wikimedia.org/wikipedia/commons/3/33/Baby_sphynx_%28512689257%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled"
+    }
+  },
+  "baby-sphynx-cat.webp": {
+    "species": "cat",
+    "query": "Sphynx kitten",
+    "candidate": {
+      "title": "File:Cat Sphynx. Kittens. img 11.jpg",
+      "width": 3577,
+      "height": 2500,
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/29/Cat_Sphynx._Kittens._img_11.jpg/1920px-Cat_Sphynx._Kittens._img_11.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+    }
+  },
+  "russian-blue-cat.webp": {
+    "species": "cat",
+    "query": "Russian Blue cat",
+    "candidate": {
+      "title": "File:Cat Sphynx. Kittens. img 11.jpg",
+      "width": 3577,
+      "height": 2500,
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/29/Cat_Sphynx._Kittens._img_11.jpg/1920px-Cat_Sphynx._Kittens._img_11.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+    }
+  },
+  "russian-blue-kitten.webp": {
+    "species": "cat",
+    "query": "Russian Blue kitten",
+    "candidate": {
+      "title": "File:Cat Sphynx. Kittens. img 11.jpg",
+      "width": 3577,
+      "height": 2500,
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/29/Cat_Sphynx._Kittens._img_11.jpg/1920px-Cat_Sphynx._Kittens._img_11.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+    }
+  },
+  "american-shorthair-tabby.webp": {
+    "species": "cat",
+    "query": "American Shorthair tabby",
+    "candidate": {
+      "title": "File:American shorthair blotched tabby.jpg",
+      "width": 2560,
+      "height": 1920,
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/43/American_shorthair_blotched_tabby.jpg/1920px-American_shorthair_blotched_tabby.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+    }
+  },
+  "american-shorthair-kitten.webp": {
+    "species": "cat",
+    "query": "American Shorthair kitten",
+    "candidate": {
+      "title": "File:Baby American shorthair in loaf pose.jpg",
+      "width": 1072,
+      "height": 1280,
+      "url": "https://upload.wikimedia.org/wikipedia/commons/b/b0/Baby_American_shorthair_in_loaf_pose.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled"
+    }
+  },
+  "himalayan-cat.webp": {
+    "species": "cat",
+    "query": "Himalayan cat",
+    "candidate": {
+      "title": "File:Himalayan Cat Male light brown colour.JPG",
+      "width": 1342,
+      "height": 1623,
+      "url": "https://upload.wikimedia.org/wikipedia/commons/6/66/Himalayan_Cat_Male_light_brown_colour.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled"
+    }
+  },
+  "himalayan-kitten.webp": {
+    "species": "cat",
+    "query": "Himalayan kitten",
+    "candidate": {
+      "title": "File:Bluepoint Himalayan Kitten Cirrus at 6 months by Asilverstein 2014mar14 IMG 2542b.jpg",
+      "width": 4303,
+      "height": 2792,
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3c/Bluepoint_Himalayan_Kitten_Cirrus_at_6_months_by_Asilverstein_2014mar14_IMG_2542b.jpg/1920px-Bluepoint_Himalayan_Kitten_Cirrus_at_6_months_by_Asilverstein_2014mar14_IMG_2542b.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+    }
+  },
+  "turkish-angora-cat.webp": {
+    "species": "cat",
+    "query": "Turkish Angora cat",
+    "candidate": {
+      "title": "File:Turkish Angora cat.jpg",
+      "width": 3000,
+      "height": 4000,
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7e/Turkish_Angora_cat.jpg/1920px-Turkish_Angora_cat.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+    }
+  },
+  "turkish-angora-kitten.webp": {
+    "species": "cat",
+    "query": "Turkish Angora kitten",
+    "candidate": {
+      "title": "File:Angora Kitten.jpg",
+      "width": 2592,
+      "height": 1944,
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2f/Angora_Kitten.jpg/1920px-Angora_Kitten.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+    }
+  },
+  "devon-rex-cat.webp": {
+    "species": "cat",
+    "query": "Devon Rex cat",
+    "candidate": {
+      "title": "File:Devon Rex Cassini.jpeg",
+      "width": 1363,
+      "height": 2048,
+      "url": "https://upload.wikimedia.org/wikipedia/commons/a/ad/Devon_Rex_Cassini.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled"
+    }
+  },
+  "egyptian-mau.webp": {
+    "species": "cat",
+    "query": "Egyptian Mau cat",
+    "candidate": {
+      "title": "File:Egyptian Mau Cat.jpg",
+      "width": 3024,
+      "height": 4032,
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/01/Egyptian_Mau_Cat.jpg/1920px-Egyptian_Mau_Cat.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+    }
+  },
+  "egyptian-mau-tabby-mix.webp": {
+    "species": "cat",
+    "query": "Egyptian Mau spotted",
+    "candidate": {
+      "title": "File:Egyptian Mau Bronze.jpg",
+      "width": 2890,
+      "height": 2271,
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7f/Egyptian_Mau_Bronze.jpg/1920px-Egyptian_Mau_Bronze.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+    }
+  },
+  "chartreux-cat.webp": {
+    "species": "cat",
+    "query": "Chartreux cat",
+    "candidate": {
+      "title": "File:CertosinoFemmina.JPG",
+      "width": 1704,
+      "height": 2272,
+      "url": "https://upload.wikimedia.org/wikipedia/commons/d/db/CertosinoFemmina.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled"
+    }
+  }
+}
