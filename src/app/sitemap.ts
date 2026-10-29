@@ -1,6 +1,6 @@
 import { MetadataRoute } from "next";
 import { CALCULATOR_TOOLS } from "@/data/calculators";
-import { BREED_DATABASE } from "@/data/breeds";
+import { getAllBreeds } from "@/data/breeds";
 import { getAllRecallBrands } from "@/data/recalls";
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -14,7 +14,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
-  const breedRoutes = BREED_DATABASE.map((breed) => ({
+  const breedRoutes = getAllBreeds().map((breed) => ({
     url: `${baseUrl}/breed/${breed.slug}`,
     lastModified: now,
     changeFrequency: "weekly" as const,

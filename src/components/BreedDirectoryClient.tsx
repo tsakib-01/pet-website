@@ -43,7 +43,7 @@ export default function BreedDirectoryClient({ breeds }: Props) {
             type="text"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            placeholder="Search 120 breeds by name, group, or traits (e.g. French Bulldog, Sphynx, Retriever, Herding)..."
+            placeholder={`Search ${totalCount} breeds by name, group, or traits (e.g. French Bulldog, Sphynx, Retriever, Herding)...`}
             className="w-full pl-10 pr-10 py-3 rounded-xl border-2 border-brand-espresso/30 focus:border-brand-espresso focus:outline-none text-xs sm:text-sm font-medium bg-brand-cream/30 text-brand-espresso placeholder:text-brand-espresso/50 shadow-inner transition-colors"
           />
           {searchQuery && (
