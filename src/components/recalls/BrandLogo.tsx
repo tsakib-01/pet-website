@@ -34,8 +34,8 @@ export default function BrandLogo({ logoUrl, domain, name, size = "md", classNam
 
   // Multi-tier logo resolution waterfall:
   // Tier 0: Custom explicit logoUrl (if provided)
-  // Tier 1: Unavatar high-res brand logo (SVG/PNG)
-  // Tier 2: Google 128px Global Favicon CDN
+  // Tier 1: Google 128px Global Favicon CDN (instant global edge cache)
+  // Tier 2: Unavatar high-res brand logo (SVG/PNG)
   // Tier 3: DuckDuckGo Icon CDN
   // Fallback: Tactile Monogram Initial Badge
   let activeSrc: string | null = null;
@@ -43,11 +43,11 @@ export default function BrandLogo({ logoUrl, domain, name, size = "md", classNam
     if (logoUrl) {
       activeSrc = logoUrl;
     } else if (domain) {
-      activeSrc = `https://unavatar.io/${domain}?fallback=false`;
+      activeSrc = `https://www.google.com/s2/favicons?domain=${domain}&sz=128`;
     }
   } else if (errorCount === 1) {
     if (domain) {
-      activeSrc = `https://www.google.com/s2/favicons?domain=${domain}&sz=128`;
+      activeSrc = `https://unavatar.io/${domain}?fallback=false`;
     }
   } else if (errorCount === 2) {
     if (domain) {
