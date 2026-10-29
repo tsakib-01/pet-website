@@ -1,9 +1,9 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useMemo } from "react";
 import Link from "next/link";
 import { BreedData } from "@/data/breeds";
-import { Dog, Cat, ArrowRight, PawPrint, Scale, Box, Clock } from "lucide-react";
+import { Dog, Cat, ArrowRight, PawPrint, Scale, Box, Clock, Search, X } from "lucide-react";
 
 interface Props {
   breeds: BreedData[];
@@ -11,106 +11,143 @@ interface Props {
 
 export default function BreedDirectoryClient({ breeds }: Props) {
   const [filter, setFilter] = useState<"all" | "dog" | "cat">("all");
+  const [searchQuery, setSearchQuery] = useState("");
 
   const dogCount = breeds.filter((b) => b.species === "dog").length;
   const catCount = breeds.filter((b) => b.species === "cat").length;
   const totalCount = breeds.length;
 
-  const filteredBreeds = breeds.filter((breed) => {
-    if (filter === "all") return true;
-    return breed.species === filter;
-  });
+  const filteredBreeds = useMemo(() => {
+    return breeds.filter((breed) => {
+      if (filter !== "all" && breed.species !== filter) return false;
+      if (!searchQuery.trim()) return true;
+      const q = searchQuery.toLowerCase().trim();
+      return (
+        breed.name.toLowerCase().includes(q) ||
+        breed.slug.toLowerCase().includes(q) ||
+        (breed.standardGroup && breed.standardGroup.toLowerCase().includes(q)) ||
+        (breed.tagline && breed.tagline.toLowerCase().includes(q)) ||
+        (breed.origin && breed.origin.toLowerCase().includes(q))
+      );
+    });
+  }, [breeds, filter, searchQuery]);
 
   return (
     <div className="space-y-6">
-      {/* Species Filter Tabs */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 bg-white p-2.5 sm:p-4 rounded-2xl border-2.5 border-brand-espresso shadow-[4px_4px_0px_#583D32]">
-        {/* On mobile: 3-column equal grid so all 3 buttons sit on 1 clean row. On desktop: inline flex row */}
-        <div className="grid grid-cols-3 gap-1.5 sm:flex sm:items-center sm:gap-2 w-full sm:w-auto">
-          {/* ALL OPTION (Default) */}
-          <button
-            type="button"
-            onClick={() => setFilter("all")}
-            className={`btn-pill px-2 sm:px-4 py-2 text-xs font-heading font-black transition-all flex items-center justify-center gap-1.5 sm:gap-2 ${
-              filter === "all"
-                ? "btn-pill-espresso"
-                : "btn-pill-cream hover:bg-brand-olive"
-            }`}
-            aria-pressed={filter === "all"}
-          >
-            <PawPrint className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-brand-terracotta flex-shrink-0" />
-            <span className="sm:hidden">All</span>
-            <span className="hidden sm:inline">All Breeds</span>
-            <span
-              className={`px-1.5 sm:px-2 py-0.5 rounded-full text-[10px] font-mono font-bold flex-shrink-0 ${
-                filter === "all"
-                  ? "bg-brand-olive text-brand-espresso"
-                  : "bg-brand-espresso/10 text-brand-espresso"
-              }`}
+      {/* Search & Species Filter Bar */}
+      <div className="bg-white p-3.5 sm:p-5 rounded-2xl border-2.5 border-brand-espresso shadow-[4px_4px_0px_#583D32] space-y-4">
+        {/* Top: Instant Search Input */}
+        <div className="relative">
+          <Search className="w-4 h-4 text-brand-espresso/60 absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none" />
+          <input
+            type="text"
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            placeholder="Search 120 breeds by name, group, or traits (e.g. French Bulldog, Sphynx, Retriever, Herding)..."
+            className="w-full pl-10 pr-10 py-3 rounded-xl border-2 border-brand-espresso/30 focus:border-brand-espresso focus:outline-none text-xs sm:text-sm font-medium bg-brand-cream/30 text-brand-espresso placeholder:text-brand-espresso/50 shadow-inner transition-colors"
+          />
+          {searchQuery && (
+            <button
+              type="button"
+              onClick={() => setSearchQuery("")}
+              className="absolute right-3 top-1/2 -translate-y-1/2 w-6 h-6 rounded-full bg-brand-espresso/10 hover:bg-brand-espresso text-brand-espresso hover:text-white flex items-center justify-center transition-colors"
+              title="Clear search"
             >
-              {totalCount}
-            </span>
-          </button>
-
-          {/* DOGS ONLY OPTION */}
-          <button
-            type="button"
-            onClick={() => setFilter("dog")}
-            className={`btn-pill px-2 sm:px-4 py-2 text-xs font-heading font-black transition-all flex items-center justify-center gap-1.5 sm:gap-2 ${
-              filter === "dog"
-                ? "btn-pill-espresso"
-                : "btn-pill-cream hover:bg-brand-olive"
-            }`}
-            aria-pressed={filter === "dog"}
-          >
-            <Dog className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-brand-terracotta flex-shrink-0" />
-            <span className="sm:hidden">Dogs</span>
-            <span className="hidden sm:inline">Dogs Only</span>
-            <span
-              className={`px-1.5 sm:px-2 py-0.5 rounded-full text-[10px] font-mono font-bold flex-shrink-0 ${
-                filter === "dog"
-                  ? "bg-brand-olive text-brand-espresso"
-                  : "bg-brand-espresso/10 text-brand-espresso"
-              }`}
-            >
-              {dogCount}
-            </span>
-          </button>
-
-          {/* CATS ONLY OPTION */}
-          <button
-            type="button"
-            onClick={() => setFilter("cat")}
-            className={`btn-pill px-2 sm:px-4 py-2 text-xs font-heading font-black transition-all flex items-center justify-center gap-1.5 sm:gap-2 ${
-              filter === "cat"
-                ? "btn-pill-espresso"
-                : "btn-pill-cream hover:bg-brand-olive"
-            }`}
-            aria-pressed={filter === "cat"}
-          >
-            <Cat className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-brand-terracotta flex-shrink-0" />
-            <span className="sm:hidden">Cats</span>
-            <span className="hidden sm:inline">Cats Only</span>
-            <span
-              className={`px-1.5 sm:px-2 py-0.5 rounded-full text-[10px] font-mono font-bold flex-shrink-0 ${
-                filter === "cat"
-                  ? "bg-brand-olive text-brand-espresso"
-                  : "bg-brand-espresso/10 text-brand-espresso"
-              }`}
-            >
-              {catCount}
-            </span>
-          </button>
+              <X className="w-3.5 h-3.5" />
+            </button>
+          )}
         </div>
 
-        {/* Counter indicator */}
-        <div className="text-center sm:text-right text-[11px] sm:text-xs font-mono font-bold text-brand-taupe uppercase tracking-wider px-1 pt-1.5 sm:pt-0 border-t border-brand-espresso/10 sm:border-0">
-          Showing {filteredBreeds.length}{" "}
-          {filter === "all"
-            ? "Total Breeds"
-            : filter === "dog"
-            ? "Dog Breeds"
-            : "Cat Breeds"}
+        {/* Bottom: Species Filter Tabs & Count Indicator */}
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pt-1 border-t border-brand-espresso/10">
+          {/* On mobile: 3-column equal grid so all 3 buttons sit on 1 clean row. On desktop: inline flex row */}
+          <div className="grid grid-cols-3 gap-1.5 sm:flex sm:items-center sm:gap-2 w-full sm:w-auto">
+            {/* ALL OPTION (Default) */}
+            <button
+              type="button"
+              onClick={() => setFilter("all")}
+              className={`btn-pill px-2 sm:px-4 py-2 text-xs font-heading font-black transition-all flex items-center justify-center gap-1.5 sm:gap-2 ${
+                filter === "all"
+                  ? "btn-pill-espresso"
+                  : "btn-pill-cream hover:bg-brand-olive"
+              }`}
+              aria-pressed={filter === "all"}
+            >
+              <PawPrint className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-brand-terracotta flex-shrink-0" />
+              <span className="sm:hidden">All</span>
+              <span className="hidden sm:inline">All Breeds</span>
+              <span
+                className={`px-1.5 sm:px-2 py-0.5 rounded-full text-[10px] font-mono font-bold flex-shrink-0 ${
+                  filter === "all"
+                    ? "bg-brand-olive text-brand-espresso"
+                    : "bg-brand-espresso/10 text-brand-espresso"
+                }`}
+              >
+                {totalCount}
+              </span>
+            </button>
+
+            {/* DOGS ONLY OPTION */}
+            <button
+              type="button"
+              onClick={() => setFilter("dog")}
+              className={`btn-pill px-2 sm:px-4 py-2 text-xs font-heading font-black transition-all flex items-center justify-center gap-1.5 sm:gap-2 ${
+                filter === "dog"
+                  ? "btn-pill-espresso"
+                  : "btn-pill-cream hover:bg-brand-olive"
+              }`}
+              aria-pressed={filter === "dog"}
+            >
+              <Dog className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-brand-terracotta flex-shrink-0" />
+              <span className="sm:hidden">Dogs</span>
+              <span className="hidden sm:inline">Dogs Only</span>
+              <span
+                className={`px-1.5 sm:px-2 py-0.5 rounded-full text-[10px] font-mono font-bold flex-shrink-0 ${
+                  filter === "dog"
+                    ? "bg-brand-olive text-brand-espresso"
+                    : "bg-brand-espresso/10 text-brand-espresso"
+                }`}
+              >
+                {dogCount}
+              </span>
+            </button>
+
+            {/* CATS ONLY OPTION */}
+            <button
+              type="button"
+              onClick={() => setFilter("cat")}
+              className={`btn-pill px-2 sm:px-4 py-2 text-xs font-heading font-black transition-all flex items-center justify-center gap-1.5 sm:gap-2 ${
+                filter === "cat"
+                  ? "btn-pill-espresso"
+                  : "btn-pill-cream hover:bg-brand-olive"
+              }`}
+              aria-pressed={filter === "cat"}
+            >
+              <Cat className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-brand-terracotta flex-shrink-0" />
+              <span className="sm:hidden">Cats</span>
+              <span className="hidden sm:inline">Cats Only</span>
+              <span
+                className={`px-1.5 sm:px-2 py-0.5 rounded-full text-[10px] font-mono font-bold flex-shrink-0 ${
+                  filter === "cat"
+                    ? "bg-brand-olive text-brand-espresso"
+                    : "bg-brand-espresso/10 text-brand-espresso"
+                }`}
+              >
+                {catCount}
+              </span>
+            </button>
+          </div>
+
+          {/* Counter indicator */}
+          <div className="text-center sm:text-right text-[11px] sm:text-xs font-mono font-bold text-brand-taupe uppercase tracking-wider px-1 pt-1.5 sm:pt-0">
+            Showing {filteredBreeds.length}{" "}
+            {filter === "all"
+              ? "Total Breeds"
+              : filter === "dog"
+              ? "Dog Breeds"
+              : "Cat Breeds"}
+            {searchQuery && <span> matching &ldquo;{searchQuery}&rdquo;</span>}
+          </div>
         </div>
       </div>
 
@@ -215,6 +252,29 @@ export default function BreedDirectoryClient({ breeds }: Props) {
           );
         })}
       </div>
+
+      {/* Empty State when no breeds match search */}
+      {filteredBreeds.length === 0 && (
+        <div className="text-center py-12 bg-white rounded-3xl border-2.5 border-brand-espresso p-8 shadow-[4px_4px_0px_#583D32] space-y-3">
+          <PawPrint className="w-10 h-10 text-brand-taupe mx-auto" />
+          <h3 className="font-heading font-black text-lg text-brand-espresso">
+            No breeds found matching &ldquo;{searchQuery}&rdquo;
+          </h3>
+          <p className="text-xs text-brand-taupe max-w-sm mx-auto">
+            Try searching by standard breed name (e.g. Golden Retriever, Sphynx, Poodle) or reset your species filter.
+          </p>
+          <button
+            type="button"
+            onClick={() => {
+              setSearchQuery("");
+              setFilter("all");
+            }}
+            className="btn-pill btn-pill-espresso text-xs font-black px-4 py-2 mt-2"
+          >
+            Clear Search &amp; Reset Filters
+          </button>
+        </div>
+      )}
     </div>
   );
 }
