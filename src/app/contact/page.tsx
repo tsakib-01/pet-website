@@ -7,7 +7,7 @@ import {
   AlertTriangle,
   ChevronRight,
   ShieldAlert,
-  Code2,
+  ShieldCheck,
   CheckCircle,
   HelpCircle,
 } from "lucide-react";
@@ -177,16 +177,16 @@ export default function ContactPage() {
               </div>
             </div>
 
-            {/* Technical Attribution Note */}
+            {/* Editorial Attribution Note */}
             <div className="bg-white border-2 border-brand-espresso rounded-2xl p-4 shadow-paper-sm flex items-center justify-between gap-3">
               <div className="flex items-center gap-2.5">
-                <Code2 className="w-5 h-5 text-brand-terracotta flex-shrink-0" />
+                <ShieldCheck className="w-5 h-5 text-brand-terracotta flex-shrink-0" />
                 <div className="text-xs font-heading font-black text-brand-espresso">
-                  Developed by White Stone
+                  Published by White Stone
                 </div>
               </div>
               <span className="text-[10px] font-mono font-bold uppercase px-2 py-0.5 rounded-full bg-brand-olive text-brand-espresso border border-brand-espresso">
-                Engineering Team
+                Consumer Safety Team
               </span>
             </div>
           </div>

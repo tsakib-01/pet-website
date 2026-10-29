@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import { PawPrint, ShieldCheck, Code2, ArrowRight } from "lucide-react";
+import { PawPrint, ShieldCheck, ArrowRight } from "lucide-react";
 import AdSensePlaceholder from "./AdSensePlaceholder";
 
 export default function Footer() {
@@ -26,11 +26,11 @@ export default function Footer() {
             Independent, veterinary-calibrated calculation suite providing canine and feline life-stage age models, emergency chocolate toxicity triage, WSAVA dual-diet portioning, and AKC ergonomic standards.
           </p>
 
-          {/* Development Attribution */}
+          {/* Publishing Attribution */}
           <div className="pt-1">
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-xl bg-white border-2 border-brand-espresso shadow-[2.5px_2.5px_0px_#583D32] text-xs font-heading font-black text-brand-espresso">
-              <Code2 className="w-4 h-4 text-brand-terracotta flex-shrink-0" />
-              <span>Developed by <strong className="text-brand-espresso font-black">White Stone</strong></span>
+              <ShieldCheck className="w-4 h-4 text-brand-terracotta flex-shrink-0" />
+              <span>Published by <strong className="text-brand-espresso font-black">White Stone</strong></span>
             </div>
           </div>
         </div>

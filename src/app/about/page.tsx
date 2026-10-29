@@ -8,7 +8,6 @@ import {
   Award,
   Lock,
   Zap,
-  Code2,
   BookOpen,
   ArrowRight,
   ChevronRight,
@@ -299,19 +298,19 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* Engineering & White Stone Attribution */}
+        {/* Editorial Integrity & White Stone Attribution */}
         <section className="bg-white border-2.5 border-brand-espresso rounded-3xl p-6 sm:p-8 shadow-paper space-y-4">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
             <div className="space-y-1">
               <div className="inline-flex items-center gap-2 text-xs font-mono font-bold uppercase text-brand-taupe">
-                <Code2 className="w-4 h-4 text-brand-terracotta" />
-                Technical Craftsmanship
+                <ShieldCheck className="w-4 h-4 text-brand-terracotta" />
+                Editorial Integrity & Transparency
               </div>
               <h3 className="font-heading text-xl sm:text-2xl font-black text-brand-espresso">
-                Engineered by White Stone
+                Published by White Stone
               </h3>
               <p className="text-xs sm:text-sm text-brand-taupe max-w-2xl font-sans font-medium leading-relaxed">
-                PawTruth is crafted with strict TypeScript verification, Next.js static edge rendering, and sub-second Core Web Vitals to guarantee dependable, lightweight access across all devices.
+                PawTruth operates as an independent public consumer safety initiative, dedicated to verifiable veterinary health benchmarks, objective regulatory indexing, and zero-compromise pet parent advocacy.
               </p>
             </div>
             <Link
