@@ -1,8 +1,8 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useMemo, useEffect } from "react";
 import Link from "next/link";
-import { BrandSafetyProfile } from "@/data/recalls";
+import { BrandSafetyProfile, getBrandCountry } from "@/data/recalls";
 import BrandLogo from "./BrandLogo";
 import {
   Search,
@@ -16,6 +16,8 @@ import {
   ShieldAlert,
   CheckCircle2,
   Filter,
+  Globe,
+  MapPin,
 } from "lucide-react";
 
 interface Props {
@@ -24,13 +26,53 @@ interface Props {
 
 export default function BrandDirectoryClient({ brands }: Props) {
   const [searchQuery, setSearchQuery] = useState("");
+  const [selectedRegion, setSelectedRegion] = useState<string>("all");
   const [brandFilter, setBrandFilter] = useState<"all" | "clean" | "recalls" | "dog" | "cat">("all");
 
   const totalBrandsCount = brands.length;
   const cleanCount = brands.filter((b) => b.totalRecallsCount === 0).length;
   const recallCount = brands.filter((b) => b.totalRecallsCount > 0).length;
 
+  // Region breakdown counts
+  const regionCounts = useMemo(() => {
+    const counts = {
+      all: brands.length,
+      USA: 0,
+      Canada: 0,
+      "UK & Europe": 0,
+      Australia: 0,
+    };
+    brands.forEach((b) => {
+      const c = getBrandCountry(b);
+      if (c in counts) {
+        counts[c as keyof typeof counts]++;
+      } else {
+        counts.USA++;
+      }
+    });
+    return counts;
+  }, [brands]);
+
+  // Read ?country= parameter from URL on client mount
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const params = new URLSearchParams(window.location.search);
+    const countryParam = params.get("country");
+    if (countryParam) {
+      const lower = countryParam.toLowerCase();
+      if (lower === "canada" || lower === "ca") setSelectedRegion("Canada");
+      else if (lower === "australia" || lower === "au" || lower === "nz") setSelectedRegion("Australia");
+      else if (lower === "uk" || lower === "europe" || lower === "eu" || lower === "gb") setSelectedRegion("UK & Europe");
+      else if (lower === "usa" || lower === "us") setSelectedRegion("USA");
+    }
+  }, []);
+
   const filteredBrands = brands.filter((brand) => {
+    // Region Filter
+    const bCountry = getBrandCountry(brand);
+    if (selectedRegion !== "all" && bCountry !== selectedRegion) return false;
+
+    // Safety Tier / Species Filter
     if (brandFilter === "clean" && brand.totalRecallsCount > 0) return false;
     if (brandFilter === "recalls" && brand.totalRecallsCount === 0) return false;
     if (brandFilter === "dog" && brand.species === "cat") return false;
@@ -42,6 +84,7 @@ export default function BrandDirectoryClient({ brands }: Props) {
         brand.name.toLowerCase().includes(q) ||
         brand.parentCompany.toLowerCase().includes(q) ||
         brand.headquarters.toLowerCase().includes(q) ||
+        bCountry.toLowerCase().includes(q) ||
         brand.recalls.some(
           (r) =>
             r.hazardType.toLowerCase().includes(q) ||
@@ -66,7 +109,7 @@ export default function BrandDirectoryClient({ brands }: Props) {
             type="text"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            placeholder="Search 250+ pet food brands by name, parent company, or headquarters (e.g. Purina, Blue Buffalo, Fromm, Victor)..."
+            placeholder="Search 270+ pet food brands by name, parent company, headquarters, or country (e.g. Purina, Blue Buffalo, Advance, Applaws)..."
             className="w-full bg-[#FAF4EE] border-2 border-brand-espresso rounded-2xl pl-11 pr-4 py-3 text-xs sm:text-sm font-heading font-bold text-brand-espresso placeholder:text-brand-taupe/60 shadow-paper-sm focus:outline-none focus:border-brand-terracotta"
           />
           {searchQuery && (
@@ -78,6 +121,114 @@ export default function BrandDirectoryClient({ brands }: Props) {
               Clear
             </button>
           )}
+        </div>
+
+        {/* Jurisdiction / Region Quick Pills */}
+        <div className="flex flex-wrap items-center gap-2 pt-1 pb-1">
+          <span className="text-[11px] font-mono font-bold text-brand-taupe uppercase tracking-wider flex items-center gap-1.5 mr-1">
+            <Globe className="w-3.5 h-3.5 text-brand-espresso" />
+            Region:
+          </span>
+          <button
+            type="button"
+            onClick={() => setSelectedRegion("all")}
+            className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-heading font-black transition-all ${
+              selectedRegion === "all"
+                ? "bg-brand-espresso text-white shadow-paper-sm"
+                : "bg-[#FAF4EE] hover:bg-white text-brand-espresso border border-brand-espresso/30"
+            }`}
+          >
+            <span>🌐 All Regions</span>
+            <span
+              className={`px-1.5 py-0.5 rounded-full text-[10px] font-mono font-bold ${
+                selectedRegion === "all"
+                  ? "bg-white/20 text-white"
+                  : "bg-brand-espresso/10 text-brand-espresso"
+              }`}
+            >
+              {regionCounts.all}
+            </span>
+          </button>
+          <button
+            type="button"
+            onClick={() => setSelectedRegion("USA")}
+            className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-heading font-black transition-all ${
+              selectedRegion === "USA"
+                ? "bg-brand-espresso text-white shadow-paper-sm"
+                : "bg-[#FAF4EE] hover:bg-white text-brand-espresso border border-brand-espresso/30"
+            }`}
+          >
+            <span>🇺🇸 USA</span>
+            <span
+              className={`px-1.5 py-0.5 rounded-full text-[10px] font-mono font-bold ${
+                selectedRegion === "USA"
+                  ? "bg-white/20 text-white"
+                  : "bg-brand-espresso/10 text-brand-espresso"
+              }`}
+            >
+              {regionCounts.USA}
+            </span>
+          </button>
+          <button
+            type="button"
+            onClick={() => setSelectedRegion("Canada")}
+            className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-heading font-black transition-all ${
+              selectedRegion === "Canada"
+                ? "bg-brand-espresso text-white shadow-paper-sm"
+                : "bg-[#FAF4EE] hover:bg-white text-brand-espresso border border-brand-espresso/30"
+            }`}
+          >
+            <span>🇨🇦 Canada</span>
+            <span
+              className={`px-1.5 py-0.5 rounded-full text-[10px] font-mono font-bold ${
+                selectedRegion === "Canada"
+                  ? "bg-white/20 text-white"
+                  : "bg-brand-espresso/10 text-brand-espresso"
+              }`}
+            >
+              {regionCounts.Canada}
+            </span>
+          </button>
+          <button
+            type="button"
+            onClick={() => setSelectedRegion("UK & Europe")}
+            className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-heading font-black transition-all ${
+              selectedRegion === "UK & Europe"
+                ? "bg-brand-espresso text-white shadow-paper-sm"
+                : "bg-[#FAF4EE] hover:bg-white text-brand-espresso border border-brand-espresso/30"
+            }`}
+          >
+            <span>🇬🇧 UK &amp; Europe</span>
+            <span
+              className={`px-1.5 py-0.5 rounded-full text-[10px] font-mono font-bold ${
+                selectedRegion === "UK & Europe"
+                  ? "bg-white/20 text-white"
+                  : "bg-brand-espresso/10 text-brand-espresso"
+              }`}
+            >
+              {regionCounts["UK & Europe"]}
+            </span>
+          </button>
+          <button
+            type="button"
+            onClick={() => setSelectedRegion("Australia")}
+            className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-heading font-black transition-all ${
+              selectedRegion === "Australia"
+                ? "bg-brand-espresso text-white shadow-paper-sm"
+                : "bg-[#FAF4EE] hover:bg-white text-brand-espresso border border-brand-espresso/30"
+            }`}
+          >
+            <span>🇦🇺 Australia &amp; NZ</span>
+            <span
+              className={`px-1.5 py-0.5 rounded-full text-[10px] font-mono font-bold ${
+                selectedRegion === "Australia"
+                  ? "bg-white/20 text-white"
+                  : "bg-brand-espresso/10 text-brand-espresso"
+              }`}
+            >
+              {regionCounts.Australia}
+            </span>
+          </button>
         </div>
 
         {/* Filter Bar */}
@@ -139,10 +290,21 @@ export default function BrandDirectoryClient({ brands }: Props) {
                   {brand.safetyTier}
                 </span>
 
-                <span className="text-[10px] font-mono font-bold text-brand-taupe uppercase flex items-center gap-1">
-                  <PawPrint className="w-3 h-3" />
-                  {brand.species}
-                </span>
+                <div className="flex items-center gap-1.5">
+                  <span className="inline-flex items-center gap-1 text-[10px] font-mono font-bold px-2 py-0.5 rounded-md bg-[#FAF4EE] text-brand-espresso border border-brand-espresso/20">
+                    {getBrandCountry(brand) === "Canada"
+                      ? "🇨🇦 Canada"
+                      : getBrandCountry(brand) === "Australia"
+                      ? "🇦🇺 Australia"
+                      : getBrandCountry(brand) === "UK & Europe"
+                      ? "🇬🇧 UK & EU"
+                      : "🇺🇸 USA"}
+                  </span>
+                  <span className="text-[10px] font-mono font-bold text-brand-taupe uppercase flex items-center gap-1">
+                    <PawPrint className="w-3 h-3" />
+                    {brand.species}
+                  </span>
+                </div>
               </div>
 
               {/* Brand Logo & Name */}
@@ -159,6 +321,10 @@ export default function BrandDirectoryClient({ brands }: Props) {
                   <div className="flex items-center gap-1 text-xs text-brand-taupe truncate">
                     <Building2 className="w-3 h-3 flex-shrink-0" />
                     <span className="truncate">{brand.parentCompany}</span>
+                  </div>
+                  <div className="flex items-center gap-1 text-[11px] text-brand-taupe/80 truncate mt-0.5">
+                    <MapPin className="w-3 h-3 flex-shrink-0 text-brand-terracotta" />
+                    <span className="truncate">{brand.headquarters}</span>
                   </div>
                 </div>
               </div>

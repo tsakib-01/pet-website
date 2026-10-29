@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { Metadata } from "next";
 import { getAllRecallBrands, getRecallBrandBySlug } from "@/data/recalls";
+import { HISTORICAL_FDA_TIMELINE } from "@/data/historicalTimeline";
 import BrandLotChecker from "@/components/recalls/BrandLotChecker";
 import BrandLogo from "@/components/recalls/BrandLogo";
 import AdSensePlaceholder from "@/components/AdSensePlaceholder";
@@ -80,7 +81,58 @@ export default async function BrandRecallPage({ params }: Props) {
     notFound();
   }
 
-  const isClean = brand.totalRecallsCount === 0;
+  const timelineRecalls = HISTORICAL_FDA_TIMELINE.filter((d) => d.brandSlug === brand.slug);
+
+  // Combine brand.recalls with timeline dockets if brand.recalls is empty
+  const displayRecalls =
+    brand.recalls && brand.recalls.length > 0
+      ? brand.recalls
+      : timelineRecalls.map((d) => ({
+          docketNumber: d.id.toUpperCase(),
+          date: d.dateFormatted || d.date,
+          year: d.year,
+          classification: d.classification,
+          severityDescription: d.hazardType,
+          hazardType: (
+            d.hazardType.includes("Salmonella")
+              ? "Salmonella"
+              : d.hazardType.includes("Listeria")
+              ? "Listeria"
+              : d.hazardType.includes("Mold") || d.hazardType.includes("Aflatoxin")
+              ? "Aflatoxin Mold"
+              : d.hazardType.includes("Vitamin D")
+              ? "Elevated Vitamin D"
+              : d.hazardType.includes("Foreign") || d.hazardType.includes("Plastic")
+              ? "Foreign Material"
+              : "Packaging Defect"
+          ) as any,
+          reason: d.reason,
+          affectedProducts: [
+            {
+              name: d.productDescription,
+              size: "Refer to docket packaging sizes",
+              lotCodes: [d.lotCodes],
+              upc: "See official regulatory notice",
+              bestBy: d.year.toString(),
+            },
+          ],
+          distributionStates: d.distributionPattern,
+          clinicalSymptoms: [
+            "Loss of appetite",
+            "Vomiting",
+            "Diarrhea",
+            "Lethargy",
+          ],
+          actionSteps: [
+            "Stop feeding the affected product immediately.",
+            "Check packaging lot codes against official notices.",
+            "Contact your veterinarian if your pet exhibits acute symptoms.",
+          ],
+          fdaNoticeUrl: d.fdaNoticeUrl,
+        }));
+
+  const totalRecallsCount = Math.max(brand.totalRecallsCount, displayRecalls.length);
+  const isClean = totalRecallsCount === 0;
 
   // JSON-LD Structured Data
   const jsonLd = {
@@ -167,16 +219,16 @@ export default async function BrandRecallPage({ params }: Props) {
           {/* Quick Stats Grid */}
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-2">
             <div className="p-3 bg-[#FAF4EE] rounded-xl border border-brand-espresso/15 text-center">
-              <div className="text-[10px] font-mono font-bold uppercase text-brand-taupe">Total FDA Recalls</div>
+              <div className="text-[10px] font-mono font-bold uppercase text-brand-taupe">Total Recalls on Record</div>
               <div className="font-heading font-black text-xl text-brand-espresso mt-0.5">
-                {brand.totalRecallsCount}
+                {totalRecallsCount}
               </div>
             </div>
 
             <div className="p-3 bg-[#FAF4EE] rounded-xl border border-brand-espresso/15 text-center">
               <div className="text-[10px] font-mono font-bold uppercase text-brand-taupe">Last Action Date</div>
               <div className="font-heading font-bold text-sm text-brand-espresso mt-1">
-                {brand.lastRecallDate || "Never Recalled"}
+                {brand.lastRecallDate || (displayRecalls[0]?.date) || "Never Recalled"}
               </div>
             </div>
 
@@ -188,9 +240,9 @@ export default async function BrandRecallPage({ params }: Props) {
             </div>
 
             <div className="p-3 bg-[#FAF4EE] rounded-xl border border-brand-espresso/15 text-center">
-              <div className="text-[10px] font-mono font-bold uppercase text-brand-taupe">Audit Status</div>
+              <div className="text-[10px] font-mono font-bold uppercase text-brand-taupe">Safety Verification</div>
               <div className="font-heading font-bold text-sm text-emerald-700 mt-1">
-                FDA OpenData Active
+                Regulatory Verified
               </div>
             </div>
           </div>
@@ -198,7 +250,7 @@ export default async function BrandRecallPage({ params }: Props) {
 
         {/* Interactive "Check My Bag" Lot Code Checker */}
         <div>
-          <BrandLotChecker brandName={brand.name} recalls={brand.recalls} />
+          <BrandLotChecker brandName={brand.name} recalls={displayRecalls} />
         </div>
 
         {/* Core Web Vitals Fixed Ad Banner */}
@@ -217,11 +269,11 @@ export default async function BrandRecallPage({ params }: Props) {
             <div className="flex items-center gap-2">
               <FileText className="w-5 h-5 text-brand-terracotta" />
               <h2 className="font-heading text-xl sm:text-2xl font-black text-brand-espresso">
-                FDA Recall Archive &amp; Docket History ({brand.name})
+                Recall Archive &amp; Docket History ({brand.name})
               </h2>
             </div>
             <span className="text-xs font-mono font-bold text-brand-taupe">
-              {brand.recalls.length} Documented Dockets
+              {displayRecalls.length} Documented Dockets
             </span>
           </div>
 
@@ -234,13 +286,13 @@ export default async function BrandRecallPage({ params }: Props) {
                 Verified Clean Manufacturing Record
               </h3>
               <p className="text-xs sm:text-sm font-sans text-emerald-900/80 max-w-xl mx-auto leading-relaxed">
-                {brand.name} has zero active or historical FDA Class I or Class II enforcement dockets on record.
-                Their production facilities have maintained a 100% spotless regulatory record under federal monitoring.
+                {brand.name} has zero active or historical government enforcement dockets on record.
+                Their production facilities have maintained a 100% spotless regulatory safety record under government monitoring.
               </p>
             </div>
           ) : (
             <div className="space-y-6">
-              {brand.recalls.map((docket) => (
+              {displayRecalls.map((docket) => (
                 <div
                   key={docket.docketNumber}
                   className="bg-white border-2.5 border-brand-espresso rounded-3xl p-6 sm:p-7 shadow-paper space-y-5"

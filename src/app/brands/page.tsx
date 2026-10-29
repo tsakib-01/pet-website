@@ -7,27 +7,31 @@ import AdSensePlaceholder from "@/components/AdSensePlaceholder";
 import { ShieldAlert, ShieldCheck, Building2, History, ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Pet Food Brand Safety Directory (250+ Brands) — PawTruth",
+  title: "Pet Food Brand Safety Directory (270+ Brands: USA, Canada, UK & Australia) — PawTruth",
   description:
-    "Comprehensive directory of 250+ pet food brands with manufacturing safety profiles, parent company ownership, verified clean records, and lot number lookup tools.",
+    "Comprehensive directory of 270+ commercial pet food brands across the USA, Canada, United Kingdom, Europe, and Australia with manufacturing safety profiles, parent company ownership, verified clean records, and lot number lookup tools.",
   keywords: [
     "pet food brands list",
     "safe dog food brands",
     "safe cat food brands",
     "clean record pet food",
-    "dog food brand ratings",
+    "australian pet food brands",
+    "uk dog food brands",
+    "canadian pet food brands",
     "pet food manufacturer directory",
     "purina safety profile",
+    "advance pet food recall",
+    "black hawk dog food recall",
+    "applaws safety dossier",
     "blue buffalo safety profile",
-    "fromm safety profile",
   ],
   alternates: {
     canonical: "https://pawtruth.com/brands",
   },
   openGraph: {
-    title: "Pet Food Brand Safety Directory (250+ Brands) | PawTruth",
+    title: "Pet Food Brand Safety Directory (270+ Brands: USA, Canada, UK & Australia) | PawTruth",
     description:
-      "Inspect safety track records, parent companies, and verified clean certificates for over 250 dog and cat food brands.",
+      "Inspect safety track records, parent companies, and verified clean certificates for over 270 dog and cat food brands across the US, Canada, UK, and Australia.",
     type: "website",
     url: "https://pawtruth.com/brands",
   },
@@ -39,9 +43,9 @@ export default function BrandsDirectoryPage() {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
-    "name": "Pet Food Brand Safety Directory (250+ Brands)",
+    "name": "Pet Food Brand Safety Directory (270+ Brands: USA, Canada, UK & Australia)",
     "description":
-      "Comprehensive public directory indexing 250+ pet food manufacturers, parent company ownership, and 10-year recall track records.",
+      "Comprehensive public directory indexing 270+ pet food manufacturers, parent company ownership, and 10-year recall track records across the United States, Canada, UK, and Australia.",
     "url": "https://pawtruth.com/brands",
     "mainEntity": {
       "@type": "ItemList",
@@ -67,13 +71,13 @@ export default function BrandsDirectoryPage() {
         <div className="text-center space-y-4 max-w-3xl mx-auto">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-olive text-brand-espresso border-2 border-brand-espresso shadow-paper-sm text-xs font-heading font-black uppercase">
             <Building2 className="w-4 h-4 text-brand-leaf" />
-            250+ Brand Safety Dossiers
+            270+ Brand Safety Dossiers: USA • Canada • UK • Australia
           </div>
           <h1 className="font-heading text-4xl sm:text-6xl font-black text-brand-espresso tracking-tight">
             Pet Food Brand Safety <span className="text-brand-terracotta">Directory</span>
           </h1>
           <p className="text-base sm:text-lg text-brand-taupe leading-relaxed">
-            Explore independent safety profiles, corporate ownership, and verified manufacturing track records for over 250 commercial pet food brands across the United States and Canada.
+            Explore independent safety profiles, corporate ownership, and verified manufacturing track records for over 270 commercial pet food brands across the United States, Canada, the United Kingdom, Europe, and Australia.
           </p>
         </div>
 

@@ -37,6 +37,54 @@ export interface BrandSafetyProfile {
   historySummary: string;
   recalls: RecallDocket[];
   faqs: { question: string; answer: string }[];
+  country?: "USA" | "Canada" | "UK & Europe" | "Australia";
+}
+
+export function getBrandCountry(brand: BrandSafetyProfile): "USA" | "Canada" | "UK & Europe" | "Australia" {
+  if (brand.country) return brand.country;
+  const hq = brand.headquarters.toLowerCase();
+  if (
+    hq.includes("canada") ||
+    hq.includes("can") ||
+    hq.includes("ontario") ||
+    hq.includes("alberta") ||
+    hq.includes("british columbia") ||
+    hq.includes("quebec") ||
+    hq.includes("saskatchewan")
+  ) {
+    return "Canada";
+  }
+  if (
+    hq.includes("australia") ||
+    hq.includes("aus") ||
+    hq.includes("victoria") ||
+    hq.includes("queensland") ||
+    hq.includes("new south wales") ||
+    hq.includes("new zealand") ||
+    hq.includes("nz")
+  ) {
+    return "Australia";
+  }
+  if (
+    hq.includes("uk") ||
+    hq.includes("united kingdom") ||
+    hq.includes("england") ||
+    hq.includes("scotland") ||
+    hq.includes("cheshire") ||
+    hq.includes("devon") ||
+    hq.includes("sussex") ||
+    hq.includes("northamptonshire") ||
+    hq.includes("france") ||
+    hq.includes("germany") ||
+    hq.includes("italy") ||
+    hq.includes("belgium") ||
+    hq.includes("netherlands") ||
+    hq.includes("europe") ||
+    hq.includes("eu")
+  ) {
+    return "UK & Europe";
+  }
+  return "USA";
 }
 
 import { ADDITIONAL_BRANDS } from "./additionalBrands";
