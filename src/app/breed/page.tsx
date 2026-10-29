@@ -4,6 +4,7 @@ import { Metadata } from "next";
 import { BREED_DATABASE } from "@/data/breeds";
 import AdSensePlaceholder from "@/components/AdSensePlaceholder";
 import BreedDirectoryClient from "@/components/BreedDirectoryClient";
+import BreedVisualGallery from "@/components/BreedVisualGallery";
 import { Activity, ChevronRight, ShieldCheck } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -100,6 +101,9 @@ export default function BreedDirectoryPage() {
 
         {/* Interactive Species Filter & Breed Cards */}
         <BreedDirectoryClient breeds={BREED_DATABASE} />
+
+        {/* 120 High-Res Breed Visual Gallery & Search */}
+        <BreedVisualGallery />
 
         {/* Why Clinical Breed Standards Matter */}
         <section className="bg-brand-cream/40 rounded-3xl border-2.5 border-brand-espresso p-6 sm:p-8 shadow-[4px_4px_0px_#583D32] space-y-4">
