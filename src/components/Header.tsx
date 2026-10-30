@@ -126,12 +126,9 @@ export default function Header() {
               <PawPrint className="w-5 h-5 text-brand-espresso" />
             </div>
             <div>
-              <div className="flex items-center gap-1.5 leading-none">
+              <div className="flex items-center leading-none">
                 <span className="font-heading text-xl sm:text-2xl font-black tracking-tight text-brand-espresso uppercase">
-                  PAW<span className="text-brand-terracotta">TRUTH</span>
-                </span>
-                <span className="text-[9px] font-mono font-black bg-brand-olive text-brand-espresso border border-brand-espresso px-1.5 py-0.2 rounded-full uppercase">
-                  TOOLS
+                  PAW<span className="text-brand-terracotta">TRUSTY</span>
                 </span>
               </div>
               <p className="text-[9px] font-mono font-bold tracking-wider text-brand-taupe uppercase hidden md:block">

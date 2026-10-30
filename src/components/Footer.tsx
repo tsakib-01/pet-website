@@ -19,7 +19,7 @@ export default function Footer() {
               <PawPrint className="w-5 h-5 flex-shrink-0" />
             </div>
             <span className="font-heading text-2xl font-black uppercase tracking-tight text-brand-espresso">
-              PAW<span className="text-brand-terracotta">TRUTH</span>
+              PAW<span className="text-brand-terracotta">TRUSTY</span>
             </span>
           </div>
           <p className="text-xs text-brand-taupe leading-relaxed font-sans font-medium">
