@@ -79,8 +79,8 @@ def generate_logo():
     letter-spacing: 0.045em;
     color: #7F6F72;
     text-transform: uppercase;
-    margin-top: 0px;
-    padding-left: 2px;
+    margin: 0;
+    padding: 0;
     line-height: 1;
   }
 </style>

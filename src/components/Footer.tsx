@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import { ShieldCheck, ArrowRight } from "lucide-react";
+import { PawPrint, ShieldCheck, ArrowRight } from "lucide-react";
 import AdSensePlaceholder from "./AdSensePlaceholder";
 
 export default function Footer() {
@@ -14,14 +14,21 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
         {/* Brand Info */}
         <div className="space-y-4">
-          <Link href="/" className="inline-block hover:opacity-90 transition-opacity">
-            <img
-              src="/images/logo-pawtrusty.svg"
-              alt="PawTrusty — Pet Health & Safety"
-              width={220}
-              height={53}
-              className="h-11 sm:h-12 w-auto object-contain"
-            />
+          <Link
+            href="/"
+            className="flex items-center gap-2 sm:gap-2.5 group flex-shrink-0 hover:opacity-90 transition-opacity w-fit"
+          >
+            <div className="w-9 h-9 sm:w-11 sm:h-11 bg-brand-olive border-2 border-brand-espresso rounded-full flex items-center justify-center shadow-pill group-hover:scale-105 group-hover:-rotate-6 transition-all flex-shrink-0">
+              <PawPrint className="w-5 h-5 text-brand-espresso" />
+            </div>
+            <div className="flex flex-col items-start justify-center gap-0.5">
+              <span className="font-heading text-xl sm:text-2xl font-black tracking-tight text-brand-espresso uppercase leading-none">
+                PAW<span className="text-brand-terracotta">TRUSTY</span>
+              </span>
+              <span className="text-[10px] sm:text-[11.5px] font-mono font-bold tracking-normal text-brand-taupe uppercase leading-none">
+                Pet Health &amp; Safety
+              </span>
+            </div>
           </Link>
           <p className="text-xs text-brand-taupe leading-relaxed font-sans font-medium">
             Independent, veterinary-calibrated calculation suite providing canine and feline life-stage age models, emergency chocolate toxicity triage, WSAVA dual-diet portioning, and AKC ergonomic standards.

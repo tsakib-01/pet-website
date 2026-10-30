@@ -15,7 +15,7 @@
     <tspan fill="#583D32">PAW</tspan><tspan fill="#D57746">TRUSTY</tspan>
   </text>
   <!-- Tagline: Larger & Tighter Spacing -->
-  <text x="122" y="97" font-family="'Space Mono', monospace" font-weight="700" font-size="25" letter-spacing="0.045em" fill="#7F6F72" text-anchor="start">
+  <text x="120" y="97" font-family="'Space Mono', monospace" font-weight="700" font-size="25" letter-spacing="0.045em" fill="#7F6F72" text-anchor="start">
     PET HEALTH &amp; SAFETY
   </text>
 </svg>

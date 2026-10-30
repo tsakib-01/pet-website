@@ -125,15 +125,13 @@ export default function Header() {
             <div className="w-9 h-9 sm:w-11 sm:h-11 bg-brand-olive border-2 border-brand-espresso rounded-full flex items-center justify-center shadow-pill group-hover:scale-105 group-hover:-rotate-6 transition-all flex-shrink-0">
               <PawPrint className="w-5 h-5 text-brand-espresso" />
             </div>
-            <div>
-              <div className="flex items-center leading-none">
-                <span className="font-heading text-xl sm:text-2xl font-black tracking-tight text-brand-espresso uppercase">
-                  PAW<span className="text-brand-terracotta">TRUSTY</span>
-                </span>
-              </div>
-              <p className="text-[10px] sm:text-[11.5px] font-mono font-bold tracking-normal text-brand-taupe uppercase hidden md:block leading-none mt-1">
+            <div className="flex flex-col items-start justify-center gap-0.5">
+              <span className="font-heading text-xl sm:text-2xl font-black tracking-tight text-brand-espresso uppercase leading-none">
+                PAW<span className="text-brand-terracotta">TRUSTY</span>
+              </span>
+              <span className="text-[10px] sm:text-[11.5px] font-mono font-bold tracking-normal text-brand-taupe uppercase leading-none">
                 Pet Health &amp; Safety
-              </p>
+              </span>
             </div>
           </Link>
 
