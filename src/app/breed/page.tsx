@@ -7,7 +7,7 @@ import BreedDirectoryClient from "@/components/BreedDirectoryClient";
 import { Activity, ChevronRight, ShieldCheck } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Dog & Cat Breed Care Guides, Standards & Calculators | PawTruth",
+  title: "Dog & Cat Breed Care Guides, Standards & Calculators | PawTrusty",
   description:
     "Explore clinical breed standards, recognized colors, temperament ratings, pediatric growth milestones, and custom interactive veterinary calculators for dogs and cats.",
   keywords: [
@@ -22,12 +22,12 @@ export const metadata: Metadata = {
     "cat breed temperament",
   ],
   alternates: {
-    canonical: "https://pawtruth.com/breed",
+    canonical: "https://pawtrusty.com/breed",
   },
   openGraph: {
-    title: "Dog & Cat Breed Clinical Hubs & Calculators | PawTruth",
+    title: "Dog & Cat Breed Clinical Hubs & Calculators | PawTrusty",
     description: "Clinical breed profiles, weight standards, colors, temperament, and 1-click veterinary calculators.",
-    url: "https://pawtruth.com/breed",
+    url: "https://pawtrusty.com/breed",
     type: "website",
   },
   twitter: {
@@ -48,13 +48,13 @@ export default function BreedDirectoryPage() {
             "@type": "ListItem",
             "position": 1,
             "name": "Home",
-            "item": "https://pawtruth.com",
+            "item": "https://pawtrusty.com",
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "Breeds",
-            "item": "https://pawtruth.com/breed",
+            "item": "https://pawtrusty.com/breed",
           },
         ],
       },
@@ -62,7 +62,7 @@ export default function BreedDirectoryPage() {
         "@type": "CollectionPage",
         "name": "Dog & Cat Breed Care Guides and Calculators",
         "description": "Comprehensive clinical directory of canine and feline breed standards, temperament profiles, coat variations, and interactive veterinary tools.",
-        "url": "https://pawtruth.com/breed",
+        "url": "https://pawtrusty.com/breed",
       },
     ],
   };

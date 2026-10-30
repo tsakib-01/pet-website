@@ -5,16 +5,16 @@ import { ShieldAlert, ShieldCheck, FileText, AlertTriangle, ChevronRight, Stetho
 import AdSensePlaceholder from "@/components/AdSensePlaceholder";
 
 export const metadata: Metadata = {
-  title: "Terms of Service & Clinical Veterinary Disclaimer — PawTruth",
+  title: "Terms of Service & Clinical Veterinary Disclaimer — PawTrusty",
   description:
-    "Review PawTruth's terms of service, educational veterinary disclaimer, public government docket indexing policies, and intellectual property terms.",
+    "Review PawTrusty's terms of service, educational veterinary disclaimer, public government docket indexing policies, and intellectual property terms.",
   alternates: {
-    canonical: "https://pawtruth.com/terms",
+    canonical: "https://pawtrusty.com/terms",
   },
   openGraph: {
-    title: "Terms of Service & Clinical Disclaimer | PawTruth",
-    description: "Official terms of service, medical disclaimer, and regulatory data terms for PawTruth.",
-    url: "https://pawtruth.com/terms",
+    title: "Terms of Service & Clinical Disclaimer | PawTrusty",
+    description: "Official terms of service, medical disclaimer, and regulatory data terms for PawTrusty.",
+    url: "https://pawtrusty.com/terms",
     type: "website",
   },
 };
@@ -32,21 +32,21 @@ export default function TermsOfServicePage() {
             "@type": "ListItem",
             position: 1,
             name: "Home",
-            item: "https://pawtruth.com",
+            item: "https://pawtrusty.com",
           },
           {
             "@type": "ListItem",
             position: 2,
             name: "Terms of Service",
-            item: "https://pawtruth.com/terms",
+            item: "https://pawtrusty.com/terms",
           },
         ],
       },
       {
         "@type": "WebPage",
         name: "Terms of Service and Veterinary Disclaimer",
-        url: "https://pawtruth.com/terms",
-        description: "Terms of service, educational disclaimer, and fair use guidelines for PawTruth.",
+        url: "https://pawtrusty.com/terms",
+        description: "Terms of service, educational disclaimer, and fair use guidelines for PawTrusty.",
       },
     ],
   };
@@ -81,7 +81,7 @@ export default function TermsOfServicePage() {
             Last Updated &amp; Effective Date: {lastUpdated}
           </p>
           <p className="text-sm sm:text-base font-medium text-brand-espresso/80 leading-relaxed">
-            Please read these Terms of Service carefully before utilizing the PawTruth consumer safety directory, veterinary calculators, breed standards, or recall search tools.
+            Please read these Terms of Service carefully before utilizing the PawTrusty consumer safety directory, veterinary calculators, breed standards, or recall search tools.
           </p>
         </header>
 
@@ -96,10 +96,10 @@ export default function TermsOfServicePage() {
               </h2>
             </div>
             <p className="text-xs sm:text-sm text-amber-950 font-medium leading-relaxed">
-              <strong>PAWTRUTH IS AN INDEPENDENT EDUCATIONAL AND REGULATORY SAFETY DIRECTORY.</strong> All materials on this website—including pet food recall dockets, brand manufacturing dossiers, breed clinical standards, and interactive calculations—are published strictly for informational, educational, and consumer transparency purposes.
+              <strong>PAWTRUSTY IS AN INDEPENDENT EDUCATIONAL AND REGULATORY SAFETY DIRECTORY.</strong> All materials on this website—including pet food recall dockets, brand manufacturing dossiers, breed clinical standards, and interactive calculations—are published strictly for informational, educational, and consumer transparency purposes.
             </p>
             <p className="text-xs sm:text-sm text-amber-950/90 leading-relaxed">
-              Content on PawTruth is <strong>not</strong> a substitute for professional veterinary diagnosis, examination, or personalized clinical treatment. Always consult a licensed veterinarian or veterinary toxicologist regarding symptoms of pet food toxicity, suspected Salmonella poisoning, dietary changes, or pediatric growth abnormalities. In any acute emergency, contact your nearest animal emergency clinic or the ASPCA Animal Poison Control Center immediately.
+              Content on PawTrusty is <strong>not</strong> a substitute for professional veterinary diagnosis, examination, or personalized clinical treatment. Always consult a licensed veterinarian or veterinary toxicologist regarding symptoms of pet food toxicity, suspected Salmonella poisoning, dietary changes, or pediatric growth abnormalities. In any acute emergency, contact your nearest animal emergency clinic or the ASPCA Animal Poison Control Center immediately.
             </p>
           </section>
 
@@ -114,7 +114,7 @@ export default function TermsOfServicePage() {
               </h2>
             </div>
             <p className="text-xs sm:text-sm text-brand-espresso/80">
-              PawTruth indexes and aggregates official, publicly accessible regulatory enforcement reports and recall dockets published by government authorities, including:
+              PawTrusty indexes and aggregates official, publicly accessible regulatory enforcement reports and recall dockets published by government authorities, including:
             </p>
             <ul className="list-disc pl-5 space-y-1 text-xs sm:text-sm text-brand-espresso/80">
               <li>United States Food and Drug Administration (FDA) Center for Veterinary Medicine</li>
@@ -123,7 +123,7 @@ export default function TermsOfServicePage() {
               <li>Australian Competition and Consumer Commission (ACCC) and PFIAA</li>
             </ul>
             <p className="text-xs sm:text-sm text-brand-espresso/80">
-              While we make rigorous editorial efforts to keep our ledger synchronized with government notices, official docket archives published directly by regulatory agencies remain the definitive legal source of recall status, lot numbers, and geographic distribution. PawTruth is an independent consumer directory and is not officially affiliated with or endorsed by any governmental body.
+              While we make rigorous editorial efforts to keep our ledger synchronized with government notices, official docket archives published directly by regulatory agencies remain the definitive legal source of recall status, lot numbers, and geographic distribution. PawTrusty is an independent consumer directory and is not officially affiliated with or endorsed by any governmental body.
             </p>
           </section>
 
@@ -153,7 +153,7 @@ export default function TermsOfServicePage() {
               </h2>
             </div>
             <p className="text-xs sm:text-sm text-brand-espresso/80">
-              All commercial product brand names, registered trademarks, logos, and corporate parent names displayed on PawTruth (such as Purina, Blue Buffalo, Victor, Royal Canin, Advance, etc.) are the property of their respective trademark owners. Their reference on this website constitutes <strong>nominative fair use</strong> strictly for the purpose of truthful, factual public recall reporting, consumer safety identification, and regulatory transparency. PawTruth claims no ownership or affiliation with these commercial brands.
+              All commercial product brand names, registered trademarks, logos, and corporate parent names displayed on PawTrusty (such as Purina, Blue Buffalo, Victor, Royal Canin, Advance, etc.) are the property of their respective trademark owners. Their reference on this website constitutes <strong>nominative fair use</strong> strictly for the purpose of truthful, factual public recall reporting, consumer safety identification, and regulatory transparency. PawTrusty claims no ownership or affiliation with these commercial brands.
             </p>
           </section>
 
@@ -183,7 +183,7 @@ export default function TermsOfServicePage() {
               </h2>
             </div>
             <p className="text-xs sm:text-sm text-brand-espresso/80">
-              PawTruth is provided on an &ldquo;as is&rdquo; and &ldquo;as available&rdquo; basis without warranties of any kind, either express or implied. To the maximum extent permitted under applicable law, PawTruth and its creators disclaim all liability for any direct, indirect, incidental, consequential, or punitive damages arising out of your access to, use of, or inability to use this website or any information contained herein.
+              PawTrusty is provided on an &ldquo;as is&rdquo; and &ldquo;as available&rdquo; basis without warranties of any kind, either express or implied. To the maximum extent permitted under applicable law, PawTrusty and its creators disclaim all liability for any direct, indirect, incidental, consequential, or punitive damages arising out of your access to, use of, or inability to use this website or any information contained herein.
             </p>
           </section>
 
@@ -193,7 +193,7 @@ export default function TermsOfServicePage() {
               Modifications to Terms
             </h2>
             <p className="text-xs sm:text-sm text-brand-espresso/80">
-              We reserve the right to revise or update these Terms of Service at any time. Continued use of PawTruth after changes are posted constitutes your acceptance of the revised terms. For legal or regulatory inquiries, please visit our{" "}
+              We reserve the right to revise or update these Terms of Service at any time. Continued use of PawTrusty after changes are posted constitutes your acceptance of the revised terms. For legal or regulatory inquiries, please visit our{" "}
               <Link href="/contact" className="font-bold text-brand-terracotta underline hover:text-brand-espresso">
                 Contact &amp; Inquiries Page
               </Link>

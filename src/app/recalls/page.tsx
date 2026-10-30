@@ -9,7 +9,7 @@ import AdSensePlaceholder from "@/components/AdSensePlaceholder";
 import { ShieldAlert, ShieldCheck, AlertTriangle, FileText, Building2, ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Pet Food Recall Database: USA, Canada, UK & Australia (2009–2026) — PawTruth",
+  title: "Pet Food Recall Database: USA, Canada, UK & Australia (2009–2026) — PawTrusty",
   description:
     "Search official pet food recall dockets across the USA (FDA), Canada (CFIA), United Kingdom & Europe (FSA), and Australia (ACCC). Verify lot numbers, check Class I contamination events, and access emergency veterinary protocols.",
   keywords: [
@@ -32,14 +32,14 @@ export const metadata: Metadata = {
     "victor dog food recall",
   ],
   alternates: {
-    canonical: "https://pawtruth.com/recalls",
+    canonical: "https://pawtrusty.com/recalls",
   },
   openGraph: {
-    title: "Pet Food Recall Database: USA, Canada, UK & Australia (2009–2026) | PawTruth",
+    title: "Pet Food Recall Database: USA, Canada, UK & Australia (2009–2026) | PawTrusty",
     description:
       "Search official veterinary recall dockets across the USA, Canada, UK, and Australia. Verify specific lot codes and inspect chronological recall histories from 2009 through 2026.",
     type: "website",
-    url: "https://pawtruth.com/recalls",
+    url: "https://pawtrusty.com/recalls",
   },
 };
 
@@ -55,13 +55,13 @@ export default function RecallsDirectoryPage() {
     "name": "International Pet Food Recall Enforcement Database (USA, Canada, UK, Australia 2009–2026)",
     "description":
       "Public safety dataset indexing official government veterinary recall enforcement reports, Class I/II/III severity classifications, lot numbers, and pathogen contaminants across the USA (FDA), Canada (CFIA), UK (FSA), and Australia (ACCC).",
-    "url": "https://pawtruth.com/recalls",
+    "url": "https://pawtrusty.com/recalls",
     "dateModified": lastVerifiedDate,
     "temporalCoverage": "2009/2026",
     "isAccessibleForFree": true,
     "creator": {
       "@type": "Organization",
-      "name": "PawTruth Consumer Safety Initiative",
+      "name": "PawTrusty Consumer Safety Initiative",
     },
   };
 
@@ -146,7 +146,7 @@ export default function RecallsDirectoryPage() {
 
         {/* Mandatory Regulatory Disclaimer */}
         <div className="p-4 rounded-2xl bg-brand-cream/40 border border-brand-espresso/20 text-[11px] font-sans text-brand-taupe leading-relaxed">
-          <strong className="text-brand-espresso">Notice:</strong> PawTruth indexes public regulatory reports published by government veterinary authorities including the U.S. Food and Drug Administration (FDA) Center for Veterinary Medicine (CVM), Canadian Food Inspection Agency (CFIA), UK Food Standards Agency (FSA), and Australian Competition &amp; Consumer Commission (ACCC). PawTruth is an independent consumer directory and is not an agency of any government. If your pet shows acute signs of illness, immediately contact a licensed veterinarian.
+          <strong className="text-brand-espresso">Notice:</strong> PawTrusty indexes public regulatory reports published by government veterinary authorities including the U.S. Food and Drug Administration (FDA) Center for Veterinary Medicine (CVM), Canadian Food Inspection Agency (CFIA), UK Food Standards Agency (FSA), and Australian Competition &amp; Consumer Commission (ACCC). PawTrusty is an independent consumer directory and is not an agency of any government. If your pet shows acute signs of illness, immediately contact a licensed veterinarian.
         </div>
       </div>
     </>

@@ -7,7 +7,7 @@ import AdSensePlaceholder from "@/components/AdSensePlaceholder";
 import { ShieldAlert, ShieldCheck, Building2, History, ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Pet Food Brand Safety Directory (270+ Brands: USA, Canada, UK & Australia) — PawTruth",
+  title: "Pet Food Brand Safety Directory (270+ Brands: USA, Canada, UK & Australia) — PawTrusty",
   description:
     "Comprehensive directory of 270+ commercial pet food brands across the USA, Canada, United Kingdom, Europe, and Australia with manufacturing safety profiles, parent company ownership, verified clean records, and lot number lookup tools.",
   keywords: [
@@ -26,14 +26,14 @@ export const metadata: Metadata = {
     "blue buffalo safety profile",
   ],
   alternates: {
-    canonical: "https://pawtruth.com/brands",
+    canonical: "https://pawtrusty.com/brands",
   },
   openGraph: {
-    title: "Pet Food Brand Safety Directory (270+ Brands: USA, Canada, UK & Australia) | PawTruth",
+    title: "Pet Food Brand Safety Directory (270+ Brands: USA, Canada, UK & Australia) | PawTrusty",
     description:
       "Inspect safety track records, parent companies, and verified clean certificates for over 270 dog and cat food brands across the US, Canada, UK, and Australia.",
     type: "website",
-    url: "https://pawtruth.com/brands",
+    url: "https://pawtrusty.com/brands",
   },
 };
 
@@ -46,7 +46,7 @@ export default function BrandsDirectoryPage() {
     "name": "Pet Food Brand Safety Directory (270+ Brands: USA, Canada, UK & Australia)",
     "description":
       "Comprehensive public directory indexing 270+ pet food manufacturers, parent company ownership, and 10-year recall track records across the United States, Canada, UK, and Australia.",
-    "url": "https://pawtruth.com/brands",
+    "url": "https://pawtrusty.com/brands",
     "mainEntity": {
       "@type": "ItemList",
       "numberOfItems": brands.length,
@@ -54,7 +54,7 @@ export default function BrandsDirectoryPage() {
         "@type": "ListItem",
         "position": idx + 1,
         "name": b.name,
-        "url": `https://pawtruth.com/brand/${b.slug}`,
+        "url": `https://pawtrusty.com/brand/${b.slug}`,
       })),
     },
   };
@@ -120,7 +120,7 @@ export default function BrandsDirectoryPage() {
 
         {/* Mandatory Regulatory Disclaimer */}
         <div className="p-4 rounded-2xl bg-brand-cream/40 border border-brand-espresso/20 text-[11px] font-sans text-brand-taupe leading-relaxed">
-          <strong className="text-brand-espresso">Consumer Safety Disclaimer:</strong> PawTruth indexes publicly accessible FDA veterinary enforcement notices, press announcements, and manufacturer disclosures. We do not accept advertising compensation to alter brand safety ratings or recall histories.
+          <strong className="text-brand-espresso">Consumer Safety Disclaimer:</strong> PawTrusty indexes publicly accessible FDA veterinary enforcement notices, press announcements, and manufacturer disclosures. We do not accept advertising compensation to alter brand safety ratings or recall histories.
         </div>
       </div>
     </>

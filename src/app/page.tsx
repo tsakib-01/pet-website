@@ -15,7 +15,7 @@ export default function HomePage() {
   const homeFaqs = [
     {
       q: "Are these pet calculators mathematically accurate?",
-      a: "Yes. Every tool on PawTruth is strictly formulated using official clinical standards established by leading veterinary bodies, including the American Veterinary Medical Association (AVMA), World Small Animal Veterinary Association (WSAVA), Merck Veterinary Manual, and the American Animal Hospital Association (AAHA)."
+      a: "Yes. Every tool on PawTrusty is strictly formulated using official clinical standards established by leading veterinary bodies, including the American Veterinary Medical Association (AVMA), World Small Animal Veterinary Association (WSAVA), Merck Veterinary Manual, and the American Animal Hospital Association (AAHA)."
     },
     {
       q: "Why is the old 'multiply dog age by 7' rule no longer used?",
@@ -31,8 +31,42 @@ export default function HomePage() {
     }
   ];
 
+  const websiteSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "PawTrusty",
+    "url": "https://pawtrusty.com",
+    "description": "Veterinary-accurate calculators and clinical pet health & recall directory.",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": {
+        "@type": "EntryPoint",
+        "urlTemplate": "https://pawtrusty.com/recalls?q={search_term_string}"
+      },
+      "query-input": "required name=search_term_string"
+    }
+  };
+
+  const organizationSchema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "PawTrusty",
+    "url": "https://pawtrusty.com",
+    "logo": "https://pawtrusty.com/images/logo-pawtrusty.png",
+    "description": "Independent, veterinary-calibrated calculation suite and pet safety directory."
+  };
+
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 py-6 sm:py-10 space-y-12 sm:space-y-16 overflow-hidden">
+      {/* Master SEO Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+      />
       {/* 1. HERO SECTION */}
       <ScrollReveal direction="up">
         <section className="relative paper-box p-5 sm:p-8 md:p-12 overflow-hidden bg-[#FAF4EE]">
@@ -397,7 +431,7 @@ export default function HomePage() {
           </div>
         </div>
         <p className="text-sm text-brand-espresso leading-relaxed max-w-4xl">
-          PawTruth calculations are built directly upon published formulas from the <strong>American Veterinary Medical Association (AVMA)</strong>, the <strong>World Small Animal Veterinary Association (WSAVA)</strong>, the <strong>American Animal Hospital Association (AAHA)</strong>, and the <strong>ASPCA Animal Poison Control Center</strong>. All processing is executed client-side in memory for complete privacy and instant speed.
+          PawTrusty calculations are built directly upon published formulas from the <strong>American Veterinary Medical Association (AVMA)</strong>, the <strong>World Small Animal Veterinary Association (WSAVA)</strong>, the <strong>American Animal Hospital Association (AAHA)</strong>, and the <strong>ASPCA Animal Poison Control Center</strong>. All processing is executed client-side in memory for complete privacy and instant speed.
         </p>
       </section>
 

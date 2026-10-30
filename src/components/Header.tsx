@@ -119,6 +119,7 @@ export default function Header() {
           {/* Brand Logo */}
           <Link
             href="/"
+            aria-label="PawTrusty — Return to homepage"
             className="flex items-center gap-2 sm:gap-2.5 group flex-shrink-0"
             onClick={() => setMobileMenuOpen(false)}
           >

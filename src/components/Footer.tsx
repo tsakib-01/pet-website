@@ -16,6 +16,7 @@ export default function Footer() {
         <div className="space-y-4">
           <Link
             href="/"
+            aria-label="PawTrusty — Return to homepage"
             className="flex items-center gap-2 sm:gap-2.5 group flex-shrink-0 hover:opacity-90 transition-opacity w-fit"
           >
             <div className="w-9 h-9 sm:w-11 sm:h-11 bg-brand-olive border-2 border-brand-espresso rounded-full flex items-center justify-center shadow-pill group-hover:scale-105 group-hover:-rotate-6 transition-all flex-shrink-0">

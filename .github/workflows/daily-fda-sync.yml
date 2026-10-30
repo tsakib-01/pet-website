@@ -29,8 +29,8 @@ jobs:
 
       - name: Commit and Push Updates
         run: |
-          git config --global user.name "PawTruth Safety Bot"
-          git config --global user.email "safety-bot@pawtruth.com"
+          git config --global user.name "PawTrusty Safety Bot"
+          git config --global user.email "safety-bot@pawtrusty.com"
           git add src/data/historicalTimeline.ts
           if git diff --staged --quiet; then
             echo "Zero new FDA recalls detected today. Working tree clean."

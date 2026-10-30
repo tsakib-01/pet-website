@@ -14,7 +14,7 @@ if sys.platform == "win32":
 
 TIMELINE_PATH = Path('src/data/historicalTimeline.ts')
 HEADERS = {
-    'User-Agent': 'PawTruth-Consumer-Safety-Sync/1.0 (Mozilla/5.0 Windows NT 10.0; Win64; x64)'
+    'User-Agent': 'PawTrusty-Consumer-Safety-Sync/1.0 (Mozilla/5.0 Windows NT 10.0; Win64; x64)'
 }
 
 def fetch_from_fda_cvm():

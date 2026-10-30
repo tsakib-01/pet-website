@@ -11,7 +11,7 @@ DOG_DIR = os.path.abspath('public/images/breeds/dogs')
 os.makedirs(DOG_DIR, exist_ok=True)
 
 HEADERS = {
-    'User-Agent': 'PawTruthBot/1.0 (https://pawtruth.com; contact@pawtruth.com)'
+    'User-Agent': 'PawTrustyBot/1.0 (https://pawtrusty.com; contact@pawtrusty.com)'
 }
 
 def download_and_save_webp(url, target_path, target_size=(1200, 800)):

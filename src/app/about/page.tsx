@@ -17,11 +17,11 @@ import {
 import AdSensePlaceholder from "@/components/AdSensePlaceholder";
 
 export const metadata: Metadata = {
-  title: "About PawTruth | Evidence-Based Pet Health & Veterinary Calculators",
+  title: "About PawTrusty | Evidence-Based Pet Health & Veterinary Calculators",
   description:
-    "Discover PawTruth's mission: delivering peer-reviewed veterinary formulas, zero-tracking privacy, and clinical dog & cat calculators calibrated to AVMA, AAHA, and WSAVA standards.",
+    "Discover PawTrusty's mission: delivering peer-reviewed veterinary formulas, zero-tracking privacy, and clinical dog & cat calculators calibrated to AVMA, AAHA, and WSAVA standards.",
   keywords: [
-    "about pawtruth",
+    "about pawtrusty",
     "veterinary calculators mission",
     "pet health algorithms",
     "AVMA standards pet health",
@@ -29,18 +29,18 @@ export const metadata: Metadata = {
     "open pet health tools",
   ],
   alternates: {
-    canonical: "https://pawtruth.com/about",
+    canonical: "https://pawtrusty.com/about",
   },
   openGraph: {
-    title: "About PawTruth | Independent Veterinary Calculator Suite",
+    title: "About PawTrusty | Independent Veterinary Calculator Suite",
     description:
       "Transforming clinical veterinary literature into instant, zero-tracking, interactive calculators for modern pet parents.",
-    url: "https://pawtruth.com/about",
+    url: "https://pawtrusty.com/about",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "About PawTruth | Evidence-Based Pet Health Calculators",
+    title: "About PawTrusty | Evidence-Based Pet Health Calculators",
     description:
       "Transforming clinical veterinary literature into instant, zero-tracking, interactive calculators for modern pet parents.",
   },
@@ -57,28 +57,28 @@ export default function AboutPage() {
             "@type": "ListItem",
             position: 1,
             name: "Home",
-            item: "https://pawtruth.com",
+            item: "https://pawtrusty.com",
           },
           {
             "@type": "ListItem",
             position: 2,
             name: "About",
-            item: "https://pawtruth.com/about",
+            item: "https://pawtrusty.com/about",
           },
         ],
       },
       {
         "@type": "AboutPage",
-        name: "About PawTruth",
+        name: "About PawTrusty",
         description:
           "Independent veterinary calculation suite and clinical pet breed database developed with peer-reviewed medical protocols.",
-        url: "https://pawtruth.com/about",
+        url: "https://pawtrusty.com/about",
       },
       {
         "@type": "Organization",
-        name: "PawTruth",
-        url: "https://pawtruth.com",
-        logo: "https://pawtruth.com/logo.png",
+        name: "PawTrusty",
+        url: "https://pawtrusty.com",
+        logo: "https://pawtrusty.com/images/logo-pawtrusty.png",
         sameAs: [],
       },
     ],
@@ -101,7 +101,7 @@ export default function AboutPage() {
             Home
           </Link>
           <ChevronRight className="w-3.5 h-3.5" />
-          <span className="text-brand-espresso">About PawTruth</span>
+          <span className="text-brand-espresso">About PawTrusty</span>
         </nav>
 
         {/* Hero Section */}
@@ -114,7 +114,7 @@ export default function AboutPage() {
             Evidence-Based Veterinary Precision for Every Pet Parent.
           </h1>
           <p className="text-base sm:text-lg font-medium text-brand-espresso/80 max-w-3xl leading-relaxed">
-            The internet is flooded with pet folklore—from the debunked &quot;1 human year equals 7 dog years&quot; myth to dangerous homemade diet recipes lacking essential calcium-to-phosphorus ratios. PawTruth was built to bridge the gap between complex academic veterinary dockets and everyday pet care.
+            The internet is flooded with pet folklore—from the debunked &quot;1 human year equals 7 dog years&quot; myth to dangerous homemade diet recipes lacking essential calcium-to-phosphorus ratios. PawTrusty was built to bridge the gap between complex academic veterinary dockets and everyday pet care.
           </p>
 
           {/* Quick Pillars Row */}
@@ -174,7 +174,7 @@ export default function AboutPage() {
                   1. Clinical Algorithmic Transparency
                 </h3>
                 <p className="text-xs sm:text-sm text-brand-taupe leading-relaxed font-sans font-medium">
-                  We never use black-box estimates. Every single calculator on PawTruth explicitly cites its underlying physiological coefficients, Resting Energy Requirement (RER) exponent formulas, and published veterinary literature.
+                  We never use black-box estimates. Every single calculator on PawTrusty explicitly cites its underlying physiological coefficients, Resting Energy Requirement (RER) exponent formulas, and published veterinary literature.
                 </p>
               </div>
               <div className="pt-2 text-[11px] font-mono font-bold text-brand-espresso/80 border-t border-brand-espresso/15">
@@ -310,7 +310,7 @@ export default function AboutPage() {
                 Independent Safety Directory
               </h3>
               <p className="text-xs sm:text-sm text-brand-taupe max-w-2xl font-sans font-medium leading-relaxed">
-                PawTruth operates as an independent public consumer safety initiative, dedicated to verifiable veterinary health benchmarks, objective regulatory indexing, and zero-compromise pet parent advocacy.
+                PawTrusty operates as an independent public consumer safety initiative, dedicated to verifiable veterinary health benchmarks, objective regulatory indexing, and zero-compromise pet parent advocacy.
               </p>
             </div>
             <Link

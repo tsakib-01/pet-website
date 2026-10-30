@@ -1,4 +1,4 @@
-# PawTruth — Pet Food Safety & Recall Inspector
+# PawTrusty — Pet Food Safety & Recall Inspector
 
 An interactive, real-time veterinary food safety directory indexing official FDA animal food recall dockets, contaminant laboratory data, and brand safety compliance.
 

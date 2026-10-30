@@ -45,12 +45,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const brand = getRecallBrandBySlug(slug);
 
   if (!brand) {
-    return { title: "Brand Not Found — PawTruth" };
+    return { title: "Brand Not Found — PawTrusty" };
   }
 
   const currentYear = new Date().getFullYear();
   return {
-    title: `${brand.name} Dog & Cat Food Recall History (${currentYear}) — PawTruth`,
+    title: `${brand.name} Dog & Cat Food Recall History (${currentYear}) — PawTrusty`,
     description: `Official FDA recall record, lot number lookup, and safety history for ${brand.name}. Check whether your kibble or canned lot is affected by active Salmonella, mold, or Vitamin D dockets.`,
     keywords: [
       `${brand.name.toLowerCase()} recall`,
@@ -62,13 +62,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       "fda pet food dockets",
     ],
     alternates: {
-      canonical: `https://pawtruth.com/brand/${brand.slug}`,
+      canonical: `https://pawtrusty.com/brand/${brand.slug}`,
     },
     openGraph: {
-      title: `${brand.name} Safety Dossier & Recall History | PawTruth`,
+      title: `${brand.name} Safety Dossier & Recall History | PawTrusty`,
       description: brand.statusSummary,
       type: "article",
-      url: `https://pawtruth.com/brand/${brand.slug}`,
+      url: `https://pawtrusty.com/brand/${brand.slug}`,
     },
   };
 }
@@ -140,7 +140,7 @@ export default async function BrandRecallPage({ params }: Props) {
     "@type": "MedicalWebPage",
     "name": `${brand.name} Recall History & Safety Record`,
     "description": brand.statusSummary,
-    "url": `https://pawtruth.com/brand/${brand.slug}`,
+    "url": `https://pawtrusty.com/brand/${brand.slug}`,
     "about": {
       "@type": "Product",
       "name": brand.name,
@@ -487,7 +487,7 @@ export default async function BrandRecallPage({ params }: Props) {
 
         {/* Mandatory Regulatory Notice & Legal Disclaimer */}
         <div className="p-4 rounded-2xl bg-brand-cream/40 border border-brand-espresso/20 text-[11px] font-sans text-brand-taupe leading-relaxed">
-          <strong className="text-brand-espresso">Official FDA Public Safety Notice:</strong> PawTruth is an independent consumer pet health directory that indexes public enforcement reports published by the U.S. Food and Drug Administration (FDA) and state agricultural departments. PawTruth is not affiliated with, endorsed by, or sponsored by {brand.name} or the FDA. If your pet exhibits acute symptoms of foodborne illness, contact a licensed veterinarian or emergency animal hospital immediately.
+          <strong className="text-brand-espresso">Official FDA Public Safety Notice:</strong> PawTrusty is an independent consumer pet health directory that indexes public enforcement reports published by the U.S. Food and Drug Administration (FDA) and state agricultural departments. PawTrusty is not affiliated with, endorsed by, or sponsored by {brand.name} or the FDA. If your pet exhibits acute symptoms of foodborne illness, contact a licensed veterinarian or emergency animal hospital immediately.
         </div>
       </div>
     </>

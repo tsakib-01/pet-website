@@ -55,7 +55,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const bName = breed.name.toLowerCase();
 
   return {
-    title: `${breed.name} Care Guide: Colors, Temperament, Size & Health | PawTruth`,
+    title: `${breed.name} Care Guide: Colors, Temperament, Size & Health | PawTrusty`,
     description: `Complete ${breed.name} veterinary guide: recognized & rare colors (${breed.coatVariations.slice(0, 3).join(", ")}), temperament scores, pediatric growth milestones, weight benchmarks, and 1-click interactive calculators.`,
     keywords: [
       bName,
@@ -77,13 +77,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       `${bName} origin`,
     ],
     alternates: {
-      canonical: `https://pawtruth.com/breed/${breed.slug}`,
+      canonical: `https://pawtrusty.com/breed/${breed.slug}`,
     },
     openGraph: {
       title: `${breed.name} Clinical Guide: Colors, Temperament & Calculators`,
       description: breed.tagline,
       type: "article",
-      url: `https://pawtruth.com/breed/${breed.slug}`,
+      url: `https://pawtrusty.com/breed/${breed.slug}`,
       images: [
         {
           url: breed.heroImage,
@@ -145,19 +145,19 @@ export default async function BreedDetailPage({ params }: Props) {
             "@type": "ListItem",
             "position": 1,
             "name": "Home",
-            "item": "https://pawtruth.com",
+            "item": "https://pawtrusty.com",
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "Breeds",
-            "item": "https://pawtruth.com/breed",
+            "item": "https://pawtrusty.com/breed",
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": breed.name,
-            "item": `https://pawtruth.com/breed/${breed.slug}`,
+            "item": `https://pawtrusty.com/breed/${breed.slug}`,
           },
         ],
       },
@@ -165,7 +165,7 @@ export default async function BreedDetailPage({ params }: Props) {
         "@type": "MedicalWebPage",
         "name": `${breed.name} Comprehensive Clinical Breed Guide`,
         "description": breed.tagline,
-        "url": `https://pawtruth.com/breed/${breed.slug}`,
+        "url": `https://pawtrusty.com/breed/${breed.slug}`,
         "aspect": ["Overview", "Temperament", "Color Variations", "Growth Milestones", "Health", "Nutritional Requirements", "History", "Breed Facts"],
         "about": {
           "@type": "Thing",
@@ -178,8 +178,8 @@ export default async function BreedDetailPage({ params }: Props) {
         },
         "publisher": {
           "@type": "Organization",
-          "name": "PawTruth",
-          "url": "https://pawtruth.com",
+          "name": "PawTrusty",
+          "url": "https://pawtrusty.com",
         },
       },
       {

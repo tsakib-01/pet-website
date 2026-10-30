@@ -5,16 +5,16 @@ import { ShieldCheck, Lock, Cookie, Eye, Globe, ChevronRight, FileText, ArrowRig
 import AdSensePlaceholder from "@/components/AdSensePlaceholder";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy & Cookie Disclosures — PawTruth",
+  title: "Privacy Policy & Cookie Disclosures — PawTrusty",
   description:
-    "Read PawTruth's privacy policy, cookie disclosures, Google AdSense compliance terms, GDPR/CCPA consumer rights, and data handling protocols.",
+    "Read PawTrusty's privacy policy, cookie disclosures, Google AdSense compliance terms, GDPR/CCPA consumer rights, and data handling protocols.",
   alternates: {
-    canonical: "https://pawtruth.com/privacy",
+    canonical: "https://pawtrusty.com/privacy",
   },
   openGraph: {
-    title: "Privacy Policy & Cookie Disclosures | PawTruth",
-    description: "Transparent data handling, cookie policies, and advertising disclosures for PawTruth.",
-    url: "https://pawtruth.com/privacy",
+    title: "Privacy Policy & Cookie Disclosures | PawTrusty",
+    description: "Transparent data handling, cookie policies, and advertising disclosures for PawTrusty.",
+    url: "https://pawtrusty.com/privacy",
     type: "website",
   },
 };
@@ -32,21 +32,21 @@ export default function PrivacyPolicyPage() {
             "@type": "ListItem",
             position: 1,
             name: "Home",
-            item: "https://pawtruth.com",
+            item: "https://pawtrusty.com",
           },
           {
             "@type": "ListItem",
             position: 2,
             name: "Privacy Policy",
-            item: "https://pawtruth.com/privacy",
+            item: "https://pawtrusty.com/privacy",
           },
         ],
       },
       {
         "@type": "WebPage",
         name: "Privacy Policy and Cookie Notice",
-        url: "https://pawtruth.com/privacy",
-        description: "Official privacy policy and third-party advertising disclosures for PawTruth.",
+        url: "https://pawtrusty.com/privacy",
+        description: "Official privacy policy and third-party advertising disclosures for PawTrusty.",
       },
     ],
   };
@@ -81,7 +81,7 @@ export default function PrivacyPolicyPage() {
             Last Updated &amp; Effective Date: {lastUpdated}
           </p>
           <p className="text-sm sm:text-base font-medium text-brand-espresso/80 leading-relaxed">
-            PawTruth (&ldquo;we,&rdquo; &ldquo;our,&rdquo; or &ldquo;us&rdquo;) is committed to protecting your personal privacy. This Privacy Policy outlines our transparent data practices, cookie disclosures, Google AdSense advertising protocols, and your legal rights under GDPR and CCPA.
+            PawTrusty (&ldquo;we,&rdquo; &ldquo;our,&rdquo; or &ldquo;us&rdquo;) is committed to protecting your personal privacy. This Privacy Policy outlines our transparent data practices, cookie disclosures, Google AdSense advertising protocols, and your legal rights under GDPR and CCPA.
           </p>
         </header>
 
@@ -98,7 +98,7 @@ export default function PrivacyPolicyPage() {
               </h2>
             </div>
             <p className="text-brand-espresso/80">
-              PawTruth is designed as a free, public consumer safety directory. You are never required to create an account, register personal credentials, or provide payment details to access our pet food recall database, brand dossiers, breed guides, or veterinary calculators.
+              PawTrusty is designed as a free, public consumer safety directory. You are never required to create an account, register personal credentials, or provide payment details to access our pet food recall database, brand dossiers, breed guides, or veterinary calculators.
             </p>
             <ul className="list-disc pl-5 space-y-1.5 text-xs sm:text-sm text-brand-espresso/80">
               <li>
@@ -122,7 +122,7 @@ export default function PrivacyPolicyPage() {
               </h2>
             </div>
             <p className="text-xs sm:text-sm text-brand-espresso/85 leading-relaxed">
-              Third-party vendors, including <strong>Google</strong>, use cookies to serve advertisements based on a user&apos;s prior visits to PawTruth or other websites across the Internet:
+              Third-party vendors, including <strong>Google</strong>, use cookies to serve advertisements based on a user&apos;s prior visits to PawTrusty or other websites across the Internet:
             </p>
             <ul className="list-disc pl-5 space-y-2 text-xs sm:text-sm text-brand-espresso/80">
               <li>
@@ -187,7 +187,7 @@ export default function PrivacyPolicyPage() {
               </h2>
             </div>
             <p className="text-brand-espresso/80 text-xs sm:text-sm">
-              Under the California Consumer Privacy Act (CCPA), California residents have specific privacy rights. <strong>PawTruth does not sell, rent, or trade your personal information</strong> to third parties for monetary consideration. California consumers may request disclosures regarding any data collected or request permanent deletion of contact inquiries by reaching out to us.
+              Under the California Consumer Privacy Act (CCPA), California residents have specific privacy rights. <strong>PawTrusty does not sell, rent, or trade your personal information</strong> to third parties for monetary consideration. California consumers may request disclosures regarding any data collected or request permanent deletion of contact inquiries by reaching out to us.
             </p>
           </section>
 
@@ -202,7 +202,7 @@ export default function PrivacyPolicyPage() {
               </h2>
             </div>
             <p className="text-brand-espresso/80 text-xs sm:text-sm">
-              PawTruth does not knowingly collect any personally identifiable information from children under the age of 13. If a parent or guardian believes that a child has provided us with personal information, please contact us immediately, and we will promptly remove such information from our records.
+              PawTrusty does not knowingly collect any personally identifiable information from children under the age of 13. If a parent or guardian believes that a child has provided us with personal information, please contact us immediately, and we will promptly remove such information from our records.
             </p>
           </section>
 

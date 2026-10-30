@@ -4,7 +4,7 @@ import { getAllBreeds } from "@/data/breeds";
 import { getAllRecallBrands } from "@/data/recalls";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://pawtruth.com";
+  const baseUrl = "https://pawtrusty.com";
   const now = new Date();
 
   const toolRoutes = CALCULATOR_TOOLS.map((tool) => ({

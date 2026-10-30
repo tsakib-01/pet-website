@@ -5,10 +5,10 @@ import Footer from "@/components/Footer";
 import FloatingScrollCompanion from "@/components/FloatingScrollCompanion";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://pawtruth.com"),
+  metadataBase: new URL("https://pawtrusty.com"),
   title: {
-    default: "PawTruth — Pet Health & Safety Calculators",
-    template: "%s | PawTruth",
+    default: "PawTrusty — Pet Health & Safety Calculators",
+    template: "%s | PawTrusty",
   },
   description:
     "Free, 100% veterinary-accurate calculators and clinical breed guides for dogs and cats: emergency toxicity triage, AVMA life-stage age converters, WSAVA nutrition portioning, and AKC sizing.",
@@ -29,17 +29,26 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   openGraph: {
-    title: "PawTruth — Pet Health & Safety Calculators",
+    title: "PawTrusty — Pet Health & Safety Calculators",
     description: "Veterinary-accurate calculators and clinical breed standards for dogs and cats.",
-    url: "https://pawtruth.com",
-    siteName: "PawTruth",
+    url: "https://pawtrusty.com",
+    siteName: "PawTrusty",
     locale: "en_US",
     type: "website",
+    images: [
+      {
+        url: "/images/logo-pawtrusty.png",
+        width: 1200,
+        height: 630,
+        alt: "PawTrusty — Pet Health & Safety",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "PawTruth — Pet Health & Safety Calculators",
+    title: "PawTrusty — Pet Health & Safety Calculators",
     description: "Veterinary-accurate calculators and clinical breed standards for dogs and cats.",
+    images: ["/images/logo-pawtrusty.png"],
   },
   robots: {
     index: true,

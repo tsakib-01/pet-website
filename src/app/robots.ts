@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://pawtruth.com/sitemap.xml",
+    sitemap: "https://pawtrusty.com/sitemap.xml",
   };
 }

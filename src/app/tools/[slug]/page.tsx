@@ -30,13 +30,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     description: tool.description,
     keywords: [tool.name.toLowerCase(), `${tool.name.toLowerCase()} online`, "pet calculator", "veterinary formula", tool.category],
     alternates: {
-      canonical: `https://pawtruth.com/tools/${tool.slug}`,
+      canonical: `https://pawtrusty.com/tools/${tool.slug}`,
     },
     openGraph: {
-      title: `${tool.name} | PawTruth Tools`,
+      title: `${tool.name} | PawTrusty Tools`,
       description: tool.tagline,
       type: "website",
-      url: `https://pawtruth.com/tools/${tool.slug}`,
+      url: `https://pawtrusty.com/tools/${tool.slug}`,
     },
   };
 }

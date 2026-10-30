@@ -7,7 +7,7 @@ from io import BytesIO
 from PIL import Image
 
 HEADERS = {
-    'User-Agent': 'PawTruthResearchBot/1.0 (https://pawtruth.com; contact@pawtruth.com)'
+    'User-Agent': 'PawTrustyResearchBot/1.0 (https://pawtrusty.com; contact@pawtrusty.com)'
 }
 
 def download_and_process(img_url, out_path, target_size=(1200, 800)):

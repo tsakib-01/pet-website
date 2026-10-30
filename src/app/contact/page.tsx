@@ -15,29 +15,29 @@ import ContactForm from "@/components/ContactForm";
 import AdSensePlaceholder from "@/components/AdSensePlaceholder";
 
 export const metadata: Metadata = {
-  title: "Contact PawTruth | Feedback, Formula Suggestions & Inquiries",
+  title: "Contact PawTrusty | Feedback, Formula Suggestions & Inquiries",
   description:
-    "Get in touch with the PawTruth team. Submit algorithmic feedback, request new veterinary calculators, report breed standard updates, or propose clinical partnerships.",
+    "Get in touch with the PawTrusty team. Submit algorithmic feedback, request new veterinary calculators, report breed standard updates, or propose clinical partnerships.",
   keywords: [
-    "contact pawtruth",
+    "contact pawtrusty",
     "pet calculator feedback",
     "veterinary formula suggestions",
-    "pawtruth contact form",
+    "pawtrusty contact form",
     "pet health support",
   ],
   alternates: {
-    canonical: "https://pawtruth.com/contact",
+    canonical: "https://pawtrusty.com/contact",
   },
   openGraph: {
-    title: "Contact PawTruth | Pet Health Directory",
+    title: "Contact PawTrusty | Pet Health Directory",
     description:
       "Reach our engineering and editorial team for algorithmic suggestions, breed updates, and clinical feedback.",
-    url: "https://pawtruth.com/contact",
+    url: "https://pawtrusty.com/contact",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Contact PawTruth | Pet Health & Calculators",
+    title: "Contact PawTrusty | Pet Health & Calculators",
     description:
       "Reach our engineering and editorial team for algorithmic suggestions, breed updates, and clinical feedback.",
   },
@@ -54,22 +54,22 @@ export default function ContactPage() {
             "@type": "ListItem",
             position: 1,
             name: "Home",
-            item: "https://pawtruth.com",
+            item: "https://pawtrusty.com",
           },
           {
             "@type": "ListItem",
             position: 2,
             name: "Contact",
-            item: "https://pawtruth.com/contact",
+            item: "https://pawtrusty.com/contact",
           },
         ],
       },
       {
         "@type": "ContactPage",
-        name: "Contact PawTruth",
+        name: "Contact PawTrusty",
         description:
           "Official contact portal for algorithmic feedback, clinical inquiries, and veterinary tool suggestions.",
-        url: "https://pawtruth.com/contact",
+        url: "https://pawtrusty.com/contact",
       },
     ],
   };
@@ -104,7 +104,7 @@ export default function ContactPage() {
             We’re Here for the Pet Community.
           </h1>
           <p className="text-base sm:text-lg font-medium text-brand-espresso/80 max-w-3xl leading-relaxed">
-            Have a clinical calculation suggestion, detected a newly published breed standard update, or want to partner with PawTruth? Send us a note below.
+            Have a clinical calculation suggestion, detected a newly published breed standard update, or want to partner with PawTrusty? Send us a note below.
           </p>
         </section>
 
@@ -164,7 +164,7 @@ export default function ContactPage() {
                 <span>Urgent Medical Safety Notice</span>
               </div>
               <p className="text-xs text-red-950 font-sans font-medium leading-relaxed">
-                PawTruth is an educational reference directory and <strong>cannot provide live veterinary triage</strong> for active pet poisoning, collapse, or acute trauma.
+                PawTrusty is an educational reference directory and <strong>cannot provide live veterinary triage</strong> for active pet poisoning, collapse, or acute trauma.
               </p>
               <div className="bg-white/80 border border-red-300 rounded-xl p-3 text-xs text-red-900 space-y-1">
                 <p className="font-heading font-black">
@@ -181,7 +181,7 @@ export default function ContactPage() {
               <div className="flex items-center gap-2.5">
                 <ShieldCheck className="w-5 h-5 text-brand-terracotta flex-shrink-0" />
                 <div className="text-xs font-heading font-black text-brand-espresso">
-                  PawTruth Safety &amp; Editorial Desk
+                  PawTrusty Safety &amp; Editorial Desk
                 </div>
               </div>
               <span className="text-[10px] font-mono font-bold uppercase px-2 py-0.5 rounded-full bg-brand-olive text-brand-espresso border border-brand-espresso">
@@ -211,7 +211,7 @@ export default function ContactPage() {
             </div>
             <div className="bg-white rounded-2xl border-2 border-brand-espresso p-4 space-y-1.5 shadow-paper-sm">
               <h3 className="font-heading font-black text-sm text-brand-espresso">
-                Can veterinary clinics link to PawTruth?
+                Can veterinary clinics link to PawTrusty?
               </h3>
               <p className="text-brand-taupe leading-relaxed">
                 Absolutely. Our calculators and breed profiles are freely accessible public resources for veterinary clinics, rescue shelters, and pet owners.

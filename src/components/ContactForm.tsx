@@ -74,7 +74,7 @@ export default function ContactForm() {
           Message Received!
         </h3>
         <p className="text-sm text-brand-taupe max-w-md mx-auto leading-relaxed font-sans font-medium">
-          Thank you for reaching out to PawTruth. Your submission has passed our automated spam filter and been queued for our editorial team.
+          Thank you for reaching out to PawTrusty. Your submission has passed our automated spam filter and been queued for our editorial team.
         </p>
         <div className="pt-2">
           <button
@@ -220,7 +220,7 @@ export default function ContactForm() {
             : "btn-pill-espresso hover:btn-pill-terracotta cursor-pointer group"
         }`}
       >
-        <span>Submit Note to PawTruth</span>
+        <span>Submit Note to PawTrusty</span>
         <span className="w-7 h-7 rounded-full bg-brand-olive text-brand-espresso flex items-center justify-center flex-shrink-0 group-hover:rotate-12 transition-transform shadow-[1px_1px_0px_#583D32]">
           <Send className="w-3.5 h-3.5" />
         </span>

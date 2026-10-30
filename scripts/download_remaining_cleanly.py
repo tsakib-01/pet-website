@@ -6,7 +6,7 @@ import urllib.request
 from PIL import Image
 
 HEADERS = {
-    "User-Agent": "PawTruthPetSafetyBot/2.0 (https://pawtruth.com; safety@pawtruth.com; research education)"
+    "User-Agent": "PawTrustyPetSafetyBot/2.0 (https://pawtrusty.com; safety@pawtrusty.com; research education)"
 }
 
 DOGAPI_MAP = {

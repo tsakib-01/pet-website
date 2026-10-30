@@ -146,7 +146,7 @@ export default function RecallTableLedger({ knownBrandSlugs = [] }: Props) {
       else if (lower === "uk" || lower === "europe" || lower === "eu" || lower === "gb") setSelectedCountry("UK & Europe");
       else if (lower === "usa" || lower === "us") setSelectedCountry("USA");
     } else {
-      const saved = localStorage.getItem("pawtruth_preferred_country");
+      const saved = localStorage.getItem("pawtrusty_preferred_country");
       if (saved && ["USA", "Canada", "UK & Europe", "Australia"].includes(saved)) {
         setSelectedCountry(saved);
       }
@@ -159,9 +159,9 @@ export default function RecallTableLedger({ knownBrandSlugs = [] }: Props) {
     setCurrentPage(1);
     if (typeof window !== "undefined") {
       if (val !== "all") {
-        localStorage.setItem("pawtruth_preferred_country", val);
+        localStorage.setItem("pawtrusty_preferred_country", val);
       } else {
-        localStorage.removeItem("pawtruth_preferred_country");
+        localStorage.removeItem("pawtrusty_preferred_country");
       }
     }
   };
@@ -181,7 +181,7 @@ export default function RecallTableLedger({ knownBrandSlugs = [] }: Props) {
     setSelectedStatus("all");
     setCurrentPage(1);
     if (typeof window !== "undefined") {
-      localStorage.removeItem("pawtruth_preferred_country");
+      localStorage.removeItem("pawtrusty_preferred_country");
     }
   };
 
