@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import { PawPrint, ShieldCheck, ArrowRight } from "lucide-react";
+import { ShieldCheck, ArrowRight } from "lucide-react";
 import AdSensePlaceholder from "./AdSensePlaceholder";
 
 export default function Footer() {
@@ -14,14 +14,15 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
         {/* Brand Info */}
         <div className="space-y-4">
-          <div className="flex items-center gap-2.5">
-            <div className="w-10 h-10 bg-brand-terracotta border-2 border-brand-espresso rounded-full flex items-center justify-center text-white shadow-pill flex-shrink-0">
-              <PawPrint className="w-5 h-5 flex-shrink-0" />
-            </div>
-            <span className="font-heading text-2xl font-black uppercase tracking-tight text-brand-espresso">
-              PAW<span className="text-brand-terracotta">TRUSTY</span>
-            </span>
-          </div>
+          <Link href="/" className="inline-block hover:opacity-90 transition-opacity">
+            <img
+              src="/images/logo-pawtrusty.svg"
+              alt="PawTrusty — Pet Health & Safety"
+              width={220}
+              height={53}
+              className="h-11 sm:h-12 w-auto object-contain"
+            />
+          </Link>
           <p className="text-xs text-brand-taupe leading-relaxed font-sans font-medium">
             Independent, veterinary-calibrated calculation suite providing canine and feline life-stage age models, emergency chocolate toxicity triage, WSAVA dual-diet portioning, and AKC ergonomic standards.
           </p>
@@ -36,7 +37,7 @@ export default function Footer() {
             <li>
               <Link href="/about" className="hover:text-brand-terracotta transition-colors flex items-center gap-1.5 group">
                 <span className="text-brand-terracotta font-black group-hover:translate-x-0.5 transition-transform">→</span>
-                <span>About PawTruth</span>
+                <span>About PawTrusty</span>
               </Link>
             </li>
             <li>
@@ -157,7 +158,7 @@ export default function Footer() {
       <div className="border-t-2 border-brand-espresso/30 py-5 px-4 sm:px-6">
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left font-mono text-[11px] text-brand-taupe font-bold">
           <div>
-            © 2026 PawTruth — Independent Pet Health &amp; Food Safety Directory. All rights reserved.
+            © 2026 PawTrusty — Independent Pet Health &amp; Safety Directory. All rights reserved.
           </div>
           <div className="flex flex-wrap items-center justify-center gap-4 text-xs font-mono">
             <Link href="/privacy" className="hover:text-brand-espresso underline transition-colors">

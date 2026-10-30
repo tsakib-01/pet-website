@@ -4,6 +4,7 @@ import tempfile
 from PIL import Image
 
 edge_path = r"C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe"
+art_dir = r"C:\Users\user\.gemini\antigravity\brain\c40b928e-1ae6-4a82-a64e-2792bb08bc07"
 
 def generate_logo():
     html_template = """<!DOCTYPE html>
@@ -29,24 +30,24 @@ def generate_logo():
   .logo-container {
     display: inline-flex;
     align-items: center;
-    gap: 24px;
+    gap: 15px;
   }
   /* Icon Circle Badge */
   .icon-badge {
-    width: 104px;
-    height: 104px;
+    width: 98px;
+    height: 98px;
     border-radius: 50%;
     background-color: #C9C986;
-    border: 5px solid #583D32;
-    box-shadow: 7px 7px 0px #583D32;
+    border: 4.8px solid #583D32;
+    box-shadow: 6.5px 6.5px 0px #583D32;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
   }
   .icon-badge svg {
-    width: 56px;
-    height: 56px;
+    width: 54px;
+    height: 54px;
     stroke: #583D32;
     stroke-width: 2.2;
     fill: none;
@@ -58,13 +59,13 @@ def generate_logo():
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 4px;
+    gap: 0px;
   }
   .brand-title {
     font-size: 68px;
     font-weight: 900;
     letter-spacing: -0.035em;
-    line-height: 1;
+    line-height: 0.92;
     color: #583D32;
     text-transform: uppercase;
   }
@@ -73,13 +74,14 @@ def generate_logo():
   }
   .brand-tagline {
     font-family: 'Space Mono', monospace;
-    font-size: 20px;
+    font-size: 27px;
     font-weight: 700;
-    letter-spacing: 0.22em;
+    letter-spacing: 0.045em;
     color: #7F6F72;
     text-transform: uppercase;
-    margin-top: 5px;
+    margin-top: 0px;
     padding-left: 2px;
+    line-height: 1;
   }
 </style>
 </head>
@@ -108,7 +110,7 @@ def generate_logo():
 
     tmp_dir = tempfile.mkdtemp()
     
-    # Render transparent version
+    # 1. Render transparent version
     html_file_trans = os.path.join(tmp_dir, "logo_trans.html")
     with open(html_file_trans, "w", encoding="utf-8") as f:
         f.write(html_template)
@@ -119,14 +121,14 @@ def generate_logo():
         "--headless",
         "--disable-gpu",
         f"--user-data-dir={tmp_dir}",
-        "--window-size=1200,400",
+        "--window-size=1200,350",
         "--default-background-color=00000000",
         f"--screenshot={raw_trans_png}",
         f"file:///{html_file_trans.replace(os.sep, '/')}"
     ]
     subprocess.run(cmd_trans, capture_output=True, timeout=20)
     
-    # Render cream background version
+    # 2. Render cream background version
     html_file_cream = os.path.join(tmp_dir, "logo_cream.html")
     with open(html_file_cream, "w", encoding="utf-8") as f:
         f.write(html_cream)
@@ -137,21 +139,19 @@ def generate_logo():
         "--headless",
         "--disable-gpu",
         f"--user-data-dir={tmp_dir}",
-        "--window-size=1200,400",
+        "--window-size=1200,350",
         f"--screenshot={raw_cream_png}",
         f"file:///{html_file_cream.replace(os.sep, '/')}"
     ]
     subprocess.run(cmd_cream, capture_output=True, timeout=20)
 
-    # Autotrim transparent logo
+    # 3. Autotrim transparent logo
     os.makedirs("public/images", exist_ok=True)
     if os.path.exists(raw_trans_png):
         im = Image.open(raw_trans_png)
-        # get bbox of non-zero alpha
         bbox = im.getbbox()
         if bbox:
-            # add small padding of 12px
-            pad = 12
+            pad = 8
             crop_box = (
                 max(0, bbox[0] - pad),
                 max(0, bbox[1] - pad),
@@ -160,16 +160,18 @@ def generate_logo():
             )
             trimmed = im.crop(crop_box)
             trimmed.save("public/images/logo-pawtrusty.png", "PNG")
-            print("Saved public/images/logo-pawtrusty.png", trimmed.size)
+            trimmed.save(os.path.join(art_dir, "logo-pawtrusty.png"), "PNG")
+            print("Saved logo-pawtrusty.png", trimmed.size)
 
-    # Autotrim cream logo
+    # 4. Autotrim cream logo
     if os.path.exists(raw_cream_png) and bbox:
         im_cream = Image.open(raw_cream_png)
         trimmed_cream = im_cream.crop(crop_box)
         trimmed_cream.save("public/images/logo-pawtrusty-cream.png", "PNG")
-        print("Saved public/images/logo-pawtrusty-cream.png", trimmed_cream.size)
+        trimmed_cream.save(os.path.join(art_dir, "logo-pawtrusty-cream.png"), "PNG")
+        print("Saved logo-pawtrusty-cream.png", trimmed_cream.size)
 
-    # Also generate high-res 512x512 standalone square icon
+    # 5. Standalone 512x512 icon
     html_icon = """<!DOCTYPE html>
 <html>
 <head>
@@ -228,6 +230,7 @@ def generate_logo():
     if os.path.exists(raw_icon_png):
         im_icon = Image.open(raw_icon_png)
         im_icon.save("public/images/logo-pawtrusty-icon.png", "PNG")
-        print("Saved public/images/logo-pawtrusty-icon.png", im_icon.size)
+        im_icon.save(os.path.join(art_dir, "logo-pawtrusty-icon.png"), "PNG")
+        print("Saved logo-pawtrusty-icon.png", im_icon.size)
 
 generate_logo()

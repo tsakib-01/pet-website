@@ -131,7 +131,7 @@ export default function Header() {
                   PAW<span className="text-brand-terracotta">TRUSTY</span>
                 </span>
               </div>
-              <p className="text-[9px] font-mono font-bold tracking-wider text-brand-taupe uppercase hidden md:block">
+              <p className="text-[10px] sm:text-[11.5px] font-mono font-bold tracking-normal text-brand-taupe uppercase hidden md:block leading-none mt-1">
                 Pet Health &amp; Safety
               </p>
             </div>
