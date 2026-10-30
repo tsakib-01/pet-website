@@ -298,7 +298,7 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* Editorial Integrity & White Stone Attribution */}
+        {/* Editorial Integrity & Attribution */}
         <section className="bg-white border-2.5 border-brand-espresso rounded-3xl p-6 sm:p-8 shadow-paper space-y-4">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
             <div className="space-y-1">
@@ -307,7 +307,7 @@ export default function AboutPage() {
                 Editorial Integrity & Transparency
               </div>
               <h3 className="font-heading text-xl sm:text-2xl font-black text-brand-espresso">
-                Published by White Stone
+                Independent Safety Directory
               </h3>
               <p className="text-xs sm:text-sm text-brand-taupe max-w-2xl font-sans font-medium leading-relaxed">
                 PawTruth operates as an independent public consumer safety initiative, dedicated to verifiable veterinary health benchmarks, objective regulatory indexing, and zero-compromise pet parent advocacy.

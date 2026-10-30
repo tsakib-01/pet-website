@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     "contact pawtruth",
     "pet calculator feedback",
     "veterinary formula suggestions",
-    "pawtruth email",
+    "pawtruth contact form",
     "pet health support",
   ],
   alternates: {
@@ -97,8 +97,8 @@ export default function ContactPage() {
         {/* Hero Header */}
         <section className="bg-white rounded-3xl border-2.5 border-brand-espresso p-6 sm:p-10 shadow-[6px_6px_0px_#583D32] space-y-4">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-olive text-brand-espresso border-2 border-brand-espresso shadow-[2px_2px_0px_#583D32] text-xs font-heading font-black uppercase">
-            <Mail className="w-4 h-4 text-brand-espresso" />
-            Direct Communications
+            <ShieldCheck className="w-4 h-4 text-brand-espresso" />
+            Secure Inquiries Portal
           </div>
           <h1 className="font-heading text-3xl sm:text-5xl font-black text-brand-espresso tracking-tight">
             We’re Here for the Pet Community.
@@ -117,42 +117,41 @@ export default function ContactPage() {
 
           {/* Right Column: Direct Email & Clinical Protocols */}
           <div className="lg:col-span-5 space-y-6">
-            {/* Direct Email Card */}
+            {/* Secure Web Portal & Anti-Spam Card */}
             <div className="bg-[#FAF4EE] border-2.5 border-brand-espresso rounded-3xl p-6 shadow-paper space-y-4">
               <div className="flex items-center gap-3 pb-3 border-b-2 border-brand-espresso/20">
                 <div className="w-10 h-10 rounded-full bg-brand-terracotta border-2 border-brand-espresso flex items-center justify-center text-white shadow-pill">
-                  <Mail className="w-5 h-5" />
+                  <ShieldCheck className="w-5 h-5" />
                 </div>
                 <div>
                   <h3 className="font-heading text-lg font-black text-brand-espresso">
-                    Direct Email
+                    Secure Web Portal
                   </h3>
                   <p className="text-[11px] font-mono font-bold text-brand-taupe uppercase">
-                    Official Inquiries & Editorial
+                    Anti-Spam Protected Inbox
                   </p>
                 </div>
               </div>
 
-              {/* Placeholder Notice */}
+              {/* Anti-Spam Protection Notice */}
               <div className="space-y-2">
-                <div className="bg-white border-2 border-brand-espresso rounded-xl p-3.5 shadow-paper-sm">
-                  <div className="text-[10px] font-mono font-bold text-brand-taupe uppercase mb-0.5">
-                    Official Contact Inbox
+                <div className="bg-white border-2 border-brand-espresso rounded-xl p-3.5 shadow-paper-sm space-y-2">
+                  <div className="text-[10px] font-mono font-bold text-brand-taupe uppercase">
+                    Direct Email Disabled for Anti-Spam
                   </div>
-                  <a
-                    href="mailto:contact@pawtruth.com"
-                    className="font-heading font-black text-base sm:text-lg text-brand-terracotta hover:underline break-all"
-                  >
-                    contact@pawtruth.com
-                  </a>
+                  <p className="text-xs font-sans font-medium text-brand-espresso/90 leading-relaxed">
+                    To shield our research team from automated web scrapers, mass phishing, and spam bots, direct public email addresses are disabled. All community inquiries must be submitted through our verified form.
+                  </p>
+                  <div className="pt-1 border-t border-brand-espresso/15 flex items-center gap-2 text-[11px] font-mono font-bold text-brand-terracotta">
+                    <span>✓ Plain text only</span>
+                    <span>•</span>
+                    <span>✓ No links or file uploads</span>
+                  </div>
                 </div>
-                <p className="text-[11px] font-mono text-brand-taupe leading-relaxed">
-                  <em>[Placeholder Email — you can update this to your specific inbox anytime]</em>
-                </p>
               </div>
 
               {/* Turnaround Time */}
-              <div className="flex items-center gap-2.5 pt-2 text-xs font-mono font-bold text-brand-espresso">
+              <div className="flex items-center gap-2.5 pt-1 text-xs font-mono font-bold text-brand-espresso">
                 <Clock className="w-4 h-4 text-brand-terracotta flex-shrink-0" />
                 <span>Response time: Typically 24–48 business hours.</span>
               </div>
@@ -182,11 +181,11 @@ export default function ContactPage() {
               <div className="flex items-center gap-2.5">
                 <ShieldCheck className="w-5 h-5 text-brand-terracotta flex-shrink-0" />
                 <div className="text-xs font-heading font-black text-brand-espresso">
-                  Published by White Stone
+                  PawTruth Safety &amp; Editorial Desk
                 </div>
               </div>
               <span className="text-[10px] font-mono font-bold uppercase px-2 py-0.5 rounded-full bg-brand-olive text-brand-espresso border border-brand-espresso">
-                Consumer Safety Team
+                Verified Directory
               </span>
             </div>
           </div>
