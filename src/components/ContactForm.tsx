@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { Send, CheckCircle, Sparkles, ShieldCheck, Ban, AlertCircle, FileText } from "lucide-react";
+import { Send, CheckCircle, Sparkles, ShieldCheck, Ban, Loader2 } from "lucide-react";
 
 // Robust pattern detecting URLs, web protocols, domains with paths, HTML tags, markdown links, data URIs, and file extensions
 const FORBIDDEN_CONTENT_REGEX =
@@ -9,12 +9,14 @@ const FORBIDDEN_CONTENT_REGEX =
 
 export default function ContactForm() {
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     subject: "general",
     message: "",
+    _hp: "", // Honeypot anti-spam trap (invisible to human visitors)
   });
 
   const validateText = (text: string): string | null => {
@@ -44,7 +46,7 @@ export default function ContactForm() {
     }
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
     // Check message
@@ -60,8 +62,51 @@ export default function ContactForm() {
       return;
     }
 
+    if (!formData.name.trim()) {
+      setError("Please provide your name.");
+      return;
+    }
+
+    if (!formData.email.trim()) {
+      setError("Please provide your email address.");
+      return;
+    }
+
+    if (formData.message.trim().length < 10) {
+      setError("Message must be at least 10 characters long.");
+      return;
+    }
+
     setError(null);
-    setSubmitted(true);
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const result = await response.json().catch(() => null);
+
+      if (!response.ok || !result?.ok) {
+        setError(
+          result?.error ||
+            "Unable to deliver your message at this time. Please try again in a few moments."
+        );
+        setIsSubmitting(false);
+        return;
+      }
+
+      setSubmitted(true);
+      setIsSubmitting(false);
+    } catch {
+      setError("A network error occurred. Please check your connection and try again.");
+      setIsSubmitting(false);
+    }
   };
 
   if (submitted) {
@@ -74,7 +119,7 @@ export default function ContactForm() {
           Message Received!
         </h3>
         <p className="text-sm text-brand-taupe max-w-md mx-auto leading-relaxed font-sans font-medium">
-          Thank you for reaching out to PawTrusty. Your submission has passed our automated spam filter and been queued for our editorial team.
+          Thank you for reaching out to PawTrusty. Your note has been securely delivered to our editorial desk.
         </p>
         <div className="pt-2">
           <button
@@ -82,7 +127,7 @@ export default function ContactForm() {
             onClick={() => {
               setSubmitted(false);
               setError(null);
-              setFormData({ name: "", email: "", subject: "general", message: "" });
+              setFormData({ name: "", email: "", subject: "general", message: "", _hp: "" });
             }}
             className="btn-pill btn-pill-espresso px-6 py-2.5 text-xs font-black shadow-paper-sm cursor-pointer"
           >
@@ -100,6 +145,18 @@ export default function ContactForm() {
       onDrop={handleDrop}
       className="bg-white border-2.5 border-brand-espresso rounded-3xl p-6 sm:p-8 shadow-paper space-y-5"
     >
+      {/* Honeypot field - hidden from human eyes to trap spam bots */}
+      <input
+        type="text"
+        name="_hp"
+        tabIndex={-1}
+        autoComplete="off"
+        className="hidden"
+        aria-hidden="true"
+        value={formData._hp}
+        onChange={(e) => setFormData({ ...formData, _hp: e.target.value })}
+      />
+
       <div className="flex items-center justify-between pb-3 border-b-2 border-brand-espresso/15">
         <div className="flex items-center gap-2">
           <Sparkles className="w-4 h-4 text-brand-terracotta" />
@@ -118,7 +175,7 @@ export default function ContactForm() {
           <Ban className="w-5 h-5 text-brand-terracotta flex-shrink-0 mt-0.5" />
           <div className="text-xs text-brand-espresso font-sans">
             <strong className="font-heading font-black block mb-0.5 text-brand-terracotta">
-              Submission Blocked
+              Submission Notice
             </strong>
             <span>{error}</span>
           </div>
@@ -135,10 +192,11 @@ export default function ContactForm() {
             type="text"
             required
             maxLength={100}
+            disabled={isSubmitting}
             value={formData.name}
             onChange={(e) => setFormData({ ...formData, name: e.target.value })}
             placeholder="Sarah Jenkins or Pet Parent"
-            className="w-full bg-[#FAF4EE] border-2 border-brand-espresso rounded-xl px-3.5 py-2.5 text-xs sm:text-sm font-sans font-medium text-brand-espresso placeholder:text-brand-taupe/60 shadow-paper-sm focus:outline-none focus:border-brand-terracotta"
+            className="w-full bg-[#FAF4EE] border-2 border-brand-espresso rounded-xl px-3.5 py-2.5 text-xs sm:text-sm font-sans font-medium text-brand-espresso placeholder:text-brand-taupe/60 shadow-paper-sm focus:outline-none focus:border-brand-terracotta disabled:opacity-60"
           />
         </div>
 
@@ -151,10 +209,11 @@ export default function ContactForm() {
             type="email"
             required
             maxLength={120}
+            disabled={isSubmitting}
             value={formData.email}
             onChange={(e) => setFormData({ ...formData, email: e.target.value })}
             placeholder="youremail@example.com"
-            className="w-full bg-[#FAF4EE] border-2 border-brand-espresso rounded-xl px-3.5 py-2.5 text-xs sm:text-sm font-sans font-medium text-brand-espresso placeholder:text-brand-taupe/60 shadow-paper-sm focus:outline-none focus:border-brand-terracotta"
+            className="w-full bg-[#FAF4EE] border-2 border-brand-espresso rounded-xl px-3.5 py-2.5 text-xs sm:text-sm font-sans font-medium text-brand-espresso placeholder:text-brand-taupe/60 shadow-paper-sm focus:outline-none focus:border-brand-terracotta disabled:opacity-60"
           />
         </div>
       </div>
@@ -166,11 +225,12 @@ export default function ContactForm() {
         </label>
         <select
           value={formData.subject}
+          disabled={isSubmitting}
           onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
-          className="w-full bg-[#FAF4EE] border-2 border-brand-espresso rounded-xl px-3.5 py-2.5 text-xs sm:text-sm font-sans font-bold text-brand-espresso shadow-paper-sm focus:outline-none focus:border-brand-terracotta cursor-pointer"
+          className="w-full bg-[#FAF4EE] border-2 border-brand-espresso rounded-xl px-3.5 py-2.5 text-xs sm:text-sm font-sans font-bold text-brand-espresso shadow-paper-sm focus:outline-none focus:border-brand-terracotta cursor-pointer disabled:opacity-60"
         >
-          <option value="general">General Feedback & Suggestions</option>
-          <option value="formula">Veterinary Formula & Algorithm Suggestion</option>
+          <option value="general">General Feedback &amp; Suggestions</option>
+          <option value="formula">Veterinary Formula &amp; Algorithm Suggestion</option>
           <option value="breed">Breed Guide / Health Standard Note</option>
           <option value="partnership">Clinical Partnership / Press Inquiry</option>
           <option value="bug">Technical Issue / Formula Correction</option>
@@ -191,12 +251,13 @@ export default function ContactForm() {
           required
           rows={5}
           maxLength={2000}
+          disabled={isSubmitting}
           value={formData.message}
           onChange={handleMessageChange}
           onDrop={handleDrop}
           onPaste={handlePaste}
           placeholder="Share your feedback, clinical suggestions, or notes here. Plain text only (no links or file uploads accepted)..."
-          className={`w-full bg-[#FAF4EE] border-2 rounded-xl p-3.5 text-xs sm:text-sm font-sans font-medium text-brand-espresso placeholder:text-brand-taupe/60 shadow-paper-sm focus:outline-none leading-relaxed transition-colors ${
+          className={`w-full bg-[#FAF4EE] border-2 rounded-xl p-3.5 text-xs sm:text-sm font-sans font-medium text-brand-espresso placeholder:text-brand-taupe/60 shadow-paper-sm focus:outline-none leading-relaxed transition-colors disabled:opacity-60 ${
             error ? "border-brand-terracotta focus:border-brand-terracotta" : "border-brand-espresso focus:border-brand-terracotta"
           }`}
         />
@@ -206,23 +267,29 @@ export default function ContactForm() {
       <div className="bg-[#FAF4EE] border border-brand-espresso/30 rounded-xl p-3 flex items-start gap-2.5 text-[11px] font-mono text-brand-espresso/80">
         <ShieldCheck className="w-4 h-4 text-emerald-700 flex-shrink-0 mt-0.5" />
         <div className="leading-relaxed">
-          <strong className="text-brand-espresso font-bold">Anti-Spam &amp; Security Policy:</strong> Plain raw text only. To prevent malicious phishing and bot spam, external links, website URLs (<code className="bg-white px-1 py-0.5 rounded text-[10px] text-brand-terracotta font-bold">http, https, www</code>), and file attachments are strictly prohibited.
+          <strong className="text-brand-espresso font-bold">Anti-Spam &amp; Privacy Shield:</strong> Public email addresses are masked to block scrapers and phishing bots. Submissions sent through this portal are securely delivered to our official editorial inbox. External links and file attachments are disallowed.
         </div>
       </div>
 
       {/* Submit Button */}
       <button
         type="submit"
-        disabled={Boolean(error)}
+        disabled={Boolean(error) || isSubmitting}
         className={`w-full py-3 px-6 text-xs sm:text-sm font-black uppercase tracking-wider flex items-center justify-between shadow-paper-sm transition-all rounded-full border-2 border-brand-espresso ${
-          error
+          Boolean(error) || isSubmitting
             ? "bg-stone-300 text-stone-500 cursor-not-allowed opacity-60"
             : "btn-pill-espresso hover:btn-pill-terracotta cursor-pointer group"
         }`}
       >
-        <span>Submit Note to PawTrusty</span>
+        <span>
+          {isSubmitting ? "Delivering Note to PawTrusty..." : "Submit Note to PawTrusty"}
+        </span>
         <span className="w-7 h-7 rounded-full bg-brand-olive text-brand-espresso flex items-center justify-center flex-shrink-0 group-hover:rotate-12 transition-transform shadow-[1px_1px_0px_#583D32]">
-          <Send className="w-3.5 h-3.5" />
+          {isSubmitting ? (
+            <Loader2 className="w-3.5 h-3.5 animate-spin" />
+          ) : (
+            <Send className="w-3.5 h-3.5" />
+          )}
         </span>
       </button>
     </form>
