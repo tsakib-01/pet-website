@@ -1,11 +1,20 @@
 import React from "react";
 import Link from "next/link";
+import { Metadata } from "next";
 import { Search, ArrowRight, CheckCircle2, PawPrint, Dog, Cat, HeartPulse, ShieldCheck, AlertTriangle, Scale, Utensils, Calendar, Box, Volume2, ChevronRight, Fish, Waves, Trophy } from "lucide-react";
 import AdSensePlaceholder from "@/components/AdSensePlaceholder";
 import ScrollReveal from "@/components/ScrollReveal";
 import FaqAccordion from "@/components/FaqAccordion";
 import { CALCULATOR_TOOLS } from "@/data/calculators";
 import DogAgeCalculator from "@/components/calculators/DogAgeCalculator";
+
+export const metadata: Metadata = {
+  title: "PawTrusty — Evidence-Based Pet Health & Veterinary Calculators",
+  description: "Free, clinical veterinary calculators and pet food safety recall directory for dogs and cats. Formulated on AVMA, WSAVA, AAHA & Merck Veterinary Manual standards.",
+  alternates: {
+    canonical: "https://pawtrusty.com",
+  },
+};
 
 export default function HomePage() {
   const dogTools = CALCULATOR_TOOLS.filter((t) => t.category === "dog");
