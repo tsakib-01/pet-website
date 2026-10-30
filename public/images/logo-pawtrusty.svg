@@ -14,8 +14,8 @@
   <text x="120" y="70" font-family="'Bricolage Grotesque', 'Plus Jakarta Sans', sans-serif" font-weight="900" font-size="64" letter-spacing="-0.035em" text-anchor="start">
     <tspan fill="#583D32">PAW</tspan><tspan fill="#D57746">TRUSTY</tspan>
   </text>
-  <!-- Tagline: Larger & Tighter Spacing -->
-  <text x="120" y="97" font-family="'Space Mono', monospace" font-weight="700" font-size="25" letter-spacing="0.045em" fill="#7F6F72" text-anchor="start">
+  <!-- Tagline: Natural Tighter Line Spacing -->
+  <text x="120" y="91" font-family="'Space Mono', monospace" font-weight="700" font-size="25" letter-spacing="0.045em" fill="#7F6F72" text-anchor="start">
     PET HEALTH &amp; SAFETY
   </text>
 </svg>

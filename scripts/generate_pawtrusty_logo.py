@@ -65,9 +65,11 @@ def generate_logo():
     font-size: 68px;
     font-weight: 900;
     letter-spacing: -0.035em;
-    line-height: 0.92;
+    line-height: 0.88;
     color: #583D32;
     text-transform: uppercase;
+    margin: 0;
+    padding: 0;
   }
   .brand-title .highlight {
     color: #D57746;
@@ -79,7 +81,7 @@ def generate_logo():
     letter-spacing: 0.045em;
     color: #7F6F72;
     text-transform: uppercase;
-    margin: 0;
+    margin-top: -5px;
     padding: 0;
     line-height: 1;
   }
