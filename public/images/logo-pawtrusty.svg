@@ -15,7 +15,7 @@
     <tspan fill="#583D32">PAW</tspan><tspan fill="#D57746">TRUSTY</tspan>
   </text>
   <!-- Tagline -->
-  <text x="144" y="106" font-family="'Space Mono', monospace" font-weight="700" font-size="17" letter-spacing="0.16em" fill="#7F6F72" text-anchor="start">
-    VETERINARY HEALTH &amp; SAFETY
+  <text x="144" y="106" font-family="'Space Mono', monospace" font-weight="700" font-size="18" letter-spacing="0.22em" fill="#7F6F72" text-anchor="start">
+    PET HEALTH &amp; SAFETY
   </text>
 </svg>

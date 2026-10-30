@@ -73,12 +73,12 @@ def generate_logo():
   }
   .brand-tagline {
     font-family: 'Space Mono', monospace;
-    font-size: 19px;
+    font-size: 20px;
     font-weight: 700;
-    letter-spacing: 0.16em;
+    letter-spacing: 0.22em;
     color: #7F6F72;
     text-transform: uppercase;
-    margin-top: 4px;
+    margin-top: 5px;
     padding-left: 2px;
   }
 </style>
@@ -95,7 +95,7 @@ def generate_logo():
     </div>
     <div class="text-lockup">
       <div class="brand-title">PAW<span class="highlight">TRUSTY</span></div>
-      <div class="brand-tagline">VETERINARY HEALTH & SAFETY</div>
+      <div class="brand-tagline">PET HEALTH &amp; SAFETY</div>
     </div>
   </div>
 </body>

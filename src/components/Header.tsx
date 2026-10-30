@@ -132,7 +132,7 @@ export default function Header() {
                 </span>
               </div>
               <p className="text-[9px] font-mono font-bold tracking-wider text-brand-taupe uppercase hidden md:block">
-                Veterinary Health & Safety
+                Pet Health &amp; Safety
               </p>
             </div>
           </Link>
