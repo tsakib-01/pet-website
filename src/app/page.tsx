@@ -122,42 +122,55 @@ export default function HomePage() {
             {/* Hero Right: Original Dog & Cat Image Collage */}
             <div className="order-1 lg:order-2 lg:col-span-5 relative flex justify-center pt-2 sm:pt-4">
               <div className="relative w-full max-w-xs sm:max-w-sm">
-                <div className="paper-box p-3 sm:p-4 bg-brand-cream border-2.5 border-brand-espresso transform -rotate-1 hover:rotate-0 transition-transform">
+                <Link
+                  href="/tools/dog-age-calculator"
+                  className="block paper-box p-3 sm:p-4 bg-brand-cream border-2.5 border-brand-espresso transform -rotate-1 hover:rotate-0 transition-transform group"
+                >
                   <img
-                    src="https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?auto=format&fit=crop&w=700&q=80"
-                    alt="Happy healthy dog"
+                    src="/images/hero-dog.webp"
+                    alt="French Bulldog"
+                    width={700}
+                    height={500}
                     className="w-full h-52 sm:h-64 object-cover rounded-xl border-2 border-brand-espresso"
                   />
                   <div className="pt-2.5 flex items-center justify-between">
                     <div>
-                      <span className="font-heading font-black text-sm sm:text-base text-brand-espresso block">
-                        Golden Retriever (Milo)
+                      <span className="font-heading font-black text-sm sm:text-base text-brand-espresso block group-hover:text-brand-terracotta transition-colors">
+                        French Bulldog (Age 3)
                       </span>
                       <span className="font-mono text-[10px] sm:text-xs text-brand-taupe font-bold">
-                        Clinical Life Stage: Adult (AAHA)
+                        Human Age: 28 Yrs • Weight: 26 lbs
                       </span>
                     </div>
                     <span className="pill-badge pill-badge-verified text-[10px]">
-                      VERIFIED
+                      AVMA FORMULA
                     </span>
                   </div>
-                </div>
+                </Link>
 
-                <div className="absolute -bottom-4 -left-3 sm:-bottom-6 sm:-left-6 w-36 sm:w-48 paper-box p-2 sm:p-3 bg-[#FAF4EE] border-2 sm:border-2.5 border-brand-espresso transform rotate-3 hover:rotate-1 transition-transform shadow-paper">
+                <Link
+                  href="/tools/cat-pregnancy-calculator"
+                  className="absolute -bottom-4 -left-3 sm:-bottom-6 sm:-left-6 w-36 sm:w-48 paper-box p-2 sm:p-3 bg-[#FAF4EE] border-2 sm:border-2.5 border-brand-espresso transform rotate-3 hover:rotate-1 transition-transform shadow-paper group"
+                >
                   <img
-                    src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=400&q=80"
-                    alt="Curious healthy cat"
+                    src="/images/hero-cat.webp"
+                    alt="Pregnant Domestic Cat"
+                    width={400}
+                    height={300}
                     className="w-full h-24 sm:h-32 object-cover rounded-lg border border-brand-espresso"
                   />
-                  <div className="pt-1 text-center">
-                    <span className="font-heading text-[10px] sm:text-xs font-black text-brand-espresso block">
-                      Feline Health Monitor
+                  <div className="pt-1.5 text-center">
+                    <span className="font-heading text-[10px] sm:text-xs font-black text-brand-espresso block leading-tight group-hover:text-brand-terracotta transition-colors">
+                      Cat Pregnancy Tracker
                     </span>
-                    <span className="pill-badge pill-badge-alert text-[8px] sm:text-[10px] py-0.2 mt-0.5">
-                      AAFP Calibrated
+                    <span className="font-mono text-[8px] sm:text-[9.5px] text-brand-taupe font-bold block mt-0.5">
+                      1 Month in Pregnancy (Day 32)
+                    </span>
+                    <span className="pill-badge pill-badge-alert text-[8px] sm:text-[9px] py-0.2 mt-1">
+                      Due in 31 Days
                     </span>
                   </div>
-                </div>
+                </Link>
 
                 <div className="absolute -top-3 -right-2 sm:-top-5 sm:-right-3 w-16 h-16 sm:w-20 sm:h-20 rounded-full border-2.5 border-brand-espresso bg-brand-olive flex flex-col items-center justify-center transform rotate-12 shadow-pill">
                   <span className="text-[10px] sm:text-xs font-mono font-black text-brand-espresso leading-none">
