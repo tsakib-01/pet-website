@@ -13,7 +13,7 @@ def generate_logo():
 <meta charset="utf-8">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,800;12..96,900&family=Space+Mono:wght@700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700;800;900&display=swap" rel="stylesheet">
 <style>
   * {
     box-sizing: border-box;
@@ -24,32 +24,32 @@ def generate_logo():
     background: transparent;
     display: inline-flex;
     align-items: center;
-    padding: 20px;
-    font-family: 'Bricolage Grotesque', sans-serif;
+    padding: 30px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
   }
   .logo-container {
     display: inline-flex;
     align-items: center;
-    gap: 15px;
+    gap: 23px;
   }
   /* Icon Circle Badge */
   .icon-badge {
-    width: 98px;
-    height: 98px;
+    width: 154px;
+    height: 154px;
     border-radius: 50%;
     background-color: #C9C986;
-    border: 4.8px solid #583D32;
-    box-shadow: 6.5px 6.5px 0px #583D32;
+    border: 7.2px solid #583D32;
+    box-shadow: 8.5px 8.5px 0px #583D32;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
   }
   .icon-badge svg {
-    width: 54px;
-    height: 54px;
+    width: 82px;
+    height: 82px;
     stroke: #583D32;
-    stroke-width: 2.2;
+    stroke-width: 2.3;
     fill: none;
     stroke-linecap: round;
     stroke-linejoin: round;
@@ -58,14 +58,15 @@ def generate_logo():
   .text-lockup {
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
     justify-content: center;
-    gap: 0px;
+    gap: 11px;
   }
   .brand-title {
-    font-size: 68px;
+    font-size: 82px;
     font-weight: 900;
     letter-spacing: -0.035em;
-    line-height: 0.88;
+    line-height: 0.9;
     color: #583D32;
     text-transform: uppercase;
     margin: 0;
@@ -75,13 +76,13 @@ def generate_logo():
     color: #D57746;
   }
   .brand-tagline {
-    font-family: 'Space Mono', monospace;
-    font-size: 27px;
-    font-weight: 700;
-    letter-spacing: 0.045em;
-    color: #7F6F72;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 34px;
+    font-weight: 800;
+    letter-spacing: 0.145em;
+    color: #797172;
     text-transform: uppercase;
-    margin-top: -5px;
+    margin: 0;
     padding: 0;
     line-height: 1;
   }

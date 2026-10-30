@@ -129,7 +129,7 @@ export default function Header() {
               <span className="font-heading text-xl sm:text-2xl font-black tracking-tight text-brand-espresso uppercase leading-none">
                 PAW<span className="text-brand-terracotta">TRUSTY</span>
               </span>
-              <span className="text-[10px] sm:text-[11.5px] font-mono font-bold tracking-normal text-brand-taupe uppercase leading-none -mt-[2px] sm:-mt-[2.5px]">
+              <span className="font-heading text-[9.5px] sm:text-[11px] font-extrabold tracking-[0.145em] text-brand-taupe uppercase leading-none mt-1 sm:mt-1.5">
                 Pet Health &amp; Safety
               </span>
             </div>
